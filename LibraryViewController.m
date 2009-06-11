@@ -8,6 +8,7 @@
 
 #import "LibraryViewController.h"
 #import "Issue.h"
+#import "IssueCell.h"
 
 @implementation LibraryViewController
 
@@ -79,6 +80,7 @@
   self.bookshelfIssues = issuesInDb;
   
   fetchedNewIssues = YES;
+  [(UITableView*)self.view reloadData];
 }
 
 /*
@@ -105,36 +107,63 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 3;
+  int sections = 0;
+  if (currentIssue != nil)
+    sections++;
+  if ([bookshelfIssues count] > 0)
+    sections++;
+  if ([backIssues count] > 0)
+    sections++;
+  debugLog(@"There are %d sections", sections);
+  return sections;
 }
-
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   switch (section) {
     case 0:
-      return (currentIssue == nil) ? 0 : 1;
+      // This will always be the current issue
+      return 1;
     case 1:
-      return [bookshelfIssues count];
+      // This may be the bookshelf or the back issues
+      if ([bookshelfIssues count] > 0)
+        return [bookshelfIssues count];
     case 2:
+      // This will always be back issues, even from the above fall through
       return [backIssues count];
     default:
       return 0;
   }
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  switch (section) {
+    case 0:
+      return @"Current Issue";
+    case 1:
+      return @"My Bookshelf";
+    case 2:
+      return @"Back Issues";
+    default:
+      return 0;
+  }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  return kIssueCellHeight;
+}
+
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  static NSString *CellIdentifier = @"Cell";
-  
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  static NSString *CellIdentifier = @"IssueCell";
+  IssueCell *cell = (IssueCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
-    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    cell = [IssueCell createNewCellFromNib];
   }
   
-  cell.textLabel.text = @"hi";
-// Configure the cell.
+  cell.title.text = @"August 2009";
+  cell.number.text = @"3";
 
   return cell;
 }
