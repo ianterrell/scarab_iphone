@@ -7,40 +7,55 @@
 //
 
 #import "LibraryViewController.h"
-
+#import "Issue.h"
 
 @implementation LibraryViewController
 
-
+@synthesize currentIssue, bookshelfIssues, backIssues;
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+  [super viewDidLoad];
 
+  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
 //    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 
-/*
+
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+  [super viewWillAppear:animated];
+  
+  if (bookshelfIssues == nil)
+    bookshelfIssues = [NSMutableArray arrayWithCapacity:5];
+  if (backIssues == nil)
+    backIssues = [NSMutableArray arrayWithCapacity:5];
+  
+  if (!checkedForNewIssues)
+    [self checkForNewIssues];
 }
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+
+#pragma mark -
+#pragma mark Check for Issues
+
+-(void)checkForNewIssues {
+  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES];
+  NSMutableArray *issuesInDb = [Issue fetchWithSortDescriptor:sortDescriptor];
+  [sortDescriptor release];
+  
+  currentIssue = [issuesInDb lastObject];
+  int currentIssueNumber = (currentIssue == nil) ? 0 : [currentIssue.number intValue];
+
+
+  
+  debugLog(@"There are currently %d issues in the database", [issuesInDb count]);
+  
+  NSArray *issuesOnServer = [Issue findAllSinceNumber:[NSNumber numberWithInt:currentIssueNumber]];
+  debugLog(@"Yo what's up!");
+  debugLog(@"There are currently %d issues on the server", [issuesOnServer count]);
+  
+  checkedForNewIssues = YES;
 }
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-	[super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-	[super viewDidDisappear:animated];
-}
-*/
 
 /*
  // Override to allow orientations other than the default portrait orientation.
@@ -66,13 +81,22 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 1;
+  return 3;
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 1;
+  switch (section) {
+    case 0:
+      return (currentIssue == nil) ? 0 : 1;
+    case 1:
+      return [bookshelfIssues count];
+    case 2:
+      return [backIssues count];
+    default:
+      return 0;
+  }
 }
 
 
@@ -146,7 +170,10 @@
 
 
 - (void)dealloc {
-    [super dealloc];
+  [currentIssue release];
+  [bookshelfIssues release];
+  [backIssues release];
+  [super dealloc];
 }
 
 

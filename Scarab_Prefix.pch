@@ -14,4 +14,11 @@
   
   #import "ScarabAppDelegate.h"
   #define AppDelegate ((ScarabAppDelegate *)[[UIApplication sharedApplication] delegate])
+  
+  #ifdef DEBUG
+  #define debugLog(...) NSLog(__VA_ARGS__)
+  #else
+  #define debugLog(...)
+  #endif
+  
 #endif

@@ -8,8 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LibraryViewController : UITableViewController {
+@class Issue;
 
+@interface LibraryViewController : UITableViewController {
+  BOOL checkedForNewIssues;
+  
+  Issue *currentIssue;
+  NSMutableArray *bookshelfIssues;
+  NSMutableArray *backIssues;
 }
+
+@property(nonatomic,retain) Issue *currentIssue;
+@property(nonatomic,retain) NSMutableArray *bookshelfIssues;
+@property(nonatomic,retain) NSMutableArray *backIssues;
+
+-(void)checkForNewIssues;
 
 @end

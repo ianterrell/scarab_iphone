@@ -8,7 +8,6 @@
 
 #import "ScarabAppDelegate.h"
 #import "SplashScreenController.h"
-#import "Issue.h"
 
 @implementation ScarabAppDelegate
 
@@ -31,7 +30,7 @@
 	if (!context) {
     // Do I want to start it up here?  I mean, duzzit matter?
 		// TODO: Handle the error.
-    NSLog(@"Error grabbing the context in applicationDidFinishLaunching");
+    debugLog(@"Error grabbing the context in applicationDidFinishLaunching");
 	}
 	
   [window addSubview:tabBarController.view];
@@ -45,7 +44,7 @@
   NSError *error;
   if (managedObjectContext != nil) {
     if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-    NSLog(@"Error grabbing the context and saving in applicationWillTerminate");
+    debugLog(@"Error grabbing the context and saving in applicationWillTerminate");
       // TODO: Handle the error.
     } 
   }
@@ -68,18 +67,6 @@
 
 -(void)doneWithSplash {
   [splashScreenController release];
-  
-  // Might as well start here.
-  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:NO];
-  NSArray *issuesInDb = [Issue fetchWithSortDescriptor:sortDescriptor];
-  [sortDescriptor release];
-  
-  NSLog(@"There are currently %d issues in the database", [issuesInDb count]);
-  
-  NSArray *issuesOnServer = [Issue findAllSinceNumber:[NSNumber numberWithInt:0]];
-  NSLog(@"Yo what's up!");
-  NSLog(@"There are currently %d issues on the server", [issuesOnServer count]);
-  
 }
 
 #pragma mark -
@@ -92,7 +79,7 @@
 -(void)save:(id)sender {	
   NSError *error;
   if (![[self managedObjectContext] save:&error]) {
-    NSLog(@"Error grabbing the context and saving in save");
+    debugLog(@"Error grabbing the context and saving in save");
     // TODO: Handle error
   }
 }
