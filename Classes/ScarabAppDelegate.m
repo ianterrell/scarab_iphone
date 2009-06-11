@@ -76,9 +76,8 @@
  Performs the save action for the application, which is to send the save:
  message to the application's managed object context.
  */
--(void)save:(id)sender {	
-  NSError *error;
-  if (![[self managedObjectContext] save:&error]) {
+-(void)save:(NSError **)error {	
+  if (![[self managedObjectContext] save:error]) {
     debugLog(@"Error grabbing the context and saving in save");
     // TODO: Handle error
   }

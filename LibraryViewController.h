@@ -11,7 +11,7 @@
 @class Issue;
 
 @interface LibraryViewController : UITableViewController {
-  BOOL checkedForNewIssues;
+  BOOL fetchedNewIssues;
   
   Issue *currentIssue;
   NSMutableArray *bookshelfIssues;
@@ -22,6 +22,6 @@
 @property(nonatomic,retain) NSMutableArray *bookshelfIssues;
 @property(nonatomic,retain) NSMutableArray *backIssues;
 
--(void)checkForNewIssues;
+-(void)fetchNewIssues;
 
 @end

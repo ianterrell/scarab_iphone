@@ -27,34 +27,58 @@
   [super viewWillAppear:animated];
   
   if (bookshelfIssues == nil)
-    bookshelfIssues = [NSMutableArray arrayWithCapacity:5];
+    self.bookshelfIssues = [NSMutableArray arrayWithCapacity:5];
   if (backIssues == nil)
-    backIssues = [NSMutableArray arrayWithCapacity:5];
+    self.backIssues = [NSMutableArray arrayWithCapacity:5];
   
-  if (!checkedForNewIssues)
-    [self checkForNewIssues];
+  if (!fetchedNewIssues)
+    [self fetchNewIssues];
 }
 
 #pragma mark -
 #pragma mark Check for Issues
 
--(void)checkForNewIssues {
+-(void)fetchNewIssues {
+  // Fetch issues in the database
   NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES];
   NSMutableArray *issuesInDb = [Issue fetchWithSortDescriptor:sortDescriptor];
   [sortDescriptor release];
+  debugLog(@"There are %d issues in the database", [issuesInDb count]);
   
-  currentIssue = [issuesInDb lastObject];
+  self.currentIssue = [issuesInDb lastObject];
   int currentIssueNumber = (currentIssue == nil) ? 0 : [currentIssue.number intValue];
+  debugLog(@"The number of the last issue in the database is %d", currentIssueNumber);
+  NSArray *newIssuesOnServer = [Issue findAllSinceNumber:[NSNumber numberWithInt:currentIssueNumber]];
+  debugLog(@"There are %d new issues on the server", [newIssuesOnServer count]);
+  
+  if ([newIssuesOnServer count] > 0) {
+    // TODO: Check if new issues are paid for by a subscription (this view is cached) -- Rails metal? -- update accordingly
+    
+    // TODO:  guarantee order from server, or sort here
+    for (Issue *issue in newIssuesOnServer) {
+      [AppDelegate.managedObjectContext insertObject:issue];
+      [issuesInDb addObject:issue];
+    }
+    
+    NSError *error = nil;
+    [AppDelegate save:&error];
+    if (error) {
+      debugLog(@"Error saving new issues in Library:  %@", [error localizedDescription]);
+      // TODO: FIXME BITCH WHAT DO I DO?
+    }
+    
+    self.currentIssue = [issuesInDb lastObject];
+  }
+  
+  // Set up view
+  
+  if (currentIssue != nil)
+    [issuesInDb removeLastObject];
 
-
+  // TODO: separate remaining into bookshelf issues and back issues
+  self.bookshelfIssues = issuesInDb;
   
-  debugLog(@"There are currently %d issues in the database", [issuesInDb count]);
-  
-  NSArray *issuesOnServer = [Issue findAllSinceNumber:[NSNumber numberWithInt:currentIssueNumber]];
-  debugLog(@"Yo what's up!");
-  debugLog(@"There are currently %d issues on the server", [issuesOnServer count]);
-  
-  checkedForNewIssues = YES;
+  fetchedNewIssues = YES;
 }
 
 /*

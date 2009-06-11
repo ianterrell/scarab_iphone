@@ -32,6 +32,6 @@
 
 -(void)doneWithSplash;
 
--(void)save:sender;
+-(void)save:(NSError **)error;
 
 @end
