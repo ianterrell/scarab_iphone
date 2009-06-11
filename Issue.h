@@ -15,8 +15,11 @@
 @property(retain) NSString *issueId;
 @property(retain) NSString *color;
 @property(retain) NSString *number;
-
+@property(retain) NSString *title;
+@property(retain) NSString *subtitle;
 
 +(NSArray *)findAllSinceNumber:(NSNumber *)issueNumber;
+
+-(UIColor *)uiColor;
 
 @end

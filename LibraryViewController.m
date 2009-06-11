@@ -77,6 +77,9 @@
     [issuesInDb removeLastObject];
 
   // TODO: separate remaining into bookshelf issues and back issues
+  sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:NO];
+  [issuesInDb sortUsingDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
+  [sortDescriptor release];
   self.bookshelfIssues = issuesInDb;
   
   fetchedNewIssues = YES;
@@ -145,7 +148,7 @@
     case 2:
       return @"Back Issues";
     default:
-      return 0;
+      return nil;
   }
 }
 
@@ -153,6 +156,19 @@
   return kIssueCellHeight;
 }
 
+-(Issue *)issueAtIndexPath:(NSIndexPath *)indexPath {
+  switch (indexPath.section) {
+    case 0:
+      return currentIssue;
+    case 1:
+      if ([bookshelfIssues count] > 0)
+        return [bookshelfIssues objectAtIndex:indexPath.row];
+    case 2:
+      return [backIssues objectAtIndex:indexPath.row];
+    default:
+      return nil;
+  }
+}
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -161,9 +177,12 @@
   if (cell == nil) {
     cell = [IssueCell createNewCellFromNib];
   }
+  Issue *issue = [self issueAtIndexPath:indexPath];
   
-  cell.title.text = @"August 2009";
-  cell.number.text = @"3";
+  cell.icon.backgroundColor = [issue uiColor];
+  cell.number.text = issue.number;
+  cell.title.text = issue.title;
+  cell.subtitle.text = issue.subtitle;
 
   return cell;
 }

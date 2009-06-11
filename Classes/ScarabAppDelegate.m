@@ -20,6 +20,8 @@
 #pragma mark Application lifecycle
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
+  debugLog(@"Application did finish launching!");
+  
   // TODO: Extract ObjectiveResource config out to bundle or some such
   [ObjectiveResourceConfig setSite:@"http://localhost:3000/"];
   //  [ObjectiveResourceConfig setUser:@"remoteResourceUserName"];
@@ -66,6 +68,7 @@
 #pragma mark Splash Screen
 
 -(void)doneWithSplash {
+  debugLog(@"Done with splash screen");
   [splashScreenController release];
 }
 

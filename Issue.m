@@ -13,6 +13,8 @@
 @dynamic issueId;
 @dynamic color;
 @dynamic number;
+@dynamic title;
+@dynamic subtitle;
 
 +(NSArray *)findAllSinceNumber:(NSNumber *)issueNumber {
   // htp://server/issues/since/:number.xml
@@ -23,6 +25,13 @@
                               [self getRemoteProtocolExtension]];
   Response *response = [Connection get:issuesSincePath];
 	return [self performSelector:[self getRemoteParseDataMethod] withObject:response.body];
+}
+
+-(UIColor *)uiColor {
+  NSString *hexColor = [NSString stringWithFormat:@"0x%@", self.color];
+  int i;
+  sscanf([hexColor UTF8String], "%x", &i);
+  return UIColorFromRGB(i);
 }
 
 @end
