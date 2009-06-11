@@ -1,0 +1,17 @@
+//
+// Prefix header for all source files of the 'Scarab' target in the 'Scarab' project
+//
+
+#ifdef __OBJC__
+  #import <Foundation/Foundation.h>
+  #import <UIKit/UIKit.h>
+  #import <CoreData/CoreData.h>
+  
+  #import "ObjectiveSupport.h"
+  #import "ObjectiveResource.h"
+  #import "Connection.h"
+  #import "Response.h"
+  
+  #import "ScarabAppDelegate.h"
+  #define AppDelegate ((ScarabAppDelegate *)[[UIApplication sharedApplication] delegate])
+#endif
