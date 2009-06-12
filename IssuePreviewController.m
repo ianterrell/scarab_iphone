@@ -90,7 +90,7 @@
   return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	WorkViewController *workViewController = [[WorkViewController alloc] initWithNibName:@"WorkViewController" bundle:nil];
 	[self.navigationController pushViewController:workViewController animated:YES];
 	[workViewController release];

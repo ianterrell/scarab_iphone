@@ -189,7 +189,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  // Navigation logic may go here -- for example, create and push another view controller.
 	IssuePreviewController *issuePreviewController = [[IssuePreviewController alloc] initWithNibName:@"IssuePreviewController" bundle:nil];
   issuePreviewController.issue = [self issueAtIndexPath:indexPath];
 	[self.navigationController pushViewController:issuePreviewController animated:YES];
