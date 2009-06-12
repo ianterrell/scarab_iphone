@@ -73,7 +73,6 @@
 		3C246B1F0FE297B600FCACDF /* ian_128.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C246B1E0FE297B600FCACDF /* ian_128.jpg */; };
 		3C246B9F0FE2A59400FCACDF /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C246B9D0FE2A59400FCACDF /* right.png */; };
 		3C246BA00FE2A59400FCACDF /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C246B9E0FE2A59400FCACDF /* left.png */; };
-		3C246BA80FE2A92800FCACDF /* 57-download.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C246BA70FE2A92800FCACDF /* 57-download.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -198,7 +197,6 @@
 		3C246B1E0FE297B600FCACDF /* ian_128.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ian_128.jpg; sourceTree = "<group>"; };
 		3C246B9D0FE2A59400FCACDF /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
 		3C246B9E0FE2A59400FCACDF /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
-		3C246BA70FE2A92800FCACDF /* 57-download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "57-download.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Scarab-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Scarab-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -265,7 +263,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3C246BA70FE2A92800FCACDF /* 57-download.png */,
 				3C246B9D0FE2A59400FCACDF /* right.png */,
 				3C246B9E0FE2A59400FCACDF /* left.png */,
 				3C246A100FE1A00200FCACDF /* ian.png */,
@@ -558,7 +555,6 @@
 				3C246B1F0FE297B600FCACDF /* ian_128.jpg in Resources */,
 				3C246B9F0FE2A59400FCACDF /* right.png in Resources */,
 				3C246BA00FE2A59400FCACDF /* left.png in Resources */,
-				3C246BA80FE2A92800FCACDF /* 57-download.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
