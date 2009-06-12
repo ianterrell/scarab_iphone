@@ -13,7 +13,7 @@
 
 @synthesize navigationItem, webView, delegate;
 
-- (void)viewDidLoad {
+-(void)viewDidLoad {
   [super viewDidLoad];
   
   // TODO: Set real author information, like, duh.
@@ -24,19 +24,19 @@
   NSString *imagePath = [[NSBundle mainBundle] resourcePath];
   imagePath = [imagePath stringByReplacingOccurrencesOfString:@"/" withString:@"//"];
   imagePath = [imagePath stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-  [webView loadHTMLString:bio baseURL:[NSURL URLWithString: [NSString stringWithFormat:@"file:/%@//",imagePath]]];}
+  [webView loadHTMLString:bio baseURL:[NSURL URLWithString: [NSString stringWithFormat:@"file:/%@//",imagePath]]];
+}
 
 -(IBAction)done {
   [self.delegate authorViewControllerDidFinish:self];	
 }
 
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
  return YES;
 }
 
 
-- (void)dealloc {
+-(void)dealloc {
   [navigationItem release];
   [webView release];
   [super dealloc];
