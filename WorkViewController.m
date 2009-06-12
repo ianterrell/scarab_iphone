@@ -11,7 +11,7 @@
 
 @implementation WorkViewController
 
-@synthesize workText;
+@synthesize workText, favoriteStar;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -31,7 +31,17 @@
 	[self dismissModalViewControllerAnimated:YES];
 }
 
+-(IBAction)toggleFavorite {
+  static BOOL favorite = NO;
+  if (favorite)
+    [favoriteStar setImage:[UIImage imageNamed:@"star-empty.png"] forState:UIControlStateNormal];
+  else
+    [favoriteStar setImage:[UIImage imageNamed:@"star-full.png"] forState:UIControlStateNormal];
+  favorite = !favorite;
+}
+
 - (void)dealloc {
+  [favoriteStar release];
   [workText release];
   [super dealloc];
 }

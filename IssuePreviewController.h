@@ -10,7 +10,7 @@
 
 @class Issue;
 
-@interface IssuePreviewController : UIViewController {
+@interface IssuePreviewController : UIViewController <UIActionSheetDelegate> {
   Issue *issue;
   
   IBOutlet UIView *icon;
@@ -27,5 +27,7 @@
 @property(nonatomic,retain) UILabel *issueTitle;
 @property(nonatomic,retain) UIWebView *description;
 @property(nonatomic,retain) UITableView *freeWorkTableView;
+
+-(IBAction)purchaseIssue;
 
 @end

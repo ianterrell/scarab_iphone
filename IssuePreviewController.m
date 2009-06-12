@@ -61,6 +61,12 @@
 	[workViewController release];
 }
 
+-(IBAction)purchaseIssue {
+  UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Purchase the current issue alone or as the first issue of a subscription." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"$2.99 Single Issue", @"$16.99 6 Months (6 issues)", @"$29.99 1 Year (12 issues)", nil];
+  [actionSheet showInView:AppDelegate.window];
+  [actionSheet release];
+}
+
 
 - (void)dealloc {
   debugLog(@"Deallocing issue preview view");

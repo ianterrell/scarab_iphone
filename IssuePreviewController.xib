@@ -46,7 +46,7 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">issue_preview_header.png</string>
+							<string key="NSResourceName">header.png</string>
 						</object>
 					</object>
 					<object class="IBUIView" id="418718837">
@@ -145,7 +145,7 @@
 					<object class="IBUIButton" id="378273767">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{143, 37}, {93, 35}}</string>
+						<string key="NSFrame">{{108, 37}, {163, 35}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -157,7 +157,7 @@
 							<int key="NSfFlags">16</int>
 						</object>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Purchase</string>
+						<string key="IBUINormalTitle">Purchase Issue</string>
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="819343656">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -169,6 +169,10 @@
 						<object class="NSColor" key="IBUINormalTitleShadowColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC41AA</bytes>
+						</object>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">down-from-up-space.png</string>
 						</object>
 					</object>
 					<object class="IBUIWebView" id="1048105403">
@@ -301,6 +305,15 @@
 					</object>
 					<int key="connectionID">22</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">purchaseIssue</string>
+						<reference key="source" ref="378273767"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">23</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -321,11 +334,11 @@
 							<reference ref="418718837"/>
 							<reference ref="218042821"/>
 							<reference ref="455010789"/>
-							<reference ref="378273767"/>
 							<reference ref="815464609"/>
 							<reference ref="1048105403"/>
 							<reference ref="281397396"/>
 							<reference ref="575021256"/>
+							<reference ref="378273767"/>
 						</object>
 						<reference key="parent" ref="942549343"/>
 					</object>
@@ -424,7 +437,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>IssuePreviewController</string>
 					<string>UIResponder</string>
-					<string>{{-1488, 368}, {320, 480}}</string>
+					<string>{{-1112, 204}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -458,7 +471,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">22</int>
+			<int key="maxID">25</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -466,6 +479,10 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">IssuePreviewController</string>
 					<string key="superclassName">UIViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">purchaseIssue</string>
+						<string key="NS.object.0">id</string>
+					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSMutableArray" key="dict.sortedKeys">

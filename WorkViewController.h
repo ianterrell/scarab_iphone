@@ -11,10 +11,13 @@
 
 @interface WorkViewController : UIViewController <AuthorViewControllerDelegate> {
   IBOutlet UIWebView *workText;
+  IBOutlet UIButton *favoriteStar;
 }
 
 @property(nonatomic,retain) UIWebView *workText;
+@property(nonatomic,retain) UIButton *favoriteStar;
 
 -(IBAction)showAuthorView;
+-(IBAction)toggleFavorite;
 
 @end
