@@ -10,6 +10,7 @@
 
 #import "Issue.h"
 #import "WorkCell.h"
+#import "WorkViewController.h"
 
 @implementation IssuePreviewController
 
@@ -36,9 +37,10 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.icon.backgroundColor = [issue uiColor];
-  self.title = [NSString stringWithFormat:@"Issue %@", issue.number];
+  self.title = @"Preview Issue"; //[NSString stringWithFormat:@"Issue %@", issue.number];
+  self.issueNumber.text = issue.number;
   self.issueTitle.text = issue.title;
-  [self.description loadHTMLString:@"<p>This is an issue description.  It has stuff in it.</p>" baseURL:nil];
+  [self.description loadHTMLString:@"<html><head><style>body { font-family: helvetica; margin: 0px; }</style></head><body><p>This is an issue description.  It has stuff in it.  It probably even describes the issue.</p><p>It may have lists?</p><ul><li>Awesome stuff</li><li>More awesome stuff</li></ul><p>Long descriptions?  I'm not sure.  You tell me, Brian.</p></body></html>" baseURL:nil];
 }
 
 
@@ -76,7 +78,6 @@
   return kWorkCellHeight;
 }
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   static NSString *CellIdentifier = @"WorkCell";
   WorkCell *cell = (WorkCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -84,11 +85,16 @@
     cell = [WorkCell createNewCellFromNib];
   }
   
-  // customize cell here
+  // TODO: customize cell with work info here
 
   return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	WorkViewController *workViewController = [[WorkViewController alloc] initWithNibName:@"WorkViewController" bundle:nil];
+	[self.navigationController pushViewController:workViewController animated:YES];
+	[workViewController release];
+}
 
 
 - (void)dealloc {
