@@ -77,6 +77,7 @@
 		3C246C020FE2EBEF00FCACDF /* star-empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C246C000FE2EBEF00FCACDF /* star-empty.png */; };
 		3C246C030FE2EBEF00FCACDF /* star-full.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C246C010FE2EBEF00FCACDF /* star-full.png */; };
 		3C246C230FE2F0CE00FCACDF /* grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C246C220FE2F0CE00FCACDF /* grey.png */; };
+		3C246C370FE2F64A00FCACDF /* creative commons credits in Resources */ = {isa = PBXBuildFile; fileRef = 3C246C360FE2F64A00FCACDF /* creative commons credits */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -205,6 +206,7 @@
 		3C246C000FE2EBEF00FCACDF /* star-empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-empty.png"; sourceTree = "<group>"; };
 		3C246C010FE2EBEF00FCACDF /* star-full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-full.png"; sourceTree = "<group>"; };
 		3C246C220FE2F0CE00FCACDF /* grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grey.png; sourceTree = "<group>"; };
+		3C246C360FE2F64A00FCACDF /* creative commons credits */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "creative commons credits"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Scarab-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Scarab-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -287,6 +289,7 @@
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Scarab-Info.plist */,
 				3C2465540FDF374F00FCACDF /* Scarab.xcdatamodel */,
+				3C246C360FE2F64A00FCACDF /* creative commons credits */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				3C246C020FE2EBEF00FCACDF /* star-empty.png in Resources */,
 				3C246C030FE2EBEF00FCACDF /* star-full.png in Resources */,
 				3C246C230FE2F0CE00FCACDF /* grey.png in Resources */,
+				3C246C370FE2F64A00FCACDF /* creative commons credits in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
