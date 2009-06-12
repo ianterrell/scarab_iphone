@@ -7,6 +7,7 @@
 //
 
 #import "LibraryViewController.h"
+#import "IssuePreviewController.h"
 #import "Issue.h"
 #import "IssueCell.h"
 
@@ -187,18 +188,13 @@
   return cell;
 }
 
-
-
-/*
-// Override to support row selection in the table view.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    // Navigation logic may go here -- for example, create and push another view controller.
-	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
-	// [self.navigationController pushViewController:anotherViewController animated:YES];
-	// [anotherViewController release];
+  // Navigation logic may go here -- for example, create and push another view controller.
+	IssuePreviewController *issuePreviewController = [[IssuePreviewController alloc] initWithNibName:@"IssuePreviewController" bundle:nil];
+  issuePreviewController.issue = [self issueAtIndexPath:indexPath];
+	[self.navigationController pushViewController:issuePreviewController animated:YES];
+	[issuePreviewController release];
 }
-*/
 
 
 /*
