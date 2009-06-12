@@ -17,6 +17,7 @@
   IBOutlet UILabel *issueNumber;
   IBOutlet UILabel *issueTitle;
   IBOutlet UIWebView *description;
+  IBOutlet UITableView *freeWorkTableView;
 }
 
 @property(nonatomic,retain) Issue *issue;
@@ -25,5 +26,6 @@
 @property(nonatomic,retain) UILabel *issueNumber;
 @property(nonatomic,retain) UILabel *issueTitle;
 @property(nonatomic,retain) UIWebView *description;
+@property(nonatomic,retain) UITableView *freeWorkTableView;
 
 @end
