@@ -68,6 +68,12 @@
 		3C246A110FE1A00200FCACDF /* ian.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C246A100FE1A00200FCACDF /* ian.png */; };
 		3C246A610FE1F81500FCACDF /* WorkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C246A600FE1F81500FCACDF /* WorkViewController.xib */; };
 		3C246A680FE1FD8200FCACDF /* WorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C246A670FE1FD8200FCACDF /* WorkViewController.m */; };
+		3C246B160FE295EE00FCACDF /* AuthorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C246B140FE295EE00FCACDF /* AuthorViewController.m */; };
+		3C246B170FE295EE00FCACDF /* AuthorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C246B150FE295EE00FCACDF /* AuthorViewController.xib */; };
+		3C246B1F0FE297B600FCACDF /* ian_128.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C246B1E0FE297B600FCACDF /* ian_128.jpg */; };
+		3C246B9F0FE2A59400FCACDF /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C246B9D0FE2A59400FCACDF /* right.png */; };
+		3C246BA00FE2A59400FCACDF /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C246B9E0FE2A59400FCACDF /* left.png */; };
+		3C246BA80FE2A92800FCACDF /* 57-download.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C246BA70FE2A92800FCACDF /* 57-download.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -186,6 +192,13 @@
 		3C246A600FE1F81500FCACDF /* WorkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkViewController.xib; sourceTree = "<group>"; };
 		3C246A660FE1FD8200FCACDF /* WorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkViewController.h; sourceTree = "<group>"; };
 		3C246A670FE1FD8200FCACDF /* WorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkViewController.m; sourceTree = "<group>"; };
+		3C246B130FE295EE00FCACDF /* AuthorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorViewController.h; sourceTree = "<group>"; };
+		3C246B140FE295EE00FCACDF /* AuthorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorViewController.m; sourceTree = "<group>"; };
+		3C246B150FE295EE00FCACDF /* AuthorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorViewController.xib; sourceTree = "<group>"; };
+		3C246B1E0FE297B600FCACDF /* ian_128.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ian_128.jpg; sourceTree = "<group>"; };
+		3C246B9D0FE2A59400FCACDF /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
+		3C246B9E0FE2A59400FCACDF /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
+		3C246BA70FE2A92800FCACDF /* 57-download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "57-download.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Scarab-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Scarab-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,7 +265,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3C246BA70FE2A92800FCACDF /* 57-download.png */,
+				3C246B9D0FE2A59400FCACDF /* right.png */,
+				3C246B9E0FE2A59400FCACDF /* left.png */,
 				3C246A100FE1A00200FCACDF /* ian.png */,
+				3C246B1E0FE297B600FCACDF /* ian_128.jpg */,
 				3C2469B20FE1966100FCACDF /* issue_preview_header.png */,
 				3C2468BD0FE1708800FCACDF /* bug_64x64.png */,
 				3C2464CC0FDEA96E00FCACDF /* Default.png */,
@@ -457,18 +474,21 @@
 			children = (
 				3C2467F70FE152E500FCACDF /* LibraryViewController.h */,
 				3C2467F80FE152E500FCACDF /* LibraryViewController.m */,
-				3C2468AD0FE16F4F00FCACDF /* IssueCell.xib */,
 				3C2468B80FE16F9000FCACDF /* IssueCell.h */,
 				3C2468B90FE16F9000FCACDF /* IssueCell.m */,
-				3C2469B40FE1985B00FCACDF /* WorkCell.xib */,
+				3C2468AD0FE16F4F00FCACDF /* IssueCell.xib */,
 				3C2469B70FE1986F00FCACDF /* WorkCell.h */,
 				3C2469B80FE1986F00FCACDF /* WorkCell.m */,
-				3C2469AF0FE1947700FCACDF /* IssuePreviewController.xib */,
+				3C2469B40FE1985B00FCACDF /* WorkCell.xib */,
 				3C2469C50FE19BB300FCACDF /* IssuePreviewController.h */,
 				3C2469C60FE19BB300FCACDF /* IssuePreviewController.m */,
-				3C246A600FE1F81500FCACDF /* WorkViewController.xib */,
+				3C2469AF0FE1947700FCACDF /* IssuePreviewController.xib */,
 				3C246A660FE1FD8200FCACDF /* WorkViewController.h */,
 				3C246A670FE1FD8200FCACDF /* WorkViewController.m */,
+				3C246A600FE1F81500FCACDF /* WorkViewController.xib */,
+				3C246B130FE295EE00FCACDF /* AuthorViewController.h */,
+				3C246B140FE295EE00FCACDF /* AuthorViewController.m */,
+				3C246B150FE295EE00FCACDF /* AuthorViewController.xib */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -534,6 +554,11 @@
 				3C2469B50FE1985B00FCACDF /* WorkCell.xib in Resources */,
 				3C246A110FE1A00200FCACDF /* ian.png in Resources */,
 				3C246A610FE1F81500FCACDF /* WorkViewController.xib in Resources */,
+				3C246B170FE295EE00FCACDF /* AuthorViewController.xib in Resources */,
+				3C246B1F0FE297B600FCACDF /* ian_128.jpg in Resources */,
+				3C246B9F0FE2A59400FCACDF /* right.png in Resources */,
+				3C246BA00FE2A59400FCACDF /* left.png in Resources */,
+				3C246BA80FE2A92800FCACDF /* 57-download.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +614,7 @@
 				3C2469B90FE1986F00FCACDF /* WorkCell.m in Sources */,
 				3C2469C70FE19BB300FCACDF /* IssuePreviewController.m in Sources */,
 				3C246A680FE1FD8200FCACDF /* WorkViewController.m in Sources */,
+				3C246B160FE295EE00FCACDF /* AuthorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

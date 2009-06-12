@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AuthorViewController.h"
 
-
-@interface WorkViewController : UIViewController {
+@interface WorkViewController : UIViewController <AuthorViewControllerDelegate> {
   IBOutlet UIWebView *workText;
 }
 
 @property(nonatomic,retain) UIWebView *workText;
+
+-(IBAction)showAuthorView;
 
 @end
