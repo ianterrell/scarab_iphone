@@ -11,6 +11,8 @@
 
 @implementation WorkViewController
 
+@synthesize workText;
+
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -27,12 +29,13 @@
 }
 */
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+
 - (void)viewDidLoad {
-    [super viewDidLoad];
+  [super viewDidLoad];
+  self.title = @"Issue 4";
+  [self.workText loadHTMLString:@"<html><head><style>body { font-family: helvetica; margin: 0px; }</style></head><body><p>Roses are red<br/>Violets are blue<br/>Blah blah blah<br/>Hizzah boo hoo.</p><p>Roses are white<br/>Violets are purple<br/>Blah blah blah<br/>Rizzah yurple.</p><p>Roses are pink<br/>Violets are yellow<br/>Blah blah blah<br/>Kizzah mellow.</p><br/><i>Read by the author</i><br/><br/><br/><br/></body></html>" baseURL:nil];
 }
-*/
+
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -56,7 +59,8 @@
 
 
 - (void)dealloc {
-    [super dealloc];
+  [workText release];
+  [super dealloc];
 }
 
 

@@ -10,7 +10,9 @@
 
 
 @interface WorkViewController : UIViewController {
-
+  IBOutlet UIWebView *workText;
 }
+
+@property(nonatomic,retain) UIWebView *workText;
 
 @end
