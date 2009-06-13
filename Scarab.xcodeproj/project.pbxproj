@@ -69,7 +69,6 @@
 		3C246A610FE1F81500FCACDF /* WorkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C246A600FE1F81500FCACDF /* WorkViewController.xib */; };
 		3C246A680FE1FD8200FCACDF /* WorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C246A670FE1FD8200FCACDF /* WorkViewController.m */; };
 		3C246B160FE295EE00FCACDF /* AuthorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C246B140FE295EE00FCACDF /* AuthorViewController.m */; };
-		3C246B170FE295EE00FCACDF /* AuthorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C246B150FE295EE00FCACDF /* AuthorViewController.xib */; };
 		3C246B1F0FE297B600FCACDF /* ian_128.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C246B1E0FE297B600FCACDF /* ian_128.jpg */; };
 		3C246B9F0FE2A59400FCACDF /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C246B9D0FE2A59400FCACDF /* right.png */; };
 		3C246BA00FE2A59400FCACDF /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C246B9E0FE2A59400FCACDF /* left.png */; };
@@ -85,6 +84,7 @@
 		3C246E540FE34FAD00FCACDF /* purple.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C246E530FE34FAD00FCACDF /* purple.png */; };
 		3C246E570FE34FF200FCACDF /* UIHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C246E560FE34FF200FCACDF /* UIHelpers.m */; };
 		3C246EE90FE3630300FCACDF /* cell_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C246EE70FE3630300FCACDF /* cell_bg.png */; };
+		3C246F8E0FE3F5BA00FCACDF /* ian_bio.html in Resources */ = {isa = PBXBuildFile; fileRef = 3C246F8D0FE3F5BA00FCACDF /* ian_bio.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,7 +222,6 @@
 		3C246A670FE1FD8200FCACDF /* WorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkViewController.m; sourceTree = "<group>"; };
 		3C246B130FE295EE00FCACDF /* AuthorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorViewController.h; sourceTree = "<group>"; };
 		3C246B140FE295EE00FCACDF /* AuthorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorViewController.m; sourceTree = "<group>"; };
-		3C246B150FE295EE00FCACDF /* AuthorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorViewController.xib; sourceTree = "<group>"; };
 		3C246B1E0FE297B600FCACDF /* ian_128.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ian_128.jpg; sourceTree = "<group>"; };
 		3C246B9D0FE2A59400FCACDF /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
 		3C246B9E0FE2A59400FCACDF /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
@@ -240,6 +239,7 @@
 		3C246E550FE34FF200FCACDF /* UIHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHelpers.h; sourceTree = "<group>"; };
 		3C246E560FE34FF200FCACDF /* UIHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHelpers.m; sourceTree = "<group>"; };
 		3C246EE70FE3630300FCACDF /* cell_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_bg.png; sourceTree = "<group>"; };
+		3C246F8D0FE3F5BA00FCACDF /* ian_bio.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ian_bio.html; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Scarab-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Scarab-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -329,6 +329,7 @@
 				8D1107310486CEB800E47090 /* Scarab-Info.plist */,
 				3C2465540FDF374F00FCACDF /* Scarab.xcdatamodel */,
 				3C246C360FE2F64A00FCACDF /* creative commons credits */,
+				3C246F8D0FE3F5BA00FCACDF /* ian_bio.html */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -544,7 +545,6 @@
 				3C246A600FE1F81500FCACDF /* WorkViewController.xib */,
 				3C246B130FE295EE00FCACDF /* AuthorViewController.h */,
 				3C246B140FE295EE00FCACDF /* AuthorViewController.m */,
-				3C246B150FE295EE00FCACDF /* AuthorViewController.xib */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -635,7 +635,6 @@
 				3C2469B50FE1985B00FCACDF /* WorkCell.xib in Resources */,
 				3C246A110FE1A00200FCACDF /* ian.png in Resources */,
 				3C246A610FE1F81500FCACDF /* WorkViewController.xib in Resources */,
-				3C246B170FE295EE00FCACDF /* AuthorViewController.xib in Resources */,
 				3C246B1F0FE297B600FCACDF /* ian_128.jpg in Resources */,
 				3C246B9F0FE2A59400FCACDF /* right.png in Resources */,
 				3C246BA00FE2A59400FCACDF /* left.png in Resources */,
@@ -647,6 +646,7 @@
 				3C246C840FE3028500FCACDF /* Three20.bundle in Resources */,
 				3C246E540FE34FAD00FCACDF /* purple.png in Resources */,
 				3C246EE90FE3630300FCACDF /* cell_bg.png in Resources */,
+				3C246F8E0FE3F5BA00FCACDF /* ian_bio.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

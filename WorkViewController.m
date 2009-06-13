@@ -36,12 +36,9 @@
 }
 
 -(IBAction)showAuthorViewWithObject:(id)object type:(id)type state:(id)state {
-  debugLog(@"showing author view! %@, %@, %@", object, type, state);
-  AuthorViewController *controller = [[AuthorViewController alloc] initWithNibName:@"AuthorViewController" bundle:nil];
-	controller.delegate = self;
-	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-	[self presentModalViewController:controller animated:YES];
-	[controller release];
+	AuthorViewController *authorViewController = [[AuthorViewController alloc] init];
+	[self.navigationController pushViewController:authorViewController animated:YES];
+	[authorViewController release];
 }
 
 -(void)authorViewControllerDidFinish:(AuthorViewController *)controller {

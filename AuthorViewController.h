@@ -8,23 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol AuthorViewControllerDelegate;
+@interface AuthorViewController : TTWebController {
 
-@interface AuthorViewController : UIViewController {
-  IBOutlet UINavigationItem *navigationItem;
-  IBOutlet UIWebView *webView;
-  id <AuthorViewControllerDelegate> delegate;
 }
 
-@property(nonatomic,retain) UIWebView *webView;
-@property(nonatomic,retain) UINavigationItem *navigationItem;
-@property(nonatomic,assign) id <AuthorViewControllerDelegate> delegate;
-
--(IBAction)done;
-
 @end
-
-@protocol AuthorViewControllerDelegate
-- (void)authorViewControllerDidFinish:(AuthorViewController *)controller;
-@end
-

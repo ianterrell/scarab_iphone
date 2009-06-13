@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AuthorViewController.h"
 
-@interface WorkViewController : UIViewController <AuthorViewControllerDelegate> {
+@interface WorkViewController : UIViewController {
   IBOutlet UIWebView *workText;
   IBOutlet UIButton *favoriteStar;
   IBOutlet UIImageView *authorImage;
@@ -19,7 +18,7 @@
 @property(nonatomic,retain) UIButton *favoriteStar;
 @property(nonatomic,retain) UIImageView *authorImage;
 
--(IBAction)showAuthorViewWithObject:(id)object type:(id)type state:(id)state;
+-(void)showAuthorViewWithObject:(id)object type:(id)type state:(id)state;
 -(IBAction)toggleFavorite;
 
 @end
