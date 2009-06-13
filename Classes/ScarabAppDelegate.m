@@ -15,6 +15,7 @@
 @synthesize window;
 @synthesize tabBarController;
 @synthesize splashScreenController;
+@synthesize visibleController;
 
 
 #pragma mark -
@@ -161,6 +162,25 @@
   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
   NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
   return basePath;
+}
+
+#pragma mark -
+#pragma mark TTNavigationDelegate methods
+
+- (BOOL)shouldLoadExternalURL:(NSURL*)url {
+  TTWebController *webController = [[TTWebController alloc] init];
+//  debugLog(@"Visible controller is...%@", [nav visibleViewController]);
+	[visibleController.navigationController pushViewController:webController animated:YES];
+  [webController openURL:url];
+	[webController release];
+//
+//  NSString* message = [NSString stringWithFormat:@"You touched a link to %@", url];
+//  UIAlertView* alertView = [[[UIAlertView alloc] initWithTitle:@"Link"
+//    message:message delegate:nil cancelButtonTitle:NSLocalizedString(@"Ok", @"")
+//    otherButtonTitles:nil] autorelease];
+//  [alertView show];
+
+  return NO;
 }
 
 

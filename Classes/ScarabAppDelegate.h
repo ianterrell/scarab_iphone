@@ -17,7 +17,9 @@
   
   NSPersistentStoreCoordinator *persistentStoreCoordinator;
   NSManagedObjectModel *managedObjectModel;
-  NSManagedObjectContext *managedObjectContext;	  
+  NSManagedObjectContext *managedObjectContext;
+  
+  UIViewController *visibleController;
 }
 
 @property(nonatomic,retain) IBOutlet UIWindow *window;
@@ -27,6 +29,8 @@
 @property(nonatomic,retain,readonly) NSManagedObjectModel *managedObjectModel;
 @property(nonatomic,retain,readonly) NSManagedObjectContext *managedObjectContext;
 @property(nonatomic,retain,readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+@property(nonatomic,assign) UIViewController *visibleController;
 
 @property(nonatomic,readonly) NSString *applicationDocumentsDirectory;
 

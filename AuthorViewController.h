@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AuthorViewController : TTWebController {
-
+@interface AuthorViewController : UIViewController {
+  IBOutlet UIScrollView *scrollView;
 }
+
+@property(nonatomic,retain) UIScrollView *scrollView;
 
 @end

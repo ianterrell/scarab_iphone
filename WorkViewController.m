@@ -35,14 +35,10 @@
   [[TTNavigationCenter defaultCenter] addView:@"author" target:self action:@selector(showAuthorViewWithObject:type:state:)];
 }
 
--(IBAction)showAuthorViewWithObject:(id)object type:(id)type state:(id)state {
-	AuthorViewController *authorViewController = [[AuthorViewController alloc] init];
+-(void)showAuthorViewWithObject:(id)object type:(id)type state:(id)state {
+	AuthorViewController *authorViewController = [[AuthorViewController alloc] initWithNibName:@"AuthorViewController" bundle:nil];
 	[self.navigationController pushViewController:authorViewController animated:YES];
 	[authorViewController release];
-}
-
--(void)authorViewControllerDidFinish:(AuthorViewController *)controller {
-	[self dismissModalViewControllerAnimated:YES];
 }
 
 -(IBAction)toggleFavorite {
