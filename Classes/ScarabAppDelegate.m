@@ -169,16 +169,9 @@
 
 - (BOOL)shouldLoadExternalURL:(NSURL*)url {
   TTWebController *webController = [[TTWebController alloc] init];
-//  debugLog(@"Visible controller is...%@", [nav visibleViewController]);
 	[visibleController.navigationController pushViewController:webController animated:YES];
-  [webController openURL:url];
+  [webController performSelector:@selector(openURL:) withObject:url afterDelay:0.4]; // fix for activity view
 	[webController release];
-//
-//  NSString* message = [NSString stringWithFormat:@"You touched a link to %@", url];
-//  UIAlertView* alertView = [[[UIAlertView alloc] initWithTitle:@"Link"
-//    message:message delegate:nil cancelButtonTitle:NSLocalizedString(@"Ok", @"")
-//    otherButtonTitles:nil] autorelease];
-//  [alertView show];
 
   return NO;
 }
