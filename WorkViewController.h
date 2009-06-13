@@ -19,7 +19,7 @@
 @property(nonatomic,retain) UIButton *favoriteStar;
 @property(nonatomic,retain) UIImageView *authorImage;
 
--(IBAction)showAuthorView;
+-(IBAction)showAuthorViewWithObject:(id)object type:(id)type state:(id)state;
 -(IBAction)toggleFavorite;
 
 @end

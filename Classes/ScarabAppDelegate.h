@@ -10,7 +10,7 @@
 
 @class SplashScreenController;
 
-@interface ScarabAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+@interface ScarabAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, TTNavigationDelegate> {
   UIWindow *window;
   UITabBarController *tabBarController;
   SplashScreenController *splashScreenController;

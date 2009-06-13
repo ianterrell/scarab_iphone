@@ -40,4 +40,8 @@
   }
 }
 
+- (TTStyle*)authorByline {
+  return [TTTextStyle styleWithColor:RGBCOLOR(100,100,100) next:nil];
+}
+
 @end

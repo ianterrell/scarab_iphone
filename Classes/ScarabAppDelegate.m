@@ -23,14 +23,18 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
   debugLog(@"Application did finish launching!");
   
+  // Set up ObjectiveResource
   // TODO: Extract ObjectiveResource config out to bundle or some such
   [ObjectiveResourceConfig setSite:@"http://localhost:3000/"];
   //  [ObjectiveResourceConfig setUser:@"remoteResourceUserName"];
   //  [ObjectiveResourceConfig setPassword:@"remoteResourcePassword"];
   [ObjectiveResourceConfig setResponseType:XmlResponse];
 
-  
+  // Set up Three20
   [TTStyleSheet setGlobalStyleSheet:[[[ScarabStyleSheet alloc] init] autorelease]];
+  TTNavigationCenter* nav = [TTNavigationCenter defaultCenter];
+  nav.delegate = self;
+  nav.urlSchemes = [NSArray arrayWithObject:@"tt"];
 
 	NSManagedObjectContext *context = [self managedObjectContext];
 	if (!context) {
