@@ -11,7 +11,7 @@
 
 @implementation IssueCell
 
-@synthesize icon, number, title, subtitle, preview;
+@synthesize scarab, number, title, subtitle, preview;
 
 
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
@@ -31,7 +31,7 @@
 
 
 - (void)dealloc {
-  [icon release];
+  [scarab release];
   [number release];
   [title release];
   [subtitle release];

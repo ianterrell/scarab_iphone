@@ -12,7 +12,7 @@
 #define kIssueCellHeight 80
 
 @interface IssueCell : SMTableViewCell {
-  IBOutlet UIView *icon;
+  IBOutlet UIImageView *scarab;
   IBOutlet UILabel *number;
   IBOutlet UILabel *title;
   IBOutlet UILabel *subtitle;
@@ -20,7 +20,7 @@
 
 }
 
-@property(nonatomic,retain) UIView *icon;
+@property(nonatomic,retain) UIImageView *scarab;
 @property(nonatomic,retain) UILabel *number;
 @property(nonatomic,retain) UILabel *title;
 @property(nonatomic,retain) UILabel *subtitle;

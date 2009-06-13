@@ -13,7 +13,7 @@
 @interface IssuePreviewController : UIViewController <UIActionSheetDelegate> {
   Issue *issue;
   
-  IBOutlet UIView *icon;
+  IBOutlet UIImageView *scarab;
   IBOutlet UILabel *issueNumber;
   IBOutlet UILabel *issueTitle;
   IBOutlet UIWebView *description;
@@ -22,7 +22,7 @@
 
 @property(nonatomic,retain) Issue *issue;
 
-@property(nonatomic,retain) UIView *icon;
+@property(nonatomic,retain) UIImageView *scarab;
 @property(nonatomic,retain) UILabel *issueNumber;
 @property(nonatomic,retain) UILabel *issueTitle;
 @property(nonatomic,retain) UIWebView *description;

@@ -11,12 +11,16 @@
 
 @implementation WorkViewController
 
-@synthesize workText, favoriteStar;
+@synthesize workText, favoriteStar, authorImage;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.title = @"Issue 4";
   [self.workText loadHTMLString:@"<html><head><style>body { font-family: helvetica; }</style></head><body><p>Roses are red<br/>Violets are blue<br/>Blah blah blah<br/>Hizzah boo hoo.</p><p>Roses are white<br/>Violets are purple<br/>Blah blah blah<br/>Rizzah yurple.</p><p>Roses are pink<br/>Violets are yellow<br/>Blah blah blah<br/>Kizzah mellow.</p><br/><i>Read by the author</i><br/><br/><br/><br/></body></html>" baseURL:nil];
+    
+  // Set author image with rounded corners
+  
+  [UIHelpers addRoundedImageNamed:@"ian.png" toView:self.view];
 }
 
 -(IBAction)showAuthorView {
@@ -43,6 +47,7 @@
 - (void)dealloc {
   [favoriteStar release];
   [workText release];
+  [authorImage release];
   [super dealloc];
 }
 

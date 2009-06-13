@@ -14,16 +14,18 @@
 
 @implementation IssuePreviewController
 
-@synthesize issue, icon, issueNumber, issueTitle, description, freeWorkTableView;
+@synthesize issue, scarab, issueNumber, issueTitle, description, freeWorkTableView;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.icon.backgroundColor = [issue uiColor];
   self.title = @"Preview"; //[NSString stringWithFormat:@"Issue %@", issue.number];
   self.issueNumber.text = issue.number;
   self.issueTitle.text = issue.title;
   [self.description loadHTMLString:@"<html><head><style>body { font-family: helvetica; }</style></head><body><p>This is an issue description.  It has stuff in it.  It probably even describes the issue.</p><p>It may have lists?</p><ul><li>Awesome stuff</li><li>More awesome stuff</li></ul><p>Long descriptions?  I'm not sure.  You tell me, Brian.</p></body></html>" baseURL:nil];
   
+  TTImageView *issueColorView = [UIHelpers newRoundedImageNamed:@"purple.png"];
+  [self.view insertSubview:issueColorView belowSubview:scarab];
+  [issueColorView release];
   
   // Make Purchase Button (pretty but a lot of work!)
   TTButton *b = [TTButton buttonWithStyle:@"purchasebutton:" title:@"     Purchase Issue"];
@@ -63,6 +65,7 @@
   }
   
   // TODO: customize cell with work info here
+  [UIHelpers addRoundedImageNamed:@"ian.png" toView:cell];
 
   return cell;
 }
@@ -83,7 +86,7 @@
 - (void)dealloc {
   debugLog(@"Deallocing issue preview view");
   [issue release];
-  [icon release];
+  [scarab release];
   [issueNumber release];
   [issueTitle release];
   [description release];

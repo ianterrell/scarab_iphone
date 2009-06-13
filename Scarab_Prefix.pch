@@ -13,6 +13,7 @@
   #import "Response.h"
 
   #import "Three20/Three20.h"
+  #import "UIHelpers.h"
   
   #import "ScarabAppDelegate.h"
   #define AppDelegate ((ScarabAppDelegate *)[[UIApplication sharedApplication] delegate])

@@ -180,7 +180,10 @@
   }
   Issue *issue = [self issueAtIndexPath:indexPath];
   
-  cell.icon.backgroundColor = [issue uiColor];
+  TTImageView *issueColorView = [UIHelpers newRoundedImageNamed:@"purple.png"];
+  [cell insertSubview:issueColorView atIndex:0];//belowSubview:cell.scarab];
+  [issueColorView release];
+  
   cell.number.text = issue.number;
   cell.title.text = issue.title;
   cell.subtitle.text = issue.subtitle;

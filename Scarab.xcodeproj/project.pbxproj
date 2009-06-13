@@ -82,6 +82,8 @@
 		3C246C990FE302AE00FCACDF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C246C980FE302AE00FCACDF /* QuartzCore.framework */; };
 		3C246D960FE3394200FCACDF /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C246C6A0FE301F600FCACDF /* libThree20.a */; };
 		3C246E210FE3496F00FCACDF /* ScarabStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C246E200FE3496F00FCACDF /* ScarabStyleSheet.m */; };
+		3C246E540FE34FAD00FCACDF /* purple.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C246E530FE34FAD00FCACDF /* purple.png */; };
+		3C246E570FE34FF200FCACDF /* UIHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C246E560FE34FF200FCACDF /* UIHelpers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +235,9 @@
 		3C246C980FE302AE00FCACDF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = ../../../../../Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = SOURCE_ROOT; };
 		3C246E1F0FE3496F00FCACDF /* ScarabStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScarabStyleSheet.h; sourceTree = "<group>"; };
 		3C246E200FE3496F00FCACDF /* ScarabStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScarabStyleSheet.m; sourceTree = "<group>"; };
+		3C246E530FE34FAD00FCACDF /* purple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purple.png; sourceTree = "<group>"; };
+		3C246E550FE34FF200FCACDF /* UIHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHelpers.h; sourceTree = "<group>"; };
+		3C246E560FE34FF200FCACDF /* UIHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHelpers.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Scarab-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Scarab-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -303,6 +308,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3C246E530FE34FAD00FCACDF /* purple.png */,
 				3C246C220FE2F0CE00FCACDF /* grey.png */,
 				3C246C000FE2EBEF00FCACDF /* star-empty.png */,
 				3C246C010FE2EBEF00FCACDF /* star-full.png */,
@@ -510,6 +516,8 @@
 				3C2468C00FE1753C00FCACDF /* SMTableViewCell.m */,
 				3C246E1F0FE3496F00FCACDF /* ScarabStyleSheet.h */,
 				3C246E200FE3496F00FCACDF /* ScarabStyleSheet.m */,
+				3C246E550FE34FF200FCACDF /* UIHelpers.h */,
+				3C246E560FE34FF200FCACDF /* UIHelpers.m */,
 			);
 			name = "Helper Classes";
 			sourceTree = "<group>";
@@ -634,6 +642,7 @@
 				3C246C230FE2F0CE00FCACDF /* grey.png in Resources */,
 				3C246C370FE2F64A00FCACDF /* creative commons credits in Resources */,
 				3C246C840FE3028500FCACDF /* Three20.bundle in Resources */,
+				3C246E540FE34FAD00FCACDF /* purple.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +700,7 @@
 				3C246A680FE1FD8200FCACDF /* WorkViewController.m in Sources */,
 				3C246B160FE295EE00FCACDF /* AuthorViewController.m in Sources */,
 				3C246E210FE3496F00FCACDF /* ScarabStyleSheet.m in Sources */,
+				3C246E570FE34FF200FCACDF /* UIHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
