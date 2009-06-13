@@ -11,6 +11,8 @@
   #import "ObjectiveResource.h"
   #import "Connection.h"
   #import "Response.h"
+
+  #import "Three20/Three20.h"
   
   #import "ScarabAppDelegate.h"
   #define AppDelegate ((ScarabAppDelegate *)[[UIApplication sharedApplication] delegate])

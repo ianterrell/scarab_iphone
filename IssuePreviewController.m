@@ -23,6 +23,18 @@
   self.issueNumber.text = issue.number;
   self.issueTitle.text = issue.title;
   [self.description loadHTMLString:@"<html><head><style>body { font-family: helvetica; }</style></head><body><p>This is an issue description.  It has stuff in it.  It probably even describes the issue.</p><p>It may have lists?</p><ul><li>Awesome stuff</li><li>More awesome stuff</li></ul><p>Long descriptions?  I'm not sure.  You tell me, Brian.</p></body></html>" baseURL:nil];
+  
+  
+  // Make Purchase Button (pretty but a lot of work!)
+  TTButton *b = [TTButton buttonWithStyle:@"purchasebutton:" title:@"     Purchase Issue"];
+  b.frame = CGRectMake(112,37,160,40);
+  b.font = [UIFont boldSystemFontOfSize:14.0];
+  [b addTarget:self action:@selector(purchaseIssue) forControlEvents:UIControlEventTouchUpInside];
+  UIImageView *biv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"download-arrow.png"]];
+  biv.center = CGPointMake(25,18);
+  [b addSubview:biv];
+  [biv release];
+  [self.view addSubview:b];
 }
 
 -(void)viewWillAppear:(BOOL)animated {

@@ -8,6 +8,7 @@
 
 #import "ScarabAppDelegate.h"
 #import "SplashScreenController.h"
+#import "ScarabStyleSheet.h"
 
 @implementation ScarabAppDelegate
 
@@ -27,6 +28,9 @@
   //  [ObjectiveResourceConfig setUser:@"remoteResourceUserName"];
   //  [ObjectiveResourceConfig setPassword:@"remoteResourcePassword"];
   [ObjectiveResourceConfig setResponseType:XmlResponse];
+
+  
+  [TTStyleSheet setGlobalStyleSheet:[[[ScarabStyleSheet alloc] init] autorelease]];
 
 	NSManagedObjectContext *context = [self managedObjectContext];
 	if (!context) {
