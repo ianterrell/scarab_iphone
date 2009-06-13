@@ -20,6 +20,7 @@
 
 +(NSArray *)findAllSinceNumber:(NSNumber *)issueNumber;
 
+-(TTView *)swatchView;
 -(UIColor *)uiColor;
 
 @end

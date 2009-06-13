@@ -23,9 +23,7 @@
   self.issueTitle.text = issue.title;
   [self.description loadHTMLString:@"<html><head><style>body { font-family: helvetica; }</style></head><body><p>This is an issue description.  It has stuff in it.  It probably even describes the issue.</p><p>It may have lists?</p><ul><li>Awesome stuff</li><li>More awesome stuff</li></ul><p>Long descriptions?  I'm not sure.  You tell me, Brian.</p></body></html>" baseURL:nil];
   
-  TTImageView *issueColorView = [UIHelpers newRoundedImageNamed:@"purple.png"];
-  [self.view insertSubview:issueColorView belowSubview:scarab];
-  [issueColorView release];
+  [self.view insertSubview:[issue swatchView] belowSubview:scarab];
   
   // Make Purchase Button (pretty but a lot of work!)
   TTButton *b = [TTButton buttonWithStyle:@"purchasebutton:" title:@"     Purchase Issue"];

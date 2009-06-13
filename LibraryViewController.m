@@ -180,13 +180,10 @@
   }
   Issue *issue = [self issueAtIndexPath:indexPath];
   
-  TTImageView *issueColorView = [UIHelpers newRoundedImageNamed:@"purple.png"];
-  [cell insertSubview:issueColorView atIndex:0];//belowSubview:cell.scarab];
-  [issueColorView release];
+  [cell insertSubview:[issue swatchView] atIndex:0];
   
   cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_bg.png"]];
   //cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_bg_selected.png"]];
-
   
   cell.number.text = issue.number;
   cell.title.text = issue.title;
