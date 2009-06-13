@@ -66,6 +66,8 @@
   
   // TODO: customize cell with work info here
   [UIHelpers addRoundedImageNamed:@"ian.png" toView:cell];
+  
+  cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_bg.png"]];
 
   return cell;
 }

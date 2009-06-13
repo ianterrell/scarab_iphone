@@ -97,7 +97,10 @@
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MCAwIDAAA</bytes>
 								</object>
-								<nil key="IBUIHighlightedColor"/>
+								<object class="NSColor" key="IBUIHighlightedColor">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MSAxIDEAA</bytes>
+								</object>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">1.000000e+01</float>
 							</object>
@@ -120,7 +123,7 @@ b3JlA</string>
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC4zOTIxNTY4NyAwLjM5MjE1Njg3IDAuMzkyMTU2ODcAA</bytes>
 								</object>
-								<object class="NSColor" key="IBUIHighlightedColor" id="634810343">
+								<object class="NSColor" key="IBUIHighlightedColor" id="79598842">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MQA</bytes>
 									<object class="NSColorSpace" key="NSCustomColorSpace">
@@ -145,7 +148,7 @@ b3JlA</string>
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC44MjM1Mjk0MiAwLjgyMzUyOTQyIDAuODIzNTI5NDIAA</bytes>
 								</object>
-								<reference key="IBUIHighlightedColor" ref="634810343"/>
+								<reference key="IBUIHighlightedColor" ref="79598842"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">1.000000e+01</float>
 								<int key="IBUITextAlignment">2</int>
