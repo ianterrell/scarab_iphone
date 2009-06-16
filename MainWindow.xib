@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="146"/>
+			<integer value="106"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -57,62 +57,59 @@
 					<bool key="IBUIPrompted">NO</bool>
 				</object>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
-				<object class="IBUIViewController" key="IBUISelectedViewController" id="117543324">
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="425369436">
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="135085450">
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="429737751">
+						<string key="IBUITitle">Library</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">library_icon.png</string>
+						</object>
 						<reference key="IBUITabBar"/>
-						<int key="IBUISystemItemIdentifier">1</int>
-					</object>
-					<object class="NSArray" key="IBUIToolbarItems">
-						<bool key="EncodedWithXMLCoder">YES</bool>
 					</object>
 					<reference key="IBUIParentViewController" ref="1034742383"/>
+					<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="461502741">
+						<nil key="NSNextResponder"/>
+						<int key="NSvFlags">256</int>
+						<string key="NSFrameSize">{0, 0}</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+					</object>
+					<object class="NSMutableArray" key="IBUIViewControllers">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="IBUIViewController" id="317869726">
+							<object class="IBUITableView" key="IBUIView" id="124188414">
+								<reference key="NSNextResponder"/>
+								<int key="NSvFlags">274</int>
+								<string key="NSFrameSize">{320, 367}</string>
+								<reference key="NSSuperview"/>
+								<object class="NSColor" key="IBUIBackgroundColor">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MQA</bytes>
+								</object>
+								<bool key="IBUIOpaque">NO</bool>
+								<bool key="IBUIClipsSubviews">YES</bool>
+								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
+								<bool key="IBUIBouncesZoom">NO</bool>
+								<int key="IBUISeparatorStyle">1</int>
+								<int key="IBUISectionIndexMinimumDisplayRowCount">0</int>
+								<bool key="IBUIShowsSelectionImmediatelyOnTouchBegin">YES</bool>
+								<float key="IBUIRowHeight">4.400000e+01</float>
+								<float key="IBUISectionHeaderHeight">2.200000e+01</float>
+								<float key="IBUISectionFooterHeight">2.200000e+01</float>
+							</object>
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="10919688">
+								<reference key="IBUINavigationBar"/>
+								<string key="IBUITitle">Library</string>
+							</object>
+							<reference key="IBUIParentViewController" ref="135085450"/>
+						</object>
+					</object>
 				</object>
 				<object class="NSMutableArray" key="IBUIViewControllers">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="IBUINavigationController" id="135085450">
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="429737751">
-							<string key="IBUITitle">Library</string>
-							<reference key="IBUITabBar"/>
-						</object>
-						<reference key="IBUIParentViewController" ref="1034742383"/>
-						<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="461502741">
-							<nil key="NSNextResponder"/>
-							<int key="NSvFlags">256</int>
-							<string key="NSFrameSize">{0, 0}</string>
-							<bool key="IBUIOpaque">NO</bool>
-							<bool key="IBUIClipsSubviews">YES</bool>
-							<bool key="IBUIMultipleTouchEnabled">YES</bool>
-						</object>
-						<object class="NSMutableArray" key="IBUIViewControllers">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIViewController" id="317869726">
-								<object class="IBUITableView" key="IBUIView" id="124188414">
-									<nil key="NSNextResponder"/>
-									<int key="NSvFlags">274</int>
-									<string key="NSFrameSize">{320, 367}</string>
-									<object class="NSColor" key="IBUIBackgroundColor">
-										<int key="NSColorSpace">3</int>
-										<bytes key="NSWhite">MQA</bytes>
-									</object>
-									<bool key="IBUIOpaque">NO</bool>
-									<bool key="IBUIClipsSubviews">YES</bool>
-									<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-									<bool key="IBUIBouncesZoom">NO</bool>
-									<int key="IBUISeparatorStyle">1</int>
-									<int key="IBUISectionIndexMinimumDisplayRowCount">0</int>
-									<bool key="IBUIShowsSelectionImmediatelyOnTouchBegin">YES</bool>
-									<float key="IBUIRowHeight">4.400000e+01</float>
-									<float key="IBUISectionHeaderHeight">2.200000e+01</float>
-									<float key="IBUISectionFooterHeight">2.200000e+01</float>
-								</object>
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="10919688">
-									<string key="IBUITitle">Library</string>
-								</object>
-								<reference key="IBUIParentViewController" ref="135085450"/>
-							</object>
-						</object>
-					</object>
+					<reference ref="135085450"/>
 					<object class="IBUIViewController" id="268481961">
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="807309489">
 							<string key="IBUITitle">Contests</string>
@@ -131,7 +128,16 @@
 						</object>
 						<reference key="IBUIParentViewController" ref="1034742383"/>
 					</object>
-					<reference ref="117543324"/>
+					<object class="IBUIViewController" id="117543324">
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="425369436">
+							<reference key="IBUITabBar"/>
+							<int key="IBUISystemItemIdentifier">1</int>
+						</object>
+						<object class="NSArray" key="IBUIToolbarItems">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+						</object>
+						<reference key="IBUIParentViewController" ref="1034742383"/>
+					</object>
 				</object>
 				<object class="IBUITabBar" key="IBUITabBar" id="795333663">
 					<nil key="NSNextResponder"/>
