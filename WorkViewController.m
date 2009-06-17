@@ -64,6 +64,11 @@
   }
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+  debugLog(@"WorkViewController View will disappear animated %d", animated);
+  [self pauseAudio];
+}
+
 -(void)showAuthorViewWithObject:(id)object type:(id)type state:(id)state {
 	AuthorViewController *authorViewController = [[AuthorViewController alloc] initWithNibName:@"AuthorViewController" bundle:nil];
 	[self.navigationController pushViewController:authorViewController animated:YES];
@@ -87,10 +92,10 @@
 
 - (void)animateToolbar:(UIView *)toolbar up:(BOOL)up {
   CGRect frame = toolbar.frame;
-  CGFloat y = up ? frame.origin.y - kToolbarHeight : frame.origin.y + kToolbarHeight;
+  frame.origin.y = up ? frame.origin.y - kToolbarHeight : frame.origin.y + kToolbarHeight;
   [UIView beginAnimations:nil context:NULL];
   [UIView setAnimationDuration:kToolbarAnimationDuration];
-  toolbar.frame = CGRectMake(frame.origin.x, y, frame.size.width, frame.size.height);
+  toolbar.frame = frame;
   [UIView commitAnimations];
 }
 
@@ -119,10 +124,7 @@
 }
 
 - (void)cancelAudioUpdateTimer {
-  if (audioUpdateTimer != nil) {
-    [self.audioUpdateTimer invalidate];
-    self.audioUpdateTimer = nil;
-  }
+  [self.audioUpdateTimer invalidate];
 }
 
 - (void)setUpAudioUpdateTimer {
@@ -212,6 +214,8 @@
 #pragma mark Memory Management
 
 - (void)dealloc {
+  debugLog(@"deallocing WorkViewController");
+  
   [[TTNavigationCenter defaultCenter] removeView:@"author"];
   
   [favoriteStar release];
