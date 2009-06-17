@@ -8,17 +8,76 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WorkViewController : UIViewController {
+@class Work;
+
+@interface WorkViewController : UIViewController <AVAudioPlayerDelegate> {
   IBOutlet UIWebView *workText;
   IBOutlet UIButton *favoriteStar;
-  IBOutlet UIImageView *authorImage;
+  IBOutlet UIImageView *authorImage;  //TODO: remove?
+ 
+  IBOutlet UIView *downloadingToolbarView;
+  IBOutlet UIProgressView *downloadingProgressView;
+  
+  IBOutlet UIView *playingToolbarView;
+  IBOutlet UIToolbar *playingToolbar;
+  IBOutlet UISlider *playingSlider;
+  IBOutlet UILabel *playingTimeElapsed;
+  IBOutlet UILabel *playingTimeRemaining;
+  IBOutlet UIBarButtonItem *playButton;
+  IBOutlet UIBarButtonItem *pauseButton;
+    
+  Work *work;
+  AVAudioPlayer *audioPlayer;
+  NSTimer *audioUpdateTimer;
+  BOOL wasPlaying, sliderCooledDown, sliderMoving;
 }
 
 @property(nonatomic,retain) UIWebView *workText;
 @property(nonatomic,retain) UIButton *favoriteStar;
 @property(nonatomic,retain) UIImageView *authorImage;
 
--(void)showAuthorViewWithObject:(id)object type:(id)type state:(id)state;
--(IBAction)toggleFavorite;
+@property(nonatomic,retain) UIView *downloadingToolbarView;
+@property(nonatomic,retain) UIProgressView *downloadingProgressView;
+
+@property(nonatomic,retain) UIView *playingToolbarView;
+@property(nonatomic,retain) UIToolbar *playingToolbar;
+@property(nonatomic,retain) UISlider *playingSlider;
+@property(nonatomic,retain) UILabel *playingTimeElapsed;
+@property(nonatomic,retain) UILabel *playingTimeRemaining;
+@property(nonatomic,retain) IBOutlet UIBarButtonItem *playButton;
+@property(nonatomic,retain) IBOutlet UIBarButtonItem *pauseButton;
+
+@property(nonatomic,retain) Work *work;
+@property(nonatomic,retain) AVAudioPlayer *audioPlayer;
+@property(nonatomic,retain) NSTimer *audioUpdateTimer;
+@property(nonatomic,assign) BOOL wasPlaying;
+@property(nonatomic,assign) BOOL sliderCooledDown;
+@property(nonatomic,assign) BOOL sliderMoving;
+
+- (void)showAuthorViewWithObject:(id)object type:(id)type state:(id)state;
+- (IBAction)toggleFavorite;
+
+- (IBAction)playAudio;
+- (IBAction)pauseAudio;
+- (IBAction)sliderPause;
+- (IBAction)sliderUpdate;
+- (IBAction)sliderPlay;
+- (void)updateAudioDisplay;
+
+#pragma mark -
+#pragma mark Audio Player
+
+- (void)setUpAudioPlayer;
+
+#pragma mark Callbacks
+
+- (void)doneDownloadingAudioFile;
+
+#pragma mark Toolbar Setup
+
+- (void)animateToolbar:(UIView *)toolbar up:(BOOL)up;
+- (void)showToolbar:(UIView *)toolbar;
+- (void)hideToolbar:(UIView *)toolbar;
+
 
 @end

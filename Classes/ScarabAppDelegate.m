@@ -9,6 +9,7 @@
 #import "ScarabAppDelegate.h"
 #import "SplashScreenController.h"
 #import "ScarabStyleSheet.h"
+#import "SMStore.h"
 
 @implementation ScarabAppDelegate
 
@@ -22,6 +23,8 @@
 #pragma mark Application lifecycle
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
+  [[[SMStore alloc] init] requestProductData];
+
   debugLog(@"Application did finish launching!");
   
   // Set up ObjectiveResource

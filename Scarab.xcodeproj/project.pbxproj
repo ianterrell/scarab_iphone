@@ -83,6 +83,13 @@
 		3C246EE90FE3630300FCACDF /* cell_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C246EE70FE3630300FCACDF /* cell_bg.png */; };
 		3C246FAB0FE3FA8C00FCACDF /* AuthorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C246FAA0FE3FA8C00FCACDF /* AuthorViewController.xib */; };
 		3C2470670FE43D0F00FCACDF /* library_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2470660FE43D0F00FCACDF /* library_icon.png */; };
+		3C2470790FE7E99800FCACDF /* SMStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2470780FE7E99800FCACDF /* SMStore.m */; };
+		3C24707E0FE7EA6B00FCACDF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C24707D0FE7EA6B00FCACDF /* StoreKit.framework */; };
+		3C9318E70FE87073009D3731 /* SMWorkAudioDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */; };
+		3C9318F90FE873E0009D3731 /* Work.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318F80FE873E0009D3731 /* Work.m */; };
+		3CE5D45C0FE8793E00A152D3 /* SMWorkAudioDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D45B0FE8793E00A152D3 /* SMWorkAudioDownload.m */; };
+		3CE5D5450FE88D0100A152D3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE5D5440FE88D0100A152D3 /* AVFoundation.framework */; };
+		3CE5D5A30FE8939200A152D3 /* StringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D5A20FE8939200A152D3 /* StringUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,14 +97,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 3C246C620FE301F600FCACDF /* Three20.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2 /* libThree20.a */;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
 			remoteInfo = Three20;
 		};
 		3C246C800FE3025200FCACDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3C246C620FE301F600FCACDF /* Three20.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = BEF31F390F352DF5000DE5D2 /* Three20 */;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
 			remoteInfo = Three20;
 		};
 /* End PBXContainerItemProxy section */
@@ -236,6 +243,18 @@
 		3C246EE70FE3630300FCACDF /* cell_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_bg.png; sourceTree = "<group>"; };
 		3C246FAA0FE3FA8C00FCACDF /* AuthorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorViewController.xib; sourceTree = "<group>"; };
 		3C2470660FE43D0F00FCACDF /* library_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = library_icon.png; sourceTree = "<group>"; };
+		3C2470770FE7E99800FCACDF /* SMStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMStore.h; sourceTree = "<group>"; };
+		3C2470780FE7E99800FCACDF /* SMStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMStore.m; sourceTree = "<group>"; };
+		3C24707D0FE7EA6B00FCACDF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		3C9318E50FE87073009D3731 /* SMWorkAudioDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMWorkAudioDownloadManager.h; sourceTree = "<group>"; };
+		3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWorkAudioDownloadManager.m; sourceTree = "<group>"; };
+		3C9318F70FE873E0009D3731 /* Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Work.h; sourceTree = "<group>"; };
+		3C9318F80FE873E0009D3731 /* Work.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Work.m; sourceTree = "<group>"; };
+		3CE5D45A0FE8793E00A152D3 /* SMWorkAudioDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMWorkAudioDownload.h; sourceTree = "<group>"; };
+		3CE5D45B0FE8793E00A152D3 /* SMWorkAudioDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWorkAudioDownload.m; sourceTree = "<group>"; };
+		3CE5D5440FE88D0100A152D3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3CE5D5A10FE8939200A152D3 /* StringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtils.h; sourceTree = "<group>"; };
+		3CE5D5A20FE8939200A152D3 /* StringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtils.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Scarab-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Scarab-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -250,6 +269,8 @@
 				3C24665E0FE0264A00FCACDF /* CoreData.framework in Frameworks */,
 				3C246C990FE302AE00FCACDF /* QuartzCore.framework in Frameworks */,
 				3C246D960FE3394200FCACDF /* libThree20.a in Frameworks */,
+				3C24707E0FE7EA6B00FCACDF /* StoreKit.framework in Frameworks */,
+				3CE5D5450FE88D0100A152D3 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +351,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3CE5D5440FE88D0100A152D3 /* AVFoundation.framework */,
+				3C24707D0FE7EA6B00FCACDF /* StoreKit.framework */,
 				3C246C980FE302AE00FCACDF /* QuartzCore.framework */,
 				3C24665D0FE0264A00FCACDF /* CoreData.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -498,6 +521,8 @@
 			children = (
 				3C2466670FE0290E00FCACDF /* Issue.h */,
 				3C2466680FE0290E00FCACDF /* Issue.m */,
+				3C9318F70FE873E0009D3731 /* Work.h */,
+				3C9318F80FE873E0009D3731 /* Work.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -515,6 +540,12 @@
 				3C246E200FE3496F00FCACDF /* ScarabStyleSheet.m */,
 				3C246E550FE34FF200FCACDF /* UIHelpers.h */,
 				3C246E560FE34FF200FCACDF /* UIHelpers.m */,
+				3C9318E50FE87073009D3731 /* SMWorkAudioDownloadManager.h */,
+				3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */,
+				3CE5D45A0FE8793E00A152D3 /* SMWorkAudioDownload.h */,
+				3CE5D45B0FE8793E00A152D3 /* SMWorkAudioDownload.m */,
+				3CE5D5A10FE8939200A152D3 /* StringUtils.h */,
+				3CE5D5A20FE8939200A152D3 /* StringUtils.m */,
 			);
 			name = "Helper Classes";
 			sourceTree = "<group>";
@@ -546,6 +577,8 @@
 		3C246A520FE1E8CC00FCACDF /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				3C2470770FE7E99800FCACDF /* SMStore.h */,
+				3C2470780FE7E99800FCACDF /* SMStore.m */,
 			);
 			name = Shop;
 			sourceTree = "<group>";
@@ -697,6 +730,11 @@
 				3C246B160FE295EE00FCACDF /* AuthorViewController.m in Sources */,
 				3C246E210FE3496F00FCACDF /* ScarabStyleSheet.m in Sources */,
 				3C246E570FE34FF200FCACDF /* UIHelpers.m in Sources */,
+				3C2470790FE7E99800FCACDF /* SMStore.m in Sources */,
+				3C9318E70FE87073009D3731 /* SMWorkAudioDownloadManager.m in Sources */,
+				3C9318F90FE873E0009D3731 /* Work.m in Sources */,
+				3CE5D45C0FE8793E00A152D3 /* SMWorkAudioDownload.m in Sources */,
+				3CE5D5A30FE8939200A152D3 /* StringUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,6 +753,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ian Terrell (F795349HT3)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -726,6 +765,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Scarab;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F16BAF9F-934A-42BE-879B-055B7FC732B4";
 			};
 			name = Debug;
 		};
@@ -733,6 +773,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ian Terrell (F795349HT3)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Scarab_Prefix.pch;
@@ -742,6 +783,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Scarab;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F16BAF9F-934A-42BE-879B-055B7FC732B4";
 			};
 			name = Release;
 		};
