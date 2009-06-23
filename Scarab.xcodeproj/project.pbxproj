@@ -567,10 +567,6 @@
 				3CE5D6BD0FE8D3DA00A152D3 /* NSData+MBBase64.m */,
 				3C5F47900FF139D50086D8D1 /* SKProduct+LocalizedPrice.h */,
 				3C5F47910FF139D50086D8D1 /* SKProduct+LocalizedPrice.m */,
-				3C5F47C50FF14A630086D8D1 /* IssuePriceFetcher.h */,
-				3C5F47C60FF14A630086D8D1 /* IssuePriceFetcher.m */,
-				3C5F47C80FF1509B0086D8D1 /* IssuePriceFetcherManager.h */,
-				3C5F47C90FF1509B0086D8D1 /* IssuePriceFetcherManager.m */,
 			);
 			name = "Helper Classes";
 			sourceTree = "<group>";
@@ -604,6 +600,10 @@
 			children = (
 				3C2470770FE7E99800FCACDF /* SMStore.h */,
 				3C2470780FE7E99800FCACDF /* SMStore.m */,
+				3C5F47C50FF14A630086D8D1 /* IssuePriceFetcher.h */,
+				3C5F47C60FF14A630086D8D1 /* IssuePriceFetcher.m */,
+				3C5F47C80FF1509B0086D8D1 /* IssuePriceFetcherManager.h */,
+				3C5F47C90FF1509B0086D8D1 /* IssuePriceFetcherManager.m */,
 			);
 			name = Shop;
 			sourceTree = "<group>";
