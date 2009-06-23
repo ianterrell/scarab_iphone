@@ -17,8 +17,11 @@
 @property(retain) NSString *number;
 @property(retain) NSString *title;
 @property(retain) NSString *subtitle;
+@property(retain) NSString *productIdentifier;
+@property(retain) NSString *transactionIdentifier;
 
 +(NSArray *)findAllSinceNumber:(NSNumber *)issueNumber;
++(Issue *)issueWithProductIdentifier:(NSString *)productIdentifier;
 
 -(TTView *)swatchView;
 -(UIColor *)uiColor;

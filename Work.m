@@ -21,7 +21,7 @@
 
 // TODO:  This is temporary, replace some stuff!
 - (NSString *)audioFileURL {
-  return @"http://192.168.1.100:3000/test.mp3";
+  return [NSString stringWithFormat:@"%@test.mp3", [ObjectiveResourceConfig getSite]];
 }
 
 // TODO:  This is temporary, replace some stuff!

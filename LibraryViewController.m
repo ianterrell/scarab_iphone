@@ -17,7 +17,6 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-
   
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
 //    self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -34,7 +33,7 @@
     self.backIssues = [NSMutableArray arrayWithCapacity:5];
   
   if (!fetchedNewIssues)
-    [self fetchNewIssues];
+    [AppDelegate showHUDWithLabel:nil details:@"Checking for new issues" whileExecuting:@selector(fetchNewIssues) onTarget:self withObject:nil animated:YES];
 }
 
 #pragma mark -
@@ -106,6 +105,7 @@
 	// Release anything that can be recreated in viewDidLoad or on demand.
 	// e.g. self.myOutlet = nil;
 }
+
 
 
 #pragma mark Table view methods

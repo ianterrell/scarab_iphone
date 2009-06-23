@@ -11,13 +11,19 @@
 #import "Issue.h"
 #import "WorkCell.h"
 #import "WorkViewController.h"
+#import "SMStore.h"
+#import "IssuePriceFetcherManager.h"
 
 @implementation IssuePreviewController
 
-@synthesize issue, scarab, issueNumber, issueTitle, description, freeWorkTableView;
+@synthesize issue, scarab, issueNumber, issueTitle, description, freeWorkTableView, purchaseButton;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  // Start request to update purchase button
+  [[IssuePriceFetcherManager defaultManager] fetchPriceForIssue:issue previewController:self];
+  
   self.title = @"Preview"; //[NSString stringWithFormat:@"Issue %@", issue.number];
   self.issueNumber.text = issue.number;
   self.issueTitle.text = issue.title;
@@ -25,16 +31,16 @@
   
   [self.view insertSubview:[issue swatchView] belowSubview:scarab];
   
-  // Make Purchase Button (pretty but a lot of work!)
-  TTButton *b = [TTButton buttonWithStyle:@"purchasebutton:" title:@"     Purchase Issue"];
-  b.frame = CGRectMake(112,37,160,40);
-  b.font = [UIFont boldSystemFontOfSize:14.0];
-  [b addTarget:self action:@selector(purchaseIssue) forControlEvents:UIControlEventTouchUpInside];
+  self.purchaseButton = [TTButton buttonWithStyle:@"purchasebutton:" title:@"     Updating Price..."];
+  self.purchaseButton.frame = CGRectMake(95,37,200,40);
+  self.purchaseButton.font = [UIFont boldSystemFontOfSize:14.0];
+  [self.purchaseButton addTarget:self action:@selector(purchaseIssue) forControlEvents:UIControlEventTouchUpInside];
   UIImageView *biv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"download-arrow.png"]];
   biv.center = CGPointMake(25,18);
-  [b addSubview:biv];
+  [self.purchaseButton addSubview:biv];
   [biv release];
-  [self.view addSubview:b];
+  self.purchaseButton.enabled = NO;
+  [self.view addSubview:self.purchaseButton];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -77,11 +83,13 @@
 }
 
 -(IBAction)purchaseIssue {
-  UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Purchase the current issue alone or as the first issue of a subscription." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"$2.99 Single Issue", @"$16.99 6 Months (6 issues)", @"$29.99 1 Year (12 issues)", nil];
-  [actionSheet showInView:AppDelegate.window];
-  [actionSheet release];
+  [[SMStore defaultStore] purchaseIssue:issue];
 }
 
+- (void)updatePurchaseButtonWithPrice:(NSString *)price { 
+  [self.purchaseButton setTitle:[NSString stringWithFormat:@"     %@ Purchase Issue", price] forState:UIControlStateNormal];
+  self.purchaseButton.enabled = YES;
+}
 
 - (void)dealloc {
   debugLog(@"Deallocing issue preview view");
@@ -91,6 +99,7 @@
   [issueTitle release];
   [description release];
   [freeWorkTableView release];
+  [purchaseButton release];
   [super dealloc];
 }
 

@@ -85,11 +85,16 @@
 		3C2470670FE43D0F00FCACDF /* library_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2470660FE43D0F00FCACDF /* library_icon.png */; };
 		3C2470790FE7E99800FCACDF /* SMStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2470780FE7E99800FCACDF /* SMStore.m */; };
 		3C24707E0FE7EA6B00FCACDF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C24707D0FE7EA6B00FCACDF /* StoreKit.framework */; };
+		3C5119E50FF01C34009CDD9F /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5119E40FF01C34009CDD9F /* Transaction.m */; };
+		3C5F47920FF139D50086D8D1 /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F47910FF139D50086D8D1 /* SKProduct+LocalizedPrice.m */; };
+		3C5F47C70FF14A630086D8D1 /* IssuePriceFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F47C60FF14A630086D8D1 /* IssuePriceFetcher.m */; };
+		3C5F47CA0FF1509B0086D8D1 /* IssuePriceFetcherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F47C90FF1509B0086D8D1 /* IssuePriceFetcherManager.m */; };
 		3C9318E70FE87073009D3731 /* SMWorkAudioDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */; };
 		3C9318F90FE873E0009D3731 /* Work.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318F80FE873E0009D3731 /* Work.m */; };
 		3CE5D45C0FE8793E00A152D3 /* SMWorkAudioDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D45B0FE8793E00A152D3 /* SMWorkAudioDownload.m */; };
 		3CE5D5450FE88D0100A152D3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE5D5440FE88D0100A152D3 /* AVFoundation.framework */; };
 		3CE5D5A30FE8939200A152D3 /* StringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D5A20FE8939200A152D3 /* StringUtils.m */; };
+		3CE5D6BE0FE8D3DA00A152D3 /* NSData+MBBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D6BD0FE8D3DA00A152D3 /* NSData+MBBase64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +251,14 @@
 		3C2470770FE7E99800FCACDF /* SMStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMStore.h; sourceTree = "<group>"; };
 		3C2470780FE7E99800FCACDF /* SMStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMStore.m; sourceTree = "<group>"; };
 		3C24707D0FE7EA6B00FCACDF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		3C5119E30FF01C34009CDD9F /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		3C5119E40FF01C34009CDD9F /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
+		3C5F47900FF139D50086D8D1 /* SKProduct+LocalizedPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+LocalizedPrice.h"; sourceTree = "<group>"; };
+		3C5F47910FF139D50086D8D1 /* SKProduct+LocalizedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+LocalizedPrice.m"; sourceTree = "<group>"; };
+		3C5F47C50FF14A630086D8D1 /* IssuePriceFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssuePriceFetcher.h; sourceTree = "<group>"; };
+		3C5F47C60FF14A630086D8D1 /* IssuePriceFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssuePriceFetcher.m; sourceTree = "<group>"; };
+		3C5F47C80FF1509B0086D8D1 /* IssuePriceFetcherManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssuePriceFetcherManager.h; sourceTree = "<group>"; };
+		3C5F47C90FF1509B0086D8D1 /* IssuePriceFetcherManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssuePriceFetcherManager.m; sourceTree = "<group>"; };
 		3C9318E50FE87073009D3731 /* SMWorkAudioDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMWorkAudioDownloadManager.h; sourceTree = "<group>"; };
 		3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWorkAudioDownloadManager.m; sourceTree = "<group>"; };
 		3C9318F70FE873E0009D3731 /* Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Work.h; sourceTree = "<group>"; };
@@ -255,6 +268,8 @@
 		3CE5D5440FE88D0100A152D3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3CE5D5A10FE8939200A152D3 /* StringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtils.h; sourceTree = "<group>"; };
 		3CE5D5A20FE8939200A152D3 /* StringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtils.m; sourceTree = "<group>"; };
+		3CE5D6BC0FE8D3DA00A152D3 /* NSData+MBBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MBBase64.h"; sourceTree = "<group>"; };
+		3CE5D6BD0FE8D3DA00A152D3 /* NSData+MBBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MBBase64.m"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Scarab-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Scarab-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -523,6 +538,8 @@
 				3C2466680FE0290E00FCACDF /* Issue.m */,
 				3C9318F70FE873E0009D3731 /* Work.h */,
 				3C9318F80FE873E0009D3731 /* Work.m */,
+				3C5119E30FF01C34009CDD9F /* Transaction.h */,
+				3C5119E40FF01C34009CDD9F /* Transaction.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -546,6 +563,14 @@
 				3CE5D45B0FE8793E00A152D3 /* SMWorkAudioDownload.m */,
 				3CE5D5A10FE8939200A152D3 /* StringUtils.h */,
 				3CE5D5A20FE8939200A152D3 /* StringUtils.m */,
+				3CE5D6BC0FE8D3DA00A152D3 /* NSData+MBBase64.h */,
+				3CE5D6BD0FE8D3DA00A152D3 /* NSData+MBBase64.m */,
+				3C5F47900FF139D50086D8D1 /* SKProduct+LocalizedPrice.h */,
+				3C5F47910FF139D50086D8D1 /* SKProduct+LocalizedPrice.m */,
+				3C5F47C50FF14A630086D8D1 /* IssuePriceFetcher.h */,
+				3C5F47C60FF14A630086D8D1 /* IssuePriceFetcher.m */,
+				3C5F47C80FF1509B0086D8D1 /* IssuePriceFetcherManager.h */,
+				3C5F47C90FF1509B0086D8D1 /* IssuePriceFetcherManager.m */,
 			);
 			name = "Helper Classes";
 			sourceTree = "<group>";
@@ -735,6 +760,11 @@
 				3C9318F90FE873E0009D3731 /* Work.m in Sources */,
 				3CE5D45C0FE8793E00A152D3 /* SMWorkAudioDownload.m in Sources */,
 				3CE5D5A30FE8939200A152D3 /* StringUtils.m in Sources */,
+				3CE5D6BE0FE8D3DA00A152D3 /* NSData+MBBase64.m in Sources */,
+				3C5119E50FF01C34009CDD9F /* Transaction.m in Sources */,
+				3C5F47920FF139D50086D8D1 /* SKProduct+LocalizedPrice.m in Sources */,
+				3C5F47C70FF14A630086D8D1 /* IssuePriceFetcher.m in Sources */,
+				3C5F47CA0FF1509B0086D8D1 /* IssuePriceFetcherManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,7 +795,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Scarab;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F16BAF9F-934A-42BE-879B-055B7FC732B4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AF6C04FD-2426-44A9-8BE6-234F1D4E4C48";
 			};
 			name = Debug;
 		};
@@ -783,7 +813,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Scarab;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F16BAF9F-934A-42BE-879B-055B7FC732B4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AF6C04FD-2426-44A9-8BE6-234F1D4E4C48";
 			};
 			name = Release;
 		};

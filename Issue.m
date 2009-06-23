@@ -15,6 +15,8 @@
 @dynamic number;
 @dynamic title;
 @dynamic subtitle;
+@dynamic productIdentifier;
+@dynamic transactionIdentifier;
 
 +(NSArray *)findAllSinceNumber:(NSNumber *)issueNumber {
   // htp://server/issues/since/:number.xml
@@ -27,6 +29,9 @@
 	return [self performSelector:[self getRemoteParseDataMethod] withObject:response.body];
 }
 
++(Issue *)issueWithProductIdentifier:(NSString *)productIdentifier {
+  return [self fetchFirstWithPredicate:[NSPredicate predicateWithFormat:@"productIdentifier = %@", productIdentifier]];
+}
 
 -(TTView *)swatchView {
   TTStyle *style = [TTShapeStyle styleWithShape:[TTRoundedRectangleShape shapeWithRadius:8] next:

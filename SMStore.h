@@ -8,11 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class Issue;
 
-@interface SMStore : NSObject <SKProductsRequestDelegate> {
+@interface SMStore : NSObject <SKPaymentTransactionObserver> {
 
 }
 
-- (void) requestProductData;
++ (SMStore *)defaultStore;
+
+- (void)purchaseIssue:(Issue *)issue;
+
+- (void)completeTransaction:(SKPaymentTransaction *)transaction;
+- (void)failedTransaction:(SKPaymentTransaction *)transaction;
+- (void)restoreTransaction:(SKPaymentTransaction *)transaction;
 
 @end

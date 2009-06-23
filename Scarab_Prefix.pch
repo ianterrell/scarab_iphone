@@ -7,6 +7,7 @@
   #import <UIKit/UIKit.h>
   #import <CoreData/CoreData.h>
   #import <StoreKit/StoreKit.h>
+  #import "SKProduct+LocalizedPrice.h"
   #import <AVFoundation/AVFoundation.h>
   
   #import "ObjectiveSupport.h"
@@ -18,6 +19,9 @@
   #import "UIHelpers.h"
   
   #import "StringUtils.h"
+  #import "NSData+MBBase64.h"
+  
+  #import "MBProgressHUD.h"
   
   #import "ScarabAppDelegate.h"
   #define AppDelegate ((ScarabAppDelegate *)[[UIApplication sharedApplication] delegate])

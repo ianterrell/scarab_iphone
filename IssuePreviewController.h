@@ -10,9 +10,10 @@
 
 @class Issue;
 
-@interface IssuePreviewController : UIViewController <UIActionSheetDelegate> {
+@interface IssuePreviewController : UIViewController {
   Issue *issue;
   
+  TTButton *purchaseButton;
   IBOutlet UIImageView *scarab;
   IBOutlet UILabel *issueNumber;
   IBOutlet UILabel *issueTitle;
@@ -22,12 +23,14 @@
 
 @property(nonatomic,retain) Issue *issue;
 
+@property(nonatomic,retain) TTButton *purchaseButton;
 @property(nonatomic,retain) UIImageView *scarab;
 @property(nonatomic,retain) UILabel *issueNumber;
 @property(nonatomic,retain) UILabel *issueTitle;
 @property(nonatomic,retain) UIWebView *description;
 @property(nonatomic,retain) UITableView *freeWorkTableView;
 
--(IBAction)purchaseIssue;
+- (IBAction)purchaseIssue;
+- (void)updatePurchaseButtonWithPrice:(NSString *)price;
 
 @end

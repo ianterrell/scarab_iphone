@@ -11,34 +11,46 @@
 #import "ScarabStyleSheet.h"
 #import "SMStore.h"
 
+#define kDatabaseName @"Scarab.sqlite3"
+#define kConnectionTimeout 30.0
+
 @implementation ScarabAppDelegate
 
 @synthesize window;
 @synthesize tabBarController;
 @synthesize splashScreenController;
 @synthesize visibleController;
+@synthesize libraryViewController;
 
 
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-  [[[SMStore alloc] init] requestProductData];
-
   debugLog(@"Application did finish launching!");
+  
+  // Set up store
+  [[SKPaymentQueue defaultQueue] addTransactionObserver:[SMStore defaultStore]];
+  
+  // TEST
+//  [[SMStore defaultStore] test];
   
   // Set up ObjectiveResource
   // TODO: Extract ObjectiveResource config out to bundle or some such
-  [ObjectiveResourceConfig setSite:@"http://192.168.1.100:3000/"];
+  [ObjectiveResourceConfig setSite:@"http://192.168.20.2:3000/"];
   //  [ObjectiveResourceConfig setUser:@"remoteResourceUserName"];
   //  [ObjectiveResourceConfig setPassword:@"remoteResourcePassword"];
   [ObjectiveResourceConfig setResponseType:XmlResponse];
+  [Connection setTimeout:kConnectionTimeout];
 
   // Set up Three20
   [TTStyleSheet setGlobalStyleSheet:[[[ScarabStyleSheet alloc] init] autorelease]];
   TTNavigationCenter* nav = [TTNavigationCenter defaultCenter];
   nav.delegate = self;
   nav.urlSchemes = [NSArray arrayWithObject:@"tt"];
+  
+  // Set up HUD
+  HUD = nil;
 
 	NSManagedObjectContext *context = [self managedObjectContext];
 	if (!context) {
@@ -141,17 +153,49 @@
   if (persistentStoreCoordinator != nil) {
     return persistentStoreCoordinator;
   }
-
-  NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"Scarab.sqlite"]];  // TODO: set name of database in bundle, config, somewhere
+  
+  NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent:kDatabaseName]];
 
   NSError *error;
   persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];
   if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
-    NSLog(@"Error setting up the store coordinator");
+    debugLog(@"Error setting up the store coordinator: %@", [error localizedDescription]);
     // TODO: Handle the error.
   }    
-
+  
   return persistentStoreCoordinator;
+}
+
+#pragma mark -
+#pragma mark HUD Methods
+
+- (void)setupHUDWithLabel:(NSString *)labelText details:(NSString *)detailsLabelText {
+  [self hudWasHidden]; // no harm making sure it's gone
+  HUD = [[MBProgressHUD alloc] initWithWindow:[UIApplication sharedApplication].keyWindow];
+  [self.window addSubview:HUD];
+  HUD.delegate = self;
+  HUD.labelText = labelText;
+  HUD.detailsLabelText = detailsLabelText;
+}
+
+- (void)showHUDWithLabel:(NSString *)labelText details:(NSString *)detailsLabelText animated:(BOOL)animated {
+  [self setupHUDWithLabel:labelText details:detailsLabelText];
+  [HUD showUsingAnimation:animated];
+}
+
+- (void)hideHUDUsingAnimation:(BOOL)animated {
+  [HUD hideUsingAnimation:animated];
+}
+
+- (void)showHUDWithLabel:(NSString *)labelText details:(NSString *)detailsLabelText whileExecuting:(SEL)selector onTarget:(id)target withObject:(id)object animated:(BOOL)animated {
+  [self setupHUDWithLabel:labelText details:detailsLabelText];
+  [HUD showWhileExecuting:selector onTarget:target withObject:object animated:animated];
+}
+
+- (void)hudWasHidden {
+  [HUD removeFromSuperview];
+  [HUD release];
+  HUD = nil;
 }
 
 

@@ -55,7 +55,7 @@
 }
 
 - (void)shutDown {
-  debugLog(@"Shutting down SMWorkAudioDownloadManager");
+  debugLog(@"Shutting down SMWorkAudioDownloadManager.  Downloads count is %d", [downloads count]);
 }
 
 - (void)dealloc {

@@ -118,6 +118,9 @@
  */
 - (void)showWhileExecuting:(SEL)method onTarget:(id)target withObject:(id)object animated:(bool)animated;
 
+- (void)showUsingAnimation:(BOOL)animated;
+- (void)hideUsingAnimation:(BOOL)animated;
+
 @end
 
 
