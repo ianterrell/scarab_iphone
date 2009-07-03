@@ -12,7 +12,7 @@
 #import "SMStore.h"
 
 #define kDatabaseName @"Scarab.sqlite3"
-#define kConnectionTimeout 30.0
+#define kConnectionTimeout 20.0
 
 @implementation ScarabAppDelegate
 
@@ -37,9 +37,9 @@
   
   // Set up ObjectiveResource
   // TODO: Extract ObjectiveResource config out to bundle or some such
-  [ObjectiveResourceConfig setSite:@"http://192.168.20.2:3000/"];
-  //  [ObjectiveResourceConfig setUser:@"remoteResourceUserName"];
-  //  [ObjectiveResourceConfig setPassword:@"remoteResourcePassword"];
+  [ObjectiveResourceConfig setSite:@"http://192.168.1.124:3000/"];
+//  [ObjectiveResourceConfig setUser:@"remoteResourceUserName"];
+//  [ObjectiveResourceConfig setPassword:@"remoteResourcePassword"];
   [ObjectiveResourceConfig setResponseType:XmlResponse];
   [Connection setTimeout:kConnectionTimeout];
 

@@ -13,7 +13,7 @@
 
 @implementation LibraryViewController
 
-@synthesize currentIssue, bookshelfIssues, backIssues;
+@synthesize issuesInDb, currentIssue, bookshelfIssues, backIssues;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -26,27 +26,51 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  
+
+  // Set up empty arrays to hold issues
   if (bookshelfIssues == nil)
     self.bookshelfIssues = [NSMutableArray arrayWithCapacity:5];
   if (backIssues == nil)
     self.backIssues = [NSMutableArray arrayWithCapacity:5];
   
+  if (issuesInDb == nil)
+    [self loadIssuesFromDb];  
+
+  [self setupIssueSections];
+
   if (!fetchedNewIssues)
     [AppDelegate showHUDWithLabel:nil details:@"Checking for new issues" whileExecuting:@selector(fetchNewIssues) onTarget:self withObject:nil animated:YES];
 }
 
 #pragma mark -
-#pragma mark Check for Issues
+#pragma mark Issue Management
 
--(void)fetchNewIssues {
-  // Fetch issues in the database
+- (void)loadIssuesFromDb {
   NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES];
-  NSMutableArray *issuesInDb = [Issue fetchWithSortDescriptor:sortDescriptor];
+  self.issuesInDb = [Issue fetchWithSortDescriptor:sortDescriptor];
   [sortDescriptor release];
   debugLog(@"There are %d issues in the database", [issuesInDb count]);
+}
+
+-(void)setupIssueSections {
+  NSMutableArray *issues = [NSMutableArray arrayWithCapacity:[issuesInDb count]];
+  [issues addObjectsFromArray:issuesInDb];
   
-  self.currentIssue = [issuesInDb lastObject];
+  self.currentIssue = [issues lastObject];
+  if (currentIssue != nil)
+    [issues removeLastObject];
+
+  // TODO: separate remaining into bookshelf issues and back issues
+  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:NO];
+  [issues sortUsingDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
+  [sortDescriptor release];
+  self.bookshelfIssues = issues;
+
+  [(UITableView*)self.view reloadData];
+}
+
+
+-(void)fetchNewIssues {
   int currentIssueNumber = (currentIssue == nil) ? 0 : [currentIssue.number intValue];
   debugLog(@"The number of the last issue in the database is %d", currentIssueNumber);
   NSArray *newIssuesOnServer = [Issue findAllSinceNumber:[NSNumber numberWithInt:currentIssueNumber]];
@@ -67,23 +91,10 @@
       debugLog(@"Error saving new issues in Library:  %@", [error localizedDescription]);
       // TODO: FIXME BITCH WHAT DO I DO?
     }
-    
-    self.currentIssue = [issuesInDb lastObject];
   }
   
-  // Set up view
-  
-  if (currentIssue != nil)
-    [issuesInDb removeLastObject];
-
-  // TODO: separate remaining into bookshelf issues and back issues
-  sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:NO];
-  [issuesInDb sortUsingDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
-  [sortDescriptor release];
-  self.bookshelfIssues = issuesInDb;
-  
+  [self setupIssueSections];
   fetchedNewIssues = YES;
-  [(UITableView*)self.view reloadData];
 }
 
 /*
@@ -241,6 +252,7 @@
 
 
 - (void)dealloc {
+  [issuesInDb release];
   [currentIssue release];
   [bookshelfIssues release];
   [backIssues release];

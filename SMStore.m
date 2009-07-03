@@ -54,6 +54,7 @@
   // We just bought an issue.
   
   if ([Transaction saveOnServer:transaction]) {  
+    debugLog(@"Transaction saved on server.");
     // Update issue in database to have transaction identifier that purchased it
     Issue *issue = [Issue issueWithProductIdentifier:transaction.payment.productIdentifier];
     issue.transactionIdentifier = transaction.transactionIdentifier;
@@ -70,6 +71,7 @@
     
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction]; 
   } else {
+    debugLog(@"Transaction not saved on server.");
     // Alert the user that the next time the app starts up we'll try again.
     // We're pretty much assuming that they're not hacking here.
   }

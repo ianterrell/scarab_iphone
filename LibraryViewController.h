@@ -13,15 +13,19 @@
 @interface LibraryViewController : UITableViewController {
   BOOL fetchedNewIssues;
   
+  NSMutableArray *issuesInDb;
   Issue *currentIssue;
   NSMutableArray *bookshelfIssues;
   NSMutableArray *backIssues;
 }
 
+@property(nonatomic,retain) NSMutableArray *issuesInDb;
 @property(nonatomic,retain) Issue *currentIssue;
 @property(nonatomic,retain) NSMutableArray *bookshelfIssues;
 @property(nonatomic,retain) NSMutableArray *backIssues;
 
--(void)fetchNewIssues;
+- (void)loadIssuesFromDb;
+- (void)setupIssueSections;
+- (void)fetchNewIssues;
 
 @end
