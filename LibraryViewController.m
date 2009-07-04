@@ -77,8 +77,6 @@
   debugLog(@"There are %d new issues on the server", [newIssuesOnServer count]);
   
   if ([newIssuesOnServer count] > 0) {
-    // TODO: Check if new issues are paid for by a subscription (this view is cached) -- Rails metal? -- update accordingly
-    
     // TODO:  guarantee order from server, or sort here
     for (Issue *issue in newIssuesOnServer) {
       [AppDelegate.managedObjectContext insertObject:issue];
