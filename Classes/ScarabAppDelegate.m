@@ -37,7 +37,7 @@
   
   // Set up ObjectiveResource
   // TODO: Extract ObjectiveResource config out to bundle or some such
-  [ObjectiveResourceConfig setSite:@"http://192.168.1.124:3000/"];
+  [ObjectiveResourceConfig setSite:@"http://staging.scarabmag.com/"];
 //  [ObjectiveResourceConfig setUser:@"remoteResourceUserName"];
 //  [ObjectiveResourceConfig setPassword:@"remoteResourcePassword"];
   [ObjectiveResourceConfig setResponseType:XmlResponse];

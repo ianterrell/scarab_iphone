@@ -57,7 +57,7 @@
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="IBUIText">Ian Terrell</string>
+						<string key="IBUIText">Brian Wilkins</string>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica-Bold</string>
 							<double key="NSSize">1.700000e+01</double>
@@ -79,7 +79,7 @@
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="IBUIText">Richmond, VA</string>
+						<string key="IBUIText">Dover, NH</string>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica-Oblique</string>
 							<double key="NSSize">1.400000e+01</double>
@@ -216,7 +216,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>AuthorViewController</string>
 					<string>UIResponder</string>
-					<string>{{-1099, 26}, {320, 480}}</string>
+					<string>{{595, 70}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

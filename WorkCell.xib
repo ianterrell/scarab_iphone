@@ -49,7 +49,7 @@
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<string key="IBUIText">From Here on Out, All Hell Could Break Loose</string>
+								<string key="IBUIText">A Coat of All Colors and None</string>
 								<object class="NSFont" key="IBUIFont">
 									<string key="NSName">Helvetica-Bold</string>
 									<double key="NSSize">1.600000e+01</double>
@@ -72,7 +72,7 @@
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<string key="IBUIText">A poem by Ian Terrell</string>
+								<string key="IBUIText">A poem by Brian Wilkins</string>
 								<object class="NSFont" key="IBUIFont">
 									<string key="NSName">Helvetica-Oblique</string>
 									<double key="NSSize">1.400000e+01</double>
@@ -177,7 +177,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>UIResponder</string>
 					<string>WorkCell</string>
-					<string>{{-1190, 475}, {320, 80}}</string>
+					<string>{{537, 503}, {320, 80}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

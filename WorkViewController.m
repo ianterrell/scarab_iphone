@@ -30,15 +30,15 @@
   self.work = [[Work alloc] init];
   
   self.title = @"Issue 4";
-  [self.workText loadHTMLString:@"<html><head><style>body { font-family: helvetica; }</style></head><body><p>Roses are red<br/>Violets are blue<br/>Blah blah blah<br/>Hizzah boo hoo.</p><p>Roses are white<br/>Violets are purple<br/>Blah blah blah<br/>Rizzah yurple.</p><p>Roses are pink<br/>Violets are yellow<br/>Blah blah blah<br/>Kizzah mellow.</p><br/><i>Read by the author</i><br/><br/><br/><br/></body></html>" baseURL:nil];
+  [self.workText loadHTMLString:@"<html><head><style>body { font-family: helvetica; }</style></head><body><p>In Ohio, my friend Lee becomes <br/>&nbsp;&nbsp;&nbsp;&nbsp;a monarch by smoking milkweed.<br/>I don’t suggest it. All the green stones <br/>&nbsp;&nbsp;&nbsp;&nbsp;in the creek point<br/>and laugh at his blond-tufted wings.</p><p>I ride fevers the way a hawk surfs a <br/>&nbsp;&nbsp;&nbsp;&nbsp;thermal: somewhere beneath me,<br/>I am a chattering delirium of martyrs. <br/>&nbsp;&nbsp;&nbsp;&nbsp;Staked, I learn this is my fault.<br/>Flaming, I learn I am blameless, that even <br/>&nbsp;&nbsp;&nbsp;&nbsp;good guys get burned.</p><p>People never run from a house fire: <br/>&nbsp;&nbsp;&nbsp;&nbsp;the fire trucks<br/>have sirens just to clear the way, <br/>&nbsp;&nbsp;&nbsp;&nbsp;but this is also<br/>jealousy: everyone wants to be first <br/>&nbsp;&nbsp;&nbsp;&nbsp;to feel the heat.</p><p>Ask the Cuyahoga, which burns and <br/>&nbsp;&nbsp;&nbsp;&nbsp;freezes in its season.<br/>Ask it what? I’ve forgotten, but I’m sure <br/>&nbsp;&nbsp;&nbsp;&nbsp;it began with<br/>a letter balanced on the tip of <br/>&nbsp;&nbsp;&nbsp;&nbsp;lamplight, or a kiss.</p><p>My father caught my mother <br/>&nbsp;&nbsp;&nbsp;&nbsp;with a campfire<br/>set with singing, oak leaves, <br/>&nbsp;&nbsp;&nbsp;&nbsp;the hissing of a Coleman stove.<br/>My mother caught my father with a <br/>&nbsp;&nbsp;&nbsp;&nbsp;honeycomb and a bear.</p><p>Brian, this is not wisdom. It is a string <br/>&nbsp;&nbsp;&nbsp;&nbsp;of cheap pearls,<br/>and everyone knows wisdom is a <br/>&nbsp;&nbsp;&nbsp;&nbsp;set of crossing<br/>white ankles in a library that cures <br/>&nbsp;&nbsp;&nbsp;&nbsp;your desire for books.</p><br/><i>Read by the author</i><br/><br/><br/><br/></body></html>" baseURL:nil];
     
   // Set author image with rounded corners
-  [UIHelpers addRoundedImageNamed:@"ian.png" toView:self.view];
+  [UIHelpers addRoundedImageNamed:@"brian.jpg" toView:self.view];
   
   // Set up byline
   TTStyledTextLabel* label = [[[TTStyledTextLabel alloc] initWithFrame:self.view.bounds] autorelease];
   label.font = [UIFont systemFontOfSize:14];
-  label.text = [TTStyledText textFromXHTML:@"<i>A poem by <a href=\"tt://author\">Ian Terrell</a></i>" lineBreaks:NO urls:YES];
+  label.text = [TTStyledText textFromXHTML:@"<i>A poem by <a href=\"tt://author\">Brian Wilkins</a></i>" lineBreaks:NO urls:YES];
   label.frame = CGRectMake(80, 52, 200, 23);
   label.textColor = RGBCOLOR(100,100,100);
   label.contentInset = UIEdgeInsetsMake(3, 0, 3, 0);

@@ -14,6 +14,9 @@
 		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		3C1DCBCC101D08AF00702531 /* brian.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C1DCBCB101D08AF00702531 /* brian.jpg */; };
+		3C1DCBDC101D08DC00702531 /* brian_128.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C1DCBDB101D08DC00702531 /* brian_128.jpg */; };
+		3C1DCC2B101D1AEE00702531 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C1DCC2A101D1AEE00702531 /* Entitlements.plist */; };
 		3C24649C0FDEA6B100FCACDF /* SplashScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C24649B0FDEA6B100FCACDF /* SplashScreen.xib */; };
 		3C24649F0FDEA6C600FCACDF /* SplashScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C24649E0FDEA6C600FCACDF /* SplashScreenController.m */; };
 		3C2464CD0FDEA96E00FCACDF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2464CC0FDEA96E00FCACDF /* Default.png */; };
@@ -125,6 +128,9 @@
 		28A0AB4B0D9B1048005BE974 /* Scarab_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scarab_Prefix.pch; sourceTree = "<group>"; };
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3C1DCBCB101D08AF00702531 /* brian.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brian.jpg; sourceTree = "<group>"; };
+		3C1DCBDB101D08DC00702531 /* brian_128.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brian_128.jpg; sourceTree = "<group>"; };
+		3C1DCC2A101D1AEE00702531 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		3C24649B0FDEA6B100FCACDF /* SplashScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreen.xib; sourceTree = "<group>"; };
 		3C24649D0FDEA6C600FCACDF /* SplashScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenController.h; sourceTree = "<group>"; };
 		3C24649E0FDEA6C600FCACDF /* SplashScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenController.m; sourceTree = "<group>"; };
@@ -326,6 +332,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				3C1DCC2A101D1AEE00702531 /* Entitlements.plist */,
 			);
 			name = Scarab;
 			sourceTree = "<group>";
@@ -348,6 +355,8 @@
 				3C246C000FE2EBEF00FCACDF /* star-empty.png */,
 				3C246C010FE2EBEF00FCACDF /* star-full.png */,
 				3C246BFE0FE2EB8E00FCACDF /* download-arrow.png */,
+				3C1DCBCB101D08AF00702531 /* brian.jpg */,
+				3C1DCBDB101D08DC00702531 /* brian_128.jpg */,
 				3C246A100FE1A00200FCACDF /* ian.png */,
 				3C246B1E0FE297B600FCACDF /* ian_128.jpg */,
 				3C2469B20FE1966100FCACDF /* header.png */,
@@ -697,6 +706,9 @@
 				3C246EE90FE3630300FCACDF /* cell_bg.png in Resources */,
 				3C246FAB0FE3FA8C00FCACDF /* AuthorViewController.xib in Resources */,
 				3C2470670FE43D0F00FCACDF /* library_icon.png in Resources */,
+				3C1DCBCC101D08AF00702531 /* brian.jpg in Resources */,
+				3C1DCBDC101D08DC00702531 /* brian_128.jpg in Resources */,
+				3C1DCC2B101D1AEE00702531 /* Entitlements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,7 +807,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Scarab;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AF6C04FD-2426-44A9-8BE6-234F1D4E4C48";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "24D5C2B4-5812-4EAC-A2E7-5E7122E770E1";
 			};
 			name = Debug;
 		};
@@ -813,9 +825,47 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Scarab;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AF6C04FD-2426-44A9-8BE6-234F1D4E4C48";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "24D5C2B4-5812-4EAC-A2E7-5E7122E770E1";
 			};
 			name = Release;
+		};
+		3C1DCC21101D1A4300702531 /* BetaTest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ian Terrell";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../three20/src/**";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "326E7B66-9338-4DBA-9B3F-6F000A95EF22";
+				SDKROOT = iphoneos3.0;
+			};
+			name = BetaTest;
+		};
+		3C1DCC22101D1A4300702531 /* BetaTest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ian Terrell";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Scarab_Prefix.pch;
+				INFOPLIST_FILE = "Scarab-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = Scarab;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "326E7B66-9338-4DBA-9B3F-6F000A95EF22";
+			};
+			name = BetaTest;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -862,6 +912,7 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				3C1DCC22101D1A4300702531 /* BetaTest */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -871,6 +922,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				3C1DCC21101D1A4300702531 /* BetaTest */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
