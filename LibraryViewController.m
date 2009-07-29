@@ -17,7 +17,7 @@
 
 - (id)init {
   if (self = [super init]) {
-    self.title = TTLocalizedString(@"Library", @"");
+    self.title = @"Library";
 
     UIImage* image = [UIImage imageNamed:@"library_icon.png"];
     self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:self.title image:image tag:0] autorelease];

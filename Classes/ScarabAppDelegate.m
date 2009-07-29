@@ -16,6 +16,7 @@
 #import "WorkViewController.h"
 #import "AuthorViewController.h"
 #import "TabBarController.h"
+#import "PlaceholderController.h"
 
 #define kDatabaseName @"Scarab.sqlite3"
 #define kConnectionTimeout 20.0
@@ -97,7 +98,8 @@
   [map from:@"scarab://library" toSharedViewController:[LibraryViewController class]];
   [map from:@"scarab://issue/(initWithNumber:)" toViewController:[IssuePreviewController class]];
   [map from:@"scarab://work" toViewController:[WorkViewController class]];
-  [map from:@"scarab://author" toViewController:[AuthorViewController class]];    
+  [map from:@"scarab://author" toViewController:[AuthorViewController class]];
+  [map from:@"scarab://placeholder/(initWithType:)" toViewController:[PlaceholderController class]];  
   
   // Before opening the tab bar, we see if the controller history was persisted the last time
   if (![navigator restoreViewControllers]) {
