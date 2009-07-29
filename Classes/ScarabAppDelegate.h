@@ -13,7 +13,6 @@
 
 @interface ScarabAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
   UIWindow *window;
-  UITabBarController *tabBarController;
   SplashScreenController *splashScreenController;
   LibraryViewController *libraryViewController;
   
@@ -27,7 +26,6 @@
 }
 
 @property(nonatomic,retain) IBOutlet UIWindow *window;
-@property(nonatomic,retain) IBOutlet UITabBarController *tabBarController;
 @property(nonatomic,retain) IBOutlet SplashScreenController *splashScreenController;
 @property(nonatomic,retain) IBOutlet LibraryViewController *libraryViewController;
 

@@ -24,7 +24,6 @@
 @implementation ScarabAppDelegate
 
 @synthesize window;
-@synthesize tabBarController;
 @synthesize splashScreenController;
 @synthesize visibleController;
 @synthesize libraryViewController;
@@ -45,6 +44,9 @@
   [self setUpObjectiveResource];
   [self setUpThree20];
   
+  self.splashScreenController = [[SplashScreenController alloc] initWithNibName:@"SplashScreen" bundle:nil];  
+  [[UIApplication sharedApplication].keyWindow addSubview:self.splashScreenController.view];
+  
   // Set up HUD
   HUD = nil;
 
@@ -55,9 +57,6 @@
 		// TODO: Handle the error.
     debugLog(@"Error grabbing the context in applicationDidFinishLaunching");
 	}
-	
-  [window addSubview:tabBarController.view];
-  [window addSubview:splashScreenController.view];
 }
 
 /**
@@ -269,7 +268,6 @@
   [managedObjectModel release];
   [persistentStoreCoordinator release];
   [splashScreenController release];
-  [tabBarController release];
   [window release];
   [super dealloc];
 }
