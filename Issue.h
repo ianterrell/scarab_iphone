@@ -21,6 +21,7 @@
 @property(retain) NSString *transactionIdentifier;
 
 +(NSArray *)findAllSinceNumber:(NSNumber *)issueNumber;
++(Issue *)issueWithNumber:(NSString *)number;
 +(Issue *)issueWithProductIdentifier:(NSString *)productIdentifier;
 
 -(TTView *)swatchView;

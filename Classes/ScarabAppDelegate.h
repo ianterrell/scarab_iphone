@@ -11,7 +11,7 @@
 @class SplashScreenController;
 @class LibraryViewController;
 
-@interface ScarabAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, TTNavigationDelegate> {
+@interface ScarabAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
   UIWindow *window;
   UITabBarController *tabBarController;
   SplashScreenController *splashScreenController;
@@ -42,6 +42,11 @@
 #pragma mark Splash Screen
 
 - (void)doneWithSplash;
+
+#pragma mark Setup Helper Methods
+
+- (void)setUpObjectiveResource;
+- (void)setUpThree20;
 
 #pragma mark HUD Methods
 

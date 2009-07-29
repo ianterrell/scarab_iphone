@@ -98,6 +98,7 @@
 		3CE5D5450FE88D0100A152D3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE5D5440FE88D0100A152D3 /* AVFoundation.framework */; };
 		3CE5D5A30FE8939200A152D3 /* StringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D5A20FE8939200A152D3 /* StringUtils.m */; };
 		3CE5D6BE0FE8D3DA00A152D3 /* NSData+MBBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D6BD0FE8D3DA00A152D3 /* NSData+MBBase64.m */; };
+		3CFA923F101FC4EF004D9F8A /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA923E101FC4EF004D9F8A /* TabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -276,6 +277,8 @@
 		3CE5D5A20FE8939200A152D3 /* StringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtils.m; sourceTree = "<group>"; };
 		3CE5D6BC0FE8D3DA00A152D3 /* NSData+MBBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MBBase64.h"; sourceTree = "<group>"; };
 		3CE5D6BD0FE8D3DA00A152D3 /* NSData+MBBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MBBase64.m"; sourceTree = "<group>"; };
+		3CFA923D101FC4EF004D9F8A /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		3CFA923E101FC4EF004D9F8A /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Scarab-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Scarab-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -318,6 +321,7 @@
 		29B97314FDCFA39411CA2CEA /* Scarab */ = {
 			isa = PBXGroup;
 			children = (
+				3CFA923C101FC4D2004D9F8A /* Navigation */,
 				3C246A520FE1E8CC00FCACDF /* Shop */,
 				3C2466AA0FE03B3400FCACDF /* Helper Classes */,
 				3C2466660FE028F900FCACDF /* Models */,
@@ -625,6 +629,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3CFA923C101FC4D2004D9F8A /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				3CFA923D101FC4EF004D9F8A /* TabBarController.h */,
+				3CFA923E101FC4EF004D9F8A /* TabBarController.m */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -777,6 +790,7 @@
 				3C5F47920FF139D50086D8D1 /* SKProduct+LocalizedPrice.m in Sources */,
 				3C5F47C70FF14A630086D8D1 /* IssuePriceFetcher.m in Sources */,
 				3C5F47CA0FF1509B0086D8D1 /* IssuePriceFetcherManager.m in Sources */,
+				3CFA923F101FC4EF004D9F8A /* TabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

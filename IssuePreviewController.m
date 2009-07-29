@@ -18,6 +18,13 @@
 
 @synthesize issue, scarab, issueNumber, issueTitle, description, freeWorkTableView, purchaseButton;
 
+-(id)initWithNumber:(NSString *)number {
+  if (self = [super init]) {
+    self.issue = [Issue issueWithNumber:number];
+  }
+  return self;
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   
@@ -77,9 +84,8 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	WorkViewController *workViewController = [[WorkViewController alloc] initWithNibName:@"WorkViewController" bundle:nil];
-	[self.navigationController pushViewController:workViewController animated:YES];
-	[workViewController release];
+  // TODO: set id after work!  work/id
+  TTOpenURL(@"scarab://work");
 }
 
 -(IBAction)purchaseIssue {

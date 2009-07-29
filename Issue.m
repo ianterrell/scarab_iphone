@@ -33,6 +33,10 @@
   return [self fetchFirstWithPredicate:[NSPredicate predicateWithFormat:@"productIdentifier = %@", productIdentifier]];
 }
 
++(Issue *)issueWithNumber:(NSString *)number {
+  return [self fetchFirstWithPredicate:[NSPredicate predicateWithFormat:@"number = %@", number]];
+}
+
 -(TTView *)swatchView {
   TTStyle *style = [TTShapeStyle styleWithShape:[TTRoundedRectangleShape shapeWithRadius:8] next:
     [TTSolidFillStyle styleWithColor:[self uiColor] next:

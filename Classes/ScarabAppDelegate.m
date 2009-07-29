@@ -11,6 +11,12 @@
 #import "ScarabStyleSheet.h"
 #import "SMStore.h"
 
+#import "IssuePreviewController.h"
+#import "LibraryViewController.h"
+#import "WorkViewController.h"
+#import "AuthorViewController.h"
+#import "TabBarController.h"
+
 #define kDatabaseName @"Scarab.sqlite3"
 #define kConnectionTimeout 20.0
 
@@ -34,24 +40,14 @@
   
   // TEST
 //  [[SMStore defaultStore] test];
-  
-  // Set up ObjectiveResource
-  // TODO: Extract ObjectiveResource config out to bundle or some such
-  [ObjectiveResourceConfig setSite:@"http://staging.scarabmag.com/"];
-//  [ObjectiveResourceConfig setUser:@"remoteResourceUserName"];
-//  [ObjectiveResourceConfig setPassword:@"remoteResourcePassword"];
-  [ObjectiveResourceConfig setResponseType:XmlResponse];
-  [Connection setTimeout:kConnectionTimeout];
 
-  // Set up Three20
-  [TTStyleSheet setGlobalStyleSheet:[[[ScarabStyleSheet alloc] init] autorelease]];
-  TTNavigationCenter* nav = [TTNavigationCenter defaultCenter];
-  nav.delegate = self;
-  nav.urlSchemes = [NSArray arrayWithObject:@"tt"];
+  [self setUpObjectiveResource];
+  [self setUpThree20];
   
   // Set up HUD
   HUD = nil;
 
+  // Set up core data
 	NSManagedObjectContext *context = [self managedObjectContext];
 	if (!context) {
     // Do I want to start it up here?  I mean, duzzit matter?
@@ -74,6 +70,45 @@
       // TODO: Handle the error.
     } 
   }
+}
+
+
+#pragma mark -
+#pragma mark Setup Helper Methods
+
+- (void)setUpObjectiveResource {
+  // TODO: Extract ObjectiveResource config out to bundle or some such
+  [ObjectiveResourceConfig setSite:@"http://staging.scarabmag.com/"];
+  //[ObjectiveResourceConfig setUser:@"remoteResourceUserName"];
+  //[ObjectiveResourceConfig setPassword:@"remoteResourcePassword"];
+  [ObjectiveResourceConfig setResponseType:XmlResponse];
+  [Connection setTimeout:kConnectionTimeout];
+}
+
+- (void)setUpTTNavigator {
+  TTNavigator* navigator = [TTNavigator navigator];
+  navigator.persistenceMode = TTNavigatorPersistenceModeAll;
+  navigator.window = [[[UIWindow alloc] initWithFrame:TTScreenBounds()] autorelease];
+  
+  TTURLMap* map = navigator.URLMap;
+  
+  [map from:@"*" toViewController:[TTWebController class]];
+  [map from:@"scarab://tabBar" toSharedViewController:[TabBarController class]];
+  [map from:@"scarab://library" toSharedViewController:[LibraryViewController class]];
+  [map from:@"scarab://issue/(initWithNumber:)" toViewController:[IssuePreviewController class]];
+  [map from:@"scarab://work" toViewController:[WorkViewController class]];
+  [map from:@"scarab://author" toViewController:[AuthorViewController class]];    
+  
+  // Before opening the tab bar, we see if the controller history was persisted the last time
+  if (![navigator restoreViewControllers]) {
+    // This is the first launch, so we just start with the tab bar
+    [navigator openURL:@"scarab://tabBar" animated:NO];
+  }
+}
+
+- (void)setUpThree20 {
+  [TTStyleSheet setGlobalStyleSheet:[[[ScarabStyleSheet alloc] init] autorelease]];
+  [self setUpTTNavigator];
 }
 
 /*

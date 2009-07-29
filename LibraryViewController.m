@@ -15,13 +15,19 @@
 
 @synthesize issuesInDb, currentIssue, bookshelfIssues, backIssues;
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+- (id)init {
+  if (self = [super init]) {
+    self.title = TTLocalizedString(@"Library", @"");
+
+    UIImage* image = [UIImage imageNamed:@"library_icon.png"];
+    self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:self.title image:image tag:0] autorelease];
+  }
+  return self;
 }
 
+- (void)viewDidLoad {
+  [super viewDidLoad];
+}
 
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -66,7 +72,7 @@
   [sortDescriptor release];
   self.bookshelfIssues = issues;
 
-  [(UITableView*)self.view reloadData];
+  [(UITableView *)self.view reloadData];
 }
 
 
@@ -202,51 +208,14 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	IssuePreviewController *issuePreviewController = [[IssuePreviewController alloc] initWithNibName:@"IssuePreviewController" bundle:nil];
-  issuePreviewController.issue = [self issueAtIndexPath:indexPath];
-	[self.navigationController pushViewController:issuePreviewController animated:YES];
-	[issuePreviewController release];
+  // TODO:  pick URL based on whether or not we've purchased it yet!
+  TTOpenURL([NSString stringWithFormat:@"scarab://issue/%@", [self issueAtIndexPath:indexPath].number]);
+  
+//	IssuePreviewController *issuePreviewController = [[IssuePreviewController alloc] initWithNibName:@"IssuePreviewController" bundle:nil];
+//  issuePreviewController.issue = [self issueAtIndexPath:indexPath];
+//	[self.navigationController pushViewController:issuePreviewController animated:YES];
+//	[issuePreviewController release];
 }
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source.
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }   
-}
-*/
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 
 - (void)dealloc {

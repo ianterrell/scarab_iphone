@@ -38,7 +38,7 @@
   // Set up byline
   TTStyledTextLabel* label = [[[TTStyledTextLabel alloc] initWithFrame:self.view.bounds] autorelease];
   label.font = [UIFont systemFontOfSize:14];
-  label.text = [TTStyledText textFromXHTML:@"<i>A poem by <a href=\"tt://author\">Brian Wilkins</a></i>" lineBreaks:NO urls:YES];
+  label.text = [TTStyledText textFromXHTML:@"<i>A poem by <a href=\"scarab://author\">Brian Wilkins</a></i>" lineBreaks:NO URLs:YES];
   label.frame = CGRectMake(80, 52, 200, 23);
   label.textColor = RGBCOLOR(100,100,100);
   label.contentInset = UIEdgeInsetsMake(3, 0, 3, 0);
@@ -47,7 +47,7 @@
   
   // Set up navigation to author view
   // TODO: Small chance the downloader will keep a copy of this around and so not dealloc and release -- how to handle here?
-  [[TTNavigationCenter defaultCenter] addView:@"author" target:self action:@selector(showAuthorViewWithObject:type:state:)];
+  //[[TTNavigationCenter defaultCenter] addView:@"author" target:self action:@selector(showAuthorViewWithObject:type:state:)];
   
   // Set up audio file
   
@@ -216,7 +216,7 @@
 - (void)dealloc {
   debugLog(@"deallocing WorkViewController");
   
-  [[TTNavigationCenter defaultCenter] removeView:@"author"];
+//  [[TTNavigationCenter defaultCenter] removeView:@"author"];
   
   [favoriteStar release];
   [workText release];
