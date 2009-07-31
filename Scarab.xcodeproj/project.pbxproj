@@ -91,6 +91,7 @@
 		3C5119E50FF01C34009CDD9F /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5119E40FF01C34009CDD9F /* Transaction.m */; };
 		3C55E48A1020C7B9009F04FF /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C55E4891020C7B9009F04FF /* IssueViewController.m */; };
 		3C55E4F710226C29009F04FF /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C55E4F610226C29009F04FF /* Author.m */; };
+		3C55E58D10237AF3009F04FF /* WorksBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C55E58C10237AF3009F04FF /* WorksBaseTableViewController.m */; };
 		3C5F47920FF139D50086D8D1 /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F47910FF139D50086D8D1 /* SKProduct+LocalizedPrice.m */; };
 		3C5F47C70FF14A630086D8D1 /* IssuePriceFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F47C60FF14A630086D8D1 /* IssuePriceFetcher.m */; };
 		3C5F47CA0FF1509B0086D8D1 /* IssuePriceFetcherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F47C90FF1509B0086D8D1 /* IssuePriceFetcherManager.m */; };
@@ -273,6 +274,8 @@
 		3C55E4891020C7B9009F04FF /* IssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueViewController.m; sourceTree = "<group>"; };
 		3C55E4F510226C29009F04FF /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
 		3C55E4F610226C29009F04FF /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
+		3C55E58B10237AF3009F04FF /* WorksBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorksBaseTableViewController.h; sourceTree = "<group>"; };
+		3C55E58C10237AF3009F04FF /* WorksBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorksBaseTableViewController.m; sourceTree = "<group>"; };
 		3C5F47900FF139D50086D8D1 /* SKProduct+LocalizedPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+LocalizedPrice.h"; sourceTree = "<group>"; };
 		3C5F47910FF139D50086D8D1 /* SKProduct+LocalizedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+LocalizedPrice.m"; sourceTree = "<group>"; };
 		3C5F47C50FF14A630086D8D1 /* IssuePriceFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssuePriceFetcher.h; sourceTree = "<group>"; };
@@ -635,6 +638,8 @@
 				3C246B130FE295EE00FCACDF /* AuthorViewController.h */,
 				3C246B140FE295EE00FCACDF /* AuthorViewController.m */,
 				3C246FAA0FE3FA8C00FCACDF /* AuthorViewController.xib */,
+				3C55E58B10237AF3009F04FF /* WorksBaseTableViewController.h */,
+				3C55E58C10237AF3009F04FF /* WorksBaseTableViewController.m */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -833,6 +838,7 @@
 				3CFA931F101FE5CD004D9F8A /* PlaceholderController.m in Sources */,
 				3C55E48A1020C7B9009F04FF /* IssueViewController.m in Sources */,
 				3C55E4F710226C29009F04FF /* Author.m in Sources */,
+				3C55E58D10237AF3009F04FF /* WorksBaseTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

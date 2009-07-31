@@ -7,6 +7,8 @@
 //
 
 #import "IssueViewController.h"
+#import "Issue.h"
+#import "Author.h"
 #import "Work.h"
 #import "WorkCell.h"
 
@@ -17,6 +19,47 @@
 -(id)initWithNumber:(NSString *)number {
   if (self = [super init]) {
     self.issue = [Issue issueWithNumber:number];
+    if (![issue hasBeenPurchased]) {
+      TTAlertViewController *alert = [[TTAlertViewController alloc] initWithTitle:@"Oops!" message:@"This issue has not been purchased."];
+      [alert addCancelButtonWithTitle:@"Cancel" URL:[NSString stringWithFormat:@"scarab://previewIssue/%@", issue.number]];
+      [alert showInView:self.view animated:YES];
+      [alert release];
+    } else {
+      if (![issue hasBeenDownloaded]) {
+        // TODO: add loading indicator!
+      
+        // Download authors in issue
+        NSArray *authorsInIssue = [Author findAllInIssue:issue];
+        
+        // insert author into DB unless they already exist -- TODO: update authors?
+        for (Author *author in authorsInIssue)
+          if ([Author authorWithId:author.authorId] == nil)
+            [AppDelegate.managedObjectContext insertObject:author];      
+        
+        // download works
+        NSArray *worksInIssue = [Work findAllInIssue:issue];
+        for (Work *work in worksInIssue)
+          // Could have been a free work and is already in DB, should already be linked to issue and author -- TODO: update works?
+          if ([Work workWithId:work.workId] == nil) {
+            [AppDelegate.managedObjectContext insertObject:work];
+            work.issue = issue;
+            work.author = [Author authorWithId:work.authorId];
+            
+            debugLog(@"work's position is a %@", [work.position className]);
+          }
+        
+        self.issue.downloaded = [NSNumber numberWithBool:YES];
+        
+        NSError *error = nil;
+        [AppDelegate save:&error];
+        if (error) {
+          debugLog(@"Error saving new authors and works:  %@", [error localizedDescription]);
+          // TODO: FIXME BITCH WHAT DO I DO?
+        }
+      }
+      self.works = [NSMutableArray arrayWithArray:[issue.works allObjects]];
+      [self.works sortUsingSelector:@selector(compareByPosition:)];
+    }
   }
   return self;
 }
@@ -43,55 +86,6 @@
 //  if (!fetchedNewIssues)
 //    [AppDelegate showHUDWithLabel:nil details:@"Checking for new issues" whileExecuting:@selector(fetchNewIssues) onTarget:self withObject:nil animated:YES];
 }
-
-#pragma mark Table view methods
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 1;
-}
-
-// Customize the number of rows in the table view.
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 11;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return kWorkCellHeight;
-}
-
--(Work *)workAtIndexPath:(NSIndexPath *)indexPath {
-  return nil;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  static NSString *CellIdentifier = @"WorkCell";
-  WorkCell *cell = (WorkCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-  if (cell == nil) {
-    cell = [WorkCell createNewCellFromNib];
-  }
-  
-  //Work *work = [self workAtIndexPath:indexPath];
-  
-//  [cell insertSubview:[issue swatchView] atIndex:0];
-//  cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_bg.png"]];
-//  //cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_bg_selected.png"]];
-//  cell.number.text = issue.number;
-//  cell.title.text = issue.title;
-//  cell.subtitle.text = issue.subtitle;
-
-  [UIHelpers addRoundedImageNamed:@"brian.jpg" toView:cell];
-  
-  cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_bg.png"]];
-  
-  return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  // TODO:  pick URL based on whether or not we've purchased it yet!
-  //TTOpenURL([NSString stringWithFormat:@"scarab://work/%@", [self workAtIndexPath:indexPath].workId]);
-  TTOpenURL(@"scarab://work");  
-}
-
 
 - (void)dealloc {
   [issue release];

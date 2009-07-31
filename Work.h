@@ -10,13 +10,31 @@
 
 #import "SMManagedObject.h"
 
+@class Issue;
+@class Author;
+
 @interface Work : SMManagedObject {
 
 }
 
+@property(retain) NSString *workId;
+@property(retain) NSString *authorId;
+@property(retain) NSString *title;
+@property(retain) NSString *body;
+@property(retain) NSString *position;
+
+@property(retain) Issue *issue;
+@property(retain) Author *author;
+
 @property(nonatomic,readonly) NSString *audioFileURL;
 @property(nonatomic,readonly) NSString *audioFilePath;
 
+#pragma mark Finders
+
++ (NSArray *)findAllInIssue:(Issue *)issue;
++ (Work *)workWithId:(NSString *)workId;
+
+#pragma mark Helpers
 - (BOOL)audioFileHasBeenDownloaded;
 - (BOOL)isAudioFileBeingDownloaded;
 

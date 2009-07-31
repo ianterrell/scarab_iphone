@@ -13,11 +13,11 @@
 
 @synthesize scrollView, name, location, author;
 
-
 -(id)initWithId:(NSString *)authorId {
   if (self = [super init]) {
     self.author = [Author authorWithId:authorId];
     if (self.author == nil) {
+      // TODO: add HUD or something to let them know a fetch is happening
       debugLog(@"fetching author with id %@ from server", authorId);
       Author *a = [Author findRemote:authorId];
       if (a == nil) {

@@ -11,6 +11,8 @@
 
 @implementation WorkCell
 
+@synthesize title, subtitle;
+
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
         // Initialization code
@@ -28,7 +30,9 @@
 
 
 - (void)dealloc {
-    [super dealloc];
+  [title release];
+  [subtitle release];
+  [super dealloc];
 }
 
 

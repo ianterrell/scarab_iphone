@@ -32,10 +32,10 @@
   // Start request to update purchase button
   // TODO: go back to this instead of hardcoded: [[IssuePriceFetcherManager defaultManager] fetchPriceForIssue:issue previewController:self];
   
-  self.title = @"Preview"; //[NSString stringWithFormat:@"Issue %@", issue.number];
+  self.title = @"Preview";//[NSString stringWithFormat:@"Preview %@", issue.title];
   self.issueNumber.text = issue.number;
   self.issueTitle.text = issue.title;
-  [self.description loadHTMLString:@"<html><head><style>body { font-family: helvetica; }</style></head><body><p>Welcome to <i>Scarab</i>, the only literary magazine designed for mobile devices. This month’s issue features the work of a new poet, largely unknown (although a bit of a big deal in Alaska). Dashing, fetching, and incorrigibly charming, Brian Wilkins is the model of a new poet who eschews the \"new poetry\". He eschews many things, not the least of which is caution, as can be seen in his daring declaration that his ghazals are \"more splendiforous than the sitar, more akin to aero-acrobatics than mere words.\"</p><p>It’s quite an issue; we hope you enjoy it as much as he does.</p></body></html>" baseURL:nil];
+  [self.description loadHTMLString:@"<html><head><style>body { font-family: helvetica; }</style></head><body><p></p></body></html>" baseURL:nil];
   
   [self.view insertSubview:[issue swatchView] belowSubview:scarab];
   

@@ -96,7 +96,7 @@
   [map from:@"*" toViewController:[TTWebController class]];
   [map from:@"scarab://tabBar" toSharedViewController:[TabBarController class]];
   [map from:@"scarab://library" toSharedViewController:[LibraryViewController class]];
-  [map from:@"scarab://previewIssue/(initWithNumber:)" toViewController:[IssuePreviewController class]];
+  [map from:@"scarab://previewIssue/(initWithNumber:)" parent:@"scarab://library" toViewController:[IssuePreviewController class] selector:nil transition:0];
   [map from:@"scarab://issue/(initWithNumber:)" parent:@"scarab://library" toViewController:[IssueViewController class] selector:nil transition:0];  
   [map from:@"scarab://work" toViewController:[WorkViewController class]];
   [map from:@"scarab://author/(initWithId:)" toViewController:[AuthorViewController class]];

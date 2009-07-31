@@ -17,8 +17,13 @@
 @dynamic subtitle;
 @dynamic productIdentifier;
 @dynamic transactionIdentifier;
+@dynamic downloaded;
 
-+(NSArray *)findAllSinceNumber:(NSNumber *)issueNumber {
+@dynamic works;
+
+#pragma mark Finders
+
++ (NSArray *)findAllSinceNumber:(NSNumber *)issueNumber {
   // htp://server/issues/since/:number.xml
   NSString *issuesSincePath = [NSString stringWithFormat:@"%@%@/since/%d%@",
                               [self getRemoteSite],
@@ -29,15 +34,26 @@
 	return [self performSelector:[self getRemoteParseDataMethod] withObject:response.body];
 }
 
-+(Issue *)issueWithProductIdentifier:(NSString *)productIdentifier {
++ (Issue *)issueWithProductIdentifier:(NSString *)productIdentifier {
   return [self fetchFirstWithPredicate:[NSPredicate predicateWithFormat:@"productIdentifier = %@", productIdentifier]];
 }
 
-+(Issue *)issueWithNumber:(NSString *)number {
++ (Issue *)issueWithNumber:(NSString *)number {
   return [self fetchFirstWithPredicate:[NSPredicate predicateWithFormat:@"number = %@", number]];
 }
 
--(TTView *)swatchView {
+#pragma mark Helpers
+
+- (BOOL)hasBeenPurchased {
+  // TODO: implement
+  return YES;
+}
+
+- (BOOL)hasBeenDownloaded {
+  return [self.downloaded boolValue];
+}
+
+- (TTView *)swatchView {
   TTStyle *style = [TTShapeStyle styleWithShape:[TTRoundedRectangleShape shapeWithRadius:8] next:
     [TTSolidFillStyle styleWithColor:[self uiColor] next:
     [TTSolidBorderStyle styleWithColor:RGBCOLOR(160, 160, 160) width:1 next:nil]]];
@@ -47,7 +63,7 @@
   return view;
 }
 
--(UIColor *)uiColor {
+- (UIColor *)uiColor {
   NSString *hexColor = [NSString stringWithFormat:@"0x%@", self.color];
   int i;
   sscanf([hexColor UTF8String], "%x", &i);

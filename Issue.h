@@ -19,12 +19,17 @@
 @property(retain) NSString *subtitle;
 @property(retain) NSString *productIdentifier;
 @property(retain) NSString *transactionIdentifier;
+@property(retain) NSNumber *downloaded;
 
-+(NSArray *)findAllSinceNumber:(NSNumber *)issueNumber;
-+(Issue *)issueWithNumber:(NSString *)number;
-+(Issue *)issueWithProductIdentifier:(NSString *)productIdentifier;
+@property(retain) NSMutableSet *works;
 
--(TTView *)swatchView;
--(UIColor *)uiColor;
++ (NSArray *)findAllSinceNumber:(NSNumber *)issueNumber;
++ (Issue *)issueWithNumber:(NSString *)number;
++ (Issue *)issueWithProductIdentifier:(NSString *)productIdentifier;
+
+- (BOOL)hasBeenPurchased;
+- (BOOL)hasBeenDownloaded;
+- (TTView *)swatchView;
+- (UIColor *)uiColor;
 
 @end

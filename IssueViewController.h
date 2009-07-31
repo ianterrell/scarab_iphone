@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Issue.h"
+#import "WorksBaseTableViewController.h"
 
-@interface IssueViewController : UITableViewController {
+@class Issue;
+
+@interface IssueViewController : WorksBaseTableViewController {
   Issue *issue;
 }
 

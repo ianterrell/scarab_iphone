@@ -8,6 +8,8 @@
 
 #import "SMManagedObject.h"
 
+@class Issue;
+
 @interface Author : SMManagedObject {
 
 }
@@ -18,7 +20,14 @@
 @property(retain) NSString *bio;
 @property(retain) NSString *photoUrl;
 
+@property(retain) NSMutableSet *works;
+
+#pragma mark Finders
+
++ (NSArray *)findAllInIssue:(Issue *)issue;
 + (Author *)authorWithId:(NSString *)authorId;
+
+#pragma mark Helpers
 
 - (NSString *)fullyQualifiedPhotoUrl;
 
