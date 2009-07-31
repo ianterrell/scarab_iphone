@@ -43,7 +43,7 @@
     } 
   }
   debugLog(@"store done with switch, number in progress: %d", numberInProgress);
-  // This might need tweaked once I do restoring transactions, hard to say how many times this will get called
+  // TODO: This might need tweaked once I do restoring transactions, hard to say how many times this will get called
   if (numberInProgress > 0)
     [AppDelegate showHUDWithLabel:nil details:@"Purchasing" animated:YES];
   else
@@ -65,10 +65,8 @@
       // TODO: FIXME BITCH WHAT DO I DO?
     }
     
-    // Update the library view to remove "preview"
-    // If the preview view is shown, replace it with the regular issue view
-    // Maybe just alert the user to go back to library view and reenter issue? seems a little better than "magic"
-    
+    TTOpenURL([NSString stringWithFormat:@"scarab://issue/%@", issue.number]);
+        
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction]; 
   } else {
     debugLog(@"Transaction not saved on server.");

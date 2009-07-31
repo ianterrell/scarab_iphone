@@ -38,7 +38,7 @@
   // Set up byline
   TTStyledTextLabel* label = [[[TTStyledTextLabel alloc] initWithFrame:self.view.bounds] autorelease];
   label.font = [UIFont systemFontOfSize:14];
-  label.text = [TTStyledText textFromXHTML:@"<i>A poem by <a href=\"scarab://author\">Brian Wilkins</a></i>" lineBreaks:NO URLs:YES];
+  label.text = [TTStyledText textFromXHTML:@"<i>A poem by <a href=\"scarab://author/1\">Brian Wilkins</a></i>" lineBreaks:NO URLs:YES];
   label.frame = CGRectMake(80, 52, 200, 23);
   label.textColor = RGBCOLOR(100,100,100);
   label.contentInset = UIEdgeInsetsMake(3, 0, 3, 0);

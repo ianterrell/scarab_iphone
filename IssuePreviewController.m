@@ -13,6 +13,7 @@
 #import "WorkViewController.h"
 #import "SMStore.h"
 #import "IssuePriceFetcherManager.h"
+#import "PlaceholderController.h"
 
 @implementation IssuePreviewController
 
@@ -29,7 +30,7 @@
   [super viewDidLoad];
   
   // Start request to update purchase button
-  [[IssuePriceFetcherManager defaultManager] fetchPriceForIssue:issue previewController:self];
+  // TODO: go back to this instead of hardcoded: [[IssuePriceFetcherManager defaultManager] fetchPriceForIssue:issue previewController:self];
   
   self.title = @"Preview"; //[NSString stringWithFormat:@"Issue %@", issue.number];
   self.issueNumber.text = issue.number;
@@ -48,6 +49,10 @@
   [biv release];
   self.purchaseButton.enabled = NO;
   [self.view addSubview:self.purchaseButton];
+  
+  // TODO: remove
+  [self updatePurchaseButtonWithPrice:@"2.99"];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -89,7 +94,9 @@
 }
 
 -(IBAction)purchaseIssue {
-  [[SMStore defaultStore] purchaseIssue:issue];
+  // TODO: go back to this! [[SMStore defaultStore] purchaseIssue:issue];
+  debugLog(@"purchasing!");
+  TTOpenURL([NSString stringWithFormat:@"scarab://issue/%@", issue.number]);
 }
 
 - (void)updatePurchaseButtonWithPrice:(NSString *)price { 

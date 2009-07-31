@@ -25,6 +25,8 @@
       return @"Sync Device";
     case PlaceholderCleanUp:
       return @"Clean Up Files";
+    case PlaceholderIssue:
+      return @"Issue";
     default:
       return @"";
   }
@@ -43,6 +45,8 @@
     case PlaceholderSync:
       return @"57-download.png";
     case PlaceholderCleanUp:
+      return @"20-gear2.png";
+    case PlaceholderIssue:
       return @"20-gear2.png";
     default:
       return @"";

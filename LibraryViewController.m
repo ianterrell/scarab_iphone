@@ -209,7 +209,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   // TODO:  pick URL based on whether or not we've purchased it yet!
-  TTOpenURL([NSString stringWithFormat:@"scarab://issue/%@", [self issueAtIndexPath:indexPath].number]);
+  TTOpenURL([NSString stringWithFormat:@"scarab://previewIssue/%@", [self issueAtIndexPath:indexPath].number]);
   
 //	IssuePreviewController *issuePreviewController = [[IssuePreviewController alloc] initWithNibName:@"IssuePreviewController" bundle:nil];
 //  issuePreviewController.issue = [self issueAtIndexPath:indexPath];

@@ -14,9 +14,9 @@
 }
 
 
-+(TTImageView *)newRoundedImageNamed:(NSString *)imageName;
-+(TTImageView *)newRoundedImageNamed:(NSString *)imageName withRect:(CGRect)rect andRadius:(CGFloat)radius;
-+(void)addRoundedImageNamed:(NSString *)imageName toView:(UIView *)view;
-+(void)addRoundedImageNamed:(NSString *)imageName toView:(UIView *)view withRect:(CGRect)rect andRadius:(CGFloat)radius;
++ (TTImageView *)newRoundedImageNamed:(NSString *)imageName;
++ (TTImageView *)newRoundedImageWithURL:(NSString *)URL;
++ (void)addRoundedImageNamed:(NSString *)imageName toView:(UIView *)view;
++ (void)addRoundedImageWithURL:(NSString *)URL toView:(UIView *)view;
 
 @end

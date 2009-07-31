@@ -15,6 +15,7 @@ typedef enum {
   PlaceholderFeedback,
   PlaceholderSync,
   PlaceholderCleanUp,
+  PlaceholderIssue,
 } PlaceholderType;
 
 @interface PlaceholderController : UIViewController {

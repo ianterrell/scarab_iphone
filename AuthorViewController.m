@@ -7,41 +7,63 @@
 //
 
 #import "AuthorViewController.h"
-
+#import "Author.h"
 
 @implementation AuthorViewController
 
-@synthesize scrollView;
+@synthesize scrollView, name, location, author;
+
+
+-(id)initWithId:(NSString *)authorId {
+  if (self = [super init]) {
+    self.author = [Author authorWithId:authorId];
+    if (self.author == nil) {
+      debugLog(@"fetching author with id %@ from server", authorId);
+      Author *a = [Author findRemote:authorId];
+      if (a == nil) {
+        // TODO: handle error
+        debugLog(@"error!  couldn't find author on the server -- this could happen; handle!");
+      } else {
+        [AppDelegate.managedObjectContext insertObject:a];
+        NSError *error = nil;
+        [AppDelegate save:&error];
+        if (error) {
+          debugLog(@"Error saving new author:  %@", [error localizedDescription]);
+          // TODO: FIXME BITCH WHAT DO I DO?
+        } else {
+          self.author = a;
+        }
+      }
+    }
+  }
+  return self;
+}
+
 
 -(void)viewDidLoad {
-  // TODO: Set real author information, like, duh.
+  self.title = self.author.name;
+  self.name.text = self.author.name;
+  self.location.text = self.author.location;
+  [UIHelpers addRoundedImageWithURL:[self.author fullyQualifiedPhotoUrl] toView:self.view];
   
-  self.title = @"Brian Wilkins";
-  
-  // Set author image with rounded corners
-  [UIHelpers addRoundedImageNamed:@"brian.jpg" toView:self.view];
-  
+  debugLog(@"bio is: ------%@------", self.author.bio);
   // Set up bio
   TTStyledTextLabel* label = [[[TTStyledTextLabel alloc] initWithFrame:self.view.bounds] autorelease];
-  
   label.font = [UIFont systemFontOfSize:14];
-  
-  NSString *bioCopy = @"<b>Brian Wilkins</b> currently lives on an air-mattress which floats down the Cocheco river in heavy rains. He holds, nay clutches, a MFA from the University of New Hampshire, which he believes will be rescinded in the near future. He has been published several times out of pity. His current venture is this very magazine, the finest thing he has accomplished short of winning a dance-a-thon.<br/><br/>You can find his latest works at <a href=\"http://www.amazon.com/\">Amazon.com</a>.";
-  //<ul><li>Webpage: <a href=\"http://ianterrell.com\">http://ianterrell.com</a></li><li>Email: <a href=\"mailto:ian.terrell@gmail.com\">ian.terrell@gmail.com</a></li></ul>
-  label.text = [TTStyledText textFromXHTML:bioCopy lineBreaks:YES URLs:YES];
+  label.text = [TTStyledText textFromXHTML:self.author.bio lineBreaks:YES URLs:YES];
   label.frame = CGRectMake(0, 0, 320, 283);
   label.contentInset = UIEdgeInsetsMake(8, 8, 8, 8);
   label.backgroundColor = [UIColor clearColor];  
   [label sizeToFit];
   [scrollView addSubview:label];
-  
   scrollView.contentSize = CGSizeMake(scrollView.width, label.height);
-  
-  AppDelegate.visibleController = self;
 }
 
 -(void)dealloc {
   [scrollView release];
+  [author release];
+  [name release];
+  [location release];
   [super dealloc];
 }
 

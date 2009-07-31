@@ -11,8 +11,9 @@
 #import "ScarabStyleSheet.h"
 #import "SMStore.h"
 
-#import "IssuePreviewController.h"
 #import "LibraryViewController.h"
+#import "IssueViewController.h"
+#import "IssuePreviewController.h"
 #import "WorkViewController.h"
 #import "AuthorViewController.h"
 #import "TabBarController.h"
@@ -78,7 +79,7 @@
 
 - (void)setUpObjectiveResource {
   // TODO: Extract ObjectiveResource config out to bundle or some such
-  [ObjectiveResourceConfig setSite:@"http://staging.scarabmag.com/"];
+  [ObjectiveResourceConfig setSite:@"http://localhost:3000/"]; //staging.scarabmag.com
   //[ObjectiveResourceConfig setUser:@"remoteResourceUserName"];
   //[ObjectiveResourceConfig setPassword:@"remoteResourcePassword"];
   [ObjectiveResourceConfig setResponseType:XmlResponse];
@@ -95,11 +96,12 @@
   [map from:@"*" toViewController:[TTWebController class]];
   [map from:@"scarab://tabBar" toSharedViewController:[TabBarController class]];
   [map from:@"scarab://library" toSharedViewController:[LibraryViewController class]];
-  [map from:@"scarab://issue/(initWithNumber:)" toViewController:[IssuePreviewController class]];
+  [map from:@"scarab://previewIssue/(initWithNumber:)" toViewController:[IssuePreviewController class]];
+  [map from:@"scarab://issue/(initWithNumber:)" parent:@"scarab://library" toViewController:[IssueViewController class] selector:nil transition:0];  
   [map from:@"scarab://work" toViewController:[WorkViewController class]];
-  [map from:@"scarab://author" toViewController:[AuthorViewController class]];
+  [map from:@"scarab://author/(initWithId:)" toViewController:[AuthorViewController class]];
   [map from:@"scarab://placeholder/(initWithType:)" toViewController:[PlaceholderController class]];  
-  
+
   // Before opening the tab bar, we see if the controller history was persisted the last time
   if (![navigator restoreViewControllers]) {
     // This is the first launch, so we just start with the tab bar

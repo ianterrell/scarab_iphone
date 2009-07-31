@@ -89,6 +89,8 @@
 		3C2470790FE7E99800FCACDF /* SMStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2470780FE7E99800FCACDF /* SMStore.m */; };
 		3C24707E0FE7EA6B00FCACDF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C24707D0FE7EA6B00FCACDF /* StoreKit.framework */; };
 		3C5119E50FF01C34009CDD9F /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5119E40FF01C34009CDD9F /* Transaction.m */; };
+		3C55E48A1020C7B9009F04FF /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C55E4891020C7B9009F04FF /* IssueViewController.m */; };
+		3C55E4F710226C29009F04FF /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C55E4F610226C29009F04FF /* Author.m */; };
 		3C5F47920FF139D50086D8D1 /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F47910FF139D50086D8D1 /* SKProduct+LocalizedPrice.m */; };
 		3C5F47C70FF14A630086D8D1 /* IssuePriceFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F47C60FF14A630086D8D1 /* IssuePriceFetcher.m */; };
 		3C5F47CA0FF1509B0086D8D1 /* IssuePriceFetcherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F47C90FF1509B0086D8D1 /* IssuePriceFetcherManager.m */; };
@@ -267,6 +269,10 @@
 		3C24707D0FE7EA6B00FCACDF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3C5119E30FF01C34009CDD9F /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
 		3C5119E40FF01C34009CDD9F /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
+		3C55E4881020C7B9009F04FF /* IssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueViewController.h; sourceTree = "<group>"; };
+		3C55E4891020C7B9009F04FF /* IssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueViewController.m; sourceTree = "<group>"; };
+		3C55E4F510226C29009F04FF /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
+		3C55E4F610226C29009F04FF /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
 		3C5F47900FF139D50086D8D1 /* SKProduct+LocalizedPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+LocalizedPrice.h"; sourceTree = "<group>"; };
 		3C5F47910FF139D50086D8D1 /* SKProduct+LocalizedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+LocalizedPrice.m"; sourceTree = "<group>"; };
 		3C5F47C50FF14A630086D8D1 /* IssuePriceFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssuePriceFetcher.h; sourceTree = "<group>"; };
@@ -574,6 +580,8 @@
 				3C9318F80FE873E0009D3731 /* Work.m */,
 				3C5119E30FF01C34009CDD9F /* Transaction.h */,
 				3C5119E40FF01C34009CDD9F /* Transaction.m */,
+				3C55E4F510226C29009F04FF /* Author.h */,
+				3C55E4F610226C29009F04FF /* Author.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -613,12 +621,14 @@
 				3C2468B80FE16F9000FCACDF /* IssueCell.h */,
 				3C2468B90FE16F9000FCACDF /* IssueCell.m */,
 				3C2468AD0FE16F4F00FCACDF /* IssueCell.xib */,
-				3C2469B70FE1986F00FCACDF /* WorkCell.h */,
-				3C2469B80FE1986F00FCACDF /* WorkCell.m */,
-				3C2469B40FE1985B00FCACDF /* WorkCell.xib */,
+				3C55E4881020C7B9009F04FF /* IssueViewController.h */,
+				3C55E4891020C7B9009F04FF /* IssueViewController.m */,
 				3C2469C50FE19BB300FCACDF /* IssuePreviewController.h */,
 				3C2469C60FE19BB300FCACDF /* IssuePreviewController.m */,
 				3C2469AF0FE1947700FCACDF /* IssuePreviewController.xib */,
+				3C2469B70FE1986F00FCACDF /* WorkCell.h */,
+				3C2469B80FE1986F00FCACDF /* WorkCell.m */,
+				3C2469B40FE1985B00FCACDF /* WorkCell.xib */,
 				3C246A660FE1FD8200FCACDF /* WorkViewController.h */,
 				3C246A670FE1FD8200FCACDF /* WorkViewController.m */,
 				3C246A600FE1F81500FCACDF /* WorkViewController.xib */,
@@ -821,6 +831,8 @@
 				3C5F47CA0FF1509B0086D8D1 /* IssuePriceFetcherManager.m in Sources */,
 				3CFA923F101FC4EF004D9F8A /* TabBarController.m in Sources */,
 				3CFA931F101FE5CD004D9F8A /* PlaceholderController.m in Sources */,
+				3C55E48A1020C7B9009F04FF /* IssueViewController.m in Sources */,
+				3C55E4F710226C29009F04FF /* Author.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

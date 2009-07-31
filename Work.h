@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#import "SMManagedObject.h"
 
-@interface Work : NSObject {
+@interface Work : SMManagedObject {
 
 }
 
