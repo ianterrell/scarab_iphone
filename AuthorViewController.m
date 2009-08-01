@@ -41,22 +41,11 @@
 
 
 -(void)viewDidLoad {
-  self.title = self.author.name;
+  self.title = @"Author";
   self.name.text = self.author.name;
   self.location.text = self.author.location;
   [UIHelpers addRoundedImageWithURL:[self.author fullyQualifiedPhotoUrl] toView:self.view];
-  
-  debugLog(@"bio is: ------%@------", self.author.bio);
-  // Set up bio
-  TTStyledTextLabel* label = [[[TTStyledTextLabel alloc] initWithFrame:self.view.bounds] autorelease];
-  label.font = [UIFont systemFontOfSize:14];
-  label.text = [TTStyledText textFromXHTML:self.author.bio lineBreaks:YES URLs:YES];
-  label.frame = CGRectMake(0, 0, 320, 283);
-  label.contentInset = UIEdgeInsetsMake(8, 8, 8, 8);
-  label.backgroundColor = [UIColor clearColor];  
-  [label sizeToFit];
-  [scrollView addSubview:label];
-  scrollView.contentSize = CGSizeMake(scrollView.width, label.height);
+  [UIHelpers addCopy:self.author.bio toScrollView:scrollView];
 }
 
 -(void)dealloc {

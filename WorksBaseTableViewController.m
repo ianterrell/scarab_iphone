@@ -54,9 +54,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  // TODO:  pick URL based on whether or not we've purchased it yet!
-  //TTOpenURL([NSString stringWithFormat:@"scarab://work/%@", [self workAtIndexPath:indexPath].workId]);
-  TTOpenURL(@"scarab://work");  
+  TTOpenURL([NSString stringWithFormat:@"scarab://work/%@", [self workAtIndexPath:indexPath].workId]);
 }
 
 - (void)dealloc {

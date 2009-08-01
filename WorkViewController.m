@@ -9,7 +9,9 @@
 #import "WorkViewController.h"
 #import "AuthorViewController.h"
 #import "SMWorkAudioDownloadManager.h"
+#import "Issue.h"
 #import "Work.h"
+#import "Author.h"
 
 #define kToolbarHeight 44
 #define kToolbarAnimationDuration 0.3
@@ -18,39 +20,49 @@
 
 @implementation WorkViewController
 
-@synthesize workText, favoriteStar, authorImage;
+@synthesize titleLabel, scrollView, favoriteStar;
 @synthesize downloadingToolbarView, downloadingProgressView;
 @synthesize playingToolbarView, playingToolbar, playingSlider, playingTimeElapsed, playingTimeRemaining, playButton, pauseButton;
 @synthesize work, audioPlayer, audioUpdateTimer, wasPlaying, sliderCooledDown, sliderMoving;
 
+-(id)initWithId:(NSString *)workId {
+  if (self = [super init]) {
+    self.work = [Work workWithId:workId];
+    if (self.work == nil) {
+      TTAlertViewController *alert = [[TTAlertViewController alloc] initWithTitle:@"Oops!" message:@"This work has not been purchased or downloaded yet."];
+      [alert addCancelButtonWithTitle:@"Cancel" URL:@"scarab://library/%@"];
+      [alert showInView:self.view animated:YES];
+      [alert release];
+    }
+  }
+  return self;
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  // TODO: set up work with a real one on initialization and navigation push
-  self.work = [[Work alloc] init];
-  
-  self.title = @"Issue 4";
-  [self.workText loadHTMLString:@"<html><head><style>body { font-family: helvetica; }</style></head><body><p>In Ohio, my friend Lee becomes <br/>&nbsp;&nbsp;&nbsp;&nbsp;a monarch by smoking milkweed.<br/>I don’t suggest it. All the green stones <br/>&nbsp;&nbsp;&nbsp;&nbsp;in the creek point<br/>and laugh at his blond-tufted wings.</p><p>I ride fevers the way a hawk surfs a <br/>&nbsp;&nbsp;&nbsp;&nbsp;thermal: somewhere beneath me,<br/>I am a chattering delirium of martyrs. <br/>&nbsp;&nbsp;&nbsp;&nbsp;Staked, I learn this is my fault.<br/>Flaming, I learn I am blameless, that even <br/>&nbsp;&nbsp;&nbsp;&nbsp;good guys get burned.</p><p>People never run from a house fire: <br/>&nbsp;&nbsp;&nbsp;&nbsp;the fire trucks<br/>have sirens just to clear the way, <br/>&nbsp;&nbsp;&nbsp;&nbsp;but this is also<br/>jealousy: everyone wants to be first <br/>&nbsp;&nbsp;&nbsp;&nbsp;to feel the heat.</p><p>Ask the Cuyahoga, which burns and <br/>&nbsp;&nbsp;&nbsp;&nbsp;freezes in its season.<br/>Ask it what? I’ve forgotten, but I’m sure <br/>&nbsp;&nbsp;&nbsp;&nbsp;it began with<br/>a letter balanced on the tip of <br/>&nbsp;&nbsp;&nbsp;&nbsp;lamplight, or a kiss.</p><p>My father caught my mother <br/>&nbsp;&nbsp;&nbsp;&nbsp;with a campfire<br/>set with singing, oak leaves, <br/>&nbsp;&nbsp;&nbsp;&nbsp;the hissing of a Coleman stove.<br/>My mother caught my father with a <br/>&nbsp;&nbsp;&nbsp;&nbsp;honeycomb and a bear.</p><p>Brian, this is not wisdom. It is a string <br/>&nbsp;&nbsp;&nbsp;&nbsp;of cheap pearls,<br/>and everyone knows wisdom is a <br/>&nbsp;&nbsp;&nbsp;&nbsp;set of crossing<br/>white ankles in a library that cures <br/>&nbsp;&nbsp;&nbsp;&nbsp;your desire for books.</p><br/><i>Read by the author</i><br/><br/><br/><br/></body></html>" baseURL:nil];
-    
-  // Set author image with rounded corners
-  [UIHelpers addRoundedImageNamed:@"brian.jpg" toView:self.view];
-  
-  // Set up byline
+  self.title = @"Poem"; // TODO: Poetry/Fiction/Essay
+
+  // Title
+  self.titleLabel.text = self.work.title;
+
+  // Byline
   TTStyledTextLabel* label = [[[TTStyledTextLabel alloc] initWithFrame:self.view.bounds] autorelease];
   label.font = [UIFont systemFontOfSize:14];
-  label.text = [TTStyledText textFromXHTML:@"<i>A poem by <a href=\"scarab://author/1\">Brian Wilkins</a></i>" lineBreaks:NO URLs:YES];
+  label.text = [TTStyledText textFromXHTML:[NSString stringWithFormat:@"<i>by <a href=\"scarab://author/%@\">%@</a></i>", self.work.authorId, self.work.author.name] lineBreaks:NO URLs:YES]; 
   label.frame = CGRectMake(80, 52, 200, 23);
   label.textColor = RGBCOLOR(100,100,100);
   label.contentInset = UIEdgeInsetsMake(3, 0, 3, 0);
   label.backgroundColor = [UIColor clearColor];  
   [self.view addSubview:label];
+
+  // Image
+  [UIHelpers addRoundedImageWithURL:[self.work.author fullyQualifiedPhotoUrl] toView:self.view];
   
-  // Set up navigation to author view
-  // TODO: Small chance the downloader will keep a copy of this around and so not dealloc and release -- how to handle here?
-  //[[TTNavigationCenter defaultCenter] addView:@"author" target:self action:@selector(showAuthorViewWithObject:type:state:)];
-  
-  // Set up audio file
-  
+  // Body
+  [UIHelpers addCopy:[NSString stringWithFormat:@"%@\n\n\n<i>Read by %@</i>\n\n\n\n", self.work.body, self.work.reader] toScrollView:scrollView];
+
+  // Audio
   if ([work audioFileHasBeenDownloaded]) {
     [self setUpAudioPlayer];
   } else {
@@ -216,11 +228,9 @@
 - (void)dealloc {
   debugLog(@"deallocing WorkViewController");
   
-//  [[TTNavigationCenter defaultCenter] removeView:@"author"];
-  
   [favoriteStar release];
-  [workText release];
-  [authorImage release];
+  [titleLabel release];
+  [scrollView release];
   
   [downloadingToolbarView release];
   [downloadingProgressView release];

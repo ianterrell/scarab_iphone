@@ -52,6 +52,7 @@
 #pragma mark Issue Management
 
 - (void)loadIssuesFromDb {
+  // TODO:  does this work alphabetically or numerically?  i.e. 1, 10, 11, 2, 3, 4 (prols alphabet, LAME)
   NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES];
   self.issuesInDb = [Issue fetchWithSortDescriptor:sortDescriptor];
   [sortDescriptor release];

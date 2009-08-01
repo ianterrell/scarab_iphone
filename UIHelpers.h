@@ -19,4 +19,6 @@
 + (void)addRoundedImageNamed:(NSString *)imageName toView:(UIView *)view;
 + (void)addRoundedImageWithURL:(NSString *)URL toView:(UIView *)view;
 
++ (void)addCopy:(NSString *)copy toScrollView:(UIScrollView *)scrollView;
+
 @end

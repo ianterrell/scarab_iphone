@@ -11,13 +11,14 @@
 @class Work;
 
 @interface WorkViewController : UIViewController <AVAudioPlayerDelegate> {
-  IBOutlet UIWebView *workText;
+  IBOutlet UILabel *titleLabel;
+  IBOutlet UIScrollView *scrollView;
   IBOutlet UIButton *favoriteStar;
-  IBOutlet UIImageView *authorImage;  //TODO: remove?
  
   IBOutlet UIView *downloadingToolbarView;
   IBOutlet UIProgressView *downloadingProgressView;
   
+  // TODO: abstract out player stuff to helper class?
   IBOutlet UIView *playingToolbarView;
   IBOutlet UIToolbar *playingToolbar;
   IBOutlet UISlider *playingSlider;
@@ -32,9 +33,9 @@
   BOOL wasPlaying, sliderCooledDown, sliderMoving;
 }
 
-@property(nonatomic,retain) UIWebView *workText;
+@property(nonatomic,retain) UILabel *titleLabel;
+@property(nonatomic,retain) UIScrollView *scrollView;
 @property(nonatomic,retain) UIButton *favoriteStar;
-@property(nonatomic,retain) UIImageView *authorImage;
 
 @property(nonatomic,retain) UIView *downloadingToolbarView;
 @property(nonatomic,retain) UIProgressView *downloadingProgressView;

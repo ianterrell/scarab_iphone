@@ -13,7 +13,7 @@
 
 @implementation Work
 
-@dynamic authorId, workId, title, body, position;
+@dynamic authorId, workId, title, body, position, reader;
 @dynamic issue, author;
 
 #pragma mark Finders

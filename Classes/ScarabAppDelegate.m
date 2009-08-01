@@ -98,7 +98,7 @@
   [map from:@"scarab://library" toSharedViewController:[LibraryViewController class]];
   [map from:@"scarab://previewIssue/(initWithNumber:)" parent:@"scarab://library" toViewController:[IssuePreviewController class] selector:nil transition:0];
   [map from:@"scarab://issue/(initWithNumber:)" parent:@"scarab://library" toViewController:[IssueViewController class] selector:nil transition:0];  
-  [map from:@"scarab://work" toViewController:[WorkViewController class]];
+  [map from:@"scarab://work/(initWithId:)" toViewController:[WorkViewController class]];
   [map from:@"scarab://author/(initWithId:)" toViewController:[AuthorViewController class]];
   [map from:@"scarab://placeholder/(initWithType:)" toViewController:[PlaceholderController class]];  
 

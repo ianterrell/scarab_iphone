@@ -52,6 +52,17 @@
   [self addRoundedImageNamed:nil orURL:URL toView:view withRect:kDefaultRoundedImageRect andRadius:kDefaultRoundedImageRadius];
 }
 
++ (void)addCopy:(NSString *)copy toScrollView:(UIScrollView *)scrollView {
+  TTStyledTextLabel* label = [[[TTStyledTextLabel alloc] initWithFrame:CGRectZero] autorelease];
+  label.font = [UIFont systemFontOfSize:14];
+  label.text = [TTStyledText textFromXHTML:copy lineBreaks:YES URLs:YES];
+  label.frame = CGRectMake(0, 0, 320, 283);
+  label.contentInset = UIEdgeInsetsMake(8, 8, 8, 8);
+  label.backgroundColor = [UIColor clearColor];  
+  [label sizeToFit];
+  [scrollView addSubview:label];
+  scrollView.contentSize = CGSizeMake(scrollView.width, label.height);
+}
 
 
 @end

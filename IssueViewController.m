@@ -44,8 +44,6 @@
             [AppDelegate.managedObjectContext insertObject:work];
             work.issue = issue;
             work.author = [Author authorWithId:work.authorId];
-            
-            debugLog(@"work's position is a %@", [work.position className]);
           }
         
         self.issue.downloaded = [NSNumber numberWithBool:YES];
