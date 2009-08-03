@@ -47,7 +47,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-
+  debugLog(@"error downloading file, failed. %@", [error localizedDescription]);
 }
 
 

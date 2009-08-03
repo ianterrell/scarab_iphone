@@ -45,14 +45,18 @@
   return [[SMWorkAudioDownloadManager defaultManager] isAudioFileBeingDownloadedForWork:self];
 }
 
-// TODO:  This is temporary, replace some stuff!
 - (NSString *)audioFileURL {
-  return [NSString stringWithFormat:@"%@/test.mp3", AppDelegate.baseServerURL];
+  // htp://server/works/:number/audio
+  debugLog([NSString stringWithFormat:@"%@%@/%d/audio", [Work getRemoteSite], [Work getRemoteCollectionName], [self.workId intValue]]);
+  return [NSString stringWithFormat:@"%@%@/%d/audio", [Work getRemoteSite], [Work getRemoteCollectionName], [self.workId intValue]];
 }
 
-// TODO:  This is temporary, replace some stuff!
++ (NSString *)audioDirectoryPath {
+  return [NSString stringWithFormat:@"%@/audio", [AppDelegate applicationDocumentsDirectory]];
+}
+
 - (NSString *)audioFilePath {
-  return [NSString stringWithFormat:@"%@/audiofile.mp3", [AppDelegate applicationDocumentsDirectory]];
+  return [NSString stringWithFormat:@"%@/%d.mp3", [Work audioDirectoryPath], [self.workId intValue]];
 }
 
 - (BOOL)isFree {

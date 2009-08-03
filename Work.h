@@ -37,6 +37,7 @@
 + (Work *)workWithId:(NSString *)workId;
 
 #pragma mark Helpers
++ (NSString *)audioDirectoryPath;
 - (BOOL)audioFileHasBeenDownloaded;
 - (BOOL)isAudioFileBeingDownloaded;
 - (BOOL)isFree;

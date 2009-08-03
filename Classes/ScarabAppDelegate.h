@@ -44,6 +44,7 @@
 
 #pragma mark Setup Helper Methods
 
+- (void)setUpAudioDirectory;
 - (void)setUpObjectiveResource;
 - (void)setUpThree20;
 

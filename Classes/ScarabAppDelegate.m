@@ -19,6 +19,8 @@
 #import "TabBarController.h"
 #import "PlaceholderController.h"
 
+#import "Work.h"
+
 #define kDatabaseName @"Scarab.sqlite3"
 #define kConnectionTimeout 20.0
 
@@ -41,6 +43,9 @@
   
   // TEST
 //  [[SMStore defaultStore] test];
+
+
+  [self setUpAudioDirectory];
 
   [self setUpObjectiveResource];
   [self setUpThree20];
@@ -76,6 +81,17 @@
 
 #pragma mark -
 #pragma mark Setup Helper Methods
+
+- (void)setUpAudioDirectory {
+  NSFileManager *manager = [NSFileManager defaultManager];
+  if (![manager fileExistsAtPath:[Work audioDirectoryPath]]) {
+    debugLog(@"Audio directory does not exist, creating.");
+    if (![manager createDirectoryAtPath:[Work audioDirectoryPath] attributes:nil]) {
+      // TODO: fix me!
+      debugLog(@"Error!  This is a problem.  Couldn't create audio directory.");
+    }
+  }
+}
 
 /**
  Returns the base URL where images and other media are found online.
