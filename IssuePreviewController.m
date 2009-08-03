@@ -17,7 +17,7 @@
 
 @implementation IssuePreviewController
 
-@synthesize issue, scarab, issueNumber, issueTitle, description, freeWorkTableView, purchaseButton;
+@synthesize issue, scarab, issueNumber, issueTitle, scrollView, purchaseButton;
 
 -(id)initWithNumber:(NSString *)number {
   if (self = [super init]) {
@@ -32,12 +32,14 @@
   // Start request to update purchase button
   // TODO: go back to this instead of hardcoded: [[IssuePriceFetcherManager defaultManager] fetchPriceForIssue:issue previewController:self];
   
-  self.title = @"Preview";//[NSString stringWithFormat:@"Preview %@", issue.title];
+  self.title = @"Preview";
   self.issueNumber.text = issue.number;
   self.issueTitle.text = issue.title;
-  [self.description loadHTMLString:@"<html><head><style>body { font-family: helvetica; }</style></head><body><p></p></body></html>" baseURL:nil];
-  
   [self.view insertSubview:[issue swatchView] belowSubview:scarab];
+  
+  debugLog(@"description is: --%@--", issue.previewDescription);
+  // Body
+  [UIHelpers addCopy:issue.previewDescription toScrollView:scrollView];
   
   self.purchaseButton = [TTButton buttonWithStyle:@"purchasebutton:" title:@"     Updating Price..."];
   self.purchaseButton.frame = CGRectMake(95,37,200,40);
@@ -55,48 +57,10 @@
 
 }
 
--(void)viewWillAppear:(BOOL)animated {
-  [freeWorkTableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:animated];
-}
-
-#pragma mark Table view methods
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 1;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return kWorkCellHeight;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  static NSString *CellIdentifier = @"WorkCell";
-  WorkCell *cell = (WorkCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-  if (cell == nil) {
-    cell = [WorkCell createNewCellFromNib];
-  }
-  
-  // TODO: customize cell with work info here
-  [UIHelpers addRoundedImageNamed:@"brian.jpg" toView:cell];
-  
-  cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_bg.png"]];
-
-  return cell;
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  // TODO: set id after work!  work/id
-  TTOpenURL(@"scarab://work");
-}
-
 -(IBAction)purchaseIssue {
   // TODO: go back to this! [[SMStore defaultStore] purchaseIssue:issue];
   debugLog(@"purchasing!");
-  TTOpenURL([NSString stringWithFormat:@"scarab://issue/%@", issue.number]);
+  TTOpenURL([NSString stringWithFormat:@"scarab://issues/%@", issue.number]);
 }
 
 - (void)updatePurchaseButtonWithPrice:(NSString *)price { 
@@ -110,8 +74,7 @@
   [scarab release];
   [issueNumber release];
   [issueTitle release];
-  [description release];
-  [freeWorkTableView release];
+  [scrollView release];
   [purchaseButton release];
   [super dealloc];
 }

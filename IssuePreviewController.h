@@ -17,8 +17,8 @@
   IBOutlet UIImageView *scarab;
   IBOutlet UILabel *issueNumber;
   IBOutlet UILabel *issueTitle;
-  IBOutlet UIWebView *description;
-  IBOutlet UITableView *freeWorkTableView;
+  
+  IBOutlet UIScrollView *scrollView;
 }
 
 @property(nonatomic,retain) Issue *issue;
@@ -27,8 +27,8 @@
 @property(nonatomic,retain) UIImageView *scarab;
 @property(nonatomic,retain) UILabel *issueNumber;
 @property(nonatomic,retain) UILabel *issueTitle;
-@property(nonatomic,retain) UIWebView *description;
-@property(nonatomic,retain) UITableView *freeWorkTableView;
+
+@property(nonatomic,retain) UIScrollView *scrollView;
 
 - (IBAction)purchaseIssue;
 - (void)updatePurchaseButtonWithPrice:(NSString *)price;

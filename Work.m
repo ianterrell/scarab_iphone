@@ -13,7 +13,7 @@
 
 @implementation Work
 
-@dynamic authorId, workId, title, body, position, reader;
+@dynamic authorId, workId, title, body, position, reader, free;
 @dynamic issue, author;
 
 #pragma mark Finders
@@ -47,12 +47,16 @@
 
 // TODO:  This is temporary, replace some stuff!
 - (NSString *)audioFileURL {
-  return [NSString stringWithFormat:@"%@test.mp3", [ObjectiveResourceConfig getSite]];
+  return [NSString stringWithFormat:@"%@/test.mp3", AppDelegate.baseServerURL];
 }
 
 // TODO:  This is temporary, replace some stuff!
 - (NSString *)audioFilePath {
   return [NSString stringWithFormat:@"%@/audiofile.mp3", [AppDelegate applicationDocumentsDirectory]];
+}
+
+- (BOOL)isFree {
+  return [self.free isEqualToString:@"true"];
 }
 
 - (NSComparisonResult)compareByPosition:(Work *)other {

@@ -54,7 +54,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  TTOpenURL([NSString stringWithFormat:@"scarab://work/%@", [self workAtIndexPath:indexPath].workId]);
+  TTOpenURL([NSString stringWithFormat:@"scarab://works/%@", [self workAtIndexPath:indexPath].workId]);
 }
 
 - (void)dealloc {

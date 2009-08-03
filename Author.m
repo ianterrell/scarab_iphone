@@ -36,9 +36,8 @@
 
 - (NSString *)fullyQualifiedPhotoUrl {
   // Site ends with /, partial URL starts with /
-  NSMutableString *url = [NSMutableString stringWithString:[ObjectiveResourceConfig getSite]];
-  int length = [url length];
-  [url replaceCharactersInRange:NSMakeRange(length-1, 1) withString:self.photoUrl];
+  NSMutableString *url = [NSMutableString stringWithString:AppDelegate.baseServerURL];
+  [url appendString:self.photoUrl];
   return url;
 }
 

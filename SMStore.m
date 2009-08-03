@@ -65,7 +65,7 @@
       // TODO: FIXME BITCH WHAT DO I DO?
     }
     
-    TTOpenURL([NSString stringWithFormat:@"scarab://issue/%@", issue.number]);
+    TTOpenURL([NSString stringWithFormat:@"scarab://issues/%@", issue.number]);
         
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction]; 
   } else {

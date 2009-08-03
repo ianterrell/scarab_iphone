@@ -36,6 +36,7 @@
 @property(nonatomic,assign) UIViewController *visibleController;
 
 @property(nonatomic,readonly) NSString *applicationDocumentsDirectory;
+@property(nonatomic,readonly) NSString *baseServerURL;
 
 #pragma mark Splash Screen
 

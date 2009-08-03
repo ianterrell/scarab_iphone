@@ -15,6 +15,7 @@
 @dynamic number;
 @dynamic title;
 @dynamic subtitle;
+@dynamic previewDescription;
 @dynamic productIdentifier;
 @dynamic transactionIdentifier;
 @dynamic downloaded;

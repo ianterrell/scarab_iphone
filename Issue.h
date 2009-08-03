@@ -17,6 +17,7 @@
 @property(retain) NSString *number;
 @property(retain) NSString *title;
 @property(retain) NSString *subtitle;
+@property(retain) NSString *previewDescription;
 @property(retain) NSString *productIdentifier;
 @property(retain) NSString *transactionIdentifier;
 @property(retain) NSNumber *downloaded;

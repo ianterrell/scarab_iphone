@@ -57,7 +57,7 @@
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="IBUIText">A Coat of All Colors and None</string>
+						<string key="IBUIText"/>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica-Bold</string>
 							<double key="NSSize">1.600000e+01</double>
@@ -72,7 +72,7 @@
 						<float key="IBUIMinimumFontSize">1.000000e+01</float>
 						<int key="IBUINumberOfLines">2</int>
 					</object>
-					<object class="IBUIScrollView" id="768256607">
+					<object class="IBUIScrollView" id="136491679">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{0, 84}, {320, 283}}</string>
@@ -420,7 +420,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">scrollView</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="768256607"/>
+						<reference key="destination" ref="136491679"/>
 					</object>
 					<int key="connectionID">65</int>
 				</object>
@@ -454,7 +454,7 @@
 							<reference ref="485313896"/>
 							<reference ref="468606035"/>
 							<reference ref="890630766"/>
-							<reference ref="768256607"/>
+							<reference ref="136491679"/>
 						</object>
 						<reference key="parent" ref="35442815"/>
 					</object>
@@ -562,7 +562,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">64</int>
-						<reference key="object" ref="768256607"/>
+						<reference key="object" ref="136491679"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>

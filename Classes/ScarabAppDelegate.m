@@ -77,9 +77,16 @@
 #pragma mark -
 #pragma mark Setup Helper Methods
 
+/**
+ Returns the base URL where images and other media are found online.
+ */
+-(NSString *)baseServerURL {	
+  return @"http://localhost:3000"; // staging.scarabmag.com
+}
+
 - (void)setUpObjectiveResource {
   // TODO: Extract ObjectiveResource config out to bundle or some such
-  [ObjectiveResourceConfig setSite:@"http://localhost:3000/"]; //staging.scarabmag.com
+  [ObjectiveResourceConfig setSite:[NSString stringWithFormat:@"%@/api/v1/", self.baseServerURL]];
   //[ObjectiveResourceConfig setUser:@"remoteResourceUserName"];
   //[ObjectiveResourceConfig setPassword:@"remoteResourcePassword"];
   [ObjectiveResourceConfig setResponseType:XmlResponse];
@@ -96,10 +103,11 @@
   [map from:@"*" toViewController:[TTWebController class]];
   [map from:@"scarab://tabBar" toSharedViewController:[TabBarController class]];
   [map from:@"scarab://library" toSharedViewController:[LibraryViewController class]];
-  [map from:@"scarab://previewIssue/(initWithNumber:)" parent:@"scarab://library" toViewController:[IssuePreviewController class] selector:nil transition:0];
-  [map from:@"scarab://issue/(initWithNumber:)" parent:@"scarab://library" toViewController:[IssueViewController class] selector:nil transition:0];  
-  [map from:@"scarab://work/(initWithId:)" toViewController:[WorkViewController class]];
-  [map from:@"scarab://author/(initWithId:)" toViewController:[AuthorViewController class]];
+//  [map from:@"scarab://previewIssue/(initWithNumber:)" parent:@"scarab://library" toViewController:[IssuePreviewController class] selector:nil transition:0];
+  [map from:@"scarab://previewIssue/(initWithNumber:)" toViewController:[IssuePreviewController class]];
+  [map from:@"scarab://issues/(initWithNumber:)" parent:@"scarab://library" toViewController:[IssueViewController class] selector:nil transition:0];  
+  [map from:@"scarab://works/(initWithId:)" toViewController:[WorkViewController class]];
+  [map from:@"scarab://authors/(initWithId:)" toViewController:[AuthorViewController class]];
   [map from:@"scarab://placeholder/(initWithType:)" toViewController:[PlaceholderController class]];  
 
   // Before opening the tab bar, we see if the controller history was persisted the last time
@@ -238,7 +246,7 @@
 
 
 #pragma mark -
-#pragma mark Application's documents directory
+#pragma mark Constantsish
 
 /**
  Returns the path to the application's documents directory.

@@ -23,6 +23,7 @@
 @property(retain) NSString *body;
 @property(retain) NSString *position;
 @property(retain) NSString *reader;
+@property(retain) NSString *free;
 
 @property(retain) Issue *issue;
 @property(retain) Author *author;
@@ -38,5 +39,6 @@
 #pragma mark Helpers
 - (BOOL)audioFileHasBeenDownloaded;
 - (BOOL)isAudioFileBeingDownloaded;
+- (BOOL)isFree;
 
 @end

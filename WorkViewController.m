@@ -26,13 +26,38 @@
 @synthesize work, audioPlayer, audioUpdateTimer, wasPlaying, sliderCooledDown, sliderMoving;
 
 -(id)initWithId:(NSString *)workId {
+  Author *a = nil;
   if (self = [super init]) {
     self.work = [Work workWithId:workId];
     if (self.work == nil) {
-      TTAlertViewController *alert = [[TTAlertViewController alloc] initWithTitle:@"Oops!" message:@"This work has not been purchased or downloaded yet."];
-      [alert addCancelButtonWithTitle:@"Cancel" URL:@"scarab://library/%@"];
-      [alert showInView:self.view animated:YES];
-      [alert release];
+      // Not in database -- could be a free work!  Let's check on the server.
+      Work *w = [Work findRemote:workId];
+      if (w == nil) {
+        // TODO: handle error
+        debugLog(@"error!  couldn't find work on the server -- this could happen; handle!");
+      } 
+      else if ([w isFree]) { 
+        // Let's grab the author, too, and link them.  Try the DB first, then fetch and save from the server.
+        a = [Author authorWithId:w.authorId];
+        if (a == nil) {        
+          a = [Author findRemote:w.authorId];
+          [AppDelegate.managedObjectContext insertObject:a];
+        }
+        [AppDelegate.managedObjectContext insertObject:w];
+        w.author = a; 
+        NSError *error = nil;
+        [AppDelegate save:&error];
+        if (error) {
+          debugLog(@"Error saving new work:  %@", [error localizedDescription]);
+          // TODO: FIXME BITCH WHAT DO I DO?
+        }
+        self.work = w;
+      } else {
+        TTAlertViewController *alert = [[TTAlertViewController alloc] initWithTitle:@"Oops!" message:@"This work has not been purchased or downloaded yet."];
+        [alert addCancelButtonWithTitle:@"Cancel" URL:@"scarab://library"];
+        [alert showInView:self.view animated:YES];
+        [alert release];
+      }
     }
   }
   return self;
@@ -40,6 +65,10 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  // TODO: test if this is sufficient
+  if (self.work == nil)
+    return;
   
   self.title = @"Poem"; // TODO: Poetry/Fiction/Essay
 
@@ -49,7 +78,7 @@
   // Byline
   TTStyledTextLabel* label = [[[TTStyledTextLabel alloc] initWithFrame:self.view.bounds] autorelease];
   label.font = [UIFont systemFontOfSize:14];
-  label.text = [TTStyledText textFromXHTML:[NSString stringWithFormat:@"<i>by <a href=\"scarab://author/%@\">%@</a></i>", self.work.authorId, self.work.author.name] lineBreaks:NO URLs:YES]; 
+  label.text = [TTStyledText textFromXHTML:[NSString stringWithFormat:@"<i>by <a href=\"scarab://authors/%@\">%@</a></i>", self.work.authorId, self.work.author.name] lineBreaks:NO URLs:YES]; 
   label.frame = CGRectMake(80, 52, 200, 23);
   label.textColor = RGBCOLOR(100,100,100);
   label.contentInset = UIEdgeInsetsMake(3, 0, 3, 0);

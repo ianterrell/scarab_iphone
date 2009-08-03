@@ -38,13 +38,17 @@
         
         // download works
         NSArray *worksInIssue = [Work findAllInIssue:issue];
-        for (Work *work in worksInIssue)
-          // Could have been a free work and is already in DB, should already be linked to issue and author -- TODO: update works?
-          if ([Work workWithId:work.workId] == nil) {
+        for (Work *work in worksInIssue) {
+          // Could have been a free work and is already in DB, but won't be linked to issue
+          Work *workInDb = [Work workWithId:work.workId];
+          if (workInDb == nil) {
             [AppDelegate.managedObjectContext insertObject:work];
             work.issue = issue;
-            work.author = [Author authorWithId:work.authorId];
+            work.author = [Author authorWithId:work.authorId];  
+          } else {
+            workInDb.issue = issue;
           }
+        }
         
         self.issue.downloaded = [NSNumber numberWithBool:YES];
         
