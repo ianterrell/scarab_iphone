@@ -67,7 +67,6 @@
   if (currentIssue != nil)
     [issues removeLastObject];
 
-  // TODO: separate remaining into bookshelf issues and back issues:
   NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:NO];
   [issues sortUsingDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
   [sortDescriptor release];

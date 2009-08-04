@@ -19,6 +19,7 @@
 #import "TabBarController.h"
 #import "PlaceholderController.h"
 #import "FavoritesViewController.h"
+#import "NewsViewController.h"
 
 #import "Transaction.h"
 #import "Work.h"
@@ -124,6 +125,7 @@
   [map from:@"scarab://tabBar" toSharedViewController:[TabBarController class]];
   [map from:@"scarab://library" toSharedViewController:[LibraryViewController class]];
   [map from:@"scarab://favorites" toSharedViewController:[FavoritesViewController class]];
+  [map from:@"scarab://news" toSharedViewController:[NewsViewController class]];
 //  [map from:@"scarab://previewIssue/(initWithNumber:)" parent:@"scarab://library" toViewController:[IssuePreviewController class] selector:nil transition:0];
   [map from:@"scarab://previewIssue/(initWithNumber:)" toViewController:[IssuePreviewController class]];
   [map from:@"scarab://issues/(initWithNumber:)" parent:@"scarab://library" toViewController:[IssueViewController class] selector:nil transition:0];  

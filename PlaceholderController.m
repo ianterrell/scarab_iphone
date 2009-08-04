@@ -13,8 +13,6 @@
 
 - (NSString*)nameForType:(PlaceholderType)type {
   switch (type) {
-    case PlaceholderNews:
-      return @"News";
     case PlaceholderCredits:
       return @"Credits";
     case PlaceholderInterviews:
@@ -34,8 +32,6 @@
 
 - (NSString*)iconForType:(PlaceholderType)type {
   switch (type) {
-    case PlaceholderNews:
-      return @"09-chat2.png";
     case PlaceholderCredits:
       return @"29-heart.png";
     case PlaceholderInterviews:

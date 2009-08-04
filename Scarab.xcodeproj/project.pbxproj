@@ -98,6 +98,8 @@
 		3C63F5B61027D45B00E2D80F /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C63F5B51027D45A00E2D80F /* libxml2.2.dylib */; };
 		3C63F6741027EDB400E2D80F /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F6731027EDB400E2D80F /* FavoritesViewController.m */; };
 		3C63F68A1027F38200E2D80F /* 29-heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C63F6891027F38200E2D80F /* 29-heart.png */; };
+		3C63F6BE1028C55B00E2D80F /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F6BD1028C55B00E2D80F /* NewsViewController.m */; };
+		3C63F6C91028C60C00E2D80F /* Update.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F6C81028C60C00E2D80F /* Update.m */; };
 		3C9318E70FE87073009D3731 /* SMWorkAudioDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */; };
 		3C9318F90FE873E0009D3731 /* Work.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318F80FE873E0009D3731 /* Work.m */; };
 		3CE5D45C0FE8793E00A152D3 /* SMWorkAudioDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D45B0FE8793E00A152D3 /* SMWorkAudioDownload.m */; };
@@ -289,6 +291,10 @@
 		3C63F6721027EDB400E2D80F /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
 		3C63F6731027EDB400E2D80F /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
 		3C63F6891027F38200E2D80F /* 29-heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29-heart.png"; sourceTree = "<group>"; };
+		3C63F6BC1028C55B00E2D80F /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		3C63F6BD1028C55B00E2D80F /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		3C63F6C71028C60C00E2D80F /* Update.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Update.h; sourceTree = "<group>"; };
+		3C63F6C81028C60C00E2D80F /* Update.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Update.m; sourceTree = "<group>"; };
 		3C9318E50FE87073009D3731 /* SMWorkAudioDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMWorkAudioDownloadManager.h; sourceTree = "<group>"; };
 		3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWorkAudioDownloadManager.m; sourceTree = "<group>"; };
 		3C9318F70FE873E0009D3731 /* Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Work.h; sourceTree = "<group>"; };
@@ -359,6 +365,7 @@
 				3C2466660FE028F900FCACDF /* Models */,
 				3C24649A0FDEA6A000FCACDF /* Splash Screen */,
 				3C2467EE0FE1527F00FCACDF /* Library */,
+				3C63F6BB1028C54700E2D80F /* News */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				3C63F5751027D2BD00E2D80F /* ObjectiveResource */,
 				3C63F5381027D2BD00E2D80F /* ObjectiveSupport */,
@@ -451,6 +458,8 @@
 				3C5119E40FF01C34009CDD9F /* Transaction.m */,
 				3C55E4F510226C29009F04FF /* Author.h */,
 				3C55E4F610226C29009F04FF /* Author.m */,
+				3C63F6C71028C60C00E2D80F /* Update.h */,
+				3C63F6C81028C60C00E2D80F /* Update.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -677,6 +686,15 @@
 			name = Connection;
 			sourceTree = "<group>";
 		};
+		3C63F6BB1028C54700E2D80F /* News */ = {
+			isa = PBXGroup;
+			children = (
+				3C63F6BC1028C55B00E2D80F /* NewsViewController.h */,
+				3C63F6BD1028C55B00E2D80F /* NewsViewController.m */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
 		3CFA923C101FC4D2004D9F8A /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -853,6 +871,8 @@
 				3C63F5A81027D2BD00E2D80F /* NSError+Error.m in Sources */,
 				3C63F5A91027D2BD00E2D80F /* ObjectiveResourceConfig.m in Sources */,
 				3C63F6741027EDB400E2D80F /* FavoritesViewController.m in Sources */,
+				3C63F6BE1028C55B00E2D80F /* NewsViewController.m in Sources */,
+				3C63F6C91028C60C00E2D80F /* Update.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

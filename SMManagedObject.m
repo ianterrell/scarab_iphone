@@ -108,4 +108,18 @@
     return mutableFetchResults;
 }
 
+#pragma mark Objective Resource Helpers
+
++ (NSArray *)findAllSinceNumber:(NSNumber *)number {
+  // htp://server/models/since/:number.xml
+  NSString *sincePath = [NSString stringWithFormat:@"%@%@/since/%d%@",
+                         [self getRemoteSite],
+                         [self getRemoteCollectionName],
+                         [number intValue],
+                         [self getRemoteProtocolExtension]];
+  Response *response = [Connection get:sincePath];
+	return [self performSelector:[self getRemoteParseDataMethod] withObject:response.body];
+}
+
+
 @end

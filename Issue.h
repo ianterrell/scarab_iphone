@@ -24,7 +24,7 @@
 
 @property(retain) NSMutableSet *works;
 
-+ (NSArray *)findAllSinceNumber:(NSNumber *)issueNumber;
++ (NSArray *)findAllSinceNumber:(NSNumber *)number;
 + (Issue *)issueWithNumber:(NSString *)number;
 + (Issue *)issueWithProductIdentifier:(NSString *)productIdentifier;
 

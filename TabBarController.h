@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface TabBarController : UITabBarController {
+@interface TabBarController : UITabBarController <UITabBarControllerDelegate> {
 
 }
 
