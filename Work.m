@@ -20,13 +20,14 @@
 
 + (NSArray *)findAllInIssue:(Issue *)issue {
   // TODO: Add transaction identifier to restrict access!
-  // htp://server/issues/:number/works.xml
-  NSString *worksInIssue = [NSString stringWithFormat:@"%@%@/%d/%@%@",
+  // htp://server/issues/:number/works.xml?tid=identifier
+  NSString *worksInIssue = [NSString stringWithFormat:@"%@%@/%d/%@%@?tid=%@",
                            [self getRemoteSite],
                            [Issue getRemoteCollectionName],
                            [issue.issueId intValue],
                            [self getRemoteCollectionName],
-                           [self getRemoteProtocolExtension]];
+                           [self getRemoteProtocolExtension],
+                           issue.transactionIdentifier];
   Response *response = [Connection get:worksInIssue];
 	return [self performSelector:[self getRemoteParseDataMethod] withObject:response.body];
 }
@@ -46,9 +47,11 @@
 }
 
 - (NSString *)audioFileURL {
-  // htp://server/works/:number/audio
-  debugLog([NSString stringWithFormat:@"%@%@/%d/audio", [Work getRemoteSite], [Work getRemoteCollectionName], [self.workId intValue]]);
-  return [NSString stringWithFormat:@"%@%@/%d/audio", [Work getRemoteSite], [Work getRemoteCollectionName], [self.workId intValue]];
+  // htp://server/works/:number/audio or with ?tid=identifier
+  if (self.issue == nil)
+    return [NSString stringWithFormat:@"%@%@/%d/audio", [Work getRemoteSite], [Work getRemoteCollectionName], [self.workId intValue]];
+  else
+    return [NSString stringWithFormat:@"%@%@/%d/audio?tid=%@", [Work getRemoteSite], [Work getRemoteCollectionName], [self.workId intValue], self.issue.transactionIdentifier];
 }
 
 + (NSString *)audioDirectoryPath {
