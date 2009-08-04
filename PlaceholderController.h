@@ -10,7 +10,7 @@
 
 typedef enum {
   PlaceholderNews,
-  PlaceholderFavorites,
+  PlaceholderCredits,
   PlaceholderInterviews,
   PlaceholderFeedback,
   PlaceholderSync,

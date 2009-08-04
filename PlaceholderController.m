@@ -15,8 +15,8 @@
   switch (type) {
     case PlaceholderNews:
       return @"News";
-    case PlaceholderFavorites:
-      return @"Favorites";
+    case PlaceholderCredits:
+      return @"Credits";
     case PlaceholderInterviews:
       return @"Interviews";
     case PlaceholderFeedback:
@@ -36,8 +36,8 @@
   switch (type) {
     case PlaceholderNews:
       return @"09-chat2.png";
-    case PlaceholderFavorites:
-      return @"28-star.png";
+    case PlaceholderCredits:
+      return @"29-heart.png";
     case PlaceholderInterviews:
       return @"66-microphone.png";
     case PlaceholderFeedback:

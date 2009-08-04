@@ -244,7 +244,7 @@
 - (void)setupHUDWithLabel:(NSString *)labelText details:(NSString *)detailsLabelText {
   [self hudWasHidden]; // no harm making sure it's gone
   HUD = [[MBProgressHUD alloc] initWithWindow:[UIApplication sharedApplication].keyWindow];
-  [self.window addSubview:HUD];
+  [[UIApplication sharedApplication].keyWindow addSubview:HUD];
   HUD.delegate = self;
   HUD.labelText = labelText;
   HUD.detailsLabelText = detailsLabelText;
