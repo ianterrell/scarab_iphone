@@ -52,6 +52,11 @@
 
 - (void)completeTransaction:(SKPaymentTransaction *)transaction {
   // We just bought an issue.
+  debugLog(@"complete transaction");
+  debugLog(@"transaction: %@", transaction);
+  debugLog(@"date: %@", transaction.transactionDate);
+  debugLog(@"identifier: %@", transaction.transactionIdentifier);
+  debugLog(@"receipt: %@", [transaction.transactionReceipt base64Encoding]);
   
   if ([Transaction saveOnServer:transaction]) {  
     debugLog(@"Transaction saved on server.");
@@ -64,25 +69,14 @@
       debugLog(@"Error saving new issues in Library:  %@", [error localizedDescription]);
       // TODO: FIXME BITCH WHAT DO I DO?
     }
-    
-    TTOpenURL([NSString stringWithFormat:@"scarab://issues/%@", issue.number]);
-        
+
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction]; 
+    TTOpenURL([NSString stringWithFormat:@"scarab://issues/%@", issue.number]);
   } else {
     debugLog(@"Transaction not saved on server.");
     // Alert the user that the next time the app starts up we'll try again.
     // We're pretty much assuming that they're not hacking here.
   }
-  
-
-
-  debugLog(@"complete transaction");
-  debugLog(@"transaction: %@", transaction);
-  debugLog(@"date: %@", transaction.transactionDate);
-  debugLog(@"identifier: %@", transaction.transactionIdentifier);
-  debugLog(@"receipt: %@", [transaction.transactionReceipt base64Encoding]);
-  
-  
 }
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction {

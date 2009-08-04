@@ -97,7 +97,7 @@
  Returns the base URL where images and other media are found online.
  */
 -(NSString *)baseServerURL {	
-  return @"http://localhost:3000"; // staging.scarabmag.com
+  return @"http://192.168.20.2:3000"; // localhost:3000 // staging.scarabmag.com
 }
 
 - (void)setUpObjectiveResource {

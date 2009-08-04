@@ -46,8 +46,7 @@
 #pragma mark Helpers
 
 - (BOOL)hasBeenPurchased {
-  // TODO: implement
-  return YES;
+  return self.transactionIdentifier != nil;
 }
 
 - (BOOL)hasBeenDownloaded {

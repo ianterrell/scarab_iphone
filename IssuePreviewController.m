@@ -30,7 +30,7 @@
   [super viewDidLoad];
   
   // Start request to update purchase button
-  // TODO: go back to this instead of hardcoded: [[IssuePriceFetcherManager defaultManager] fetchPriceForIssue:issue previewController:self];
+  [[IssuePriceFetcherManager defaultManager] fetchPriceForIssue:issue previewController:self];
   
   self.title = @"Preview";
   self.issueNumber.text = issue.number;
@@ -51,16 +51,10 @@
   [biv release];
   self.purchaseButton.enabled = NO;
   [self.view addSubview:self.purchaseButton];
-  
-  // TODO: remove
-  [self updatePurchaseButtonWithPrice:@"2.99"];
-
 }
 
 -(IBAction)purchaseIssue {
-  // TODO: go back to this! [[SMStore defaultStore] purchaseIssue:issue];
-  debugLog(@"purchasing!");
-  TTOpenURL([NSString stringWithFormat:@"scarab://issues/%@", issue.number]);
+  [[SMStore defaultStore] purchaseIssue:issue];
 }
 
 - (void)updatePurchaseButtonWithPrice:(NSString *)price { 

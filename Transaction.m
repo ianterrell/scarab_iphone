@@ -15,6 +15,7 @@
 + (BOOL)saveOnServer:(SKPaymentTransaction *)paymentTransaction {
   Transaction *transaction = [[Transaction alloc] init];
   transaction.receipt = [paymentTransaction.transactionReceipt base64Encoding];
+  debugLog(@"saving!");
   return [transaction saveRemote];  // if YES then it passed the Rails validations, which include validating with Apple
 }
 
