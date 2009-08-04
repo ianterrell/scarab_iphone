@@ -63,6 +63,38 @@
 		3C5F47920FF139D50086D8D1 /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F47910FF139D50086D8D1 /* SKProduct+LocalizedPrice.m */; };
 		3C5F47C70FF14A630086D8D1 /* IssuePriceFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F47C60FF14A630086D8D1 /* IssuePriceFetcher.m */; };
 		3C5F47CA0FF1509B0086D8D1 /* IssuePriceFetcherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F47C90FF1509B0086D8D1 /* IssuePriceFetcherManager.m */; };
+		3C63F58A1027D2BD00E2D80F /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F53D1027D2BD00E2D80F /* NSString+InflectionSupport.m */; };
+		3C63F58B1027D2BD00E2D80F /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F53F1027D2BD00E2D80F /* NSData+Additions.m */; };
+		3C63F58C1027D2BD00E2D80F /* NSObject+PropertySupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5411027D2BD00E2D80F /* NSObject+PropertySupport.m */; };
+		3C63F58D1027D2BD00E2D80F /* NSString+GSub.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5431027D2BD00E2D80F /* NSString+GSub.m */; };
+		3C63F58E1027D2BD00E2D80F /* ObjectiveResourceDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5451027D2BD00E2D80F /* ObjectiveResourceDateFormatter.m */; };
+		3C63F58F1027D2BD00E2D80F /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F54A1027D2BD00E2D80F /* NSObject+SBJSON.m */; };
+		3C63F5901027D2BD00E2D80F /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F54C1027D2BD00E2D80F /* NSString+SBJSON.m */; };
+		3C63F5911027D2BD00E2D80F /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F54E1027D2BD00E2D80F /* SBJSON.m */; };
+		3C63F5921027D2BD00E2D80F /* NSArray+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5521027D2BD00E2D80F /* NSArray+JSONSerializableSupport.m */; };
+		3C63F5931027D2BD00E2D80F /* NSDictionary+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5561027D2BD00E2D80F /* NSDictionary+JSONSerializableSupport.m */; };
+		3C63F5941027D2BD00E2D80F /* NSObject+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5581027D2BD00E2D80F /* NSObject+JSONSerializableSupport.m */; };
+		3C63F5951027D2BD00E2D80F /* NSDate+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F55A1027D2BD00E2D80F /* NSDate+Serialize.m */; };
+		3C63F5961027D2BD00E2D80F /* NSDictionary+KeyTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F55C1027D2BD00E2D80F /* NSDictionary+KeyTranslation.m */; };
+		3C63F5971027D2BD00E2D80F /* NSObject+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F55E1027D2BD00E2D80F /* NSObject+Serialize.m */; };
+		3C63F5981027D2BD00E2D80F /* NSString+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5601027D2BD00E2D80F /* NSString+Serialize.m */; };
+		3C63F5991027D2BD00E2D80F /* NSNumber+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5641027D2BD00E2D80F /* NSNumber+XMLSerializableSupport.m */; };
+		3C63F59A1027D2BD00E2D80F /* FromXMLElementDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5661027D2BD00E2D80F /* FromXMLElementDelegate.m */; };
+		3C63F59B1027D2BD00E2D80F /* NSArray+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5681027D2BD00E2D80F /* NSArray+XMLSerializableSupport.m */; };
+		3C63F59C1027D2BD00E2D80F /* NSDate+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F56A1027D2BD00E2D80F /* NSDate+XMLSerializableSupport.m */; };
+		3C63F59D1027D2BD00E2D80F /* NSDictionary+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F56C1027D2BD00E2D80F /* NSDictionary+XMLSerializableSupport.m */; };
+		3C63F59E1027D2BD00E2D80F /* NSNull+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F56E1027D2BD00E2D80F /* NSNull+XMLSerializableSupport.m */; };
+		3C63F59F1027D2BD00E2D80F /* NSObject+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5701027D2BD00E2D80F /* NSObject+XMLSerializableSupport.m */; };
+		3C63F5A01027D2BD00E2D80F /* NSString+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5721027D2BD00E2D80F /* NSString+XMLSerializableSupport.m */; };
+		3C63F5A11027D2BD00E2D80F /* NSObject+ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5771027D2BD00E2D80F /* NSObject+ObjectiveResource.m */; };
+		3C63F5A21027D2BD00E2D80F /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F57A1027D2BD00E2D80F /* ConnectionManager.m */; };
+		3C63F5A31027D2BD00E2D80F /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F57C1027D2BD00E2D80F /* ConnectionDelegate.m */; };
+		3C63F5A41027D2BD00E2D80F /* NSHTTPURLResponse+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F57E1027D2BD00E2D80F /* NSHTTPURLResponse+Error.m */; };
+		3C63F5A51027D2BD00E2D80F /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5801027D2BD00E2D80F /* Connection.m */; };
+		3C63F5A61027D2BD00E2D80F /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5821027D2BD00E2D80F /* Response.m */; };
+		3C63F5A71027D2BD00E2D80F /* NSMutableURLRequest+ResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5841027D2BD00E2D80F /* NSMutableURLRequest+ResponseType.m */; };
+		3C63F5A81027D2BD00E2D80F /* NSError+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5861027D2BD00E2D80F /* NSError+Error.m */; };
+		3C63F5A91027D2BD00E2D80F /* ObjectiveResourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5891027D2BD00E2D80F /* ObjectiveResourceConfig.m */; };
 		3C9318E70FE87073009D3731 /* SMWorkAudioDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */; };
 		3C9318F90FE873E0009D3731 /* Work.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318F80FE873E0009D3731 /* Work.m */; };
 		3CE5D45C0FE8793E00A152D3 /* SMWorkAudioDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D45B0FE8793E00A152D3 /* SMWorkAudioDownload.m */; };
@@ -177,6 +209,79 @@
 		3C5F47C60FF14A630086D8D1 /* IssuePriceFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssuePriceFetcher.m; sourceTree = "<group>"; };
 		3C5F47C80FF1509B0086D8D1 /* IssuePriceFetcherManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssuePriceFetcherManager.h; sourceTree = "<group>"; };
 		3C5F47C90FF1509B0086D8D1 /* IssuePriceFetcherManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssuePriceFetcherManager.m; sourceTree = "<group>"; };
+		3C63F53A1027D2BD00E2D80F /* CoreSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSupport.h; sourceTree = "<group>"; };
+		3C63F53C1027D2BD00E2D80F /* NSString+InflectionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+InflectionSupport.h"; sourceTree = "<group>"; };
+		3C63F53D1027D2BD00E2D80F /* NSString+InflectionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+InflectionSupport.m"; sourceTree = "<group>"; };
+		3C63F53E1027D2BD00E2D80F /* NSData+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Additions.h"; sourceTree = "<group>"; };
+		3C63F53F1027D2BD00E2D80F /* NSData+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Additions.m"; sourceTree = "<group>"; };
+		3C63F5401027D2BD00E2D80F /* NSObject+PropertySupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PropertySupport.h"; sourceTree = "<group>"; };
+		3C63F5411027D2BD00E2D80F /* NSObject+PropertySupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PropertySupport.m"; sourceTree = "<group>"; };
+		3C63F5421027D2BD00E2D80F /* NSString+GSub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GSub.h"; sourceTree = "<group>"; };
+		3C63F5431027D2BD00E2D80F /* NSString+GSub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GSub.m"; sourceTree = "<group>"; };
+		3C63F5441027D2BD00E2D80F /* ObjectiveResourceDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveResourceDateFormatter.h; sourceTree = "<group>"; };
+		3C63F5451027D2BD00E2D80F /* ObjectiveResourceDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveResourceDateFormatter.m; sourceTree = "<group>"; };
+		3C63F5461027D2BD00E2D80F /* ObjectiveSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveSupport.h; sourceTree = "<group>"; };
+		3C63F5481027D2BD00E2D80F /* JSONFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONFramework.h; sourceTree = "<group>"; };
+		3C63F5491027D2BD00E2D80F /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		3C63F54A1027D2BD00E2D80F /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		3C63F54B1027D2BD00E2D80F /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		3C63F54C1027D2BD00E2D80F /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		3C63F54D1027D2BD00E2D80F /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		3C63F54E1027D2BD00E2D80F /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		3C63F5511027D2BD00E2D80F /* NSArray+JSONSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSONSerializableSupport.h"; sourceTree = "<group>"; };
+		3C63F5521027D2BD00E2D80F /* NSArray+JSONSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JSONSerializableSupport.m"; sourceTree = "<group>"; };
+		3C63F5531027D2BD00E2D80F /* JSONSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONSerializable.h; sourceTree = "<group>"; };
+		3C63F5541027D2BD00E2D80F /* JSONSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONSerializableSupport.h; sourceTree = "<group>"; };
+		3C63F5551027D2BD00E2D80F /* NSDictionary+JSONSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSONSerializableSupport.h"; sourceTree = "<group>"; };
+		3C63F5561027D2BD00E2D80F /* NSDictionary+JSONSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSONSerializableSupport.m"; sourceTree = "<group>"; };
+		3C63F5571027D2BD00E2D80F /* NSObject+JSONSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSONSerializableSupport.h"; sourceTree = "<group>"; };
+		3C63F5581027D2BD00E2D80F /* NSObject+JSONSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSONSerializableSupport.m"; sourceTree = "<group>"; };
+		3C63F5591027D2BD00E2D80F /* NSDate+Serialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Serialize.h"; sourceTree = "<group>"; };
+		3C63F55A1027D2BD00E2D80F /* NSDate+Serialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Serialize.m"; sourceTree = "<group>"; };
+		3C63F55B1027D2BD00E2D80F /* NSDictionary+KeyTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+KeyTranslation.h"; sourceTree = "<group>"; };
+		3C63F55C1027D2BD00E2D80F /* NSDictionary+KeyTranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+KeyTranslation.m"; sourceTree = "<group>"; };
+		3C63F55D1027D2BD00E2D80F /* NSObject+Serialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Serialize.h"; sourceTree = "<group>"; };
+		3C63F55E1027D2BD00E2D80F /* NSObject+Serialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Serialize.m"; sourceTree = "<group>"; };
+		3C63F55F1027D2BD00E2D80F /* NSString+Serialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Serialize.h"; sourceTree = "<group>"; };
+		3C63F5601027D2BD00E2D80F /* NSString+Serialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Serialize.m"; sourceTree = "<group>"; };
+		3C63F5611027D2BD00E2D80F /* Serialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serialize.h; sourceTree = "<group>"; };
+		3C63F5631027D2BD00E2D80F /* NSNumber+XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+XMLSerializableSupport.h"; sourceTree = "<group>"; };
+		3C63F5641027D2BD00E2D80F /* NSNumber+XMLSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+XMLSerializableSupport.m"; sourceTree = "<group>"; };
+		3C63F5651027D2BD00E2D80F /* FromXMLElementDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FromXMLElementDelegate.h; sourceTree = "<group>"; };
+		3C63F5661027D2BD00E2D80F /* FromXMLElementDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FromXMLElementDelegate.m; sourceTree = "<group>"; };
+		3C63F5671027D2BD00E2D80F /* NSArray+XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+XMLSerializableSupport.h"; sourceTree = "<group>"; };
+		3C63F5681027D2BD00E2D80F /* NSArray+XMLSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+XMLSerializableSupport.m"; sourceTree = "<group>"; };
+		3C63F5691027D2BD00E2D80F /* NSDate+XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+XMLSerializableSupport.h"; sourceTree = "<group>"; };
+		3C63F56A1027D2BD00E2D80F /* NSDate+XMLSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+XMLSerializableSupport.m"; sourceTree = "<group>"; };
+		3C63F56B1027D2BD00E2D80F /* NSDictionary+XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+XMLSerializableSupport.h"; sourceTree = "<group>"; };
+		3C63F56C1027D2BD00E2D80F /* NSDictionary+XMLSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+XMLSerializableSupport.m"; sourceTree = "<group>"; };
+		3C63F56D1027D2BD00E2D80F /* NSNull+XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+XMLSerializableSupport.h"; sourceTree = "<group>"; };
+		3C63F56E1027D2BD00E2D80F /* NSNull+XMLSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+XMLSerializableSupport.m"; sourceTree = "<group>"; };
+		3C63F56F1027D2BD00E2D80F /* NSObject+XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+XMLSerializableSupport.h"; sourceTree = "<group>"; };
+		3C63F5701027D2BD00E2D80F /* NSObject+XMLSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+XMLSerializableSupport.m"; sourceTree = "<group>"; };
+		3C63F5711027D2BD00E2D80F /* NSString+XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XMLSerializableSupport.h"; sourceTree = "<group>"; };
+		3C63F5721027D2BD00E2D80F /* NSString+XMLSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLSerializableSupport.m"; sourceTree = "<group>"; };
+		3C63F5731027D2BD00E2D80F /* XMLSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLSerializable.h; sourceTree = "<group>"; };
+		3C63F5741027D2BD00E2D80F /* XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLSerializableSupport.h; sourceTree = "<group>"; };
+		3C63F5761027D2BD00E2D80F /* NSObject+ObjectiveResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ObjectiveResource.h"; sourceTree = "<group>"; };
+		3C63F5771027D2BD00E2D80F /* NSObject+ObjectiveResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ObjectiveResource.m"; sourceTree = "<group>"; };
+		3C63F5791027D2BD00E2D80F /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
+		3C63F57A1027D2BD00E2D80F /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
+		3C63F57B1027D2BD00E2D80F /* ConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionDelegate.h; sourceTree = "<group>"; };
+		3C63F57C1027D2BD00E2D80F /* ConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionDelegate.m; sourceTree = "<group>"; };
+		3C63F57D1027D2BD00E2D80F /* NSHTTPURLResponse+Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSHTTPURLResponse+Error.h"; sourceTree = "<group>"; };
+		3C63F57E1027D2BD00E2D80F /* NSHTTPURLResponse+Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSHTTPURLResponse+Error.m"; sourceTree = "<group>"; };
+		3C63F57F1027D2BD00E2D80F /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
+		3C63F5801027D2BD00E2D80F /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connection.m; sourceTree = "<group>"; };
+		3C63F5811027D2BD00E2D80F /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
+		3C63F5821027D2BD00E2D80F /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Response.m; sourceTree = "<group>"; };
+		3C63F5831027D2BD00E2D80F /* NSMutableURLRequest+ResponseType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+ResponseType.h"; sourceTree = "<group>"; };
+		3C63F5841027D2BD00E2D80F /* NSMutableURLRequest+ResponseType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+ResponseType.m"; sourceTree = "<group>"; };
+		3C63F5851027D2BD00E2D80F /* NSError+Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Error.h"; sourceTree = "<group>"; };
+		3C63F5861027D2BD00E2D80F /* NSError+Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Error.m"; sourceTree = "<group>"; };
+		3C63F5871027D2BD00E2D80F /* ObjectiveResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveResource.h; sourceTree = "<group>"; };
+		3C63F5881027D2BD00E2D80F /* ObjectiveResourceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveResourceConfig.h; sourceTree = "<group>"; };
+		3C63F5891027D2BD00E2D80F /* ObjectiveResourceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveResourceConfig.m; sourceTree = "<group>"; };
 		3C9318E50FE87073009D3731 /* SMWorkAudioDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMWorkAudioDownloadManager.h; sourceTree = "<group>"; };
 		3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWorkAudioDownloadManager.m; sourceTree = "<group>"; };
 		3C9318F70FE873E0009D3731 /* Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Work.h; sourceTree = "<group>"; };
@@ -247,6 +352,8 @@
 				3C24649A0FDEA6A000FCACDF /* Splash Screen */,
 				3C2467EE0FE1527F00FCACDF /* Library */,
 				080E96DDFE201D6D7F000001 /* Classes */,
+				3C63F5751027D2BD00E2D80F /* ObjectiveResource */,
+				3C63F5381027D2BD00E2D80F /* ObjectiveSupport */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				3C246C620FE301F600FCACDF /* Three20.xcodeproj */,
 				3C246C830FE3028500FCACDF /* Three20.bundle */,
@@ -414,6 +521,150 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3C63F5381027D2BD00E2D80F /* ObjectiveSupport */ = {
+			isa = PBXGroup;
+			children = (
+				3C63F5391027D2BD00E2D80F /* Core */,
+				3C63F5471027D2BD00E2D80F /* json-framework */,
+				3C63F54F1027D2BD00E2D80F /* Serialization */,
+			);
+			name = ObjectiveSupport;
+			path = lib;
+			sourceTree = "<group>";
+		};
+		3C63F5391027D2BD00E2D80F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3C63F53A1027D2BD00E2D80F /* CoreSupport.h */,
+				3C63F53B1027D2BD00E2D80F /* Inflections */,
+				3C63F53E1027D2BD00E2D80F /* NSData+Additions.h */,
+				3C63F53F1027D2BD00E2D80F /* NSData+Additions.m */,
+				3C63F5401027D2BD00E2D80F /* NSObject+PropertySupport.h */,
+				3C63F5411027D2BD00E2D80F /* NSObject+PropertySupport.m */,
+				3C63F5421027D2BD00E2D80F /* NSString+GSub.h */,
+				3C63F5431027D2BD00E2D80F /* NSString+GSub.m */,
+				3C63F5441027D2BD00E2D80F /* ObjectiveResourceDateFormatter.h */,
+				3C63F5451027D2BD00E2D80F /* ObjectiveResourceDateFormatter.m */,
+				3C63F5461027D2BD00E2D80F /* ObjectiveSupport.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3C63F53B1027D2BD00E2D80F /* Inflections */ = {
+			isa = PBXGroup;
+			children = (
+				3C63F53C1027D2BD00E2D80F /* NSString+InflectionSupport.h */,
+				3C63F53D1027D2BD00E2D80F /* NSString+InflectionSupport.m */,
+			);
+			path = Inflections;
+			sourceTree = "<group>";
+		};
+		3C63F5471027D2BD00E2D80F /* json-framework */ = {
+			isa = PBXGroup;
+			children = (
+				3C63F5481027D2BD00E2D80F /* JSONFramework.h */,
+				3C63F5491027D2BD00E2D80F /* NSObject+SBJSON.h */,
+				3C63F54A1027D2BD00E2D80F /* NSObject+SBJSON.m */,
+				3C63F54B1027D2BD00E2D80F /* NSString+SBJSON.h */,
+				3C63F54C1027D2BD00E2D80F /* NSString+SBJSON.m */,
+				3C63F54D1027D2BD00E2D80F /* SBJSON.h */,
+				3C63F54E1027D2BD00E2D80F /* SBJSON.m */,
+			);
+			path = "json-framework";
+			sourceTree = "<group>";
+		};
+		3C63F54F1027D2BD00E2D80F /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				3C63F5501027D2BD00E2D80F /* JSON */,
+				3C63F5591027D2BD00E2D80F /* NSDate+Serialize.h */,
+				3C63F55A1027D2BD00E2D80F /* NSDate+Serialize.m */,
+				3C63F55B1027D2BD00E2D80F /* NSDictionary+KeyTranslation.h */,
+				3C63F55C1027D2BD00E2D80F /* NSDictionary+KeyTranslation.m */,
+				3C63F55D1027D2BD00E2D80F /* NSObject+Serialize.h */,
+				3C63F55E1027D2BD00E2D80F /* NSObject+Serialize.m */,
+				3C63F55F1027D2BD00E2D80F /* NSString+Serialize.h */,
+				3C63F5601027D2BD00E2D80F /* NSString+Serialize.m */,
+				3C63F5611027D2BD00E2D80F /* Serialize.h */,
+				3C63F5621027D2BD00E2D80F /* XML */,
+			);
+			path = Serialization;
+			sourceTree = "<group>";
+		};
+		3C63F5501027D2BD00E2D80F /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				3C63F5511027D2BD00E2D80F /* NSArray+JSONSerializableSupport.h */,
+				3C63F5521027D2BD00E2D80F /* NSArray+JSONSerializableSupport.m */,
+				3C63F5531027D2BD00E2D80F /* JSONSerializable.h */,
+				3C63F5541027D2BD00E2D80F /* JSONSerializableSupport.h */,
+				3C63F5551027D2BD00E2D80F /* NSDictionary+JSONSerializableSupport.h */,
+				3C63F5561027D2BD00E2D80F /* NSDictionary+JSONSerializableSupport.m */,
+				3C63F5571027D2BD00E2D80F /* NSObject+JSONSerializableSupport.h */,
+				3C63F5581027D2BD00E2D80F /* NSObject+JSONSerializableSupport.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		3C63F5621027D2BD00E2D80F /* XML */ = {
+			isa = PBXGroup;
+			children = (
+				3C63F5631027D2BD00E2D80F /* NSNumber+XMLSerializableSupport.h */,
+				3C63F5641027D2BD00E2D80F /* NSNumber+XMLSerializableSupport.m */,
+				3C63F5651027D2BD00E2D80F /* FromXMLElementDelegate.h */,
+				3C63F5661027D2BD00E2D80F /* FromXMLElementDelegate.m */,
+				3C63F5671027D2BD00E2D80F /* NSArray+XMLSerializableSupport.h */,
+				3C63F5681027D2BD00E2D80F /* NSArray+XMLSerializableSupport.m */,
+				3C63F5691027D2BD00E2D80F /* NSDate+XMLSerializableSupport.h */,
+				3C63F56A1027D2BD00E2D80F /* NSDate+XMLSerializableSupport.m */,
+				3C63F56B1027D2BD00E2D80F /* NSDictionary+XMLSerializableSupport.h */,
+				3C63F56C1027D2BD00E2D80F /* NSDictionary+XMLSerializableSupport.m */,
+				3C63F56D1027D2BD00E2D80F /* NSNull+XMLSerializableSupport.h */,
+				3C63F56E1027D2BD00E2D80F /* NSNull+XMLSerializableSupport.m */,
+				3C63F56F1027D2BD00E2D80F /* NSObject+XMLSerializableSupport.h */,
+				3C63F5701027D2BD00E2D80F /* NSObject+XMLSerializableSupport.m */,
+				3C63F5711027D2BD00E2D80F /* NSString+XMLSerializableSupport.h */,
+				3C63F5721027D2BD00E2D80F /* NSString+XMLSerializableSupport.m */,
+				3C63F5731027D2BD00E2D80F /* XMLSerializable.h */,
+				3C63F5741027D2BD00E2D80F /* XMLSerializableSupport.h */,
+			);
+			path = XML;
+			sourceTree = "<group>";
+		};
+		3C63F5751027D2BD00E2D80F /* ObjectiveResource */ = {
+			isa = PBXGroup;
+			children = (
+				3C63F5781027D2BD00E2D80F /* Connection */,
+				3C63F5761027D2BD00E2D80F /* NSObject+ObjectiveResource.h */,
+				3C63F5871027D2BD00E2D80F /* ObjectiveResource.h */,
+				3C63F5881027D2BD00E2D80F /* ObjectiveResourceConfig.h */,
+				3C63F5891027D2BD00E2D80F /* ObjectiveResourceConfig.m */,
+				3C63F5771027D2BD00E2D80F /* NSObject+ObjectiveResource.m */,
+			);
+			name = ObjectiveResource;
+			sourceTree = "<group>";
+		};
+		3C63F5781027D2BD00E2D80F /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				3C63F5791027D2BD00E2D80F /* ConnectionManager.h */,
+				3C63F57A1027D2BD00E2D80F /* ConnectionManager.m */,
+				3C63F57B1027D2BD00E2D80F /* ConnectionDelegate.h */,
+				3C63F57C1027D2BD00E2D80F /* ConnectionDelegate.m */,
+				3C63F57D1027D2BD00E2D80F /* NSHTTPURLResponse+Error.h */,
+				3C63F57E1027D2BD00E2D80F /* NSHTTPURLResponse+Error.m */,
+				3C63F57F1027D2BD00E2D80F /* Connection.h */,
+				3C63F5801027D2BD00E2D80F /* Connection.m */,
+				3C63F5811027D2BD00E2D80F /* Response.h */,
+				3C63F5821027D2BD00E2D80F /* Response.m */,
+				3C63F5831027D2BD00E2D80F /* NSMutableURLRequest+ResponseType.h */,
+				3C63F5841027D2BD00E2D80F /* NSMutableURLRequest+ResponseType.m */,
+				3C63F5851027D2BD00E2D80F /* NSError+Error.h */,
+				3C63F5861027D2BD00E2D80F /* NSError+Error.m */,
+			);
+			name = Connection;
+			sourceTree = "<group>";
+		};
 		3CFA923C101FC4D2004D9F8A /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,6 +807,38 @@
 				3C55E48A1020C7B9009F04FF /* IssueViewController.m in Sources */,
 				3C55E4F710226C29009F04FF /* Author.m in Sources */,
 				3C55E58D10237AF3009F04FF /* WorksBaseTableViewController.m in Sources */,
+				3C63F58A1027D2BD00E2D80F /* NSString+InflectionSupport.m in Sources */,
+				3C63F58B1027D2BD00E2D80F /* NSData+Additions.m in Sources */,
+				3C63F58C1027D2BD00E2D80F /* NSObject+PropertySupport.m in Sources */,
+				3C63F58D1027D2BD00E2D80F /* NSString+GSub.m in Sources */,
+				3C63F58E1027D2BD00E2D80F /* ObjectiveResourceDateFormatter.m in Sources */,
+				3C63F58F1027D2BD00E2D80F /* NSObject+SBJSON.m in Sources */,
+				3C63F5901027D2BD00E2D80F /* NSString+SBJSON.m in Sources */,
+				3C63F5911027D2BD00E2D80F /* SBJSON.m in Sources */,
+				3C63F5921027D2BD00E2D80F /* NSArray+JSONSerializableSupport.m in Sources */,
+				3C63F5931027D2BD00E2D80F /* NSDictionary+JSONSerializableSupport.m in Sources */,
+				3C63F5941027D2BD00E2D80F /* NSObject+JSONSerializableSupport.m in Sources */,
+				3C63F5951027D2BD00E2D80F /* NSDate+Serialize.m in Sources */,
+				3C63F5961027D2BD00E2D80F /* NSDictionary+KeyTranslation.m in Sources */,
+				3C63F5971027D2BD00E2D80F /* NSObject+Serialize.m in Sources */,
+				3C63F5981027D2BD00E2D80F /* NSString+Serialize.m in Sources */,
+				3C63F5991027D2BD00E2D80F /* NSNumber+XMLSerializableSupport.m in Sources */,
+				3C63F59A1027D2BD00E2D80F /* FromXMLElementDelegate.m in Sources */,
+				3C63F59B1027D2BD00E2D80F /* NSArray+XMLSerializableSupport.m in Sources */,
+				3C63F59C1027D2BD00E2D80F /* NSDate+XMLSerializableSupport.m in Sources */,
+				3C63F59D1027D2BD00E2D80F /* NSDictionary+XMLSerializableSupport.m in Sources */,
+				3C63F59E1027D2BD00E2D80F /* NSNull+XMLSerializableSupport.m in Sources */,
+				3C63F59F1027D2BD00E2D80F /* NSObject+XMLSerializableSupport.m in Sources */,
+				3C63F5A01027D2BD00E2D80F /* NSString+XMLSerializableSupport.m in Sources */,
+				3C63F5A11027D2BD00E2D80F /* NSObject+ObjectiveResource.m in Sources */,
+				3C63F5A21027D2BD00E2D80F /* ConnectionManager.m in Sources */,
+				3C63F5A31027D2BD00E2D80F /* ConnectionDelegate.m in Sources */,
+				3C63F5A41027D2BD00E2D80F /* NSHTTPURLResponse+Error.m in Sources */,
+				3C63F5A51027D2BD00E2D80F /* Connection.m in Sources */,
+				3C63F5A61027D2BD00E2D80F /* Response.m in Sources */,
+				3C63F5A71027D2BD00E2D80F /* NSMutableURLRequest+ResponseType.m in Sources */,
+				3C63F5A81027D2BD00E2D80F /* NSError+Error.m in Sources */,
+				3C63F5A91027D2BD00E2D80F /* ObjectiveResourceConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
