@@ -24,6 +24,7 @@
 @property(retain) NSString *position;
 @property(retain) NSString *reader;
 @property(retain) NSString *free;
+@property(retain) NSNumber *favorite;
 
 @property(retain) Issue *issue;
 @property(retain) Author *author;
@@ -41,5 +42,6 @@
 - (BOOL)audioFileHasBeenDownloaded;
 - (BOOL)isAudioFileBeingDownloaded;
 - (BOOL)isFree;
+- (BOOL)isFavorite;
 
 @end

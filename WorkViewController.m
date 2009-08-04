@@ -88,6 +88,12 @@
   // Image
   [UIHelpers addRoundedImageWithURL:[self.work.author fullyQualifiedPhotoUrl] toView:self.view];
   
+  // Favorite
+  if ([self.work isFavorite])
+    [favoriteStar setImage:[UIImage imageNamed:@"star-full.png"] forState:UIControlStateNormal];
+  else
+    [favoriteStar setImage:[UIImage imageNamed:@"star-empty.png"] forState:UIControlStateNormal];
+  
   // Body
   [UIHelpers addCopy:[NSString stringWithFormat:@"%@\n\n\n<i>Read by %@</i>\n\n\n\n", self.work.body, self.work.reader] toScrollView:scrollView];
 
@@ -120,12 +126,22 @@
 #pragma mark Interface Actions
 
 -(IBAction)toggleFavorite {
-  static BOOL favorite = NO;
-  if (favorite)
+  if ([work isFavorite]) {
     [favoriteStar setImage:[UIImage imageNamed:@"star-empty.png"] forState:UIControlStateNormal];
-  else
+    work.favorite = [NSNumber numberWithBool:NO];
+  } else {
     [favoriteStar setImage:[UIImage imageNamed:@"star-full.png"] forState:UIControlStateNormal];
-  favorite = !favorite;
+    work.favorite = [NSNumber numberWithBool:YES];
+  }
+  
+  NSError *error = nil;
+  [AppDelegate save:&error];
+  if (error) {
+    debugLog(@"Error saving favorite:  %@", [error localizedDescription]);
+    // TODO: FIXME BITCH WHAT DO I DO?
+  }
+  
+  [AppDelegate.favoritesViewController reloadFavorites];
 }
 
 #pragma mark -

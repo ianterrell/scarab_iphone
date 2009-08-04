@@ -13,7 +13,7 @@
 
 @implementation Work
 
-@dynamic authorId, workId, title, body, position, reader, free;
+@dynamic authorId, workId, title, body, position, reader, free, favorite;
 @dynamic issue, author;
 
 #pragma mark Finders
@@ -64,6 +64,10 @@
 
 - (BOOL)isFree {
   return [self.free isEqualToString:@"true"];
+}
+
+- (BOOL)isFavorite {
+  return [self.favorite boolValue];
 }
 
 - (NSComparisonResult)compareByPosition:(Work *)other {

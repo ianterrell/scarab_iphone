@@ -96,6 +96,7 @@
 		3C63F5A81027D2BD00E2D80F /* NSError+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5861027D2BD00E2D80F /* NSError+Error.m */; };
 		3C63F5A91027D2BD00E2D80F /* ObjectiveResourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5891027D2BD00E2D80F /* ObjectiveResourceConfig.m */; };
 		3C63F5B61027D45B00E2D80F /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C63F5B51027D45A00E2D80F /* libxml2.2.dylib */; };
+		3C63F6741027EDB400E2D80F /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F6731027EDB400E2D80F /* FavoritesViewController.m */; };
 		3C9318E70FE87073009D3731 /* SMWorkAudioDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */; };
 		3C9318F90FE873E0009D3731 /* Work.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318F80FE873E0009D3731 /* Work.m */; };
 		3CE5D45C0FE8793E00A152D3 /* SMWorkAudioDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D45B0FE8793E00A152D3 /* SMWorkAudioDownload.m */; };
@@ -284,6 +285,8 @@
 		3C63F5881027D2BD00E2D80F /* ObjectiveResourceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveResourceConfig.h; sourceTree = "<group>"; };
 		3C63F5891027D2BD00E2D80F /* ObjectiveResourceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveResourceConfig.m; sourceTree = "<group>"; };
 		3C63F5B51027D45A00E2D80F /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		3C63F6721027EDB400E2D80F /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		3C63F6731027EDB400E2D80F /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
 		3C9318E50FE87073009D3731 /* SMWorkAudioDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMWorkAudioDownloadManager.h; sourceTree = "<group>"; };
 		3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWorkAudioDownloadManager.m; sourceTree = "<group>"; };
 		3C9318F70FE873E0009D3731 /* Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Work.h; sourceTree = "<group>"; };
@@ -500,6 +503,8 @@
 				3C246FAA0FE3FA8C00FCACDF /* AuthorViewController.xib */,
 				3C55E58B10237AF3009F04FF /* WorksBaseTableViewController.h */,
 				3C55E58C10237AF3009F04FF /* WorksBaseTableViewController.m */,
+				3C63F6721027EDB400E2D80F /* FavoritesViewController.h */,
+				3C63F6731027EDB400E2D80F /* FavoritesViewController.m */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -843,6 +848,7 @@
 				3C63F5A71027D2BD00E2D80F /* NSMutableURLRequest+ResponseType.m in Sources */,
 				3C63F5A81027D2BD00E2D80F /* NSError+Error.m in Sources */,
 				3C63F5A91027D2BD00E2D80F /* ObjectiveResourceConfig.m in Sources */,
+				3C63F6741027EDB400E2D80F /* FavoritesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
