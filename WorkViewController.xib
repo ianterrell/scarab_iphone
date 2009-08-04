@@ -74,7 +74,7 @@
 					</object>
 					<object class="IBUIScrollView" id="136491679">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">268</int>
+						<int key="NSvFlags">309</int>
 						<string key="NSFrame">{{0, 84}, {320, 283}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -117,7 +117,7 @@
 					</object>
 					<object class="IBUIView" id="468606035">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">269</int>
 						<object class="NSMutableArray" key="NSSubviews">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUIToolbar" id="1068892665">
@@ -178,7 +178,7 @@
 					</object>
 					<object class="IBUIView" id="890630766">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">269</int>
 						<object class="NSMutableArray" key="NSSubviews">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUIToolbar" id="300431607">

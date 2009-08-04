@@ -52,7 +52,7 @@
 #pragma mark Issue Management
 
 - (void)loadIssuesFromDb {
-  // TODO:  does this work alphabetically or numerically?  i.e. 1, 10, 11, 2, 3, 4 (prols alphabet, LAME)
+  // TODO:  does this work alphabetically or numerically?  i.e. 1, 10, 11, 2, 3, 4 (prols alphabet, LAME) -- sort in code?
   NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES];
   self.issuesInDb = [Issue fetchWithSortDescriptor:sortDescriptor];
   [sortDescriptor release];
@@ -67,11 +67,19 @@
   if (currentIssue != nil)
     [issues removeLastObject];
 
-  // TODO: separate remaining into bookshelf issues and back issues
+  // TODO: separate remaining into bookshelf issues and back issues:
   NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:NO];
   [issues sortUsingDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
   [sortDescriptor release];
-  self.bookshelfIssues = issues;
+  
+  int c = [issues count];
+  self.backIssues = [NSMutableArray arrayWithCapacity:c];
+  self.bookshelfIssues = [NSMutableArray arrayWithCapacity:c];
+  for (Issue *i in issues)
+    if ([i hasBeenPurchased])
+      [self.bookshelfIssues addObject:i];
+    else
+      [self.backIssues addObject:i];
 
   [(UITableView *)self.view reloadData];
 }
@@ -204,18 +212,17 @@
   cell.number.text = issue.number;
   cell.title.text = issue.title;
   cell.subtitle.text = issue.subtitle;
+  cell.preview.hidden = [issue hasBeenPurchased];
 
   return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  // TODO:  pick URL based on whether or not we've purchased it yet!
-  TTOpenURL([NSString stringWithFormat:@"scarab://previewIssue/%@", [self issueAtIndexPath:indexPath].number]);
-  
-//	IssuePreviewController *issuePreviewController = [[IssuePreviewController alloc] initWithNibName:@"IssuePreviewController" bundle:nil];
-//  issuePreviewController.issue = [self issueAtIndexPath:indexPath];
-//	[self.navigationController pushViewController:issuePreviewController animated:YES];
-//	[issuePreviewController release];
+  Issue *issue = [self issueAtIndexPath:indexPath];
+  if ([issue hasBeenPurchased])
+    TTOpenURL([NSString stringWithFormat:@"scarab://issues/%@", issue.number]);
+  else
+    TTOpenURL([NSString stringWithFormat:@"scarab://previewIssue/%@", issue.number]);
 }
 
 

@@ -44,9 +44,11 @@
 
 #pragma mark Setup Helper Methods
 
+- (void)setUpStore;
 - (void)setUpAudioDirectory;
 - (void)setUpObjectiveResource;
 - (void)setUpThree20;
+- (void)setUpSplashScreen;
 
 #pragma mark HUD Methods
 

@@ -21,7 +21,7 @@
 	for (NSString *key in self) {
 		// Create XML if key not in exclusion list
 		if(![exclusions containsObject:key]) {
-			value = [self valueForKey:key];
+      value = [self valueForKey:key];
 			propertyRootName = [[self class] translationForKey:key withTranslations:keyTranslations];
 			[elementValue appendString:[value toXMLElementAs:propertyRootName]];
 		}

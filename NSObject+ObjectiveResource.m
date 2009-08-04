@@ -240,7 +240,13 @@ static NSString *_activeResourcePrefix = nil;
 		*aError = res.error;
 	}
 	if ([res isSuccess]) {
-		NSDictionary *newProperties = [[[self class] performSelector:[[self class] getRemoteParseDataMethod] withObject:res.body] properties];
+    NSDictionary *newProperties = [[[self class] performSelector:[[self class] getRemoteParseDataMethod] withObject:res.body] properties];
+    
+    // Nice little hack here.  Will have to be hand merged if updating OR.
+    NSMutableDictionary *hackedProperties = [NSMutableDictionary dictionaryWithDictionary:newProperties];
+    [hackedProperties removeObjectsForKeys:[self excludedPropertyNames]];
+    newProperties = hackedProperties;
+    
 		[self setProperties:newProperties];
 		return YES;
 	}

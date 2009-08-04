@@ -19,6 +19,12 @@
   return [transaction saveRemote];  // if YES then it passed the Rails validations, which include validating with Apple
 }
 
+- (NSArray *)excludedPropertyNames {
+  NSMutableArray *excluded = [NSMutableArray arrayWithArray: [super excludedPropertyNames]];
+  [excluded addObject:@"URLValue"];
+  return (NSArray *)excluded;
+} 
+
 - (void)dealloc {
   [transactionId release];
   [receipt release];

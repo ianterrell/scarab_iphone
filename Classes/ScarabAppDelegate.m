@@ -19,6 +19,7 @@
 #import "TabBarController.h"
 #import "PlaceholderController.h"
 
+#import "Transaction.h"
 #import "Work.h"
 
 #define kDatabaseName @"Scarab.sqlite3"
@@ -37,21 +38,12 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
   debugLog(@"Application did finish launching!");
-  
-  // Set up store
-  [[SKPaymentQueue defaultQueue] addTransactionObserver:[SMStore defaultStore]];
-  
-  // TEST
-//  [[SMStore defaultStore] test];
 
-
+  [self setUpStore];
   [self setUpAudioDirectory];
-
   [self setUpObjectiveResource];
   [self setUpThree20];
-  
-  self.splashScreenController = [[SplashScreenController alloc] initWithNibName:@"SplashScreen" bundle:nil];  
-  [[UIApplication sharedApplication].keyWindow addSubview:self.splashScreenController.view];
+  [self setUpSplashScreen];
   
   // Set up HUD
   HUD = nil;
@@ -82,6 +74,16 @@
 #pragma mark -
 #pragma mark Setup Helper Methods
 
+/**
+ * Sets up the store to handle transactions -- including any in progress
+ */
+- (void)setUpStore {
+  [[SKPaymentQueue defaultQueue] addTransactionObserver:[SMStore defaultStore]];
+}
+
+/**
+ * Creates the directory to hold the audio files if it does not already exist.
+ */
 - (void)setUpAudioDirectory {
   NSFileManager *manager = [NSFileManager defaultManager];
   if (![manager fileExistsAtPath:[Work audioDirectoryPath]]) {
@@ -136,6 +138,11 @@
 - (void)setUpThree20 {
   [TTStyleSheet setGlobalStyleSheet:[[[ScarabStyleSheet alloc] init] autorelease]];
   [self setUpTTNavigator];
+}
+
+- (void)setUpSplashScreen {
+  self.splashScreenController = [[SplashScreenController alloc] initWithNibName:@"SplashScreen" bundle:nil];  
+  [[UIApplication sharedApplication].keyWindow addSubview:self.splashScreenController.view];
 }
 
 /*
