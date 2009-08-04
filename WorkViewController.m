@@ -70,7 +70,7 @@
   if (self.work == nil)
     return;
   
-  self.title = @"Poem"; // TODO: Poetry/Fiction/Essay
+  self.title = self.work.workType;
 
   // Title
   self.titleLabel.text = self.work.title;

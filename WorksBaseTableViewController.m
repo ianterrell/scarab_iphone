@@ -43,7 +43,7 @@
   Work *work = [self workAtIndexPath:indexPath];
   if (work != nil) {
     cell.title.text = work.title;
-    cell.subtitle.text = [NSString stringWithFormat:@"A poem by %@", work.author.name]; // TODO: add prose
+    cell.subtitle.text = [NSString stringWithFormat:@"%@ %@", [work aTypeBy], work.author.name];
     [UIHelpers addRoundedImageWithURL:[work.author fullyQualifiedPhotoUrl] toView:cell];
   }
   

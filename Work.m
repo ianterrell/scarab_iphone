@@ -13,7 +13,7 @@
 
 @implementation Work
 
-@dynamic authorId, workId, title, body, position, reader, free, favorite;
+@dynamic authorId, workId, title, body, position, reader, workType, free, favorite;
 @dynamic issue, author;
 
 #pragma mark Finders
@@ -60,6 +60,16 @@
 
 - (NSString *)audioFilePath {
   return [NSString stringWithFormat:@"%@/%d.mp3", [Work audioDirectoryPath], [self.workId intValue]];
+}
+
+- (NSString *)aTypeBy {
+  if ([self.workType isEqualToString:@"Poem"])
+    return @"A poem by";
+  if ([self.workType isEqualToString:@"Fiction"])
+    return @"Fiction by";
+  if ([self.workType isEqualToString:@"Essay"])
+    return @"An essay by";
+  return @"";
 }
 
 - (BOOL)isFree {

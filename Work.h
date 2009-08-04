@@ -23,6 +23,7 @@
 @property(retain) NSString *body;
 @property(retain) NSString *position;
 @property(retain) NSString *reader;
+@property(retain) NSString *workType;
 @property(retain) NSString *free;
 @property(retain) NSNumber *favorite;
 
@@ -41,6 +42,7 @@
 + (NSString *)audioDirectoryPath;
 - (BOOL)audioFileHasBeenDownloaded;
 - (BOOL)isAudioFileBeingDownloaded;
+- (NSString *)aTypeBy;
 - (BOOL)isFree;
 - (BOOL)isFavorite;
 
