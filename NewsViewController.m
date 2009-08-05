@@ -11,6 +11,8 @@
 
 @implementation NewsViewController
 
+// TODO: have first item be a badass logo or something.
+
 - (int)setupDatasourceFromDb {
   TTListDataSource *source = [[TTListDataSource alloc] init];
   NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:NO];
