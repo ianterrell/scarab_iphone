@@ -8,13 +8,30 @@
 
 #import <Foundation/Foundation.h>
 
+@class Interview;
+@class FootnoteView;
+@class Footnote;
 
 @interface InterviewViewController : UIViewController {
-  IBOutlet UILabel *titleLabel;
+  IBOutlet UILabel *subTitleLabel;
   IBOutlet UIScrollView *scrollView;
+  FootnoteView *footnoteView;
+  
+  Interview *interview;
+  Footnote *nextFootnote;
+  
+  BOOL footnoteUp;
 }
 
-@property(nonatomic,retain) UILabel *titleLabel;
+@property(nonatomic,retain) Interview *interview;
+@property(nonatomic,retain) Footnote *nextFootnote;
+
+@property(nonatomic,retain) FootnoteView *footnoteView;
+@property(nonatomic,retain) UILabel *subTitleLabel;
 @property(nonatomic,retain) UIScrollView *scrollView;
+
+- (void)openFootnoteWithId:(NSString *)footnoteId;
+- (void)showFootnote;
+- (void)hideFootnoteShowNext:(BOOL)next;
 
 @end

@@ -10,7 +10,6 @@
 
 typedef enum {
   PlaceholderCredits,
-  PlaceholderInterviews,
   PlaceholderFeedback,
   PlaceholderSync,
   PlaceholderCleanUp,

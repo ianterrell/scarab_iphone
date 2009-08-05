@@ -15,8 +15,6 @@
   switch (type) {
     case PlaceholderCredits:
       return @"Credits";
-    case PlaceholderInterviews:
-      return @"Interviews";
     case PlaceholderFeedback:
       return @"Send Feedback";
     case PlaceholderSync:
@@ -34,8 +32,6 @@
   switch (type) {
     case PlaceholderCredits:
       return @"29-heart.png";
-    case PlaceholderInterviews:
-      return @"66-microphone.png";
     case PlaceholderFeedback:
       return @"18-envelope.png";
     case PlaceholderSync:

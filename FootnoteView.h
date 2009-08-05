@@ -8,9 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+#import "InterviewViewController.h"
 
 @interface FootnoteView : TTView {
   CGPoint startTouchPosition;
+  InterviewViewController *interviewViewController;
+  TTStyledTextLabel *footnoteLabel;
 }
+
+@property(nonatomic, assign) InterviewViewController *interviewViewController;
+@property(nonatomic, assign) TTStyledTextLabel *footnoteLabel;
+
+- (void)setTextFromXHTML:(NSString *)text;
 
 @end

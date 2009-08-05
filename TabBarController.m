@@ -14,7 +14,7 @@
 - (void)viewDidLoad {
   [self setTabURLs:[NSArray arrayWithObjects:@"scarab://library",
                                              @"scarab://news",
-                                             [NSString stringWithFormat:@"scarab://placeholder/%d", PlaceholderInterviews],
+                                             @"scarab://interviews",
                                              @"scarab://favorites",
                                              [NSString stringWithFormat:@"scarab://placeholder/%d", PlaceholderFeedback],
                                              [NSString stringWithFormat:@"scarab://placeholder/%d", PlaceholderSync],

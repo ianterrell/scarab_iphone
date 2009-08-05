@@ -11,6 +11,7 @@
 @class SplashScreenController;
 @class LibraryViewController;
 @class FavoritesViewController;
+@class InterviewViewController;
 
 @interface ScarabAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
   UIWindow *window;
@@ -23,6 +24,7 @@
   
   UIViewController *visibleController;
   FavoritesViewController *favoritesViewController;
+  InterviewViewController *interviewViewController;
   
   MBProgressHUD *HUD;
 }
@@ -31,6 +33,7 @@
 @property(nonatomic,retain) IBOutlet SplashScreenController *splashScreenController;
 @property(nonatomic,retain) IBOutlet LibraryViewController *libraryViewController;
 @property(nonatomic,retain) FavoritesViewController *favoritesViewController;
+@property(nonatomic,retain) InterviewViewController *interviewViewController;
 
 @property(nonatomic,retain,readonly) NSManagedObjectModel *managedObjectModel;
 @property(nonatomic,retain,readonly) NSManagedObjectContext *managedObjectContext;

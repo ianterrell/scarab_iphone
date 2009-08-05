@@ -20,6 +20,8 @@
 #import "PlaceholderController.h"
 #import "FavoritesViewController.h"
 #import "NewsViewController.h"
+#import "InterviewsViewController.h"
+#import "InterviewViewController.h"
 
 #import "Transaction.h"
 #import "Work.h"
@@ -34,7 +36,7 @@
 @synthesize visibleController;
 @synthesize libraryViewController;
 @synthesize favoritesViewController;
-
+@synthesize interviewViewController;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -123,14 +125,21 @@
   
   [map from:@"*" toViewController:[TTWebController class]];
   [map from:@"scarab://tabBar" toSharedViewController:[TabBarController class]];
+
   [map from:@"scarab://library" toSharedViewController:[LibraryViewController class]];
-  [map from:@"scarab://favorites" toSharedViewController:[FavoritesViewController class]];
-  [map from:@"scarab://news" toSharedViewController:[NewsViewController class]];
-//  [map from:@"scarab://previewIssue/(initWithNumber:)" parent:@"scarab://library" toViewController:[IssuePreviewController class] selector:nil transition:0];
   [map from:@"scarab://previewIssue/(initWithNumber:)" toViewController:[IssuePreviewController class]];
   [map from:@"scarab://issues/(initWithNumber:)" parent:@"scarab://library" toViewController:[IssueViewController class] selector:nil transition:0];  
   [map from:@"scarab://works/(initWithId:)" toViewController:[WorkViewController class]];
   [map from:@"scarab://authors/(initWithId:)" toViewController:[AuthorViewController class]];
+
+  [map from:@"scarab://favorites" toSharedViewController:[FavoritesViewController class]];
+
+  [map from:@"scarab://news" toSharedViewController:[NewsViewController class]];
+  
+  [map from:@"scarab://interviews" toSharedViewController:[InterviewsViewController class]];
+  [map from:@"scarab://interviews/(initWithId:)" toViewController:[InterviewViewController class]];
+  [map from:@"scarab://footnotes/(openFootnote:)" toObject:self selector:@selector(openFootnote:)];
+  
   [map from:@"scarab://placeholder/(initWithType:)" toViewController:[PlaceholderController class]];  
 
   // Before opening the tab bar, we see if the controller history was persisted the last time
@@ -168,6 +177,13 @@
 -(void)doneWithSplash {
   debugLog(@"Done with splash screen");
   [splashScreenController release];
+}
+
+#pragma mark -
+#pragma mark Actions
+
+- (void)openFootnote:(NSString *)footnoteId {
+  [interviewViewController openFootnoteWithId:footnoteId];
 }
 
 #pragma mark -
@@ -307,6 +323,7 @@
   [persistentStoreCoordinator release];
   [splashScreenController release];
   [favoritesViewController release];
+  [interviewViewController release];
   [window release];
   [super dealloc];
 }
