@@ -25,8 +25,7 @@
   }
   self.dataSource = source;
   [self refresh];
-  return last
-  ;
+  return last;
 }
 
 - (id)init {
