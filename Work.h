@@ -17,11 +17,11 @@
 
 }
 
-@property(retain) NSString *workId;
-@property(retain) NSString *authorId;
+@property(retain) NSNumber *workId;
+@property(retain) NSNumber *authorId;
 @property(retain) NSString *title;
 @property(retain) NSString *body;
-@property(retain) NSString *position;
+@property(retain) NSNumber *position;
 @property(retain) NSString *reader;
 @property(retain) NSString *workType;
 @property(retain) NSString *free;
@@ -36,7 +36,7 @@
 #pragma mark Finders
 
 + (NSArray *)findAllInIssue:(Issue *)issue;
-+ (Work *)workWithId:(NSString *)workId;
++ (Work *)workWithId:(NSNumber *)workId;
 
 #pragma mark Helpers
 + (NSString *)audioDirectoryPath;

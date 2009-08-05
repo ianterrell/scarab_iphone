@@ -28,8 +28,8 @@
   return [self fetchFirstWithPredicate:[NSPredicate predicateWithFormat:@"productIdentifier = %@", productIdentifier]];
 }
 
-+ (Issue *)issueWithNumber:(NSString *)number {
-  return [self fetchFirstWithPredicate:[NSPredicate predicateWithFormat:@"number = %@", number]];
++ (Issue *)issueWithNumber:(NSNumber *)number {
+  return [self fetchFirstWithPredicate:[NSPredicate predicateWithFormat:@"number = %d", [number intValue]]];
 }
 
 #pragma mark Helpers

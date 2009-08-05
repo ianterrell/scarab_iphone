@@ -11,6 +11,24 @@
 
 @implementation NewsViewController
 
+- (int)setupDatasourceFromDb {
+  TTListDataSource *source = [[TTListDataSource alloc] init];
+  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:NO];
+  NSArray *updates = [Update fetchWithSortDescriptor:sortDescriptor];
+  [sortDescriptor release];
+  int last = 0;
+  for (Update *update in updates) {
+    debugLog(@"body is --%@--", update.body);
+    [source.items addObject:[TTTableStyledTextItem itemWithText:[TTStyledText textFromXHTML:update.body] URL:nil]];
+    if (last == 0)
+      last = [update.number intValue];
+  }
+  self.dataSource = source;
+  [self refresh];
+  return last
+  ;
+}
+
 - (id)init {
   if (self = [super init]) {
     self.title = @"News";
@@ -22,31 +40,9 @@
     self.variableHeightRows = YES;
     self.tableView.allowsSelection = NO;
     
-    // TODO: on init or appear? also reverse sort
-    
-    TTListDataSource *dataSource = [[[TTListDataSource alloc] init] autorelease];
-
-    self.dataSource = dataSource;
-        if (!fetchedTheNews) {
-      // TODO:  does this work alphabetically or numerically?  i.e. 1, 10, 11, 2, 3, 4 (prols alphabet, LAME) -- sort in code?
-      NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES];
-      NSArray *updates = [Update fetchWithSortDescriptor:sortDescriptor];
-      [sortDescriptor release];
-      
-      debugLog(@"there are %d updates in the db", [updates count]);
-      
-      currentUpdateNumber = [((Update *)[updates lastObject]).number intValue];
-      
-      for (Update *update in updates) {
-        debugLog(@"body is --%@--", update.body);
-        [((TTListDataSource *)self.dataSource).items addObject:[TTTableStyledTextItem itemWithText:[TTStyledText textFromXHTML:update.body] URL:nil]];
-      }
-      
-      [AppDelegate showHUDWithLabel:nil details:@"Checking for news" whileExecuting:@selector(fetchNews) onTarget:self withObject:nil animated:YES];
-      
-      [_tableView reloadData];
-    }
-
+    currentUpdateNumber = [self setupDatasourceFromDb];
+    if (!fetchedTheNews)
+      [self performSelector:@selector(fetchNews) withObject:nil afterDelay:0.1];
   }
   return self;
 }
@@ -63,22 +59,22 @@
   NSArray *newUpdatesOnServer = [Update findAllSinceNumber:[NSNumber numberWithInt:currentUpdateNumber]];
   debugLog(@"There are %d new updates on the server", [newUpdatesOnServer count]);
   
-  if ([newUpdatesOnServer count] > 0) {
-    // TODO:  guarantee order from server, or sort here
-    for (Update *update in newUpdatesOnServer) {
-      [AppDelegate.managedObjectContext insertObject:update];
-      [((TTListDataSource *)self.dataSource).items addObject:[TTTableStyledTextItem itemWithText:[TTStyledText textFromXHTML:update.body] URL:nil]];
-    }
+  int count = [newUpdatesOnServer count];
+  if (count > 0) {
+    self.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", count];
     
+    for (Update *update in newUpdatesOnServer)
+      [AppDelegate.managedObjectContext insertObject:update];
+
     NSError *error = nil;
     [AppDelegate save:&error];
     if (error) {
       debugLog(@"Error saving new issues in Library:  %@", [error localizedDescription]);
       // TODO: FIXME BITCH WHAT DO I DO?
     }
-    [self refresh];
   }
   fetchedTheNews = YES;
+  [self setupDatasourceFromDb];
 }
 
 @end

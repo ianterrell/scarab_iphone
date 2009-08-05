@@ -14,10 +14,8 @@
 
 }
 
-@property(retain) NSString *updateId;
-@property(retain) NSString *number;
+@property(retain) NSNumber *updateId;
+@property(retain) NSNumber *number;
 @property(retain) NSString *body;
-
-+ (NSArray *)findAllSinceNumber:(NSNumber *)number;
 
 @end

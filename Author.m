@@ -28,8 +28,8 @@
 	return [self performSelector:[self getRemoteParseDataMethod] withObject:response.body];
 }
 
-+ (Author *)authorWithId:(NSString *)authorId {
-  return [self fetchFirstWithPredicate:[NSPredicate predicateWithFormat:@"authorId = %@", authorId]];
++ (Author *)authorWithId:(NSNumber *)authorId {
+  return [self fetchFirstWithPredicate:[NSPredicate predicateWithFormat:@"authorId = %d", [authorId intValue]]];
 }
 
 #pragma mark Helpers

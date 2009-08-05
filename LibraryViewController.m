@@ -52,7 +52,6 @@
 #pragma mark Issue Management
 
 - (void)loadIssuesFromDb {
-  // TODO:  does this work alphabetically or numerically?  i.e. 1, 10, 11, 2, 3, 4 (prols alphabet, LAME) -- sort in code?
   NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES];
   self.issuesInDb = [Issue fetchWithSortDescriptor:sortDescriptor];
   [sortDescriptor release];
@@ -208,7 +207,7 @@
   cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_bg.png"]];
   //cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_bg_selected.png"]];
   
-  cell.number.text = issue.number;
+  cell.number.text = [issue.number stringValue];
   cell.title.text = issue.title;
   cell.subtitle.text = issue.subtitle;
   cell.preview.hidden = [issue hasBeenPurchased];

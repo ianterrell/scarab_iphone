@@ -9,6 +9,7 @@
 #import "WorkViewController.h"
 #import "AuthorViewController.h"
 #import "SMWorkAudioDownloadManager.h"
+#import "FavoritesViewController.h"
 #import "Issue.h"
 #import "Work.h"
 #import "Author.h"
@@ -28,7 +29,7 @@
 -(id)initWithId:(NSString *)workId {
   Author *a = nil;
   if (self = [super init]) {
-    self.work = [Work workWithId:workId];
+    self.work = [Work workWithId:[NSNumber numberWithInt:[workId intValue]]];
     if (self.work == nil) {
       // Not in database -- could be a free work!  Let's check on the server.
       Work *w = [Work findRemote:workId];
@@ -40,7 +41,7 @@
         // Let's grab the author, too, and link them.  Try the DB first, then fetch and save from the server.
         a = [Author authorWithId:w.authorId];
         if (a == nil) {        
-          a = [Author findRemote:w.authorId];
+          a = [Author findRemote:[w.authorId stringValue]];
           [AppDelegate.managedObjectContext insertObject:a];
         }
         [AppDelegate.managedObjectContext insertObject:w];

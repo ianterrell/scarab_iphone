@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface Transaction : NSObject {
-  NSString *transactionId;
+  NSNumber *transactionId;
   NSString *receipt;
 }
 
-@property(nonatomic,retain) NSString *transactionId;
+@property(nonatomic,retain) NSNumber *transactionId;
 @property(nonatomic,retain) NSString *receipt;
 
 +(BOOL)saveOnServer:(SKPaymentTransaction *)transaction;

@@ -32,8 +32,8 @@
 	return [self performSelector:[self getRemoteParseDataMethod] withObject:response.body];
 }
 
-+ (Work *)workWithId:(NSString *)workId {
-  return [self fetchFirstWithPredicate:[NSPredicate predicateWithFormat:@"workId = %@", workId]];
++ (Work *)workWithId:(NSNumber *)workId {
+  return [self fetchFirstWithPredicate:[NSPredicate predicateWithFormat:@"workId = %d", [workId intValue]]];
 }
 
 #pragma mark Helpers
@@ -80,6 +80,7 @@
   return [self.favorite boolValue];
 }
 
+// TODO: I can fix this.
 - (NSComparisonResult)compareByPosition:(Work *)other {
   int x = [self.position intValue];
   int y = [other.position intValue];

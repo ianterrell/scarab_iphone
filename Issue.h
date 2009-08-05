@@ -12,9 +12,9 @@
 
 }
 
-@property(retain) NSString *issueId;
+@property(retain) NSNumber *issueId;
 @property(retain) NSString *color;
-@property(retain) NSString *number;
+@property(retain) NSNumber *number;
 @property(retain) NSString *title;
 @property(retain) NSString *subtitle;
 @property(retain) NSString *previewDescription;
@@ -24,8 +24,7 @@
 
 @property(retain) NSMutableSet *works;
 
-+ (NSArray *)findAllSinceNumber:(NSNumber *)number;
-+ (Issue *)issueWithNumber:(NSString *)number;
++ (Issue *)issueWithNumber:(NSNumber *)number;
 + (Issue *)issueWithProductIdentifier:(NSString *)productIdentifier;
 
 - (BOOL)hasBeenPurchased;

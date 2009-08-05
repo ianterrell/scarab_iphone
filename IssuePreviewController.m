@@ -21,7 +21,7 @@
 
 -(id)initWithNumber:(NSString *)number {
   if (self = [super init]) {
-    self.issue = [Issue issueWithNumber:number];
+    self.issue = [Issue issueWithNumber:[NSNumber numberWithInt:[number intValue]]];
   }
   return self;
 }
@@ -33,7 +33,7 @@
   [[IssuePriceFetcherManager defaultManager] fetchPriceForIssue:issue previewController:self];
   
   self.title = @"Preview";
-  self.issueNumber.text = issue.number;
+  self.issueNumber.text = [issue.number stringValue];
   self.issueTitle.text = issue.title;
   [self.view insertSubview:[issue swatchView] belowSubview:scarab];
   

@@ -18,7 +18,7 @@
 
 -(id)initWithNumber:(NSString *)number {
   if (self = [super init]) {
-    self.issue = [Issue issueWithNumber:number];
+    self.issue = [Issue issueWithNumber:[NSNumber numberWithInt:[number intValue]]];
     if (![issue hasBeenPurchased]) {
       TTAlertViewController *alert = [[TTAlertViewController alloc] initWithTitle:@"Oops!" message:@"This issue has not been purchased."];
       [alert addCancelButtonWithTitle:@"Cancel" URL:[NSString stringWithFormat:@"scarab://previewIssue/%@", issue.number]];

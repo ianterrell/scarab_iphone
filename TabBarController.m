@@ -25,11 +25,11 @@
   self.delegate = self;
 }
 
-//- (void) tabBarController:(UITabBarController*)aTabBarController didSelectViewController:(UIViewController*)viewController {
-////    viewController.tabBarItem.badgeValue = nil;
-//  debugLog(@"hey I just selected a %@", [viewController className]);
-//  viewController.tabBarItem.badgeValue = @"1";
-//}
+- (void) tabBarController:(UITabBarController*)aTabBarController didSelectViewController:(UIViewController*)viewController {
+//    viewController.tabBarItem.badgeValue = nil;
+  debugLog(@"hey I just selected a %@", [viewController className]);
+  viewController.tabBarItem.badgeValue = nil;
+}
 
 
 @end

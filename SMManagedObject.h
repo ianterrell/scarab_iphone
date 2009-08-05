@@ -28,6 +28,9 @@
 +(id)fetchFirstWithPredicate:(NSPredicate *)predicate sortDescriptor:(NSSortDescriptor *)sortDescriptor;
 +(id)fetchFirstWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors;
 
+// For that common pattern
++ (NSArray *)findAllSinceNumber:(NSNumber *)number;
+
 // Main fetchers
 +(id)fetchInContext:(NSManagedObjectContext *)managedObjectContext first:(BOOL)first predicate:(NSPredicate *)predicate sortDescriptor:(NSSortDescriptor *)sortDescriptor;
 +(id)fetchInContext:(NSManagedObjectContext *)managedObjectContext first:(BOOL)first predicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors;

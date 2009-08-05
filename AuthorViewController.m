@@ -15,7 +15,7 @@
 
 -(id)initWithId:(NSString *)authorId {
   if (self = [super init]) {
-    self.author = [Author authorWithId:authorId];
+    self.author = [Author authorWithId:[NSNumber numberWithInt:[authorId intValue]]];
     if (self.author == nil) {
       // TODO: add HUD or something to let them know a fetch is happening
       debugLog(@"fetching author with id %@ from server", authorId);

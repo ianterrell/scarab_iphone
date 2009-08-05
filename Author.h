@@ -14,7 +14,7 @@
 
 }
 
-@property(retain) NSString *authorId;
+@property(retain) NSNumber *authorId;
 @property(retain) NSString *name;
 @property(retain) NSString *location;
 @property(retain) NSString *bio;
@@ -25,7 +25,7 @@
 #pragma mark Finders
 
 + (NSArray *)findAllInIssue:(Issue *)issue;
-+ (Author *)authorWithId:(NSString *)authorId;
++ (Author *)authorWithId:(NSNumber *)authorId;
 
 #pragma mark Helpers
 
