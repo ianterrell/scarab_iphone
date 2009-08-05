@@ -14,7 +14,7 @@
 - (int)setupDatasourceFromDb {
   TTListDataSource *source = [[TTListDataSource alloc] init];
   NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:NO];
-  NSArray *updates = [Update fetchWithSortDescriptor:sortDescriptor];
+  NSArray *updates = [Update fetchWithSortDescriptor:sortDescriptor limit:10];
   [sortDescriptor release];
   int last = 0;
   for (Update *update in updates) {

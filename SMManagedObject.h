@@ -15,6 +15,8 @@
 // Fetch
 +(NSMutableArray *)fetch;
 +(NSMutableArray *)fetchWithPredicate:(NSPredicate *)predicate;
++(NSMutableArray *)fetchLimit:(int)limit;
++(NSMutableArray *)fetchWithPredicate:(NSPredicate *)predicate limit:(int)limit;
 +(id)fetchFirst;
 +(id)fetchFirstWithPredicate:(NSPredicate *)predicate;
 
@@ -23,6 +25,10 @@
 +(NSMutableArray *)fetchWithSortDescriptors:(NSArray *)sortDescriptors;
 +(NSMutableArray *)fetchWithPredicate:(NSPredicate *)predicate sortDescriptor:(NSSortDescriptor *)sortDescriptor;
 +(NSMutableArray *)fetchWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors;
++(NSMutableArray *)fetchWithSortDescriptor:(NSSortDescriptor *)sortDescriptor limit:(int)limit;
++(NSMutableArray *)fetchWithSortDescriptors:(NSArray *)sortDescriptors limit:(int)limit;
++(NSMutableArray *)fetchWithPredicate:(NSPredicate *)predicate sortDescriptor:(NSSortDescriptor *)sortDescriptor limit:(int)limit;
++(NSMutableArray *)fetchWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(int)limit;
 +(id)fetchFirstWithSortDescriptor:(NSSortDescriptor *)sortDescriptor;
 +(id)fetchFirstWithSortDescriptors:(NSArray *)sortDescriptors;
 +(id)fetchFirstWithPredicate:(NSPredicate *)predicate sortDescriptor:(NSSortDescriptor *)sortDescriptor;
@@ -32,8 +38,8 @@
 + (NSArray *)findAllSinceNumber:(NSNumber *)number;
 
 // Main fetchers
-+(id)fetchInContext:(NSManagedObjectContext *)managedObjectContext first:(BOOL)first predicate:(NSPredicate *)predicate sortDescriptor:(NSSortDescriptor *)sortDescriptor;
-+(id)fetchInContext:(NSManagedObjectContext *)managedObjectContext first:(BOOL)first predicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors;
++(id)fetchInContext:(NSManagedObjectContext *)managedObjectContext first:(BOOL)first predicate:(NSPredicate *)predicate sortDescriptor:(NSSortDescriptor *)sortDescriptor limit:(int)limit;
++(id)fetchInContext:(NSManagedObjectContext *)managedObjectContext first:(BOOL)first predicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(int)limit;
 
 
 @end
