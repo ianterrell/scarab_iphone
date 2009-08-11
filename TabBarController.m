@@ -18,7 +18,7 @@
                                              @"scarab://favorites",
                                              [NSString stringWithFormat:@"scarab://placeholder/%d", PlaceholderFeedback],
                                              [NSString stringWithFormat:@"scarab://placeholder/%d", PlaceholderSync],
-                                             [NSString stringWithFormat:@"scarab://placeholder/%d", PlaceholderCleanUp],
+                                             @"scarab://cleanUpFiles",
                                              @"scarab://credits",
                                              nil]];
   self.customizableViewControllers = [NSArray arrayWithObjects:nil];

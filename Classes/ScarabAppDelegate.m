@@ -22,6 +22,7 @@
 #import "NewsViewController.h"
 #import "InterviewsViewController.h"
 #import "InterviewViewController.h"
+#import "CleanUpFilesViewController.h"
 #import "CreditsViewController.h"
 
 #import "Transaction.h"
@@ -137,6 +138,7 @@
 
   [map from:@"scarab://news" toSharedViewController:[NewsViewController class]];
   
+  [map from:@"scarab://cleanUpFiles" toSharedViewController:[CleanUpFilesViewController class]];
   [map from:@"scarab://credits" toSharedViewController:[CreditsViewController class]];
   
   [map from:@"scarab://interviews" toSharedViewController:[InterviewsViewController class]];
