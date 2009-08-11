@@ -19,7 +19,7 @@
                                              [NSString stringWithFormat:@"scarab://placeholder/%d", PlaceholderFeedback],
                                              [NSString stringWithFormat:@"scarab://placeholder/%d", PlaceholderSync],
                                              [NSString stringWithFormat:@"scarab://placeholder/%d", PlaceholderCleanUp],
-                                             [NSString stringWithFormat:@"scarab://placeholder/%d", PlaceholderCredits],
+                                             @"scarab://credits",
                                              nil]];
   self.customizableViewControllers = [NSArray arrayWithObjects:nil];
   self.delegate = self;

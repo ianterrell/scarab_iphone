@@ -108,6 +108,9 @@
 		3C63F90A1029DA6800E2D80F /* InterviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C63F9081029DA6800E2D80F /* InterviewCell.xib */; };
 		3C63F9101029DDE800E2D80F /* Interview.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F90F1029DDE800E2D80F /* Interview.m */; };
 		3C63F9131029DDEE00E2D80F /* Footnote.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F9121029DDEE00E2D80F /* Footnote.m */; };
+		3C63FB4F1032122100E2D80F /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63FB4D1032122100E2D80F /* CreditsViewController.m */; };
+		3C63FB501032122100E2D80F /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C63FB4E1032122100E2D80F /* CreditsViewController.xib */; };
+		3C63FB531032138700E2D80F /* logo_128x168.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C63FB521032138700E2D80F /* logo_128x168.png */; };
 		3C9318E70FE87073009D3731 /* SMWorkAudioDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */; };
 		3C9318F90FE873E0009D3731 /* Work.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318F80FE873E0009D3731 /* Work.m */; };
 		3CE5D45C0FE8793E00A152D3 /* SMWorkAudioDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D45B0FE8793E00A152D3 /* SMWorkAudioDownload.m */; };
@@ -317,6 +320,10 @@
 		3C63F90F1029DDE800E2D80F /* Interview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interview.m; sourceTree = "<group>"; };
 		3C63F9111029DDEE00E2D80F /* Footnote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Footnote.h; sourceTree = "<group>"; };
 		3C63F9121029DDEE00E2D80F /* Footnote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Footnote.m; sourceTree = "<group>"; };
+		3C63FB4C1032122100E2D80F /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsViewController.h; sourceTree = "<group>"; };
+		3C63FB4D1032122100E2D80F /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsViewController.m; sourceTree = "<group>"; };
+		3C63FB4E1032122100E2D80F /* CreditsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditsViewController.xib; sourceTree = "<group>"; };
+		3C63FB521032138700E2D80F /* logo_128x168.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_128x168.png; sourceTree = "<group>"; };
 		3C9318E50FE87073009D3731 /* SMWorkAudioDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMWorkAudioDownloadManager.h; sourceTree = "<group>"; };
 		3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWorkAudioDownloadManager.m; sourceTree = "<group>"; };
 		3C9318F70FE873E0009D3731 /* Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Work.h; sourceTree = "<group>"; };
@@ -389,6 +396,7 @@
 				3C2467EE0FE1527F00FCACDF /* Library */,
 				3C63F84710293E7000E2D80F /* Interviews */,
 				3C63F6BB1028C54700E2D80F /* News */,
+				3C63FB4B1032120900E2D80F /* Credits */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				3C63F5751027D2BD00E2D80F /* ObjectiveResource */,
 				3C63F5381027D2BD00E2D80F /* ObjectiveSupport */,
@@ -434,6 +442,7 @@
 				3C246B1E0FE297B600FCACDF /* ian_128.jpg */,
 				3C2469B20FE1966100FCACDF /* header.png */,
 				3C2468BD0FE1708800FCACDF /* bug_64x64.png */,
+				3C63FB521032138700E2D80F /* logo_128x168.png */,
 				3C2464CC0FDEA96E00FCACDF /* Default.png */,
 				3C2464F50FDEAB5E00FCACDF /* Icon.png */,
 				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
@@ -739,6 +748,16 @@
 			name = Interviews;
 			sourceTree = "<group>";
 		};
+		3C63FB4B1032120900E2D80F /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+				3C63FB4C1032122100E2D80F /* CreditsViewController.h */,
+				3C63FB4D1032122100E2D80F /* CreditsViewController.m */,
+				3C63FB4E1032122100E2D80F /* CreditsViewController.xib */,
+			);
+			name = Credits;
+			sourceTree = "<group>";
+		};
 		3CFA923C101FC4D2004D9F8A /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -843,6 +862,8 @@
 				3C63F68A1027F38200E2D80F /* 29-heart.png in Resources */,
 				3C63F84E10293F0000E2D80F /* InterviewViewController.xib in Resources */,
 				3C63F90A1029DA6800E2D80F /* InterviewCell.xib in Resources */,
+				3C63FB501032122100E2D80F /* CreditsViewController.xib in Resources */,
+				3C63FB531032138700E2D80F /* logo_128x168.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -925,6 +946,7 @@
 				3C63F9091029DA6800E2D80F /* InterviewCell.m in Sources */,
 				3C63F9101029DDE800E2D80F /* Interview.m in Sources */,
 				3C63F9131029DDEE00E2D80F /* Footnote.m in Sources */,
+				3C63FB4F1032122100E2D80F /* CreditsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
