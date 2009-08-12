@@ -18,9 +18,10 @@
 
 - (IssuePriceFetcher *)initWithIssue:(Issue *)_issue controller:(IssuePreviewController *)_controller {
   if (self == [super init]) {
+    debugLog(@"issue is %@", _issue);
     self.issue = _issue;
     self.controller = _controller;
-    SKProductsRequest *request= [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithObject:issue.productIdentifier]]; 
+    SKProductsRequest *request= [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithObject:self.issue.productIdentifier]]; 
     request.delegate = self;
     [request start]; 
   }

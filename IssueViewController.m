@@ -26,7 +26,7 @@
       [alert release];
     } else {
       if (![issue hasBeenDownloaded]) {
-        // TODO: add loading indicator!
+        [AppDelegate showHUDWithLabel:nil details:@"Downloading Issue" animated:YES];
       
         // Download authors in issue
         NSArray *authorsInIssue = [Author findAllInIssue:issue];
@@ -58,6 +58,7 @@
           debugLog(@"Error saving new authors and works:  %@", [error localizedDescription]);
           // TODO: FIXME BITCH WHAT DO I DO?
         }
+        [AppDelegate hideHUDUsingAnimation:YES];
       }
       self.works = [NSMutableArray arrayWithArray:[issue.works allObjects]];
       [self.works sortUsingSelector:@selector(compareByPosition:)];

@@ -20,6 +20,7 @@
 @synthesize issue, scarab, issueNumber, issueTitle, scrollView, purchaseButton;
 
 -(id)initWithNumber:(NSString *)number {
+  debugLog(@"issue preview init with number: %@", number);
   if (self = [super init]) {
     self.issue = [Issue issueWithNumber:[NSNumber numberWithInt:[number intValue]]];
   }
@@ -28,6 +29,8 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  debugLog(@"issue preview view did load, issue is %@", issue);
   
   // Start request to update purchase button
   [[IssuePriceFetcherManager defaultManager] fetchPriceForIssue:issue previewController:self];
