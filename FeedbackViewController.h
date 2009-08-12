@@ -10,10 +10,10 @@
 
 
 @interface FeedbackViewController : UIViewController <TTPostControllerDelegate> {
-  IBOutlet UIButton *button;
+  IBOutlet TTButton *button;
 }
 
-@property(nonatomic,retain) UIButton *button;
+@property(nonatomic,retain) TTButton *button;
 
 - (IBAction)sendFeedback;
 

@@ -118,6 +118,7 @@
 		3C63FC421032503F00E2D80F /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63FC401032503F00E2D80F /* FeedbackViewController.m */; };
 		3C63FC431032503F00E2D80F /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C63FC411032503F00E2D80F /* FeedbackViewController.xib */; };
 		3C63FC871032599800E2D80F /* Feedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63FC861032599800E2D80F /* Feedback.m */; };
+		3C63FCAA10325D0000E2D80F /* tall_gradient_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C63FCA910325D0000E2D80F /* tall_gradient_bg.png */; };
 		3C9318E70FE87073009D3731 /* SMWorkAudioDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */; };
 		3C9318F90FE873E0009D3731 /* Work.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318F80FE873E0009D3731 /* Work.m */; };
 		3CE5D45C0FE8793E00A152D3 /* SMWorkAudioDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D45B0FE8793E00A152D3 /* SMWorkAudioDownload.m */; };
@@ -341,6 +342,7 @@
 		3C63FC411032503F00E2D80F /* FeedbackViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackViewController.xib; sourceTree = "<group>"; };
 		3C63FC851032599800E2D80F /* Feedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feedback.h; sourceTree = "<group>"; };
 		3C63FC861032599800E2D80F /* Feedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feedback.m; sourceTree = "<group>"; };
+		3C63FCA910325D0000E2D80F /* tall_gradient_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tall_gradient_bg.png; sourceTree = "<group>"; };
 		3C9318E50FE87073009D3731 /* SMWorkAudioDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMWorkAudioDownloadManager.h; sourceTree = "<group>"; };
 		3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWorkAudioDownloadManager.m; sourceTree = "<group>"; };
 		3C9318F70FE873E0009D3731 /* Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Work.h; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 				3CFA9315101FE5BB004D9F8A /* 20-gear2.png */,
 				3C2470660FE43D0F00FCACDF /* library_icon.png */,
 				3C246EE70FE3630300FCACDF /* cell_bg.png */,
+				3C63FCA910325D0000E2D80F /* tall_gradient_bg.png */,
 				3C246C220FE2F0CE00FCACDF /* grey.png */,
 				3C246C000FE2EBEF00FCACDF /* star-empty.png */,
 				3C246C010FE2EBEF00FCACDF /* star-full.png */,
@@ -915,6 +918,7 @@
 				3C63FB90103219C000E2D80F /* CleanUpFilesViewController.xib in Resources */,
 				3C63FBE21032371E00E2D80F /* RestoreTransactionsViewController.xib in Resources */,
 				3C63FC431032503F00E2D80F /* FeedbackViewController.xib in Resources */,
+				3C63FCAA10325D0000E2D80F /* tall_gradient_bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,12 @@
     self.title = @"Send Feedback";
     UIImage* image = [UIImage imageNamed:@"18-envelope.png"];
     self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:self.title image:image tag:0] autorelease];
+    
+    self.button = [TTButton buttonWithStyle:@"purchasebutton:" title:@"Send Feedback"];
+    self.button.frame = CGRectMake(91,104,138,40);
+    self.button.font = [UIFont boldSystemFontOfSize:14.0];
+    [self.button addTarget:self action:@selector(sendFeedback) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.button];
   }
   return self;
 }
