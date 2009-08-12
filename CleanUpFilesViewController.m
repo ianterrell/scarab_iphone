@@ -9,6 +9,8 @@
 #import "CleanUpFilesViewController.h"
 #import "Work.h"
 
+#define kFileSizeDisplayDuration 0.3
+
 @implementation CleanUpFilesViewController
 
 @synthesize sizeLabel;
@@ -40,6 +42,14 @@
       if (fileAttributes != nil)
         fileSize = [NSNumber numberWithUnsignedLongLong:([fileSize unsignedLongLongValue] + [[fileAttributes objectForKey:NSFileSize] unsignedLongLongValue])];
     }
+    
+  if ([sizeLabel.text isEqualToString:@""]) {
+    sizeLabel.alpha = 0.0;
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:kFileSizeDisplayDuration];
+    sizeLabel.alpha = 1.0;
+    [UIView commitAnimations];
+  }
   
   sizeLabel.text = [NSString stringWithFormat:@"%0.1f", [fileSize unsignedLongLongValue]/1024.0/1024.0];
 }

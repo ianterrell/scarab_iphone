@@ -36,7 +36,7 @@
 				<int key="NSvFlags">292</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="IBUIImageView" id="838291727">
+					<object class="IBUIImageView" id="72543205">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrameSize">{320, 367}</string>
@@ -111,9 +111,8 @@
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string type="base64-UTF8" key="IBUIText">WW91IHByb2JhYmx5IGRvbid0IGhhdmUgdG8gd29ycnkgYWJvdXQgaXQsIGJ1dCBpZiB5b3Ugd2FudCB0
-byBjbGVhbiB1cCBzb21lIHNwYWNlIHlvdSBjYW4gZGVsZXRlIHRoZSBhdWRpbyBmaWxlcy4gIFlvdSds
-bCBkb3dubG9hZCBhIGZyZXNoIGNvcHkgdGhlIG5leHQgdGltZSB5b3UgdHJ5IHRvIGxpc3RlbiB0byBh
-IHBvZW0uA</string>
+byBjbGVhbiB1cCBzb21lIHNwYWNlIHlvdSBjYW4gZGVsZXRlIHRoZSBhdWRpbyBmaWxlcy4gIEEgZnJl
+c2ggY29weSB3aWxsIGJlIGRvd25sb2FkZWQgdGhlIG5leHQgdGltZSB5b3UgcmVhZCBhIHBvZW0uA</string>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica</string>
 							<double key="NSSize">1.400000e+01</double>
@@ -182,7 +181,7 @@ IHBvZW0uA</string>
 							<reference ref="1047210909"/>
 							<reference ref="331617546"/>
 							<reference ref="388130199"/>
-							<reference ref="838291727"/>
+							<reference ref="72543205"/>
 						</object>
 						<reference key="parent" ref="317526666"/>
 					</object>
@@ -219,7 +218,7 @@ IHBvZW0uA</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">11</int>
-						<reference key="object" ref="838291727"/>
+						<reference key="object" ref="72543205"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>
