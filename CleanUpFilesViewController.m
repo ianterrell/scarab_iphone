@@ -38,7 +38,7 @@
       debugLog(@"file is %@ at %@", file, [NSString stringWithFormat:@"%@/%@", [Work audioDirectoryPath], file]);
       NSDictionary *fileAttributes = [manager fileAttributesAtPath:[NSString stringWithFormat:@"%@/%@", [Work audioDirectoryPath], file] traverseLink:YES];
       if (fileAttributes != nil)
-        fileSize = [NSNumber numberWithUnsignedLongLong:(0 + [[fileAttributes objectForKey:NSFileSize] unsignedLongLongValue])];
+        fileSize = [NSNumber numberWithUnsignedLongLong:([fileSize unsignedLongLongValue] + [[fileAttributes objectForKey:NSFileSize] unsignedLongLongValue])];
     }
   
   sizeLabel.text = [NSString stringWithFormat:@"%0.1f", [fileSize unsignedLongLongValue]/1024.0/1024.0];
