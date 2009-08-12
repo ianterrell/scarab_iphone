@@ -115,6 +115,9 @@
 		3C63FB90103219C000E2D80F /* CleanUpFilesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C63FB8E103219C000E2D80F /* CleanUpFilesViewController.xib */; };
 		3C63FBE11032371E00E2D80F /* RestoreTransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63FBDF1032371E00E2D80F /* RestoreTransactionsViewController.m */; };
 		3C63FBE21032371E00E2D80F /* RestoreTransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C63FBE01032371E00E2D80F /* RestoreTransactionsViewController.xib */; };
+		3C63FC421032503F00E2D80F /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63FC401032503F00E2D80F /* FeedbackViewController.m */; };
+		3C63FC431032503F00E2D80F /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C63FC411032503F00E2D80F /* FeedbackViewController.xib */; };
+		3C63FC871032599800E2D80F /* Feedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63FC861032599800E2D80F /* Feedback.m */; };
 		3C9318E70FE87073009D3731 /* SMWorkAudioDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */; };
 		3C9318F90FE873E0009D3731 /* Work.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318F80FE873E0009D3731 /* Work.m */; };
 		3CE5D45C0FE8793E00A152D3 /* SMWorkAudioDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D45B0FE8793E00A152D3 /* SMWorkAudioDownload.m */; };
@@ -128,7 +131,6 @@
 		3CFA9319101FE5BB004D9F8A /* 09-chat2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CFA9313101FE5BB004D9F8A /* 09-chat2.png */; };
 		3CFA931A101FE5BB004D9F8A /* 66-microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CFA9314101FE5BB004D9F8A /* 66-microphone.png */; };
 		3CFA931B101FE5BB004D9F8A /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CFA9315101FE5BB004D9F8A /* 20-gear2.png */; };
-		3CFA931F101FE5CD004D9F8A /* PlaceholderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA931E101FE5CD004D9F8A /* PlaceholderController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -334,6 +336,11 @@
 		3C63FBDE1032371E00E2D80F /* RestoreTransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestoreTransactionsViewController.h; sourceTree = "<group>"; };
 		3C63FBDF1032371E00E2D80F /* RestoreTransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestoreTransactionsViewController.m; sourceTree = "<group>"; };
 		3C63FBE01032371E00E2D80F /* RestoreTransactionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestoreTransactionsViewController.xib; sourceTree = "<group>"; };
+		3C63FC3F1032503F00E2D80F /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		3C63FC401032503F00E2D80F /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		3C63FC411032503F00E2D80F /* FeedbackViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackViewController.xib; sourceTree = "<group>"; };
+		3C63FC851032599800E2D80F /* Feedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feedback.h; sourceTree = "<group>"; };
+		3C63FC861032599800E2D80F /* Feedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feedback.m; sourceTree = "<group>"; };
 		3C9318E50FE87073009D3731 /* SMWorkAudioDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMWorkAudioDownloadManager.h; sourceTree = "<group>"; };
 		3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWorkAudioDownloadManager.m; sourceTree = "<group>"; };
 		3C9318F70FE873E0009D3731 /* Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Work.h; sourceTree = "<group>"; };
@@ -353,8 +360,6 @@
 		3CFA9313101FE5BB004D9F8A /* 09-chat2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "09-chat2.png"; sourceTree = "<group>"; };
 		3CFA9314101FE5BB004D9F8A /* 66-microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "66-microphone.png"; sourceTree = "<group>"; };
 		3CFA9315101FE5BB004D9F8A /* 20-gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear2.png"; sourceTree = "<group>"; };
-		3CFA931D101FE5CD004D9F8A /* PlaceholderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderController.h; sourceTree = "<group>"; };
-		3CFA931E101FE5CD004D9F8A /* PlaceholderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Scarab-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Scarab-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -406,6 +411,7 @@
 				3C2467EE0FE1527F00FCACDF /* Library */,
 				3C63F84710293E7000E2D80F /* Interviews */,
 				3C63F6BB1028C54700E2D80F /* News */,
+				3C63FC3E1032502F00E2D80F /* Feedback */,
 				3C63FB8B103219B000E2D80F /* Clean Up Files */,
 				3C63FB4B1032120900E2D80F /* Credits */,
 				3C63FBDD1032370300E2D80F /* Restore Transactions */,
@@ -508,6 +514,8 @@
 				3C63F90F1029DDE800E2D80F /* Interview.m */,
 				3C63F9111029DDEE00E2D80F /* Footnote.h */,
 				3C63F9121029DDEE00E2D80F /* Footnote.m */,
+				3C63FC851032599800E2D80F /* Feedback.h */,
+				3C63FC861032599800E2D80F /* Feedback.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -790,13 +798,21 @@
 			name = "Restore Transactions";
 			sourceTree = "<group>";
 		};
+		3C63FC3E1032502F00E2D80F /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				3C63FC3F1032503F00E2D80F /* FeedbackViewController.h */,
+				3C63FC401032503F00E2D80F /* FeedbackViewController.m */,
+				3C63FC411032503F00E2D80F /* FeedbackViewController.xib */,
+			);
+			name = Feedback;
+			sourceTree = "<group>";
+		};
 		3CFA923C101FC4D2004D9F8A /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
 				3CFA923D101FC4EF004D9F8A /* TabBarController.h */,
 				3CFA923E101FC4EF004D9F8A /* TabBarController.m */,
-				3CFA931D101FE5CD004D9F8A /* PlaceholderController.h */,
-				3CFA931E101FE5CD004D9F8A /* PlaceholderController.m */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
@@ -898,6 +914,7 @@
 				3C63FB531032138700E2D80F /* logo_128x168.png in Resources */,
 				3C63FB90103219C000E2D80F /* CleanUpFilesViewController.xib in Resources */,
 				3C63FBE21032371E00E2D80F /* RestoreTransactionsViewController.xib in Resources */,
+				3C63FC431032503F00E2D80F /* FeedbackViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -935,7 +952,6 @@
 				3C5F47C70FF14A630086D8D1 /* IssuePriceFetcher.m in Sources */,
 				3C5F47CA0FF1509B0086D8D1 /* IssuePriceFetcherManager.m in Sources */,
 				3CFA923F101FC4EF004D9F8A /* TabBarController.m in Sources */,
-				3CFA931F101FE5CD004D9F8A /* PlaceholderController.m in Sources */,
 				3C55E48A1020C7B9009F04FF /* IssueViewController.m in Sources */,
 				3C55E4F710226C29009F04FF /* Author.m in Sources */,
 				3C55E58D10237AF3009F04FF /* WorksBaseTableViewController.m in Sources */,
@@ -983,6 +999,8 @@
 				3C63FB4F1032122100E2D80F /* CreditsViewController.m in Sources */,
 				3C63FB8F103219C000E2D80F /* CleanUpFilesViewController.m in Sources */,
 				3C63FBE11032371E00E2D80F /* RestoreTransactionsViewController.m in Sources */,
+				3C63FC421032503F00E2D80F /* FeedbackViewController.m in Sources */,
+				3C63FC871032599800E2D80F /* Feedback.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

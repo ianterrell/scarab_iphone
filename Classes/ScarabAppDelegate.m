@@ -17,7 +17,7 @@
 #import "WorkViewController.h"
 #import "AuthorViewController.h"
 #import "TabBarController.h"
-#import "PlaceholderController.h"
+#import "FeedbackViewController.h"
 #import "FavoritesViewController.h"
 #import "NewsViewController.h"
 #import "InterviewsViewController.h"
@@ -137,6 +137,7 @@
 
   [map from:@"scarab://favorites" toSharedViewController:[FavoritesViewController class]];
   [map from:@"scarab://news" toSharedViewController:[NewsViewController class]];
+  [map from:@"scarab://feedback" toSharedViewController:[FeedbackViewController class]];
   [map from:@"scarab://syncDevice" toSharedViewController:[RestoreTransactionsViewController class]];
   [map from:@"scarab://cleanUpFiles" toSharedViewController:[CleanUpFilesViewController class]];
   [map from:@"scarab://credits" toSharedViewController:[CreditsViewController class]];
@@ -145,7 +146,6 @@
   [map from:@"scarab://interviews/(initWithId:)" toViewController:[InterviewViewController class]];
   [map from:@"scarab://footnotes/(openFootnote:)" toObject:self selector:@selector(openFootnote:)];
   
-  [map from:@"scarab://placeholder/(initWithType:)" toViewController:[PlaceholderController class]];  
 
   // Before opening the tab bar, we see if the controller history was persisted the last time
   if (![navigator restoreViewControllers]) {

@@ -13,7 +13,6 @@
 #import "WorkViewController.h"
 #import "SMStore.h"
 #import "IssuePriceFetcherManager.h"
-#import "PlaceholderController.h"
 
 @implementation IssuePreviewController
 

@@ -27,7 +27,7 @@
     } else {
       if (![issue hasBeenDownloaded]) {
         [AppDelegate showHUDWithLabel:nil details:@"Downloading Issue" animated:YES];
-      
+        
         // Download authors in issue
         NSArray *authorsInIssue = [Author findAllInIssue:issue];
         
@@ -65,6 +65,10 @@
     }
   }
   return self;
+}
+
+- (void)downloadIssue {
+
 }
 
 - (void)viewDidLoad {

@@ -7,7 +7,6 @@
 //
 
 #import "TabBarController.h"
-#import "PlaceholderController.h"
 
 @implementation TabBarController
 
@@ -16,7 +15,7 @@
                                              @"scarab://news",
                                              @"scarab://interviews",
                                              @"scarab://favorites",
-                                             [NSString stringWithFormat:@"scarab://placeholder/%d", PlaceholderFeedback],
+                                             @"scarab://feedback",
                                              @"scarab://syncDevice",
                                              @"scarab://cleanUpFiles",
                                              @"scarab://credits",
