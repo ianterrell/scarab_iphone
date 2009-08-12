@@ -41,7 +41,7 @@
   
   TTStyledTextLabel* footnote = [[[TTStyledTextLabel alloc] initWithFrame:CGRectZero] autorelease];
   footnote.font = [UIFont systemFontOfSize:13];
-  footnote.text = [TTStyledText textFromXHTML:text lineBreaks:YES URLs:YES];
+  footnote.text = [TTStyledText textFromXHTML:[StringUtils prepForLabel:text] lineBreaks:YES URLs:YES];
   footnote.frame = CGRectMake(0, 0, 300, 283);
   footnote.contentInset = UIEdgeInsetsMake(15, 10, 5, 0);
   footnote.backgroundColor = [UIColor clearColor];
