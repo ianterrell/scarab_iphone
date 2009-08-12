@@ -54,6 +54,7 @@
 }
 
 -(IBAction)purchaseIssue {
+  [AppDelegate showHUDWithLabel:nil details:@"Purchasing" animated:YES];
   [[SMStore defaultStore] purchaseIssue:issue];
 }
 

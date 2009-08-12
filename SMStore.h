@@ -11,15 +11,17 @@
 @class Issue;
 
 @interface SMStore : NSObject <SKPaymentTransactionObserver> {
-
+  int count;
 }
+
+@property(nonatomic,assign) int count;
 
 + (SMStore *)defaultStore;
 
 - (void)purchaseIssue:(Issue *)issue;
+- (void)restoreAllTransactions;
 
-- (void)completeTransaction:(SKPaymentTransaction *)transaction;
 - (void)failedTransaction:(SKPaymentTransaction *)transaction;
-- (void)restoreTransaction:(SKPaymentTransaction *)transaction;
+- (void)completeOrRestoreTransaction:(SKPaymentTransaction *)transaction isRestore:(BOOL)isRestore;
 
 @end

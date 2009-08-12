@@ -17,7 +17,7 @@
                                              @"scarab://interviews",
                                              @"scarab://favorites",
                                              [NSString stringWithFormat:@"scarab://placeholder/%d", PlaceholderFeedback],
-                                             [NSString stringWithFormat:@"scarab://placeholder/%d", PlaceholderSync],
+                                             @"scarab://syncDevice",
                                              @"scarab://cleanUpFiles",
                                              @"scarab://credits",
                                              nil]];

@@ -24,6 +24,7 @@
 #import "InterviewViewController.h"
 #import "CleanUpFilesViewController.h"
 #import "CreditsViewController.h"
+#import "RestoreTransactionsViewController.h"
 
 #import "Transaction.h"
 #import "Work.h"
@@ -135,9 +136,8 @@
   [map from:@"scarab://authors/(initWithId:)" toViewController:[AuthorViewController class]];
 
   [map from:@"scarab://favorites" toSharedViewController:[FavoritesViewController class]];
-
   [map from:@"scarab://news" toSharedViewController:[NewsViewController class]];
-  
+  [map from:@"scarab://syncDevice" toSharedViewController:[RestoreTransactionsViewController class]];
   [map from:@"scarab://cleanUpFiles" toSharedViewController:[CleanUpFilesViewController class]];
   [map from:@"scarab://credits" toSharedViewController:[CreditsViewController class]];
   

@@ -12,6 +12,8 @@
 
 @implementation SMStore
 
+@synthesize count;
+
 + (SMStore *)defaultStore {
   static SMStore *singleton = nil;
   if (singleton == nil)
@@ -23,19 +25,25 @@
   [[SKPaymentQueue defaultQueue] addPayment:[SKPayment paymentWithProductIdentifier:issue.productIdentifier]];   
 }
 
+- (void)restoreAllTransactions {
+  [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+}
+
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions {
   debugLog(@"store updated transactions");
+  self.count = [transactions count];
   int numberInProgress = 0;
   for (SKPaymentTransaction *transaction in transactions) {
+    self.count--;
     switch (transaction.transactionState) { 
       case SKPaymentTransactionStatePurchased: 
-        [self completeTransaction:transaction]; 
+        [self completeOrRestoreTransaction:transaction isRestore:NO]; 
         break; 
       case SKPaymentTransactionStateFailed: 
         [self failedTransaction:transaction]; 
         break; 
       case SKPaymentTransactionStateRestored: 
-        [self restoreTransaction:transaction]; 
+        [self completeOrRestoreTransaction:transaction isRestore:YES]; 
         break;
       case SKPaymentTransactionStatePurchasing:
         numberInProgress++;
@@ -43,38 +51,52 @@
     } 
   }
   debugLog(@"store done with switch, number in progress: %d", numberInProgress);
-  // TODO: This might need tweaked once I do restoring transactions, hard to say how many times this will get called
-  if (numberInProgress > 0)
-    [AppDelegate showHUDWithLabel:nil details:@"Purchasing" animated:YES];
-  else
+  if (numberInProgress == 0)
     [AppDelegate hideHUDUsingAnimation:YES];
 }
 
-- (void)completeTransaction:(SKPaymentTransaction *)transaction {
-  // We just bought an issue.
-  debugLog(@"complete transaction");
+- (void)completeOrRestoreTransaction:(SKPaymentTransaction *)transaction isRestore:(BOOL)isRestore {
+  // Logging
+  debugLog(@"complete or restore transaction (is restore: %d)", isRestore);
   debugLog(@"transaction: %@", transaction);
   debugLog(@"date: %@", transaction.transactionDate);
   debugLog(@"identifier: %@", transaction.transactionIdentifier);
   debugLog(@"receipt: %@", [transaction.transactionReceipt base64Encoding]);
+  if (isRestore) {  
+    debugLog(@"original...");
+    debugLog(@"date: %@", transaction.originalTransaction.transactionDate);
+    debugLog(@"identifier: %@", transaction.originalTransaction.transactionIdentifier);
+    debugLog(@"receipt: %@", [transaction.originalTransaction.transactionReceipt base64Encoding]);
+  }
+  
+  Issue *issue = [Issue issueWithProductIdentifier:transaction.payment.productIdentifier];
+  
+  // Don't restore ones that are already recorded as purchased
+  if (isRestore && [issue hasBeenPurchased]) {
+    debugLog(@"We've already purchased this issue to restore, returning.");
+    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+    return;
+  }
   
   if ([Transaction saveOnServer:transaction]) {  
     debugLog(@"Transaction saved on server.");
-    // Update issue in database to have transaction identifier that purchased it
-    Issue *issue = [Issue issueWithProductIdentifier:transaction.payment.productIdentifier];
     issue.transactionIdentifier = transaction.transactionIdentifier;
     NSError *error = nil;
     [AppDelegate save:&error];
     if (error) {
       debugLog(@"Error saving new issues in Library:  %@", [error localizedDescription]);
       // TODO: FIXME BITCH WHAT DO I DO?
-    }
-
-    [[SKPaymentQueue defaultQueue] finishTransaction:transaction]; 
-    TTOpenURL([NSString stringWithFormat:@"scarab://issues/%@", issue.number]);
+    } else {
+      [[SKPaymentQueue defaultQueue] finishTransaction:transaction]; 
+      
+      if (!isRestore)
+        TTOpenURL([NSString stringWithFormat:@"scarab://issues/%@", issue.number]); 
+      else if (self.count == 0)
+        TTOpenURL(@"scarab://library");
+    }    
   } else {
     debugLog(@"Transaction not saved on server.");
-    // Alert the user that the next time the app starts up we'll try again.
+    // TODO: Alert the user that the next time the app starts up we'll try again.
     // We're pretty much assuming that they're not hacking here.
   }
 }
@@ -101,20 +123,6 @@
   debugLog(@"identifier: %@", transaction.transactionIdentifier);
   debugLog(@"receipt: %@", [transaction.transactionReceipt base64Encoding]);
   
-  debugLog(@"original...");
-  debugLog(@"date: %@", transaction.originalTransaction.transactionDate);
-  debugLog(@"identifier: %@", transaction.originalTransaction.transactionIdentifier);
-  debugLog(@"receipt: %@", [transaction.originalTransaction.transactionReceipt base64Encoding]);
-}
-
-- (void)test {
-  debugLog(@"starting test...");
-  //
-  [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
-  
-//  SKPayment *payment = [SKPayment paymentWithProductIdentifier:@"12_Month_Subscription"]; 
-//  SKPayment *payment = [SKPayment paymentWithProductIdentifier:@"issue_test_nonconsumable"]; 
-//  [[SKPaymentQueue defaultQueue] addPayment:payment];   
 }
 
 //- (void) requestProductData { 

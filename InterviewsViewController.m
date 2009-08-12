@@ -76,6 +76,8 @@
           [AppDelegate.managedObjectContext insertObject:author];
           interview.author = author;
         }
+      } else {
+        interview.author = author;
       }
       
       // Fetch footnotes!

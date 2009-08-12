@@ -9,11 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-  PlaceholderCredits,
-  PlaceholderFeedback,
-  PlaceholderSync,
-  PlaceholderCleanUp,
-  PlaceholderIssue,
+  PlaceholderFeedback
 } PlaceholderType;
 
 @interface PlaceholderController : UIViewController {

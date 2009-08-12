@@ -113,6 +113,8 @@
 		3C63FB531032138700E2D80F /* logo_128x168.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C63FB521032138700E2D80F /* logo_128x168.png */; };
 		3C63FB8F103219C000E2D80F /* CleanUpFilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63FB8D103219C000E2D80F /* CleanUpFilesViewController.m */; };
 		3C63FB90103219C000E2D80F /* CleanUpFilesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C63FB8E103219C000E2D80F /* CleanUpFilesViewController.xib */; };
+		3C63FBE11032371E00E2D80F /* RestoreTransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63FBDF1032371E00E2D80F /* RestoreTransactionsViewController.m */; };
+		3C63FBE21032371E00E2D80F /* RestoreTransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C63FBE01032371E00E2D80F /* RestoreTransactionsViewController.xib */; };
 		3C9318E70FE87073009D3731 /* SMWorkAudioDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */; };
 		3C9318F90FE873E0009D3731 /* Work.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318F80FE873E0009D3731 /* Work.m */; };
 		3CE5D45C0FE8793E00A152D3 /* SMWorkAudioDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D45B0FE8793E00A152D3 /* SMWorkAudioDownload.m */; };
@@ -329,6 +331,9 @@
 		3C63FB8C103219C000E2D80F /* CleanUpFilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CleanUpFilesViewController.h; sourceTree = "<group>"; };
 		3C63FB8D103219C000E2D80F /* CleanUpFilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanUpFilesViewController.m; sourceTree = "<group>"; };
 		3C63FB8E103219C000E2D80F /* CleanUpFilesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CleanUpFilesViewController.xib; sourceTree = "<group>"; };
+		3C63FBDE1032371E00E2D80F /* RestoreTransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestoreTransactionsViewController.h; sourceTree = "<group>"; };
+		3C63FBDF1032371E00E2D80F /* RestoreTransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestoreTransactionsViewController.m; sourceTree = "<group>"; };
+		3C63FBE01032371E00E2D80F /* RestoreTransactionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestoreTransactionsViewController.xib; sourceTree = "<group>"; };
 		3C9318E50FE87073009D3731 /* SMWorkAudioDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMWorkAudioDownloadManager.h; sourceTree = "<group>"; };
 		3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWorkAudioDownloadManager.m; sourceTree = "<group>"; };
 		3C9318F70FE873E0009D3731 /* Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Work.h; sourceTree = "<group>"; };
@@ -403,6 +408,7 @@
 				3C63F6BB1028C54700E2D80F /* News */,
 				3C63FB8B103219B000E2D80F /* Clean Up Files */,
 				3C63FB4B1032120900E2D80F /* Credits */,
+				3C63FBDD1032370300E2D80F /* Restore Transactions */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				3C63F5751027D2BD00E2D80F /* ObjectiveResource */,
 				3C63F5381027D2BD00E2D80F /* ObjectiveSupport */,
@@ -774,6 +780,16 @@
 			name = "Clean Up Files";
 			sourceTree = "<group>";
 		};
+		3C63FBDD1032370300E2D80F /* Restore Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				3C63FBDE1032371E00E2D80F /* RestoreTransactionsViewController.h */,
+				3C63FBDF1032371E00E2D80F /* RestoreTransactionsViewController.m */,
+				3C63FBE01032371E00E2D80F /* RestoreTransactionsViewController.xib */,
+			);
+			name = "Restore Transactions";
+			sourceTree = "<group>";
+		};
 		3CFA923C101FC4D2004D9F8A /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -881,6 +897,7 @@
 				3C63FB501032122100E2D80F /* CreditsViewController.xib in Resources */,
 				3C63FB531032138700E2D80F /* logo_128x168.png in Resources */,
 				3C63FB90103219C000E2D80F /* CleanUpFilesViewController.xib in Resources */,
+				3C63FBE21032371E00E2D80F /* RestoreTransactionsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -965,6 +982,7 @@
 				3C63F9131029DDEE00E2D80F /* Footnote.m in Sources */,
 				3C63FB4F1032122100E2D80F /* CreditsViewController.m in Sources */,
 				3C63FB8F103219C000E2D80F /* CleanUpFilesViewController.m in Sources */,
+				3C63FBE11032371E00E2D80F /* RestoreTransactionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,16 +13,8 @@
 
 - (NSString*)nameForType:(PlaceholderType)type {
   switch (type) {
-    case PlaceholderCredits:
-      return @"Credits";
     case PlaceholderFeedback:
       return @"Send Feedback";
-    case PlaceholderSync:
-      return @"Sync Device";
-    case PlaceholderCleanUp:
-      return @"Clean Up Files";
-    case PlaceholderIssue:
-      return @"Issue";
     default:
       return @"";
   }
@@ -30,16 +22,8 @@
 
 - (NSString*)iconForType:(PlaceholderType)type {
   switch (type) {
-    case PlaceholderCredits:
-      return @"29-heart.png";
     case PlaceholderFeedback:
       return @"18-envelope.png";
-    case PlaceholderSync:
-      return @"57-download.png";
-    case PlaceholderCleanUp:
-      return @"20-gear2.png";
-    case PlaceholderIssue:
-      return @"20-gear2.png";
     default:
       return @"";
   }
