@@ -16,4 +16,8 @@
   return [NSString stringWithFormat:@"%d:%02d", (int)time/60, (int)time%60];
 }
 
++ (NSString *)prepForLabel:(NSString *)stringToPrep {
+  return [stringToPrep stringByReplacingOccurrencesOfString:@"&" withString:@"&amp;"];
+}
+
 @end

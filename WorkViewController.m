@@ -96,7 +96,7 @@
     [favoriteStar setImage:[UIImage imageNamed:@"star-empty.png"] forState:UIControlStateNormal];
   
   // Body
-  [UIHelpers addCopy:[NSString stringWithFormat:@"%@\n\n\n<i>Read by %@</i>\n\n\n\n", self.work.body, self.work.reader] toScrollView:scrollView];
+  [UIHelpers addCopy:[StringUtils prepForLabel:[NSString stringWithFormat:@"%@\n\n\n<i>Read by %@</i>\n\n\n\n", self.work.body, self.work.reader]] toScrollView:scrollView];
 
   // Audio
   if ([work audioFileHasBeenDownloaded]) {

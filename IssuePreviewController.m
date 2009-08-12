@@ -41,7 +41,7 @@
   
   debugLog(@"description is: --%@--", issue.previewDescription);
   // Body
-  [UIHelpers addCopy:issue.previewDescription toScrollView:scrollView];
+  [UIHelpers addCopy:[StringUtils prepForLabel:issue.previewDescription] toScrollView:scrollView];
   
   self.purchaseButton = [TTButton buttonWithStyle:@"purchasebutton:" title:@"     Updating Price..."];
   self.purchaseButton.frame = CGRectMake(95,37,200,40);

@@ -51,7 +51,10 @@
     [UIView commitAnimations];
   }
   
-  sizeLabel.text = [NSString stringWithFormat:@"%0.1f", [fileSize unsignedLongLongValue]/1024.0/1024.0];
+  NSString *size = [NSString stringWithFormat:@"%0.1f", [fileSize unsignedLongLongValue]/1024.0/1024.0];
+  if ([size isEqualToString:@"0.0"])
+    size = @"0";
+  sizeLabel.text = size;
 }
 
 

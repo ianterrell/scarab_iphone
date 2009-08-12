@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   debugLog(@"hello! adding copy to credits");
-  [UIHelpers addCopy:@"Scarab is a publication of Old Brick Press, LLC.\n\nScarab is thankful for generous artists with open licenses.  Some tab bar icons were created by <a href=\"http://www.glyphish.com\">Glyphish</a> and are licensed under Creative Commons Attribution 3.0.  The star icons for favoriting works were created by <a href=\"http://www.icojoy.com\">Icojoy</a> and are <a href=\"http://www.freeiconsdownload.com/Free_Downloads.asp?id=265\">available</a> under the Creative Commons Attribution 3.0 license.  The download icon was created by <a href=\"http://pixel-mixer.com/\">Pixel-Mixer</a> and is <a href=\"http://www.iconspedia.com/icon/down-11614.html\">available</a> free for use." toScrollView:scrollView];
+  [UIHelpers addCopy:[StringUtils prepForLabel:@"Scarab is a publication of Old Brick Press, LLC.\n\nScarab is thankful for generous artists with open licenses.  Some tab bar icons were created by <a href=\"http://www.glyphish.com\">Glyphish</a> and are licensed under Creative Commons Attribution 3.0.  The star icons for favoriting works were created by <a href=\"http://www.icojoy.com\">Icojoy</a> and are <a href=\"http://www.freeiconsdownload.com/Free_Downloads.asp?id=265\">available</a> under the Creative Commons Attribution 3.0 license.  The download icon was created by <a href=\"http://pixel-mixer.com/\">Pixel-Mixer</a> and is <a href=\"http://www.iconspedia.com/icon/down-11614.html\">available</a> free for use."] toScrollView:scrollView];
 }
 
 - (id)init {

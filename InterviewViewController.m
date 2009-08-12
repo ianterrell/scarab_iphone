@@ -53,7 +53,7 @@
   [UIHelpers addRoundedImageWithURL:[self.interview.author fullyQualifiedPhotoUrl] toView:self.view];
   
   // Body
-  [UIHelpers addCopy:self.interview.body toScrollView:scrollView];
+  [UIHelpers addCopy:[StringUtils prepForLabel:self.interview.body] toScrollView:scrollView];
   
   // Footnote
   self.footnoteView = [[FootnoteView alloc] init];

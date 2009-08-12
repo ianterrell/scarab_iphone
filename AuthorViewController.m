@@ -45,7 +45,7 @@
   self.name.text = self.author.name;
   self.location.text = self.author.location;
   [UIHelpers addRoundedImageWithURL:[self.author fullyQualifiedPhotoUrl] toView:self.view];
-  [UIHelpers addCopy:self.author.bio toScrollView:scrollView];
+  [UIHelpers addCopy:[StringUtils prepForLabel:self.author.bio] toScrollView:scrollView];
 }
 
 -(void)dealloc {

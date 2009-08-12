@@ -13,5 +13,6 @@
 
 }
 + (NSString *)timeStringFromSeconds:(NSTimeInterval)time;
++ (NSString *)prepForLabel:(NSString *)stringToPrep;
 
 @end
