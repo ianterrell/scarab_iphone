@@ -61,11 +61,13 @@
   [issues sortUsingDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
   [sortDescriptor release];
   
-  self.currentIssue = [issues objectAtIndex:0];
-  if (currentIssue != nil)
-    [issues removeObjectAtIndex:0];
-    
   int c = [issues count];
+  if (c > 0) {
+    self.currentIssue = [issues objectAtIndex:0];
+    [issues removeObjectAtIndex:0];
+    c--;
+  }
+    
   self.backIssues = [NSMutableArray arrayWithCapacity:c];
   self.bookshelfIssues = [NSMutableArray arrayWithCapacity:c];
   for (Issue *i in issues)
