@@ -32,26 +32,21 @@
 
 - (void)downloadAudioForWork:(Work *)work controller:(WorkViewController *)controller {
   SMWorkAudioDownload *download = [[SMWorkAudioDownload alloc] initWithWork:work controller:controller];
-  // TODO:  may need to use something like the work ID with some logical equality rather than object equality; depends on core data once I add it in here
-  // for now... one work
-  [downloads setObject:download forKey:@"work"];
+  [downloads setObject:download forKey:work.workId];
   [download release];
 }
 
 - (void)updateController:(WorkViewController *)_controller forDownloadForWork:(Work *)work {
-  // TODO: fix to use work in best way (hashcodes, etc)
-  SMWorkAudioDownload *download = [downloads objectForKey:@"work"];
+  SMWorkAudioDownload *download = [downloads objectForKey:work.workId];
   download.controller = _controller;
 }
 
 - (void)doneDownloadingAudioFileForWork:(Work *)work {
-  // TODO: fix to use work key...
-  [downloads removeObjectForKey:@"work"];
+  [downloads removeObjectForKey:work.workId];
 }
 
 - (BOOL)isAudioFileBeingDownloadedForWork:(Work *)work {
-  // TODO: fix to use work key...
-  return [downloads objectForKey:@"work"] != nil;
+  return [downloads objectForKey:work.workId] != nil;
 }
 
 - (void)shutDown {
