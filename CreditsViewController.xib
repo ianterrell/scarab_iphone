@@ -36,7 +36,7 @@
 				<int key="NSvFlags">293</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="IBUIImageView" id="624638463">
+					<object class="IBUIImageView" id="987043285">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrameSize">{320, 367}</string>
@@ -70,6 +70,7 @@
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+						<bool key="IBUIAlwaysBounceVertical">YES</bool>
 						<bool key="IBUIBouncesZoom">NO</bool>
 					</object>
 					<object class="IBUILabel" id="819297054">
@@ -203,7 +204,7 @@
 							<reference ref="907467354"/>
 							<reference ref="948828878"/>
 							<reference ref="89267936"/>
-							<reference ref="624638463"/>
+							<reference ref="987043285"/>
 						</object>
 						<reference key="parent" ref="317526666"/>
 					</object>
@@ -250,7 +251,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">12</int>
-						<reference key="object" ref="624638463"/>
+						<reference key="object" ref="987043285"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>

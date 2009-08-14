@@ -56,6 +56,9 @@
 		3C2470670FE43D0F00FCACDF /* library_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2470660FE43D0F00FCACDF /* library_icon.png */; };
 		3C2470790FE7E99800FCACDF /* SMStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2470780FE7E99800FCACDF /* SMStore.m */; };
 		3C24707E0FE7EA6B00FCACDF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C24707D0FE7EA6B00FCACDF /* StoreKit.framework */; };
+		3C3FD5301035953000304238 /* MoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FD52F1035953000304238 /* MoreController.m */; };
+		3C3FD59A1035A16B00304238 /* 02-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C3FD5991035A16B00304238 /* 02-redo.png */; };
+		3C3FD5B51035A4A200304238 /* more-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C3FD5B41035A4A200304238 /* more-icon.png */; };
 		3C5119E50FF01C34009CDD9F /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5119E40FF01C34009CDD9F /* Transaction.m */; };
 		3C55E48A1020C7B9009F04FF /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C55E4891020C7B9009F04FF /* IssueViewController.m */; };
 		3C55E4F710226C29009F04FF /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C55E4F610226C29009F04FF /* Author.m */; };
@@ -218,6 +221,10 @@
 		3C2470770FE7E99800FCACDF /* SMStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMStore.h; sourceTree = "<group>"; };
 		3C2470780FE7E99800FCACDF /* SMStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMStore.m; sourceTree = "<group>"; };
 		3C24707D0FE7EA6B00FCACDF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		3C3FD52E1035953000304238 /* MoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreController.h; sourceTree = "<group>"; };
+		3C3FD52F1035953000304238 /* MoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreController.m; sourceTree = "<group>"; };
+		3C3FD5991035A16B00304238 /* 02-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-redo.png"; sourceTree = "<group>"; };
+		3C3FD5B41035A4A200304238 /* more-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more-icon.png"; sourceTree = "<group>"; };
 		3C5119E30FF01C34009CDD9F /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
 		3C5119E40FF01C34009CDD9F /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		3C55E4881020C7B9009F04FF /* IssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueViewController.h; sourceTree = "<group>"; };
@@ -443,6 +450,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3C3FD5B41035A4A200304238 /* more-icon.png */,
+				3C3FD5991035A16B00304238 /* 02-redo.png */,
 				3C63F6891027F38200E2D80F /* 29-heart.png */,
 				3CFA9310101FE5BB004D9F8A /* 57-download.png */,
 				3CFA9311101FE5BB004D9F8A /* 28-star.png */,
@@ -816,6 +825,8 @@
 			children = (
 				3CFA923D101FC4EF004D9F8A /* TabBarController.h */,
 				3CFA923E101FC4EF004D9F8A /* TabBarController.m */,
+				3C3FD52E1035953000304238 /* MoreController.h */,
+				3C3FD52F1035953000304238 /* MoreController.m */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
@@ -919,6 +930,8 @@
 				3C63FBE21032371E00E2D80F /* RestoreTransactionsViewController.xib in Resources */,
 				3C63FC431032503F00E2D80F /* FeedbackViewController.xib in Resources */,
 				3C63FCAA10325D0000E2D80F /* tall_gradient_bg.png in Resources */,
+				3C3FD59A1035A16B00304238 /* 02-redo.png in Resources */,
+				3C3FD5B51035A4A200304238 /* more-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1005,6 +1018,7 @@
 				3C63FBE11032371E00E2D80F /* RestoreTransactionsViewController.m in Sources */,
 				3C63FC421032503F00E2D80F /* FeedbackViewController.m in Sources */,
 				3C63FC871032599800E2D80F /* Feedback.m in Sources */,
+				3C3FD5301035953000304238 /* MoreController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

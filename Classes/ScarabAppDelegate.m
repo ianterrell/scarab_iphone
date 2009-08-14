@@ -25,6 +25,7 @@
 #import "CleanUpFilesViewController.h"
 #import "CreditsViewController.h"
 #import "RestoreTransactionsViewController.h"
+#import "MoreController.h"
 
 #import "Transaction.h"
 #import "Work.h"
@@ -52,6 +53,8 @@
   [self setUpObjectiveResource];
   [self setUpThree20];
   [self setUpSplashScreen];
+  
+  debugLog(@"feedback nav mode is %d, create is %d", [[TTNavigator navigator].URLMap navigationModeForURL:@"scarab://feedback"], TTNavigationModeCreate);
   
   // Set up HUD
   HUD = nil;
@@ -104,10 +107,10 @@
 }
 
 /**
- Returns the base URL where images and other media are found online.
+ Returns the base URL where images and other media are found online.  No trailing slash.
  */
 -(NSString *)baseServerURL {	
-  return @"http://192.168.20.2:3000"; // localhost:3000 // staging.scarabmag.com
+  return @"http://staging.scarabmag.com"; // localhost:3000 // staging.scarabmag.com
 }
 
 - (void)setUpObjectiveResource {
@@ -137,15 +140,16 @@
 
   [map from:@"scarab://favorites" toSharedViewController:[FavoritesViewController class]];
   [map from:@"scarab://news" toSharedViewController:[NewsViewController class]];
-  [map from:@"scarab://feedback" toSharedViewController:[FeedbackViewController class]];
-  [map from:@"scarab://syncDevice" toSharedViewController:[RestoreTransactionsViewController class]];
-  [map from:@"scarab://cleanUpFiles" toSharedViewController:[CleanUpFilesViewController class]];
-  [map from:@"scarab://credits" toSharedViewController:[CreditsViewController class]];
   
   [map from:@"scarab://interviews" toSharedViewController:[InterviewsViewController class]];
   [map from:@"scarab://interviews/(initWithId:)" toViewController:[InterviewViewController class]];
   [map from:@"scarab://footnotes/(openFootnote:)" toObject:self selector:@selector(openFootnote:)];
   
+  [map from:@"scarab://more" toSharedViewController:[MoreController class]];
+  [map from:@"scarab://feedback" toViewController:[FeedbackViewController class]];
+  [map from:@"scarab://syncDevice" toViewController:[RestoreTransactionsViewController class]];
+  [map from:@"scarab://cleanUpFiles" toViewController:[CleanUpFilesViewController class]];
+  [map from:@"scarab://credits" toViewController:[CreditsViewController class]];
 
   // Before opening the tab bar, we see if the controller history was persisted the last time
   if (![navigator restoreViewControllers]) {

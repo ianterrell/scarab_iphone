@@ -44,4 +44,9 @@
   return [TTTextStyle styleWithColor:RGBCOLOR(100,100,100) next:nil];
 }
 
+// This is for the MoreController -- might need to make non-global in future if we use other table cells!
+- (UIFont*)tableFont {
+  return [UIFont boldSystemFontOfSize:20];
+}
+
 @end

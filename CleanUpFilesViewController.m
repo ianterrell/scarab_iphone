@@ -19,8 +19,6 @@
 - (id)init {
   if (self = [super init]) {
     self.title = @"Clean Up Files";
-    UIImage* image = [UIImage imageNamed:@"20-gear2.png"];
-    self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:self.title image:image tag:0] autorelease];
     
     TTButton *button = [TTButton buttonWithStyle:@"purchasebutton:" title:@"Clean Up Files"];
     button.frame = CGRectMake(90,153,140,40);

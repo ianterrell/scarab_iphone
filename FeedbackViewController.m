@@ -16,8 +16,6 @@
 - (id)init {
   if (self = [super init]) {
     self.title = @"Send Feedback";
-    UIImage* image = [UIImage imageNamed:@"18-envelope.png"];
-    self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:self.title image:image tag:0] autorelease];
     
     self.button = [TTButton buttonWithStyle:@"purchasebutton:" title:@"Send Feedback"];
     self.button.frame = CGRectMake(91,104,138,40);

@@ -57,11 +57,11 @@
   
   // Footnote
   self.footnoteView = [[FootnoteView alloc] init];
-  [footnoteView setTextFromXHTML:@"<i>Footnotes appear here when you tap on them.  Swipe downward to hide them.</i>"];
+  [footnoteView setTextFromXHTML:@"<i>Footnotes appear here when you tap on them.  Swipe straight downward on them to hide.</i>"];
   footnoteView.origin = CGPointMake(kFootnoteStartX, self.view.height);
   footnoteView.interviewViewController = self;
   [self.view addSubview:footnoteView];
-//  [self showFootnote];
+  [self showFootnote];
 }
 
 #pragma mark -

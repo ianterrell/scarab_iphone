@@ -14,13 +14,11 @@
 - (id)init {
   if (self = [super init]) {
     self.title = @"Sync Device";
-    UIImage* image = [UIImage imageNamed:@"57-download.png"];
-    self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:self.title image:image tag:0] autorelease];
     
     TTButton *button = [TTButton buttonWithStyle:@"purchasebutton:" title:@"Sync Device"];
     button.frame = CGRectMake(90,164,140,40);
     button.font = [UIFont boldSystemFontOfSize:14.0];
-    [button addTarget:self action:@selector(cleanUpFiles) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(restoreTransactions) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
   }
   return self;
