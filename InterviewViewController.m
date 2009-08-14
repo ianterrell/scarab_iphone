@@ -52,16 +52,22 @@
   // Image
   [UIHelpers addRoundedImageWithURL:[self.interview.author fullyQualifiedPhotoUrl] toView:self.view];
   
-  // Body
+  // Body 
   [UIHelpers addCopy:[StringUtils prepForLabel:self.interview.body] toScrollView:scrollView];
   
   // Footnote
   self.footnoteView = [[FootnoteView alloc] init];
-  [footnoteView setTextFromXHTML:@"<i>Footnotes appear here when you tap on them.  Swipe straight downward on them to hide.</i>"];
+  [footnoteView setTextFromXHTML:@"<i>Most links in the interviews are actually footnotes, which appear here when you tap on them.  To hide this notice and other real footnotes, touch them and swipe straight down.</i>"];
   footnoteView.origin = CGPointMake(kFootnoteStartX, self.view.height);
   footnoteView.interviewViewController = self;
   [self.view addSubview:footnoteView];
-  [self showFootnote];
+  
+  // Show tutorial footnote?
+  NSString *tutorialShownFilePath = [NSString stringWithFormat:@"%@/footnoteTutorialShown", [AppDelegate applicationDocumentsDirectory]];
+  if (![[NSFileManager defaultManager] fileExistsAtPath:tutorialShownFilePath]) {
+    [self showFootnote];
+    [[NSFileManager defaultManager] createFileAtPath:tutorialShownFilePath contents:nil attributes:nil];
+  }
 }
 
 #pragma mark -
