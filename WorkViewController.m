@@ -34,8 +34,8 @@
       // Not in database -- could be a free work!  Let's check on the server.
       Work *w = [Work findRemote:workId];
       if (w == nil) {
-        // TODO: handle error
         debugLog(@"error!  couldn't find work on the server -- this could happen; handle!");
+        [AppDelegate showGenericError];
       } 
       else if ([w isFree]) { 
         // Let's grab the author, too, and link them.  Try the DB first, then fetch and save from the server.
@@ -50,7 +50,7 @@
         [AppDelegate save:&error];
         if (error) {
           debugLog(@"Error saving new work:  %@", [error localizedDescription]);
-          // TODO: FIXME BITCH WHAT DO I DO?
+          [AppDelegate showSaveError];
         }
         self.work = w;
       } else {
@@ -67,7 +67,6 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  // TODO: test if this is sufficient
   if (self.work == nil)
     return;
   
@@ -139,7 +138,7 @@
   [AppDelegate save:&error];
   if (error) {
     debugLog(@"Error saving favorite:  %@", [error localizedDescription]);
-    // TODO: FIXME BITCH WHAT DO I DO?
+    [AppDelegate showGenericError];
   }
   
   [AppDelegate.favoritesViewController reloadFavorites];

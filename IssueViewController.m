@@ -56,7 +56,7 @@
         [AppDelegate save:&error];
         if (error) {
           debugLog(@"Error saving new authors and works:  %@", [error localizedDescription]);
-          // TODO: FIXME BITCH WHAT DO I DO?
+          [AppDelegate showSaveError];
         }
         [AppDelegate hideHUDUsingAnimation:YES];
       }

@@ -67,7 +67,7 @@
     [self calculateAndDisplaySize];
   } else {
     debugLog(@"error cleaning up files!");
-    // TODO FIX ME DISPLAY ERROR
+    [AppDelegate showGenericError];
   }
 }
 

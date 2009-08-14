@@ -125,7 +125,7 @@
 	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
 	if (mutableFetchResults == nil) {
 		NSLog(@"Error fetching results in SMManagedObject");
-    // TODO: really handle something if necessary.
+    [AppDelegate showGenericError];
 	}
   [request release];
 	[mutableFetchResults autorelease];

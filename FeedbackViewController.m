@@ -41,7 +41,7 @@
   Feedback *feedback = [[Feedback alloc] init];
   feedback.text = text;
   if (![feedback saveRemote]) {
-    // TODO: ERROR ALERT
+    [AppDelegate showGenericError];
   }
   [feedback release];
 }

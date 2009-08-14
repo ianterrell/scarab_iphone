@@ -70,8 +70,8 @@
       if (author == nil) {
         author = [Author findRemote:[NSString stringWithFormat:@"%d", [interview.authorId intValue]]];
         if (author == nil) {
-          // TODO: handle error
-          debugLog(@"error!  couldn't find author on the server -- this could happen (orly?); handle!");
+          debugLog(@"error!  couldn't find author on the server -- this could happen if server is down.");
+          [AppDelegate showGenericError];
         } else {
           [AppDelegate.managedObjectContext insertObject:author];
           interview.author = author;
@@ -95,8 +95,7 @@
       for (id key in [error userInfo]) {
         debugLog(@"key: %@, value: %@", key, [[error userInfo] objectForKey:key]);
       }
-      // TODO: FIXME BITCH WHAT DO I DO?
-      // probably set interviews to empty or nil, alert user to try again or contact support if the problem persists
+      [AppDelegate showGenericError];
     } else {
       [self setupInterviewsFromDb];
     }

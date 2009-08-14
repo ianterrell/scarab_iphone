@@ -41,13 +41,14 @@
     [controller doneDownloadingAudioFile];
     [[SMWorkAudioDownloadManager defaultManager] doneDownloadingAudioFileForWork:self.work];
   } else {
-    // TODO handle this error for real
     debugLog(@"Error saving audio file for work.");
+    TTAlert(@"There was an error saving the audio file to the device. Don't worry, it will be downloaded next time. Please make sure you have at least 50MB free for Scarab to work properly!");
   }
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
   debugLog(@"error downloading file, failed. %@", [error localizedDescription]);
+  [AppDelegate showGenericError];
 }
 
 

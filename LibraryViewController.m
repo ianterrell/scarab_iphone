@@ -57,14 +57,14 @@
   NSMutableArray *issues = [NSMutableArray arrayWithCapacity:[issuesInDb count]];
   [issues addObjectsFromArray:issuesInDb];
   
-  self.currentIssue = [issues lastObject];
-  if (currentIssue != nil)
-    [issues removeLastObject];
-
   NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:NO];
   [issues sortUsingDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
   [sortDescriptor release];
   
+  self.currentIssue = [issues objectAtIndex:0];
+  if (currentIssue != nil)
+    [issues removeObjectAtIndex:0];
+    
   int c = [issues count];
   self.backIssues = [NSMutableArray arrayWithCapacity:c];
   self.bookshelfIssues = [NSMutableArray arrayWithCapacity:c];
@@ -85,7 +85,6 @@
   debugLog(@"There are %d new issues on the server", [newIssuesOnServer count]);
   
   if ([newIssuesOnServer count] > 0) {
-    // TODO:  guarantee order from server, or sort here
     for (Issue *issue in newIssuesOnServer) {
       [AppDelegate.managedObjectContext insertObject:issue];
       [issuesInDb addObject:issue];
@@ -95,7 +94,7 @@
     [AppDelegate save:&error];
     if (error) {
       debugLog(@"Error saving new issues in Library:  %@", [error localizedDescription]);
-      // TODO: FIXME BITCH WHAT DO I DO?
+      [AppDelegate showSaveError];
     }
   }
   

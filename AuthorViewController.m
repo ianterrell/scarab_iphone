@@ -21,15 +21,15 @@
       debugLog(@"fetching author with id %@ from server", authorId);
       Author *a = [Author findRemote:authorId];
       if (a == nil) {
-        // TODO: handle error
         debugLog(@"error!  couldn't find author on the server -- this could happen; handle!");
+        [AppDelegate showGenericError];
       } else {
         [AppDelegate.managedObjectContext insertObject:a];
         NSError *error = nil;
         [AppDelegate save:&error];
         if (error) {
           debugLog(@"Error saving new author:  %@", [error localizedDescription]);
-          // TODO: FIXME BITCH WHAT DO I DO?
+          [AppDelegate showSaveError];
         } else {
           self.author = a;
         }

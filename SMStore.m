@@ -84,8 +84,8 @@
     NSError *error = nil;
     [AppDelegate save:&error];
     if (error) {
-      debugLog(@"Error saving new issues in Library:  %@", [error localizedDescription]);
-      // TODO: FIXME BITCH WHAT DO I DO?
+      debugLog(@"Error saving issue transaction:  %@", [error localizedDescription]);
+      [AppDelegate showSaveError];
     } else {
       [[SKPaymentQueue defaultQueue] finishTransaction:transaction]; 
       
@@ -96,8 +96,7 @@
     }    
   } else {
     debugLog(@"Transaction not saved on server.");
-    // TODO: Alert the user that the next time the app starts up we'll try again.
-    // We're pretty much assuming that they're not hacking here.
+    TTAlert(@"There was a problem communicating with the server to verify your purchase. Scarab will try again each time you start the app until it works.  Please email support@scarabmag.com if this problem persists!");
   }
 }
 

@@ -19,7 +19,6 @@
 #pragma mark Finders
 
 + (NSArray *)findAllInIssue:(Issue *)issue {
-  // TODO: Add transaction identifier to restrict access!
   // htp://server/issues/:number/works.xml?tid=identifier
   NSString *worksInIssue = [NSString stringWithFormat:@"%@%@/%d/%@%@?tid=%@",
                            [self getRemoteSite],
@@ -80,7 +79,7 @@
   return [self.favorite boolValue];
 }
 
-// TODO: I can fix this.
+// TODO: I can refactor this
 - (NSComparisonResult)compareByPosition:(Work *)other {
   int x = [self.position intValue];
   int y = [other.position intValue];

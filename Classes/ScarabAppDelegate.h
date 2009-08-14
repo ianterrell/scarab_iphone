@@ -48,6 +48,12 @@
 
 - (void)doneWithSplash;
 
+#pragma mark Helpers
+
+- (void)showGenericError;
+- (void)showSaveError;
+- (void)showReinstallError;
+
 #pragma mark Setup Helper Methods
 
 - (void)setUpStore;

@@ -54,17 +54,14 @@
   [self setUpThree20];
   [self setUpSplashScreen];
   
-  debugLog(@"feedback nav mode is %d, create is %d", [[TTNavigator navigator].URLMap navigationModeForURL:@"scarab://feedback"], TTNavigationModeCreate);
-  
   // Set up HUD
   HUD = nil;
 
   // Set up core data
 	NSManagedObjectContext *context = [self managedObjectContext];
 	if (!context) {
-    // Do I want to start it up here?  I mean, duzzit matter?
-		// TODO: Handle the error.
     debugLog(@"Error grabbing the context in applicationDidFinishLaunching");
+    [self showReinstallError];
 	}
 }
 
@@ -75,8 +72,8 @@
   NSError *error;
   if (managedObjectContext != nil) {
     if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-    debugLog(@"Error grabbing the context and saving in applicationWillTerminate");
-      // TODO: Handle the error.
+      debugLog(@"Error grabbing the context and saving in applicationWillTerminate");
+      // We're quitting... not much to handle.  Oh well.
     } 
   }
 }
@@ -100,8 +97,8 @@
   if (![manager fileExistsAtPath:[Work audioDirectoryPath]]) {
     debugLog(@"Audio directory does not exist, creating.");
     if (![manager createDirectoryAtPath:[Work audioDirectoryPath] attributes:nil]) {
-      // TODO: fix me!
       debugLog(@"Error!  This is a problem.  Couldn't create audio directory.");
+      [self showReinstallError];
     }
   }
 }
@@ -116,8 +113,6 @@
 - (void)setUpObjectiveResource {
   // TODO: Extract ObjectiveResource config out to bundle or some such
   [ObjectiveResourceConfig setSite:[NSString stringWithFormat:@"%@/api/v1/", self.baseServerURL]];
-  //[ObjectiveResourceConfig setUser:@"remoteResourceUserName"];
-  //[ObjectiveResourceConfig setPassword:@"remoteResourcePassword"];
   [ObjectiveResourceConfig setResponseType:XmlResponse];
   [Connection setTimeout:kConnectionTimeout];
 }
@@ -195,6 +190,20 @@
   [interviewViewController openFootnoteWithId:footnoteId];
 }
 
+- (void)showGenericError {
+  TTAlert(@"Oops! An error occurred while performing your request. Please exit the application and come back and try again.\n\nIf the problem persists, please email support@scarabmag.com with a description of what you're doing before you see this.  Thank you!");
+}
+
+- (void)showSaveError {
+  TTAlert(@"Oops! An error occurred while saving some data. All of your purchases are protected, though. Please exit the application and come back and try again.\n\nIf the problem persists, please email support@scarabmag.com with a description of what you're doing before you see this.  Thank you!");
+}
+
+- (void)showReinstallError {
+  TTAlert(@"Oops! A serious error occurred! Please exit the application and come back and try again.\n\nIf the problem persists, please delete and then redownload the application (it will be free).  Sorry for the trouble, and thank you!");
+}
+
+
+
 #pragma mark -
 #pragma mark Saving
 
@@ -205,7 +214,7 @@
 -(void)save:(NSError **)error {	
   if (![[self managedObjectContext] save:error]) {
     debugLog(@"Error grabbing the context and saving in save");
-    // TODO: Handle error
+    // Errors should be handled where this is called to provide context sensitive information if necessary.
   }
 }
 
@@ -259,7 +268,7 @@
   persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];
   if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
     debugLog(@"Error setting up the store coordinator: %@", [error localizedDescription]);
-    // TODO: Handle the error.
+    [self showReinstallError];
   }    
   
   return persistentStoreCoordinator;

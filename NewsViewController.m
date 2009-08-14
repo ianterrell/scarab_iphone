@@ -11,8 +11,6 @@
 
 @implementation NewsViewController
 
-// TODO: have first item be a badass logo or something.
-
 - (int)setupDatasourceFromDb {
   TTListDataSource *source = [[TTListDataSource alloc] init];
   NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:NO];
@@ -70,8 +68,8 @@
     NSError *error = nil;
     [AppDelegate save:&error];
     if (error) {
-      debugLog(@"Error saving new issues in Library:  %@", [error localizedDescription]);
-      // TODO: FIXME BITCH WHAT DO I DO?
+      debugLog(@"Error saving new news:  %@", [error localizedDescription]);
+      [AppDelegate showSaveError];
     }
   }
   fetchedTheNews = YES;
