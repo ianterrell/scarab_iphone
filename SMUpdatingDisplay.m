@@ -7,6 +7,7 @@
 //
 
 #import "SMUpdatingDisplay.h"
+#import "TabBarController.h"
 
 #define kAnimationDuration 0.3
 #define kBaseOriginY 401
@@ -47,6 +48,10 @@
   }
 }
 
+- (BOOL)isCheckingFor:(NSString *)thing {
+  return [things containsObject:thing];
+}
+
 - (void)show {
   debugLog(@"in show");
   
@@ -66,18 +71,14 @@
   } else  {
     debugLog(@"updating and showing");
     // update and show
-    loadingLabel.alpha = 0.0;
+    loadingLabel.frame = CGRectMake(0, kBaseOriginY + kBarHeight, 320, kBarHeight);
     loadingLabel.text = [self displayMessage];
     [loadingLabel sizeToFit];
     debugLog(@"thingie is %f", [UIScreen mainScreen].applicationFrame.origin.y);
-    //    debugLog(@"loadingLabel is at %f %f and is %f by %f", loadingLabel.origin.x, loadingLabel.origin.y, loadingLabel.height, loadingLabel.width);
-    //    debugLog(@"view is %@ and is at %f %f and is %f by %f", view, view.origin.x, view.origin.y, view.height, view.width);
-    loadingLabel.frame = CGRectMake(0, kBaseOriginY, 320, 30);
-    //loadingLabel.frame = CGRectMake(0, view.height - loadingLabel.height, view.width, loadingLabel.height);
-    [[UIApplication sharedApplication].keyWindow addSubview:loadingLabel];
+    [AppDelegate.tabBarController.view insertSubview:loadingLabel atIndex:([AppDelegate.tabBarController.view.subviews count] - 1)];
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:kAnimationDuration];
-    loadingLabel.alpha = 1.0;
+    loadingLabel.frame = CGRectMake(0, kBaseOriginY, 320, kBarHeight);
     [UIView commitAnimations];
   }
 }
@@ -90,9 +91,8 @@
     [UIView setAnimationDuration:kAnimationDuration];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationDidStopSelector:@selector(doneHiding)];
-    loadingLabel.alpha = 0.0;
+    loadingLabel.frame = CGRectMake(0, kBaseOriginY + kBarHeight, 320, kBarHeight);
     [UIView commitAnimations];
-    loadingLabel.text = @""; // clear for later display;
   } else {
     debugLog(@"updating with fewer items");
     loadingLabel.text = [self displayMessage];
@@ -114,6 +114,7 @@
 
 - (void)doneHiding {
   [loadingLabel removeFromSuperview];
+  loadingLabel.text = @""; // clear for later display;
 }
 
 

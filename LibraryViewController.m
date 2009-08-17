@@ -49,8 +49,7 @@
 
   [self setupIssueSections];
 
-  // TODO DO NOT GO IF ALREADY FETCHING!
-  if (!fetchedNewIssues) {
+  if (!fetchedNewIssues && ![[SMUpdatingDisplay sharedDisplay] isCheckingFor:@"new issues"]) {
     [[SMUpdatingDisplay sharedDisplay] addCheckingFor:@"new issues"];
     [NSThread detachNewThreadSelector:@selector(fetchNewIssues) toTarget:self withObject:nil];// [AppDelegate showHUDWithLabel:nil details:@"Checking for new issues" whileExecuting:@selector(fetchNewIssues) onTarget:self withObject:nil animated:YES];
   }

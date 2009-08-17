@@ -12,6 +12,7 @@
 @class LibraryViewController;
 @class FavoritesViewController;
 @class InterviewViewController;
+@class TabBarController;
 
 @interface ScarabAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
   UIWindow *window;
@@ -25,8 +26,8 @@
   UIViewController *visibleController;
   FavoritesViewController *favoritesViewController;
   InterviewViewController *interviewViewController;
+  TabBarController *tabBarController;
   
-  TTActivityLabel *loadingLabel;
   MBProgressHUD *HUD;
 }
 
@@ -35,6 +36,7 @@
 @property(nonatomic,retain) IBOutlet LibraryViewController *libraryViewController;
 @property(nonatomic,retain) FavoritesViewController *favoritesViewController;
 @property(nonatomic,retain) InterviewViewController *interviewViewController;
+@property(nonatomic,retain) TabBarController *tabBarController;
 
 @property(nonatomic,retain,readonly) NSManagedObjectModel *managedObjectModel;
 @property(nonatomic,retain,readonly) NSManagedObjectContext *managedObjectContext;
@@ -44,8 +46,6 @@
 
 @property(nonatomic,readonly) NSString *applicationDocumentsDirectory;
 @property(nonatomic,readonly) NSString *baseServerURL;
-
-@property(nonatomic,retain) TTActivityLabel *loadingLabel;
 
 #pragma mark Splash Screen
 
@@ -64,11 +64,6 @@
 - (void)setUpObjectiveResource;
 - (void)setUpThree20;
 - (void)setUpSplashScreen;
-
-#pragma mark Loading Methods
-
-- (void)displayLoadingWithMessage:(NSString *)message;
-- (void)hideLoading;
 
 #pragma mark HUD Methods
 

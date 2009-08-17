@@ -23,6 +23,7 @@
                                              nil]];
   self.customizableViewControllers = [NSArray arrayWithObjects:nil];
   self.delegate = self;
+  AppDelegate.tabBarController = self;
 }
 
 - (void) tabBarController:(UITabBarController*)aTabBarController didSelectViewController:(UIViewController*)viewController {

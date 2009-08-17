@@ -34,7 +34,7 @@
   if (interviews == nil)
     lastInterviewNumber = [self setupInterviewsFromDb];
 
-  if (!fetchedNewInterviews) {
+  if (!fetchedNewInterviews && ![[SMUpdatingDisplay sharedDisplay] isCheckingFor:@"new interviews"]) {
     [[SMUpdatingDisplay sharedDisplay] addCheckingFor:@"new interviews"];
     [NSThread detachNewThreadSelector:@selector(fetchNewInterviews) toTarget:self withObject:nil];
   }

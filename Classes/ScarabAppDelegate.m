@@ -42,8 +42,7 @@
 @synthesize visibleController;
 @synthesize libraryViewController;
 @synthesize favoritesViewController;
-@synthesize interviewViewController;
-@synthesize loadingLabel;
+@synthesize interviewViewController, tabBarController;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -283,33 +282,6 @@
 
 
 #pragma mark -
-#pragma mark Loading Display Methods
-
-- (void)displayLoadingWithMessage:(NSString *)message {
-  loadingLabel = [[[TTActivityLabel alloc] initWithStyle:TTActivityLabelStyleBlackBanner] autorelease];
-  loadingLabel.alpha = 0.0;
-  loadingLabel.text = message;
-  [loadingLabel sizeToFit];
-  loadingLabel.frame = CGRectMake(0, 50, [[UIApplication sharedApplication] keyWindow].width, loadingLabel.height);
-  [[[UIApplication sharedApplication] keyWindow] addSubview:loadingLabel];
-  
-//    CGRect frame = toolbar.frame;
-//  frame.origin.y = up ? frame.origin.y - kToolbarHeight : frame.origin.y + kToolbarHeight;
-  [UIView beginAnimations:nil context:NULL];
-  [UIView setAnimationDuration:0.3];
-  loadingLabel.alpha = 1.0;
-  [UIView commitAnimations];
-}
-
-- (void)hideLoading {
-  [UIView beginAnimations:nil context:NULL];
-  [UIView setAnimationDuration:0.3];
-  loadingLabel.alpha = 0.0;
-  [UIView commitAnimations];
-//  [loadingLabel removeFromSuperview];
-}
-
-#pragma mark -
 #pragma mark HUD Methods
 
 - (void)setupHUDWithLabel:(NSString *)labelText details:(NSString *)detailsLabelText {
@@ -371,13 +343,13 @@
 #pragma mark Memory management
 
 -(void)dealloc {
-  [loadingLabel release];
   [managedObjectContext release];
   [managedObjectModel release];
   [persistentStoreCoordinator release];
   [splashScreenController release];
   [favoritesViewController release];
   [interviewViewController release];
+  [tabBarController release];
   [window release];
   [super dealloc];
 }
