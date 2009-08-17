@@ -113,7 +113,7 @@
  TODO:  put this in the bundle, dammit
  */
 -(NSString *)baseServerURL {	
-  return @"http://192.168.20.2:3000"; // localhost:3000 // staging.scarabmag.com
+  return @"http://staging.scarabmag.com"; // 192.168.20.2:3000 // localhost:3000 // staging.scarabmag.com
 }
 
 - (void)setUpObjectiveResource {

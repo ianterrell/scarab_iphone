@@ -29,15 +29,6 @@
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
 
-  for (UIView *v in [self.view subviews]) {
-    debugLog(@"view is %@", v);
-  }
-  
-  debugLog(@"---");
-  for (UIView *v in [self.view.superview subviews]) {
-    debugLog(@"view is %@", v);
-  }
-
   // Set up empty arrays to hold issues
   if (bookshelfIssues == nil)
     self.bookshelfIssues = [NSMutableArray arrayWithCapacity:5];
@@ -94,7 +85,7 @@
 
 -(void)fetchNewIssues {
   NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-
+  
   int currentIssueNumber = (currentIssue == nil) ? 0 : [currentIssue.number intValue];
   debugLog(@"The number of the last issue in the database is %d", currentIssueNumber);
   NSArray *newIssuesOnServer = [Issue findAllSinceNumber:[NSNumber numberWithInt:currentIssueNumber]];
@@ -105,7 +96,6 @@
       [AppDelegate.managedObjectContext insertObject:issue];
       [issuesInDb addObject:issue];
     }
-    
     NSError *error = nil;
     [AppDelegate save:&error];
     if (error) {

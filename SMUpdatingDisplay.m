@@ -74,7 +74,6 @@
     loadingLabel.frame = CGRectMake(0, kBaseOriginY + kBarHeight, 320, kBarHeight);
     loadingLabel.text = [self displayMessage];
     [loadingLabel sizeToFit];
-    debugLog(@"thingie is %f", [UIScreen mainScreen].applicationFrame.origin.y);
     [AppDelegate.tabBarController.view insertSubview:loadingLabel atIndex:([AppDelegate.tabBarController.view.subviews count] - 1)];
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:kAnimationDuration];
