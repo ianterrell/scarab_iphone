@@ -12,6 +12,7 @@
 #import "Author.h"
 #import "Footnote.h"
 #import "InterviewCell.h"
+#import "SMUpdatingDisplay.h"
 
 @implementation InterviewsViewController
 
@@ -33,8 +34,10 @@
   if (interviews == nil)
     lastInterviewNumber = [self setupInterviewsFromDb];
 
-  if (!fetchedNewInterviews)
-    [AppDelegate showHUDWithLabel:nil details:@"Checking for new interviews" whileExecuting:@selector(fetchNewInterviews) onTarget:self withObject:nil animated:YES];
+  if (!fetchedNewInterviews) {
+    [[SMUpdatingDisplay sharedDisplay] addCheckingFor:@"new interviews"];
+    [NSThread detachNewThreadSelector:@selector(fetchNewInterviews) toTarget:self withObject:nil];
+  }
 }
 
 #pragma mark -
@@ -57,6 +60,8 @@
 }
 
 -(void)fetchNewInterviews {
+  NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+  
   debugLog(@"The number of the last interview in the database is %d", lastInterviewNumber);
   NSArray *newInterviewsOnServer = [Interview findAllSinceNumber:[NSNumber numberWithInt:lastInterviewNumber]];
   debugLog(@"There are %d new interviews on the server", [newInterviewsOnServer count]);
@@ -99,9 +104,12 @@
     } else {
       [self setupInterviewsFromDb];
     }
+    
   }
   
   fetchedNewInterviews = YES;
+  [[SMUpdatingDisplay sharedDisplay] removeCheckingFor:@"new interviews"];
+  [pool release];
 }
 
 #pragma mark -

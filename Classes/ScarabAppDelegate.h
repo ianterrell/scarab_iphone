@@ -26,6 +26,7 @@
   FavoritesViewController *favoritesViewController;
   InterviewViewController *interviewViewController;
   
+  TTActivityLabel *loadingLabel;
   MBProgressHUD *HUD;
 }
 
@@ -44,6 +45,8 @@
 @property(nonatomic,readonly) NSString *applicationDocumentsDirectory;
 @property(nonatomic,readonly) NSString *baseServerURL;
 
+@property(nonatomic,retain) TTActivityLabel *loadingLabel;
+
 #pragma mark Splash Screen
 
 - (void)doneWithSplash;
@@ -61,6 +64,11 @@
 - (void)setUpObjectiveResource;
 - (void)setUpThree20;
 - (void)setUpSplashScreen;
+
+#pragma mark Loading Methods
+
+- (void)displayLoadingWithMessage:(NSString *)message;
+- (void)hideLoading;
 
 #pragma mark HUD Methods
 

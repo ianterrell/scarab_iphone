@@ -30,6 +30,8 @@
 #import "Transaction.h"
 #import "Work.h"
 
+#import "SMUpdatingDisplay.h"
+
 #define kDatabaseName @"Scarab.sqlite3"
 #define kConnectionTimeout 20.0
 
@@ -41,6 +43,7 @@
 @synthesize libraryViewController;
 @synthesize favoritesViewController;
 @synthesize interviewViewController;
+@synthesize loadingLabel;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -56,6 +59,8 @@
   
   // Set up HUD
   HUD = nil;
+  
+  [[SMUpdatingDisplay sharedDisplay] show];
 
   // Set up core data
 	NSManagedObjectContext *context = [self managedObjectContext];
@@ -105,9 +110,11 @@
 
 /**
  Returns the base URL where images and other media are found online.  No trailing slash.
+ 
+ TODO:  put this in the bundle, dammit
  */
 -(NSString *)baseServerURL {	
-  return @"http://staging.scarabmag.com"; // localhost:3000 // staging.scarabmag.com
+  return @"http://192.168.20.2:3000"; // localhost:3000 // staging.scarabmag.com
 }
 
 - (void)setUpObjectiveResource {
@@ -274,6 +281,34 @@
   return persistentStoreCoordinator;
 }
 
+
+#pragma mark -
+#pragma mark Loading Display Methods
+
+- (void)displayLoadingWithMessage:(NSString *)message {
+  loadingLabel = [[[TTActivityLabel alloc] initWithStyle:TTActivityLabelStyleBlackBanner] autorelease];
+  loadingLabel.alpha = 0.0;
+  loadingLabel.text = message;
+  [loadingLabel sizeToFit];
+  loadingLabel.frame = CGRectMake(0, 50, [[UIApplication sharedApplication] keyWindow].width, loadingLabel.height);
+  [[[UIApplication sharedApplication] keyWindow] addSubview:loadingLabel];
+  
+//    CGRect frame = toolbar.frame;
+//  frame.origin.y = up ? frame.origin.y - kToolbarHeight : frame.origin.y + kToolbarHeight;
+  [UIView beginAnimations:nil context:NULL];
+  [UIView setAnimationDuration:0.3];
+  loadingLabel.alpha = 1.0;
+  [UIView commitAnimations];
+}
+
+- (void)hideLoading {
+  [UIView beginAnimations:nil context:NULL];
+  [UIView setAnimationDuration:0.3];
+  loadingLabel.alpha = 0.0;
+  [UIView commitAnimations];
+//  [loadingLabel removeFromSuperview];
+}
+
 #pragma mark -
 #pragma mark HUD Methods
 
@@ -336,6 +371,7 @@
 #pragma mark Memory management
 
 -(void)dealloc {
+  [loadingLabel release];
   [managedObjectContext release];
   [managedObjectModel release];
   [persistentStoreCoordinator release];

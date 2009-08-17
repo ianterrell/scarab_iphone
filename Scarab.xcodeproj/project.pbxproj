@@ -59,6 +59,7 @@
 		3C3FD5301035953000304238 /* MoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FD52F1035953000304238 /* MoreController.m */; };
 		3C3FD59A1035A16B00304238 /* 02-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C3FD5991035A16B00304238 /* 02-redo.png */; };
 		3C3FD5B51035A4A200304238 /* more-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C3FD5B41035A4A200304238 /* more-icon.png */; };
+		3C3FD7921039B88200304238 /* SMUpdatingDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FD7911039B88200304238 /* SMUpdatingDisplay.m */; };
 		3C5119E50FF01C34009CDD9F /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5119E40FF01C34009CDD9F /* Transaction.m */; };
 		3C55E48A1020C7B9009F04FF /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C55E4891020C7B9009F04FF /* IssueViewController.m */; };
 		3C55E4F710226C29009F04FF /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C55E4F610226C29009F04FF /* Author.m */; };
@@ -225,6 +226,8 @@
 		3C3FD52F1035953000304238 /* MoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreController.m; sourceTree = "<group>"; };
 		3C3FD5991035A16B00304238 /* 02-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-redo.png"; sourceTree = "<group>"; };
 		3C3FD5B41035A4A200304238 /* more-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more-icon.png"; sourceTree = "<group>"; };
+		3C3FD7901039B88200304238 /* SMUpdatingDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMUpdatingDisplay.h; sourceTree = "<group>"; };
+		3C3FD7911039B88200304238 /* SMUpdatingDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMUpdatingDisplay.m; sourceTree = "<group>"; };
 		3C5119E30FF01C34009CDD9F /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
 		3C5119E40FF01C34009CDD9F /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		3C55E4881020C7B9009F04FF /* IssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueViewController.h; sourceTree = "<group>"; };
@@ -555,6 +558,8 @@
 				3CE5D6BD0FE8D3DA00A152D3 /* NSData+MBBase64.m */,
 				3C5F47900FF139D50086D8D1 /* SKProduct+LocalizedPrice.h */,
 				3C5F47910FF139D50086D8D1 /* SKProduct+LocalizedPrice.m */,
+				3C3FD7901039B88200304238 /* SMUpdatingDisplay.h */,
+				3C3FD7911039B88200304238 /* SMUpdatingDisplay.m */,
 			);
 			name = "Helper Classes";
 			sourceTree = "<group>";
@@ -1019,6 +1024,7 @@
 				3C63FC421032503F00E2D80F /* FeedbackViewController.m in Sources */,
 				3C63FC871032599800E2D80F /* Feedback.m in Sources */,
 				3C3FD5301035953000304238 /* MoreController.m in Sources */,
+				3C3FD7921039B88200304238 /* SMUpdatingDisplay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

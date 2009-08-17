@@ -10,6 +10,7 @@
 #import "IssuePreviewController.h"
 #import "Issue.h"
 #import "IssueCell.h"
+#import "SMUpdatingDisplay.h"
 
 @implementation LibraryViewController
 
@@ -28,6 +29,15 @@
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
 
+  for (UIView *v in [self.view subviews]) {
+    debugLog(@"view is %@", v);
+  }
+  
+  debugLog(@"---");
+  for (UIView *v in [self.view.superview subviews]) {
+    debugLog(@"view is %@", v);
+  }
+
   // Set up empty arrays to hold issues
   if (bookshelfIssues == nil)
     self.bookshelfIssues = [NSMutableArray arrayWithCapacity:5];
@@ -39,8 +49,11 @@
 
   [self setupIssueSections];
 
-  if (!fetchedNewIssues)
-    [AppDelegate showHUDWithLabel:nil details:@"Checking for new issues" whileExecuting:@selector(fetchNewIssues) onTarget:self withObject:nil animated:YES];
+  // TODO DO NOT GO IF ALREADY FETCHING!
+  if (!fetchedNewIssues) {
+    [[SMUpdatingDisplay sharedDisplay] addCheckingFor:@"new issues"];
+    [NSThread detachNewThreadSelector:@selector(fetchNewIssues) toTarget:self withObject:nil];// [AppDelegate showHUDWithLabel:nil details:@"Checking for new issues" whileExecuting:@selector(fetchNewIssues) onTarget:self withObject:nil animated:YES];
+  }
 }
 
 #pragma mark -
@@ -81,6 +94,8 @@
 
 
 -(void)fetchNewIssues {
+  NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+
   int currentIssueNumber = (currentIssue == nil) ? 0 : [currentIssue.number intValue];
   debugLog(@"The number of the last issue in the database is %d", currentIssueNumber);
   NSArray *newIssuesOnServer = [Issue findAllSinceNumber:[NSNumber numberWithInt:currentIssueNumber]];
@@ -98,10 +113,13 @@
       debugLog(@"Error saving new issues in Library:  %@", [error localizedDescription]);
       [AppDelegate showSaveError];
     }
+    
+    [self setupIssueSections];
   }
   
-  [self setupIssueSections];
   fetchedNewIssues = YES;
+  [[SMUpdatingDisplay sharedDisplay] removeCheckingFor:@"new issues"];
+  [pool release];
 }
 
 /*
@@ -123,8 +141,6 @@
 	// Release anything that can be recreated in viewDidLoad or on demand.
 	// e.g. self.myOutlet = nil;
 }
-
-
 
 #pragma mark Table view methods
 

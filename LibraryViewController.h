@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class Issue;
+@class SMUpdatingDisplay;
 
 @interface LibraryViewController : UITableViewController {
   BOOL fetchedNewIssues;

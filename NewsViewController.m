@@ -8,6 +8,7 @@
 
 #import "NewsViewController.h"
 #import "Update.h"
+#import "SMUpdatingDisplay.h"
 
 @implementation NewsViewController
 
@@ -40,8 +41,10 @@
     self.tableView.allowsSelection = NO;
     
     currentUpdateNumber = [self setupDatasourceFromDb];
-    if (!fetchedTheNews)
-      [self performSelector:@selector(fetchNews) withObject:nil afterDelay:0.1];
+    if (!fetchedTheNews) {
+      [[SMUpdatingDisplay sharedDisplay] addCheckingFor:@"news"];
+      [NSThread detachNewThreadSelector:@selector(fetchNews) toTarget:self withObject:nil];
+    }
   }
   return self;
 }
@@ -54,6 +57,8 @@
 
 
 -(void)fetchNews {
+  NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+  
   debugLog(@"The number of the last update in the database is %d", currentUpdateNumber);
   NSArray *newUpdatesOnServer = [Update findAllSinceNumber:[NSNumber numberWithInt:currentUpdateNumber]];
   debugLog(@"There are %d new updates on the server", [newUpdatesOnServer count]);
@@ -74,6 +79,9 @@
   }
   fetchedTheNews = YES;
   [self setupDatasourceFromDb];
+
+  [[SMUpdatingDisplay sharedDisplay] removeCheckingFor:@"news"];
+  [pool release];
 }
 
 @end
