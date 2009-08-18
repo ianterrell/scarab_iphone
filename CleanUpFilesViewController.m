@@ -62,6 +62,9 @@
 }
 
 - (IBAction)cleanUpFiles {
+  // Add analytics hit
+  [[Beacon shared] startSubBeaconWithName:@"Cleaned Up Files" timeSession:NO];
+
   if ([[NSFileManager defaultManager] removeItemAtPath:[Work audioDirectoryPath] error:nil]) {
     [AppDelegate setUpAudioDirectory];
     [self calculateAndDisplaySize];

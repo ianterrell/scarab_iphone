@@ -41,6 +41,9 @@
 
 
 -(void)viewDidLoad {
+  // Add analytics hit for the author
+  [[Beacon shared] startSubBeaconWithName:[NSString stringWithFormat:@"Author %d - %@", [self.author.authorId intValue], self.author.name] timeSession:NO];
+  
   self.title = @"Author";
   self.name.text = self.author.name;
   self.location.text = self.author.location;

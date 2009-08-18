@@ -34,6 +34,9 @@
   if (self.interview == nil)
     return;
   
+  // Add analytics hit for the interview
+  [[Beacon shared] startSubBeaconWithName:[NSString stringWithFormat:@"Interview %d - %@", [self.interview.interviewId intValue], self.interview.author.name] timeSession:NO];
+  
   self.title = @"Interview";
 
   // Title

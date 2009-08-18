@@ -26,6 +26,7 @@
 #import "CreditsViewController.h"
 #import "RestoreTransactionsViewController.h"
 #import "MoreController.h"
+#import "SMWebController.h"
 
 #import "Transaction.h"
 #import "Work.h"
@@ -50,6 +51,7 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
   debugLog(@"Application did finish launching!");
 
+  [self setUpAnalytics];
   [self setUpStore];
   [self setUpAudioDirectory];
   [self setUpObjectiveResource];
@@ -80,6 +82,7 @@
       // We're quitting... not much to handle.  Oh well.
     } 
   }
+  [Beacon endBeacon];
 }
 
 
@@ -116,6 +119,11 @@
   return @"http://staging.scarabmag.com"; // 192.168.20.2:3000 // localhost:3000 // staging.scarabmag.com
 }
 
+- (void)setUpAnalytics {
+  NSString *applicationCode = @"a9b76b54fd070e1bb2943d8a7b1d0c3a";
+  [Beacon initAndStartBeaconWithApplicationCode:applicationCode useCoreLocation:NO useOnlyWiFi:NO];
+}
+
 - (void)setUpObjectiveResource {
   // TODO: Extract ObjectiveResource config out to bundle or some such
   [ObjectiveResourceConfig setSite:[NSString stringWithFormat:@"%@/api/v1/", self.baseServerURL]];
@@ -130,7 +138,7 @@
   
   TTURLMap* map = navigator.URLMap;
   
-  [map from:@"*" toViewController:[TTWebController class]];
+  [map from:@"*" toViewController:[SMWebController class]];
   [map from:@"scarab://tabBar" toSharedViewController:[TabBarController class]];
 
   [map from:@"scarab://library" toSharedViewController:[LibraryViewController class]];

@@ -70,6 +70,9 @@
   if (self.work == nil)
     return;
   
+  // Add analytics hit for the work
+  [[Beacon shared] startSubBeaconWithName:[NSString stringWithFormat:@"Work %d - %@", [self.work.workId intValue], self.work.title] timeSession:NO];
+
   self.title = self.work.workType;
 
   // Title
@@ -130,6 +133,9 @@
     [favoriteStar setImage:[UIImage imageNamed:@"star-empty.png"] forState:UIControlStateNormal];
     work.favorite = [NSNumber numberWithBool:NO];
   } else {
+    // Add analytics hits for favoriting
+    [[Beacon shared] startSubBeaconWithName:@"Favorited" timeSession:NO];
+    [[Beacon shared] startSubBeaconWithName:[NSString stringWithFormat:@"Favorited %d - %@", [self.work.workId intValue], self.work.title] timeSession:NO];
     [favoriteStar setImage:[UIImage imageNamed:@"star-full.png"] forState:UIControlStateNormal];
     work.favorite = [NSNumber numberWithBool:YES];
   }

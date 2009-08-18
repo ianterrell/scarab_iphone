@@ -23,6 +23,8 @@
   
   #import "MBProgressHUD.h"
   
+  #import "Beacon.h"
+  
   #import "ScarabAppDelegate.h"
   #define AppDelegate ((ScarabAppDelegate *)[[UIApplication sharedApplication] delegate])
   

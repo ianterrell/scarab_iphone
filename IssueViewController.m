@@ -73,6 +73,9 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  // Add analytics for viewing issue
+  [[Beacon shared] startSubBeaconWithName:[NSString stringWithFormat:@"Issue %d - %@", [self.issue.issueId intValue], self.issue.title] timeSession:NO];
 }
 
 

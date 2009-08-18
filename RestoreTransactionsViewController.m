@@ -25,6 +25,8 @@
 }
 
 - (IBAction)restoreTransactions {
+  // Add analytics hit
+  [[Beacon shared] startSubBeaconWithName:@"Restored Transactions" timeSession:NO];
   [AppDelegate showHUDWithLabel:nil details:@"Syncing" animated:YES];
   [[SMStore defaultStore] restoreAllTransactions];
 }

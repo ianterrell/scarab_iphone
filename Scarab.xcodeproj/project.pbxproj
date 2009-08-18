@@ -60,6 +60,11 @@
 		3C3FD59A1035A16B00304238 /* 02-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C3FD5991035A16B00304238 /* 02-redo.png */; };
 		3C3FD5B51035A4A200304238 /* more-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C3FD5B41035A4A200304238 /* more-icon.png */; };
 		3C3FD7921039B88200304238 /* SMUpdatingDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FD7911039B88200304238 /* SMUpdatingDisplay.m */; };
+		3C3FD97B1039DE7800304238 /* libPMAnalytics-r68.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3FD97A1039DE7800304238 /* libPMAnalytics-r68.a */; };
+		3C3FD97E1039DEB700304238 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3FD97D1039DEB700304238 /* libsqlite3.dylib */; };
+		3C3FD9801039DED200304238 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3FD97F1039DED200304238 /* CoreLocation.framework */; };
+		3C3FD9841039DEE000304238 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3FD9831039DEE000304238 /* SystemConfiguration.framework */; };
+		3C3FD9DA1039E61200304238 /* SMWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FD9D91039E61200304238 /* SMWebController.m */; };
 		3C5119E50FF01C34009CDD9F /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5119E40FF01C34009CDD9F /* Transaction.m */; };
 		3C55E48A1020C7B9009F04FF /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C55E4891020C7B9009F04FF /* IssueViewController.m */; };
 		3C55E4F710226C29009F04FF /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C55E4F610226C29009F04FF /* Author.m */; };
@@ -228,6 +233,13 @@
 		3C3FD5B41035A4A200304238 /* more-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more-icon.png"; sourceTree = "<group>"; };
 		3C3FD7901039B88200304238 /* SMUpdatingDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMUpdatingDisplay.h; sourceTree = "<group>"; };
 		3C3FD7911039B88200304238 /* SMUpdatingDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMUpdatingDisplay.m; sourceTree = "<group>"; };
+		3C3FD9791039DE7800304238 /* Beacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beacon.h; sourceTree = "<group>"; };
+		3C3FD97A1039DE7800304238 /* libPMAnalytics-r68.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPMAnalytics-r68.a"; sourceTree = "<group>"; };
+		3C3FD97D1039DEB700304238 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		3C3FD97F1039DED200304238 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3C3FD9831039DEE000304238 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3C3FD9D81039E61200304238 /* SMWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMWebController.h; sourceTree = "<group>"; };
+		3C3FD9D91039E61200304238 /* SMWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWebController.m; sourceTree = "<group>"; };
 		3C5119E30FF01C34009CDD9F /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
 		3C5119E40FF01C34009CDD9F /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		3C55E4881020C7B9009F04FF /* IssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueViewController.h; sourceTree = "<group>"; };
@@ -389,6 +401,10 @@
 				3C24707E0FE7EA6B00FCACDF /* StoreKit.framework in Frameworks */,
 				3CE5D5450FE88D0100A152D3 /* AVFoundation.framework in Frameworks */,
 				3C63F5B61027D45B00E2D80F /* libxml2.2.dylib in Frameworks */,
+				3C3FD97B1039DE7800304238 /* libPMAnalytics-r68.a in Frameworks */,
+				3C3FD97E1039DEB700304238 /* libsqlite3.dylib in Frameworks */,
+				3C3FD9801039DED200304238 /* CoreLocation.framework in Frameworks */,
+				3C3FD9841039DEE000304238 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +460,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				3C3FD9791039DE7800304238 /* Beacon.h */,
 				28A0AB4B0D9B1048005BE974 /* Scarab_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -490,6 +507,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C3FD9831039DEE000304238 /* SystemConfiguration.framework */,
+				3C3FD97F1039DED200304238 /* CoreLocation.framework */,
+				3C3FD97D1039DEB700304238 /* libsqlite3.dylib */,
+				3C3FD97A1039DE7800304238 /* libPMAnalytics-r68.a */,
 				3C63F5B51027D45A00E2D80F /* libxml2.2.dylib */,
 				3CE5D5440FE88D0100A152D3 /* AVFoundation.framework */,
 				3C24707D0FE7EA6B00FCACDF /* StoreKit.framework */,
@@ -832,6 +853,8 @@
 				3CFA923E101FC4EF004D9F8A /* TabBarController.m */,
 				3C3FD52E1035953000304238 /* MoreController.h */,
 				3C3FD52F1035953000304238 /* MoreController.m */,
+				3C3FD9D81039E61200304238 /* SMWebController.h */,
+				3C3FD9D91039E61200304238 /* SMWebController.m */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
@@ -1025,6 +1048,7 @@
 				3C63FC871032599800E2D80F /* Feedback.m in Sources */,
 				3C3FD5301035953000304238 /* MoreController.m in Sources */,
 				3C3FD7921039B88200304238 /* SMUpdatingDisplay.m in Sources */,
+				3C3FD9DA1039E61200304238 /* SMWebController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1050,6 +1074,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Scarab_Prefix.pch;
 				INFOPLIST_FILE = "Scarab-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1068,6 +1096,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Scarab_Prefix.pch;
 				INFOPLIST_FILE = "Scarab-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1106,6 +1138,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Scarab_Prefix.pch;
 				INFOPLIST_FILE = "Scarab-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",

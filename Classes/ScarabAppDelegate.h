@@ -59,6 +59,7 @@
 
 #pragma mark Setup Helper Methods
 
+- (void)setUpAnalytics;
 - (void)setUpStore;
 - (void)setUpAudioDirectory;
 - (void)setUpObjectiveResource;

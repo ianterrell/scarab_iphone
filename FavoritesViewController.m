@@ -22,6 +22,11 @@
   return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  [[Beacon shared] startSubBeaconWithName:@"Viewed Favorites" timeSession:NO];
+}
+
 - (void)reloadFavorites {
   self.works = [Work fetchWithPredicate:[NSPredicate predicateWithFormat:@"favorite = %d", YES]];
   [(UITableView *)self.view reloadData];

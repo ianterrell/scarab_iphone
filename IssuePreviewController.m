@@ -28,8 +28,10 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
   debugLog(@"issue preview view did load, issue is %@", issue);
+  
+  // Add analytics for previewing issue
+  [[Beacon shared] startSubBeaconWithName:[NSString stringWithFormat:@"Preview %d - %@", [self.issue.issueId intValue], self.issue.title] timeSession:NO];
   
   // Start request to update purchase button
   [[IssuePriceFetcherManager defaultManager] fetchPriceForIssue:issue previewController:self];
@@ -56,6 +58,9 @@
 }
 
 -(IBAction)purchaseIssue {
+  // Add analytics for purchasing issue
+  [[Beacon shared] startSubBeaconWithName:[NSString stringWithFormat:@"Start Purchase %d - %@", [self.issue.issueId intValue], self.issue.title] timeSession:NO];
+
   [AppDelegate showHUDWithLabel:nil details:@"Purchasing" animated:YES];
   [[SMStore defaultStore] purchaseIssue:issue];
 }

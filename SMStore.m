@@ -89,8 +89,11 @@
     } else {
       [[SKPaymentQueue defaultQueue] finishTransaction:transaction]; 
       
-      if (!isRestore)
+      if (!isRestore) {
+        // Add analytics for purchasing issue
+        [[Beacon shared] startSubBeaconWithName:[NSString stringWithFormat:@"Finish Purchase %d - %@", [issue.issueId intValue], issue.title] timeSession:NO];
         TTOpenURL([NSString stringWithFormat:@"scarab://issues/%@", issue.number]); 
+      }
       else if (self.count == 0)
         TTOpenURL(@"scarab://library");
     }    
