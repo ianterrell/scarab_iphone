@@ -134,7 +134,6 @@
     work.favorite = [NSNumber numberWithBool:NO];
   } else {
     // Add analytics hits for favoriting
-    [[Beacon shared] startSubBeaconWithName:@"Favorited" timeSession:NO];
     [[Beacon shared] startSubBeaconWithName:[NSString stringWithFormat:@"Favorited %d - %@", [self.work.workId intValue], self.work.title] timeSession:NO];
     [favoriteStar setImage:[UIImage imageNamed:@"star-full.png"] forState:UIControlStateNormal];
     work.favorite = [NSNumber numberWithBool:YES];
@@ -197,6 +196,8 @@
 
 - (IBAction)playAudio {
   debugLog(@"Playing audio");
+  // Add analytics for listening
+  [[Beacon shared] startSubBeaconWithName:[NSString stringWithFormat:@"Listen %d - %@", [self.work.workId intValue], self.work.title] timeSession:YES];
   [self.playingToolbar setItems:[NSArray arrayWithObject:self.pauseButton] animated:YES];
   [self.audioPlayer play];
   [self setUpAudioUpdateTimer];
@@ -204,6 +205,8 @@
 
 - (IBAction)pauseAudio {
   debugLog(@"Pausing audio");
+  // Add analytics for listening
+  [[Beacon shared] endSubBeaconWithName:[NSString stringWithFormat:@"Listen %d - %@", [self.work.workId intValue], self.work.title]];
   [self.playingToolbar setItems:[NSArray arrayWithObject:self.playButton] animated:YES];
   [self cancelAudioUpdateTimer];
   [self.audioPlayer pause];
