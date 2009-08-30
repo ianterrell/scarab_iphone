@@ -18,4 +18,9 @@
   [[Beacon shared] startSubBeaconWithName:[NSString stringWithFormat:@"URL %@ %@", [URL host], [URL fragment]] timeSession:NO];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    // Return YES for supported orientations
+    return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
 @end

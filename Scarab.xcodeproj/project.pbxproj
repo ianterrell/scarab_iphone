@@ -130,6 +130,7 @@
 		3C63FCAA10325D0000E2D80F /* tall_gradient_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C63FCA910325D0000E2D80F /* tall_gradient_bg.png */; };
 		3C9318E70FE87073009D3731 /* SMWorkAudioDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */; };
 		3C9318F90FE873E0009D3731 /* Work.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9318F80FE873E0009D3731 /* Work.m */; };
+		3CE342FC104AF9CD000EE95A /* logo_162.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CE342FB104AF9CD000EE95A /* logo_162.png */; };
 		3CE5D45C0FE8793E00A152D3 /* SMWorkAudioDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D45B0FE8793E00A152D3 /* SMWorkAudioDownload.m */; };
 		3CE5D5450FE88D0100A152D3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE5D5440FE88D0100A152D3 /* AVFoundation.framework */; };
 		3CE5D5A30FE8939200A152D3 /* StringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D5A20FE8939200A152D3 /* StringUtils.m */; };
@@ -369,6 +370,7 @@
 		3C9318E60FE87073009D3731 /* SMWorkAudioDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWorkAudioDownloadManager.m; sourceTree = "<group>"; };
 		3C9318F70FE873E0009D3731 /* Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Work.h; sourceTree = "<group>"; };
 		3C9318F80FE873E0009D3731 /* Work.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Work.m; sourceTree = "<group>"; };
+		3CE342FB104AF9CD000EE95A /* logo_162.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_162.png; sourceTree = "<group>"; };
 		3CE5D45A0FE8793E00A152D3 /* SMWorkAudioDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMWorkAudioDownload.h; sourceTree = "<group>"; };
 		3CE5D45B0FE8793E00A152D3 /* SMWorkAudioDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWorkAudioDownload.m; sourceTree = "<group>"; };
 		3CE5D5440FE88D0100A152D3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -470,6 +472,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3CE342FB104AF9CD000EE95A /* logo_162.png */,
 				3C3FD5B41035A4A200304238 /* more-icon.png */,
 				3C3FD5991035A16B00304238 /* 02-redo.png */,
 				3C63F6891027F38200E2D80F /* 29-heart.png */,
@@ -960,6 +963,7 @@
 				3C63FCAA10325D0000E2D80F /* tall_gradient_bg.png in Resources */,
 				3C3FD59A1035A16B00304238 /* 02-redo.png in Resources */,
 				3C3FD5B51035A4A200304238 /* more-icon.png in Resources */,
+				3CE342FC104AF9CD000EE95A /* logo_162.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1067,7 +1071,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ian Terrell (F795349HT3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ian Terrell (32WJ7Z486S)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1083,7 +1087,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Scarab;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "24D5C2B4-5812-4EAC-A2E7-5E7122E770E1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F59D1659-742C-4F1C-81A5-25C785736677";
 			};
 			name = Debug;
 		};
@@ -1091,7 +1095,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ian Terrell (F795349HT3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ian Terrell (32WJ7Z486S)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Scarab_Prefix.pch;
@@ -1105,7 +1109,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Scarab;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "24D5C2B4-5812-4EAC-A2E7-5E7122E770E1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F59D1659-742C-4F1C-81A5-25C785736677";
 			};
 			name = Release;
 		};
@@ -1133,7 +1137,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ian Terrell";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ian Terrell (32WJ7Z486S)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Scarab_Prefix.pch;
@@ -1147,9 +1151,50 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Scarab;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "326E7B66-9338-4DBA-9B3F-6F000A95EF22";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F59D1659-742C-4F1C-81A5-25C785736677";
 			};
 			name = BetaTest;
+		};
+		3CE34349104B08FC000EE95A /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Old Brick Press, LLC";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../three20/src/**";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9797061C-30AE-4FFF-A76F-CCEB781A1672";
+				SDKROOT = iphoneos3.0;
+			};
+			name = Distribution;
+		};
+		3CE3434A104B08FC000EE95A /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Old Brick Press, LLC";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Scarab_Prefix.pch;
+				INFOPLIST_FILE = "Scarab-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = Scarab;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9797061C-30AE-4FFF-A76F-CCEB781A1672";
+			};
+			name = Distribution;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1174,7 +1219,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ian Terrell (32WJ7Z486S)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1184,6 +1229,7 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F59D1659-742C-4F1C-81A5-25C785736677";
 				SDKROOT = iphoneos3.0;
 			};
 			name = Release;
@@ -1196,6 +1242,7 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				3CE3434A104B08FC000EE95A /* Distribution */,
 				3C1DCC22101D1A4300702531 /* BetaTest */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1206,6 +1253,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				3CE34349104B08FC000EE95A /* Distribution */,
 				3C1DCC21101D1A4300702531 /* BetaTest */,
 			);
 			defaultConfigurationIsVisible = 0;

@@ -12,7 +12,7 @@
 @implementation Author
 
 @dynamic authorId, name, location, bio, photoUrl;
-@dynamic works;
+@dynamic works, interviews;
 
 #pragma mark Finders
 

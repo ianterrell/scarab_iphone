@@ -33,6 +33,8 @@
 
 #import "SMUpdatingDisplay.h"
 
+// 192.168.20.2:3000 // localhost:3000 // staging.scarabmag.com // www.scarabmag.com
+#define kServerBaseURL @"http://www.scarabmag.com"
 #define kDatabaseName @"Scarab.sqlite3"
 #define kConnectionTimeout 20.0
 
@@ -116,7 +118,7 @@
  TODO:  put this in the bundle, dammit
  */
 -(NSString *)baseServerURL {	
-  return @"http://staging.scarabmag.com"; // 192.168.20.2:3000 // localhost:3000 // staging.scarabmag.com
+  return kServerBaseURL;
 }
 
 - (void)setUpAnalytics {

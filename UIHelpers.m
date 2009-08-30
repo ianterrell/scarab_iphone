@@ -13,8 +13,6 @@
 
 @implementation UIHelpers
 
-#pragma mark Private
-
 +(TTImageView *)newRoundedImageNamed:(NSString *)imageName orURL:(NSString *)URL withRect:(CGRect)rect andRadius:(CGFloat)radius {
   TTImageView *imageView = [[TTImageView alloc] initWithFrame:rect];
   imageView.backgroundColor = [UIColor clearColor];

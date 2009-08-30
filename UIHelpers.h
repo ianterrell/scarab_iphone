@@ -13,6 +13,7 @@
 
 }
 
++ (void)addRoundedImageNamed:(NSString *)imageName orURL:(NSString *)URL toView:(UIView *)view withRect:(CGRect)rect andRadius:(CGFloat)radius;
 
 + (TTImageView *)newRoundedImageNamed:(NSString *)imageName;
 + (TTImageView *)newRoundedImageWithURL:(NSString *)URL;

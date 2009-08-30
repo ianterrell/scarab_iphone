@@ -21,6 +21,7 @@
 @property(retain) NSString *photoUrl;
 
 @property(retain) NSMutableSet *works;
+@property(retain) NSMutableSet *interviews;
 
 #pragma mark Finders
 
