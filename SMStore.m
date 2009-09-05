@@ -110,9 +110,10 @@
   debugLog(@"error desc: %@, failure reason: %@, suggestion: %@", transaction.error.localizedDescription, transaction.error.localizedFailureReason, transaction.error.localizedRecoverySuggestion);
   debugLog(@"date: %@", transaction.transactionDate);
   debugLog(@"identifier: %@", transaction.transactionIdentifier);
-//  if (transaction.error != SKErrorPaymentCancelled) { 
-//    debugLog(@"other error");
-//  } else {
+  if (transaction.error.code != SKErrorPaymentCancelled) { 
+    TTAlert([NSString stringWithFormat:@"Oops! An error occurred while performing your transaction: %@; %@\nPlease exit the application and come back and try again.\n\nIf the problem persists, please email support@scarabmag.com with the error you're seeing.  Thank you!", transaction.error.localizedDescription, transaction.error.localizedFailureReason]);
+  }
+  // else {
 //    debugLog(@"payment canceled");
 //  }
   [[SKPaymentQueue defaultQueue] finishTransaction: transaction]; 

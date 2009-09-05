@@ -66,6 +66,11 @@
 - (void)setUpThree20;
 - (void)setUpSplashScreen;
 
+#pragma mark Network Connectivity Stuff
+
+- (void)showNetworkWarningIfNeeded;
+- (NSString *)dontShowConnectivityAlertFlagPath;
+
 #pragma mark HUD Methods
 
 - (void)showHUDWithLabel:(NSString *)labelText details:(NSString *)detailsLabelText animated:(BOOL)animated;

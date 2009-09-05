@@ -11,6 +11,7 @@
 #import "ScarabStyleSheet.h"
 #import "SMStore.h"
 
+#import "Reachability.h"
 #import "LibraryViewController.h"
 #import "IssueViewController.h"
 #import "IssuePreviewController.h"
@@ -53,6 +54,8 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
   debugLog(@"Application did finish launching!");
 
+  [self showNetworkWarningIfNeeded];
+
   [self setUpAnalytics];
   [self setUpStore];
   [self setUpAudioDirectory];
@@ -92,6 +95,20 @@
 #pragma mark Setup Helper Methods
 
 /**
+ * Shows a warning if the network is not available.
+ */
+- (void)showNetworkWarningIfNeeded {
+  if ([[Reachability sharedReachability] internetConnectionStatus] == NotReachable) {
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[self dontShowConnectivityAlertFlagPath]]) {
+      TTAlertViewController *alert = [[TTAlertViewController alloc] initWithTitle:@"No Connection!" message:@"Scarab requires a connection to the internet to fetch news and new content, including each issue's audio files. However, if you've already downloaded content, you can still access it offline."];
+      [alert addButtonWithTitle:@"Don't warn" URL:@"scarab://dontShowConnectivityAlert"];
+      [alert addCancelButtonWithTitle:@"Ok" URL:nil];
+      [alert.alertView show];
+    }
+  }
+}
+
+/**
  * Sets up the store to handle transactions -- including any in progress
  */
 - (void)setUpStore {
@@ -122,7 +139,7 @@
 }
 
 - (void)setUpAnalytics {
-  NSString *applicationCode = @"a9b76b54fd070e1bb2943d8a7b1d0c3a";
+  NSString *applicationCode = @"833641d7409a5765e8f4140cafe717d1"; // <-- live // beta: @"a9b76b54fd070e1bb2943d8a7b1d0c3a";
   [Beacon initAndStartBeaconWithApplicationCode:applicationCode useCoreLocation:NO useOnlyWiFi:NO];
 }
 
@@ -161,6 +178,9 @@
   [map from:@"scarab://syncDevice" toViewController:[RestoreTransactionsViewController class]];
   [map from:@"scarab://cleanUpFiles" toViewController:[CleanUpFilesViewController class]];
   [map from:@"scarab://credits" toViewController:[CreditsViewController class]];
+  
+  
+  [map from:@"scarab://dontShowConnectivityAlert" toObject:self selector:@selector(dontShowConnectivityAlert)];
 
   // Before opening the tab bar, we see if the controller history was persisted the last time
   if (![navigator restoreViewControllers]) {
@@ -218,6 +238,13 @@
   TTAlert(@"Oops! A serious error occurred! Please exit the application and come back and try again.\n\nIf the problem persists, please delete and then redownload the application (it will be free).  Sorry for the trouble, and thank you!");
 }
 
+- (NSString *)dontShowConnectivityAlertFlagPath {
+  return [NSString stringWithFormat:@"%@/dontShowConnectivityAlert", [AppDelegate applicationDocumentsDirectory]];
+}
+
+- (void)dontShowConnectivityAlert {
+  [[NSFileManager defaultManager] createFileAtPath:[self dontShowConnectivityAlertFlagPath] contents:nil attributes:nil];
+}
 
 
 #pragma mark -

@@ -14,6 +14,7 @@
 		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		3C1190B41051E2C6003D472A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1190B31051E2C6003D472A /* Reachability.m */; };
 		3C1DCBCC101D08AF00702531 /* brian.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C1DCBCB101D08AF00702531 /* brian.jpg */; };
 		3C1DCBDC101D08DC00702531 /* brian_128.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C1DCBDB101D08DC00702531 /* brian_128.jpg */; };
 		3C1DCC2B101D1AEE00702531 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C1DCC2A101D1AEE00702531 /* Entitlements.plist */; };
@@ -172,6 +173,8 @@
 		28A0AB4B0D9B1048005BE974 /* Scarab_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scarab_Prefix.pch; sourceTree = "<group>"; };
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3C1190B21051E2C6003D472A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		3C1190B31051E2C6003D472A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		3C1DCBCB101D08AF00702531 /* brian.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brian.jpg; sourceTree = "<group>"; };
 		3C1DCBDB101D08DC00702531 /* brian_128.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brian_128.jpg; sourceTree = "<group>"; };
 		3C1DCC2A101D1AEE00702531 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
@@ -584,6 +587,8 @@
 				3C5F47910FF139D50086D8D1 /* SKProduct+LocalizedPrice.m */,
 				3C3FD7901039B88200304238 /* SMUpdatingDisplay.h */,
 				3C3FD7911039B88200304238 /* SMUpdatingDisplay.m */,
+				3C1190B21051E2C6003D472A /* Reachability.h */,
+				3C1190B31051E2C6003D472A /* Reachability.m */,
 			);
 			name = "Helper Classes";
 			sourceTree = "<group>";
@@ -1053,6 +1058,7 @@
 				3C3FD5301035953000304238 /* MoreController.m in Sources */,
 				3C3FD7921039B88200304238 /* SMUpdatingDisplay.m in Sources */,
 				3C3FD9DA1039E61200304238 /* SMWebController.m in Sources */,
+				3C1190B41051E2C6003D472A /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1071,7 +1077,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ian Terrell (32WJ7Z486S)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ian Terrell (F795349HT3)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1087,7 +1093,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Scarab;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F59D1659-742C-4F1C-81A5-25C785736677";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "24D5C2B4-5812-4EAC-A2E7-5E7122E770E1";
 			};
 			name = Debug;
 		};
@@ -1137,7 +1143,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ian Terrell (32WJ7Z486S)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ian Terrell";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Scarab_Prefix.pch;
@@ -1151,7 +1157,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Scarab;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F59D1659-742C-4F1C-81A5-25C785736677";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "326E7B66-9338-4DBA-9B3F-6F000A95EF22";
 			};
 			name = BetaTest;
 		};
