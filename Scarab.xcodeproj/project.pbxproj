@@ -1077,7 +1077,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ian Terrell (F795349HT3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ian Terrell (32WJ7Z486S)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1093,7 +1093,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Scarab;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "24D5C2B4-5812-4EAC-A2E7-5E7122E770E1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D2E8D3A5-D120-4836-B43C-8B4FF6FA5C41";
 			};
 			name = Debug;
 		};
@@ -1115,7 +1115,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Scarab;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F59D1659-742C-4F1C-81A5-25C785736677";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D2E8D3A5-D120-4836-B43C-8B4FF6FA5C41";
 			};
 			name = Release;
 		};

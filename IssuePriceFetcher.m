@@ -29,8 +29,12 @@
 }
 
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response { 
-  SKProduct *product = [response.products objectAtIndex:0];
-  [controller updatePurchaseButtonWithPrice:[product localizedPrice]];
+  if ([response.products count] > 0) {
+    SKProduct *product = [response.products objectAtIndex:0];
+    [controller updatePurchaseButtonWithPrice:[product localizedPrice]];
+  } else {
+    TTAlert(@"Oops! The AppStore doesn't have this issue in it yet. Sometimes it can take a few days to propagate through their servers. Please be patient and try again tomorrow! Sorry!");
+  }
 } 
 
 - (void)requestDidFinish:(SKRequest *)request {
