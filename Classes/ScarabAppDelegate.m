@@ -30,12 +30,13 @@
 #import "SMWebController.h"
 
 #import "Transaction.h"
+#import "Device.h"
 #import "Work.h"
 
 #import "SMUpdatingDisplay.h"
 
 // 192.168.20.2:3000 // localhost:3000 // staging.scarabmag.com // www.scarabmag.com
-#define kServerBaseURL @"http://www.scarabmag.com"
+#define kServerBaseURL @"http://192.168.0.101:3000"
 #define kDatabaseName @"Scarab.sqlite3"
 #define kConnectionTimeout 20.0
 
@@ -55,6 +56,8 @@
   debugLog(@"Application did finish launching!");
 
   [self showNetworkWarningIfNeeded];
+  
+  [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
 
   [self setUpAnalytics];
   [self setUpStore];
@@ -210,6 +213,23 @@
 -(void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
 }
 */
+
+#pragma mark -
+#pragma mark Push Notifications
+
+// Delegation methods
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
+//  const void *devTokenBytes = [devToken bytes];
+//  self.registered = YES;
+//  [self sendProviderDeviceToken:devTokenBytes]; // custom method
+  debugLog(@"Registering device ID with server, token: %@", devToken);
+  [Device saveOnServer:devToken];
+}
+ 
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
+  debugLog(@"Error in registration. Error: %@", err);
+}
+
 
 #pragma mark -
 #pragma mark Splash Screen

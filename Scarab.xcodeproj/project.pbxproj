@@ -57,6 +57,7 @@
 		3C2470670FE43D0F00FCACDF /* library_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2470660FE43D0F00FCACDF /* library_icon.png */; };
 		3C2470790FE7E99800FCACDF /* SMStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2470780FE7E99800FCACDF /* SMStore.m */; };
 		3C24707E0FE7EA6B00FCACDF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C24707D0FE7EA6B00FCACDF /* StoreKit.framework */; };
+		3C353E651101289D00D03FC9 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C353E641101289D00D03FC9 /* Device.m */; };
 		3C3FD5301035953000304238 /* MoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FD52F1035953000304238 /* MoreController.m */; };
 		3C3FD59A1035A16B00304238 /* 02-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C3FD5991035A16B00304238 /* 02-redo.png */; };
 		3C3FD5B51035A4A200304238 /* more-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C3FD5B41035A4A200304238 /* more-icon.png */; };
@@ -231,6 +232,8 @@
 		3C2470770FE7E99800FCACDF /* SMStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMStore.h; sourceTree = "<group>"; };
 		3C2470780FE7E99800FCACDF /* SMStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMStore.m; sourceTree = "<group>"; };
 		3C24707D0FE7EA6B00FCACDF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		3C353E631101289D00D03FC9 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		3C353E641101289D00D03FC9 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		3C3FD52E1035953000304238 /* MoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreController.h; sourceTree = "<group>"; };
 		3C3FD52F1035953000304238 /* MoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreController.m; sourceTree = "<group>"; };
 		3C3FD5991035A16B00304238 /* 02-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-redo.png"; sourceTree = "<group>"; };
@@ -558,6 +561,8 @@
 				3C63F9121029DDEE00E2D80F /* Footnote.m */,
 				3C63FC851032599800E2D80F /* Feedback.h */,
 				3C63FC861032599800E2D80F /* Feedback.m */,
+				3C353E631101289D00D03FC9 /* Device.h */,
+				3C353E641101289D00D03FC9 /* Device.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1059,6 +1064,7 @@
 				3C3FD7921039B88200304238 /* SMUpdatingDisplay.m in Sources */,
 				3C3FD9DA1039E61200304238 /* SMWebController.m in Sources */,
 				3C1190B41051E2C6003D472A /* Reachability.m in Sources */,
+				3C353E651101289D00D03FC9 /* Device.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1093,7 +1099,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Scarab;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D2E8D3A5-D120-4836-B43C-8B4FF6FA5C41";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "85174761-A569-4B8A-A2EE-88E609F8AD75";
 			};
 			name = Debug;
 		};
