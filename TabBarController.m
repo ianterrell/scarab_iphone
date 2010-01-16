@@ -16,10 +16,6 @@
                                              @"scarab://interviews",
                                              @"scarab://favorites",
                                              @"scarab://more",
-//                                             @"scarab://feedback",
-//                                             @"scarab://syncDevice",
-//                                             @"scarab://cleanUpFiles",
-//                                             @"scarab://credits",
                                              nil]];
   self.customizableViewControllers = [NSArray arrayWithObjects:nil];
   self.delegate = self;
