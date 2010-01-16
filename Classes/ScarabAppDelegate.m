@@ -54,6 +54,7 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
   debugLog(@"Application did finish launching!");
+  application.applicationIconBadgeNumber = 0; // in case we got here via a push notification
 
   [self showNetworkWarningIfNeeded];
   
