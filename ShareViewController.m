@@ -35,13 +35,13 @@
   [self.view addSubview:button];
   
   TTButton *tweet = [TTButton buttonWithStyle:@"tweetItButton:" title:@"Tweet it"];
-  tweet.frame = CGRectMake(210, 153, 90, 30);
+  tweet.frame = CGRectMake(210, 119, 90, 30);
   tweet.font = [UIFont boldSystemFontOfSize:14.0];
-  //[self.purchaseButton addTarget:self action:@selector(purchaseIssue) forControlEvents:UIControlEventTouchUpInside];
+  [tweet addTarget:self action:@selector(openTweetView) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:tweet];
 
   TTButton *email = [TTButton buttonWithStyle:@"purchasebutton:" title:@"Share via Email"];
-  email.frame = CGRectMake(20, 288, 280, 50);
+  email.frame = CGRectMake(20, 249, 280, 50);
   email.font = [UIFont boldSystemFontOfSize:22.0];
   //[self.purchaseButton addTarget:self action:@selector(purchaseIssue) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:email];
@@ -80,6 +80,12 @@
   debugLog(@"dialog did fail with error: %@", [error localizedDescription]);
 }
 
+#pragma mark -
+#pragma mark Button Actions
+
+-(void)openTweetView {
+  TTOpenURL(@"scarab://tweetShare");
+}
 
 
 /*

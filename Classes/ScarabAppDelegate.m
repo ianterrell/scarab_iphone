@@ -27,6 +27,7 @@
 #import "CreditsViewController.h"
 #import "RestoreTransactionsViewController.h"
 #import "ShareViewController.h"
+#import "TweetShareViewController.h"
 #import "MoreController.h"
 #import "SMWebController.h"
 
@@ -184,6 +185,7 @@
   [map from:@"scarab://cleanUpFiles" toViewController:[CleanUpFilesViewController class]];
   [map from:@"scarab://credits" toViewController:[CreditsViewController class]];
   [map from:@"scarab://share" toViewController:[ShareViewController class]];
+  [map from:@"scarab://tweetShare" toViewController:[TweetShareViewController class]];
   
   
   [map from:@"scarab://dontShowConnectivityAlert" toObject:self selector:@selector(dontShowConnectivityAlert)];

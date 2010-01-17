@@ -81,6 +81,8 @@
 		3C3FD9801039DED200304238 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3FD97F1039DED200304238 /* CoreLocation.framework */; };
 		3C3FD9841039DEE000304238 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3FD9831039DEE000304238 /* SystemConfiguration.framework */; };
 		3C3FD9DA1039E61200304238 /* SMWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FD9D91039E61200304238 /* SMWebController.m */; };
+		3C46D7621103728100CFC16F /* TweetShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C46D7611103728100CFC16F /* TweetShareViewController.m */; };
+		3C46D7641103728E00CFC16F /* TweetShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C46D7631103728E00CFC16F /* TweetShareViewController.xib */; };
 		3C5119E50FF01C34009CDD9F /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5119E40FF01C34009CDD9F /* Transaction.m */; };
 		3C55E48A1020C7B9009F04FF /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C55E4891020C7B9009F04FF /* IssueViewController.m */; };
 		3C55E4F710226C29009F04FF /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C55E4F610226C29009F04FF /* Author.m */; };
@@ -288,6 +290,9 @@
 		3C3FD9831039DEE000304238 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3C3FD9D81039E61200304238 /* SMWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMWebController.h; sourceTree = "<group>"; };
 		3C3FD9D91039E61200304238 /* SMWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWebController.m; sourceTree = "<group>"; };
+		3C46D7601103728100CFC16F /* TweetShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetShareViewController.h; sourceTree = "<group>"; };
+		3C46D7611103728100CFC16F /* TweetShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetShareViewController.m; sourceTree = "<group>"; };
+		3C46D7631103728E00CFC16F /* TweetShareViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetShareViewController.xib; sourceTree = "<group>"; };
 		3C5119E30FF01C34009CDD9F /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
 		3C5119E40FF01C34009CDD9F /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		3C55E4881020C7B9009F04FF /* IssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueViewController.h; sourceTree = "<group>"; };
@@ -704,6 +709,9 @@
 				3C353EED11015DE700D03FC9 /* ShareViewController.h */,
 				3C353EEE11015DE700D03FC9 /* ShareViewController.m */,
 				3C353EEB11015DDA00D03FC9 /* ShareViewController.xib */,
+				3C46D7601103728100CFC16F /* TweetShareViewController.h */,
+				3C46D7611103728100CFC16F /* TweetShareViewController.m */,
+				3C46D7631103728E00CFC16F /* TweetShareViewController.xib */,
 			);
 			name = Share;
 			sourceTree = "<group>";
@@ -1066,6 +1074,7 @@
 				3C353F2E11015FCC00D03FC9 /* FBConnect.bundle in Resources */,
 				3CA3D55F1102A4AD006A4985 /* facebook.png in Resources */,
 				3CA3D5631102A57B006A4985 /* twitter.png in Resources */,
+				3C46D7641103728E00CFC16F /* TweetShareViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1167,6 +1176,7 @@
 				3C353F2B11015FCC00D03FC9 /* FBLoginDialog.m in Sources */,
 				3C353F2C11015FCC00D03FC9 /* FBPermissionDialog.m in Sources */,
 				3C353F2D11015FCC00D03FC9 /* FBStreamDialog.m in Sources */,
+				3C46D7621103728100CFC16F /* TweetShareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

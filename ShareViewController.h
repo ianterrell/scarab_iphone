@@ -17,5 +17,6 @@
 @property(nonatomic, retain) FBSession *session;
 
 -(void)showPublishDialog;
+-(void)openTweetView;
 
 @end
