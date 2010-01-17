@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "FBConnect/FBConnect.h"
+#import <MessageUI/MessageUI.h>
 
 
-@interface ShareViewController : UIViewController <FBSessionDelegate, FBDialogDelegate> {
+@interface ShareViewController : UIViewController <FBSessionDelegate, FBDialogDelegate, MFMailComposeViewControllerDelegate> {
   FBSession *session;
 }
 

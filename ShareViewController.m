@@ -43,9 +43,11 @@
   TTButton *email = [TTButton buttonWithStyle:@"purchasebutton:" title:@"Share via Email"];
   email.frame = CGRectMake(20, 249, 280, 50);
   email.font = [UIFont boldSystemFontOfSize:22.0];
-  //[self.purchaseButton addTarget:self action:@selector(purchaseIssue) forControlEvents:UIControlEventTouchUpInside];
+  [email addTarget:self action:@selector(mail) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:email];
 
+  // Add analytics for viewing share screen
+  [[Beacon shared] startSubBeaconWithName:@"Viewed Share" timeSession:NO];
 }
 
 #pragma mark -
@@ -70,6 +72,8 @@
 
 - (void)dialogDidSucceed:(FBDialog*)dialog {
   debugLog(@"dialog did succeed!");
+  // Add analytics for sharing via FB
+  [[Beacon shared] startSubBeaconWithName:@"Shared - Facebook" timeSession:NO];
 }
 
 - (void)dialogDidCancel:(FBDialog*)dialog {
@@ -85,6 +89,41 @@
 
 -(void)openTweetView {
   TTOpenURL(@"scarab://tweetShare");
+}
+
+-(void)mail {
+  if ([MFMailComposeViewController canSendMail]) {
+    MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
+    controller.mailComposeDelegate = self;
+    [controller setSubject:@"Scarab Magazine:  A literary magazine for the iPhone and iPod Touch"];
+    [controller setMessageBody:@""
+    "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"0\">"
+    "	 <tbody><tr>"
+    "		 <td valign=\"top\" align=\"left\" width=\"10%\">"
+    "		 	 <img src=\"http://192.168.0.104:3000/images/iphone_with_splash.png\" style=\"padding-bottom:10px;\" width=\"144\" height=\"225\">"
+    "		 </td>"
+    "		 <td valign=\"top\" align=\"left\" width=\"90%;\">"
+    "			 <p style=\"font:13px 'Lucida Grande', 'Lucida', 'Helvetica', 'Arial'\">I started reading Scarab, a literary magazine for my iPhone, and I think you'll like it, too.  They feature the best in contemporary artists reading their prose and poetry to you as you follow along, and publish eleven new works an issue.  Plus you can win an iTunes gift card each week just for having the app.  Check it out!</p>"
+    "			 <p style=\"font:13px 'Lucida Grande', 'Lucida', 'Helvetica', 'Arial';padding:0;margin:0;padding-bottom:10px;\"><a href=\"http://www.scarabmag.com\">Scarab Homepage</a></p>"
+    "			 <p style=\"font:13px 'Lucida Grande', 'Lucida', 'Helvetica', 'Arial';padding:0;margin:0;padding-bottom:10px;\"><a href=\"http://itunes.com/apps/scarab\">Download Scarab on iTunes</a></p>"
+    "		 </td>"
+    "	 </tr></tbody>"
+    "</table>" isHTML:YES];
+    [self presentModalViewController:controller animated:YES];
+    [controller release];
+  } else {
+    TTAlert(@"Your device isn't set up to send emails.  Have you set up your Mail app yet?");
+  }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+	[self becomeFirstResponder];
+	[self dismissModalViewControllerAnimated:YES];
+  
+  if (result == MFMailComposeResultSent) {    
+    // Add analytics for sharing via mail
+    [[Beacon shared] startSubBeaconWithName:@"Shared - Email" timeSession:NO];
+  }
 }
 
 

@@ -104,7 +104,7 @@
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string type="base64-UTF8" key="IBUIText">VGFwICJUd2VldCBJdCIgdG8gbG9nIGluLCB0d2VldCBhYm91dCB1cywgYW5kIG9wdGlvbmFsbHkgZm9s
-bG93IHVzIQ</string>
+bG93IHVzLg</string>
 						<reference key="IBUITextColor" ref="438957309"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
@@ -125,7 +125,7 @@ bG93IHVzIQ</string>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">1.000000e+01</float>
 					</object>
-					<object class="IBUILabel" id="775460451">
+					<object class="IBUILabel" id="9440046">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 321}, {280, 40}}</string>
@@ -196,7 +196,7 @@ cGFzc3dvcmRzLg</string>
 							<reference ref="832460046"/>
 							<reference ref="538714513"/>
 							<reference ref="848163766"/>
-							<reference ref="775460451"/>
+							<reference ref="9440046"/>
 						</object>
 						<reference key="parent" ref="941033733"/>
 					</object>
@@ -243,7 +243,7 @@ cGFzc3dvcmRzLg</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">19</int>
-						<reference key="object" ref="775460451"/>
+						<reference key="object" ref="9440046"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>

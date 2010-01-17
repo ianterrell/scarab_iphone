@@ -20,6 +20,12 @@
   return [device saveRemote];  // if YES then it passed the Rails validations
 }
 
++(void)threadedSaveOnServer:(NSData *)tokenData {
+  NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+  [self saveOnServer:tokenData];
+  [pool release];
+}
+
 - (NSArray *)excludedPropertyNames {
   NSMutableArray *excluded = [NSMutableArray arrayWithArray: [super excludedPropertyNames]];
   [excluded addObject:@"URLValue"];

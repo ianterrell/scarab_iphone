@@ -38,7 +38,7 @@
 #import "SMUpdatingDisplay.h"
 
 // 192.168.20.2:3000 // localhost:3000 // staging.scarabmag.com // www.scarabmag.com //192.168.0.101
-#define kServerBaseURL @"http://192.168.0.101:3000"
+#define kServerBaseURL @"http://192.168.0.104:3000"
 #define kDatabaseName @"Scarab.sqlite3"
 #define kConnectionTimeout 20.0
 
@@ -207,18 +207,6 @@
   [[UIApplication sharedApplication].keyWindow addSubview:self.splashScreenController.view];
 }
 
-/*
-// Optional UITabBarControllerDelegate method
--(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-}
-*/
-
-/*
-// Optional UITabBarControllerDelegate method
--(void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
-}
-*/
-
 #pragma mark -
 #pragma mark Push Notifications
 
@@ -228,7 +216,7 @@
 //  self.registered = YES;
 //  [self sendProviderDeviceToken:devTokenBytes]; // custom method
   debugLog(@"Registering device ID with server, token: %@", devToken);
-  [Device saveOnServer:devToken];
+  [NSThread detachNewThreadSelector:@selector(threadedSaveOnServer:) toTarget:[Device class] withObject:devToken];
 }
  
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
