@@ -15,9 +15,12 @@
 
 @synthesize session;
 
+#pragma mark -
+#pragma mark Initialization
+
 - (id)init {
   if (self = [super init]) {
-    self.title = @"Share";
+    self.title = @"Share with Friends";
   }
   return self;
 }
@@ -28,25 +31,40 @@
   self.session = [FBSession sessionForApplication:fbApiKey secret:fbApiSecret delegate:self];
 
   FBLoginButton* button = [[[FBLoginButton alloc] init] autorelease];
+  button.frame = CGRectMake(210, 20, 90, 30);
   [self.view addSubview:button];
   
+  TTButton *tweet = [TTButton buttonWithStyle:@"tweetItButton:" title:@"Tweet it"];
+  tweet.frame = CGRectMake(210, 153, 90, 30);
+  tweet.font = [UIFont boldSystemFontOfSize:14.0];
+  //[self.purchaseButton addTarget:self action:@selector(purchaseIssue) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:tweet];
 
+  TTButton *email = [TTButton buttonWithStyle:@"purchasebutton:" title:@"Share via Email"];
+  email.frame = CGRectMake(20, 288, 280, 50);
+  email.font = [UIFont boldSystemFontOfSize:22.0];
+  //[self.purchaseButton addTarget:self action:@selector(purchaseIssue) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:email];
 
 }
 
--(IBAction)showDialog {
+#pragma mark -
+#pragma mark Facebook Methods and Callbacks
+
+- (void)session:(FBSession*)session didLogin:(FBUID)uid {
+//  debugLog(@"did login with facebook user id: %@", uid);
+  [self showPublishDialog];
+}
+
+-(void)showPublishDialog {
   FBStreamDialog* dialog = [[[FBStreamDialog alloc] init] autorelease];
 	dialog.delegate = self;
-	dialog.userMessagePrompt = @"Example prompt";
-	dialog.attachment = @"{\"name\":\"Facebook Connect for iPhone\","
-		"\"href\":\"http://developers.facebook.com/connect.php?tab=iphone\","
-		"\"caption\":\"Caption\",\"description\":\"Description\","
-		"\"media\":[{\"type\":\"image\","
-			"\"src\":\"http://img40.yfrog.com/img40/5914/iphoneconnectbtn.jpg\","
-			"\"href\":\"http://developers.facebook.com/connect.php?tab=iphone/\"}],"
-		"\"properties\":{\"another link\":{\"text\":\"Facebook home page\",\"href\":\"http://www.facebook.com\"}}}";
-	// replace this with a friend's UID
-	// dialog.targetId = @"999999";
+  dialog.userMessagePrompt = @"Tell your friends about Scarab!";
+	dialog.attachment = @"{\"name\":\"Scarab Magazine\","
+		"\"href\":\"http://www.scarabmag.com\","
+		"\"caption\":\"A literary magazine for your iPhone.\","
+    "\"description\":\"Listen to and read along with the best in contemporary poetry and prose. Eleven new works and an interview per issue, delivered right into your hand.\","
+		"\"properties\":{\"App\":{\"text\":\"Scarab on iTunes\",\"href\":\"http://itunes.com/apps/scarab\"}}}";
 	[dialog show];
 }
 
@@ -62,9 +80,7 @@
   debugLog(@"dialog did fail with error: %@", [error localizedDescription]);
 }
 
-- (void)session:(FBSession*)session didLogin:(FBUID)uid {
-//  debugLog(@"did login with facebook user id: %@", uid);
-}
+
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.

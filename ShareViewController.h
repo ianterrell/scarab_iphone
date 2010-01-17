@@ -16,6 +16,6 @@
 
 @property(nonatomic, retain) FBSession *session;
 
--(IBAction)showDialog;
+-(void)showPublishDialog;
 
 @end

@@ -36,7 +36,7 @@
 
 #import "SMUpdatingDisplay.h"
 
-// 192.168.20.2:3000 // localhost:3000 // staging.scarabmag.com // www.scarabmag.com
+// 192.168.20.2:3000 // localhost:3000 // staging.scarabmag.com // www.scarabmag.com //192.168.0.101
 #define kServerBaseURL @"http://192.168.0.101:3000"
 #define kDatabaseName @"Scarab.sqlite3"
 #define kConnectionTimeout 20.0

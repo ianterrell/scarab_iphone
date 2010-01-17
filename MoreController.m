@@ -18,7 +18,7 @@
     self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:self.title image:image tag:0] autorelease];
     self.variableHeightRows = NO;
 
-    TTTableImageItem *share = [TTTableImageItem itemWithText:@"Share with a Friend" imageURL:@"bundle://08-chat.png" URL:@"scarab://share"];
+    TTTableImageItem *share = [TTTableImageItem itemWithText:@"Share with friends" imageURL:@"bundle://08-chat.png" URL:@"scarab://share"];
     TTTableImageItem *feedback = [TTTableImageItem itemWithText:@"Send Feedback" imageURL:@"bundle://18-envelope.png" URL:@"scarab://feedback"];
     TTTableImageItem *syncDevice = [TTTableImageItem itemWithText:@"Sync Device" imageURL:@"bundle://02-redo.png" URL:@"scarab://syncDevice"];
     TTTableImageItem *cleanUpFiles = [TTTableImageItem itemWithText:@"Clean Up Files" imageURL:@"bundle://20-gear2.png" URL:@"scarab://cleanUpFiles"];
