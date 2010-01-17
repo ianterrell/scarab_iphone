@@ -100,7 +100,7 @@
     "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"0\">"
     "	 <tbody><tr>"
     "		 <td valign=\"top\" align=\"left\" width=\"10%\">"
-    "		 	 <img src=\"http://192.168.0.104:3000/images/iphone_with_splash.png\" style=\"padding-bottom:10px;\" width=\"144\" height=\"225\">"
+    "		 	 <img src=\"http://www.scarabmag.com/images/iphone_with_splash.png\" style=\"padding-bottom:10px;\" width=\"144\" height=\"225\">"
     "		 </td>"
     "		 <td valign=\"top\" align=\"left\" width=\"90%;\">"
     "			 <p style=\"font:13px 'Lucida Grande', 'Lucida', 'Helvetica', 'Arial'\">I started reading Scarab, a literary magazine for my iPhone, and I think you'll like it, too.  They feature the best in contemporary artists reading their prose and poetry to you as you follow along, and publish eleven new works an issue.  Plus you can win an iTunes gift card each week just for having the app.  Check it out!</p>"
