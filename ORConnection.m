@@ -6,7 +6,7 @@
 //  Copyright 2008 yFactorial, LLC. All rights reserved.
 //
 
-#import "Connection.h"
+#import "ORConnection.h"
 #import "Response.h"
 #import "NSData+Additions.h"
 #import "NSMutableURLRequest+ResponseType.h"
@@ -17,7 +17,7 @@
 	#define debugLog(...)
 #endif
 
-@implementation Connection
+@implementation ORConnection
 
 static float timeoutInterval = 5.0;
 

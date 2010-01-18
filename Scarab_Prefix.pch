@@ -12,7 +12,7 @@
   
   #import "ObjectiveSupport.h"
   #import "ObjectiveResource.h"
-  #import "Connection.h"
+  #import "ORConnection.h"
   #import "Response.h"
 
   #import "Three20/Three20.h"

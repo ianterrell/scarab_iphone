@@ -7,7 +7,7 @@
 //
 
 #import "NSObject+ObjectiveResource.h"
-#import "Connection.h"
+#import "ORConnection.h"
 #import "Response.h"
 #import "CoreSupport.h"
 #import "XMLSerializableSupport.h"
@@ -120,7 +120,7 @@ static NSString *_activeResourcePrefix = nil;
 
 // Find all items 
 + (NSArray *)findAllRemoteWithResponse:(NSError **)aError {
-	Response *res = [Connection get:[self getRemoteCollectionPath] withUser:[[self class] getRemoteUser] andPassword:[[self class]  getRemotePassword]];
+	Response *res = [ORConnection get:[self getRemoteCollectionPath] withUser:[[self class] getRemoteUser] andPassword:[[self class]  getRemotePassword]];
 	if([res isError] && aError) {
 		*aError = res.error;
 		return nil;
@@ -136,7 +136,7 @@ static NSString *_activeResourcePrefix = nil;
 }
 
 + (id)findRemote:(NSString *)elementId withResponse:(NSError **)aError {
-	Response *res = [Connection get:[self getRemoteElementPath:elementId] withUser:[[self class] getRemoteUser] andPassword:[[self class]  getRemotePassword]];
+	Response *res = [ORConnection get:[self getRemoteElementPath:elementId] withUser:[[self class] getRemoteUser] andPassword:[[self class]  getRemotePassword]];
 	if([res isError] && aError) {
 		*aError = res.error;
 	}
@@ -235,7 +235,7 @@ static NSString *_activeResourcePrefix = nil;
 }
 
 - (BOOL)createRemoteAtPath:(NSString *)path withResponse:(NSError **)aError {
-	Response *res = [Connection post:[self convertToRemoteExpectedType] to:path withUser:[[self class]  getRemoteUser] andPassword:[[self class]  getRemotePassword]];
+	Response *res = [ORConnection post:[self convertToRemoteExpectedType] to:path withUser:[[self class]  getRemoteUser] andPassword:[[self class]  getRemotePassword]];
 	if([res isError] && aError) {
 		*aError = res.error;
 	}
@@ -256,7 +256,7 @@ static NSString *_activeResourcePrefix = nil;
 }
 
 -(BOOL)updateRemoteAtPath:(NSString *)path withResponse:(NSError **)aError {	
-	Response *res = [Connection put:[self convertToRemoteExpectedType] to:path 
+	Response *res = [ORConnection put:[self convertToRemoteExpectedType] to:path 
 						   withUser:[[self class]  getRemoteUser] andPassword:[[self class]  getRemotePassword]];
 	if([res isError] && aError) {
 		*aError = res.error;
@@ -275,7 +275,7 @@ static NSString *_activeResourcePrefix = nil;
 }
 
 - (BOOL)destroyRemoteAtPath:(NSString *)path withResponse:(NSError **)aError {
-	Response *res = [Connection delete:path withUser:[[self class]  getRemoteUser] andPassword:[[self class]  getRemotePassword]];
+	Response *res = [ORConnection delete:path withUser:[[self class]  getRemoteUser] andPassword:[[self class]  getRemotePassword]];
 	if([res isError] && aError) {
 		*aError = res.error;
 	}

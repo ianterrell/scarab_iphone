@@ -134,7 +134,7 @@
 		3C63F5A21027D2BD00E2D80F /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F57A1027D2BD00E2D80F /* ConnectionManager.m */; };
 		3C63F5A31027D2BD00E2D80F /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F57C1027D2BD00E2D80F /* ConnectionDelegate.m */; };
 		3C63F5A41027D2BD00E2D80F /* NSHTTPURLResponse+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F57E1027D2BD00E2D80F /* NSHTTPURLResponse+Error.m */; };
-		3C63F5A51027D2BD00E2D80F /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5801027D2BD00E2D80F /* Connection.m */; };
+		3C63F5A51027D2BD00E2D80F /* ORConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5801027D2BD00E2D80F /* ORConnection.m */; };
 		3C63F5A61027D2BD00E2D80F /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5821027D2BD00E2D80F /* Response.m */; };
 		3C63F5A71027D2BD00E2D80F /* NSMutableURLRequest+ResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5841027D2BD00E2D80F /* NSMutableURLRequest+ResponseType.m */; };
 		3C63F5A81027D2BD00E2D80F /* NSError+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C63F5861027D2BD00E2D80F /* NSError+Error.m */; };
@@ -422,8 +422,8 @@
 		3C63F57C1027D2BD00E2D80F /* ConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionDelegate.m; sourceTree = "<group>"; };
 		3C63F57D1027D2BD00E2D80F /* NSHTTPURLResponse+Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSHTTPURLResponse+Error.h"; sourceTree = "<group>"; };
 		3C63F57E1027D2BD00E2D80F /* NSHTTPURLResponse+Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSHTTPURLResponse+Error.m"; sourceTree = "<group>"; };
-		3C63F57F1027D2BD00E2D80F /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
-		3C63F5801027D2BD00E2D80F /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connection.m; sourceTree = "<group>"; };
+		3C63F57F1027D2BD00E2D80F /* ORConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORConnection.h; sourceTree = "<group>"; };
+		3C63F5801027D2BD00E2D80F /* ORConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORConnection.m; sourceTree = "<group>"; };
 		3C63F5811027D2BD00E2D80F /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
 		3C63F5821027D2BD00E2D80F /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Response.m; sourceTree = "<group>"; };
 		3C63F5831027D2BD00E2D80F /* NSMutableURLRequest+ResponseType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+ResponseType.h"; sourceTree = "<group>"; };
@@ -1005,8 +1005,8 @@
 				3C63F57C1027D2BD00E2D80F /* ConnectionDelegate.m */,
 				3C63F57D1027D2BD00E2D80F /* NSHTTPURLResponse+Error.h */,
 				3C63F57E1027D2BD00E2D80F /* NSHTTPURLResponse+Error.m */,
-				3C63F57F1027D2BD00E2D80F /* Connection.h */,
-				3C63F5801027D2BD00E2D80F /* Connection.m */,
+				3C63F57F1027D2BD00E2D80F /* ORConnection.h */,
+				3C63F5801027D2BD00E2D80F /* ORConnection.m */,
 				3C63F5811027D2BD00E2D80F /* Response.h */,
 				3C63F5821027D2BD00E2D80F /* Response.m */,
 				3C63F5831027D2BD00E2D80F /* NSMutableURLRequest+ResponseType.h */,
@@ -1273,7 +1273,7 @@
 				3C63F5A21027D2BD00E2D80F /* ConnectionManager.m in Sources */,
 				3C63F5A31027D2BD00E2D80F /* ConnectionDelegate.m in Sources */,
 				3C63F5A41027D2BD00E2D80F /* NSHTTPURLResponse+Error.m in Sources */,
-				3C63F5A51027D2BD00E2D80F /* Connection.m in Sources */,
+				3C63F5A51027D2BD00E2D80F /* ORConnection.m in Sources */,
 				3C63F5A61027D2BD00E2D80F /* Response.m in Sources */,
 				3C63F5A71027D2BD00E2D80F /* NSMutableURLRequest+ResponseType.m in Sources */,
 				3C63F5A81027D2BD00E2D80F /* NSError+Error.m in Sources */,

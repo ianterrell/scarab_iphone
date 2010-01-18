@@ -22,7 +22,7 @@
                                     [interview.interviewId intValue],
                                     [self getRemoteCollectionName],
                                     [self getRemoteProtocolExtension]];
-  Response *response = [Connection get:footnotesInInterview];
+  Response *response = [ORConnection get:footnotesInInterview];
 	return [self performSelector:[self getRemoteParseDataMethod] withObject:response.body];
 }
 

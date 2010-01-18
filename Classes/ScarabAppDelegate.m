@@ -155,7 +155,7 @@
   // TODO: Extract ObjectiveResource config out to bundle or some such
   [ObjectiveResourceConfig setSite:[NSString stringWithFormat:@"%@/api/v1/", self.baseServerURL]];
   [ObjectiveResourceConfig setResponseType:XmlResponse];
-  [Connection setTimeout:kConnectionTimeout];
+  [ORConnection setTimeout:kConnectionTimeout];
 }
 
 - (void)setUpTTNavigator {

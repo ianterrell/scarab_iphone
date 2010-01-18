@@ -8,7 +8,7 @@
 
 @class Response;
 
-@interface Connection : NSObject
+@interface ORConnection : NSObject
 + (void) setTimeout:(float)timeout;
 + (float) timeout;
 + (Response *)post:(NSString *)body to:(NSString *)url;

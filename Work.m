@@ -27,7 +27,7 @@
                            [self getRemoteCollectionName],
                            [self getRemoteProtocolExtension],
                            issue.transactionIdentifier];
-  Response *response = [Connection get:worksInIssue];
+  Response *response = [ORConnection get:worksInIssue];
 	return [self performSelector:[self getRemoteParseDataMethod] withObject:response.body];
 }
 

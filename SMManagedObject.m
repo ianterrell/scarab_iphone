@@ -145,7 +145,7 @@
                          [self getRemoteCollectionName],
                          [number intValue],
                          [self getRemoteProtocolExtension]];
-  Response *response = [Connection get:sincePath];
+  Response *response = [ORConnection get:sincePath];
 	return [self performSelector:[self getRemoteParseDataMethod] withObject:response.body];
 }
 

@@ -24,7 +24,7 @@
                              [issue.issueId intValue],
                              [self getRemoteCollectionName],
                              [self getRemoteProtocolExtension]];
-  Response *response = [Connection get:authorsInIssue];
+  Response *response = [ORConnection get:authorsInIssue];
 	return [self performSelector:[self getRemoteParseDataMethod] withObject:response.body];
 }
 
