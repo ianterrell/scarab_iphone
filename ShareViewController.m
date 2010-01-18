@@ -103,7 +103,7 @@
     "		 	 <img src=\"http://www.scarabmag.com/images/iphone_with_splash.png\" style=\"padding-bottom:10px;\" width=\"144\" height=\"225\">"
     "		 </td>"
     "		 <td valign=\"top\" align=\"left\" width=\"90%;\">"
-    "			 <p style=\"font:13px 'Lucida Grande', 'Lucida', 'Helvetica', 'Arial'\">I started reading Scarab, a literary magazine for my iPhone, and I think you'll like it, too.  They feature the best in contemporary artists reading their prose and poetry to you as you follow along, and publish eleven new works an issue.  Plus you can win an iTunes gift card each week just for having the app.  Check it out!</p>"
+    "			 <p style=\"font:13px 'Lucida Grande', 'Lucida', 'Helvetica', 'Arial'\">I started reading Scarab, a literary magazine for my iPhone, and I think you'll like it, too.  They feature the best in contemporary artists reading their prose and poetry to you as you follow along.  Every issue showcases eleven new artists, as well as an interview with writers at the top of their game.  Plus you can win an iTunes gift card each week just for having the app.  Check it out!</p>"
     "			 <p style=\"font:13px 'Lucida Grande', 'Lucida', 'Helvetica', 'Arial';padding:0;margin:0;padding-bottom:10px;\"><a href=\"http://www.scarabmag.com\">Scarab Homepage</a></p>"
     "			 <p style=\"font:13px 'Lucida Grande', 'Lucida', 'Helvetica', 'Arial';padding:0;margin:0;padding-bottom:10px;\"><a href=\"http://itunes.com/apps/scarab\">Download Scarab on iTunes</a></p>"
     "		 </td>"

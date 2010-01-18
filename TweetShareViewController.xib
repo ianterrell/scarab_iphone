@@ -117,7 +117,7 @@
 						<bool key="IBUIDelaysContentTouches">NO</bool>
 						<bool key="IBUICanCancelContentTouches">NO</bool>
 						<bool key="IBUIBouncesZoom">NO</bool>
-						<string key="IBUIText">I recommend @scarabmag, a literary magazine built as an iPhone or iPod touch application! http://www.scarabmag.com</string>
+						<string key="IBUIText">I recommend @scarabmag, a literary magazine for the iPhone and iPod Touch. 11 new works an issue! http://www.scarabmag.com</string>
 						<object class="NSFont" key="IBUIFont" id="235800544">
 							<string key="NSName">Helvetica</string>
 							<double key="NSSize">1.400000e+01</double>

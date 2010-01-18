@@ -103,8 +103,7 @@
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string type="base64-UTF8" key="IBUIText">VGFwICJUd2VldCBJdCIgdG8gbG9nIGluLCB0d2VldCBhYm91dCB1cywgYW5kIG9wdGlvbmFsbHkgZm9s
-bG93IHVzLg</string>
+						<string type="base64-UTF8" key="IBUIText">VGFwICJUd2VldCBJdCIgdG8gbG9nIGluLCB0d2VldCBhYm91dCB1cywgYW5kIGZvbGxvdyBhbG9uZy4</string>
 						<reference key="IBUITextColor" ref="438957309"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
