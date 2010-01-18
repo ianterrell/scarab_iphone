@@ -1482,7 +1482,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Scarab;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9797061C-30AE-4FFF-A76F-CCEB781A1672";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "74D4BDC1-679A-4760-96A0-A5FDC1E118FB";
 			};
 			name = Distribution;
 		};
