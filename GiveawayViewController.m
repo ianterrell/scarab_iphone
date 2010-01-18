@@ -46,7 +46,7 @@
     device.email = self.emailField.text;
     device.okToEmail = self.mailingListSwitch.on;
     if ([device saveRemote]) {
-      TTAlert(@"You're all signed up to win free gift cards!  Be sure to stop back by here again if your email address changes.");
+      TTAlert(@"You're all signed up to win free gift cards!");
       [self.emailField.text writeToFile:[NSString stringWithFormat:@"%@/promotionEmail", [AppDelegate applicationDocumentsDirectory]] atomically:YES encoding:NSASCIIStringEncoding error:nil];
     } else {
       TTAlert(@"There was an error signing you up -- please try again later!  Sorry!");
