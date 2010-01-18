@@ -30,6 +30,7 @@
 #import "TweetShareViewController.h"
 #import "MoreController.h"
 #import "SMWebController.h"
+#import "GiveawayViewController.h"
 
 #import "Transaction.h"
 #import "Device.h"
@@ -50,6 +51,7 @@
 @synthesize libraryViewController;
 @synthesize favoritesViewController;
 @synthesize interviewViewController, tabBarController;
+@synthesize pushNotificationDeviceToken;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -186,6 +188,7 @@
   [map from:@"scarab://credits" toViewController:[CreditsViewController class]];
   [map from:@"scarab://share" toViewController:[ShareViewController class]];
   [map from:@"scarab://tweetShare" toViewController:[TweetShareViewController class]];
+  [map from:@"scarab://giveaway" toViewController:[GiveawayViewController class]];
   
   
   [map from:@"scarab://dontShowConnectivityAlert" toObject:self selector:@selector(dontShowConnectivityAlert)];
@@ -215,6 +218,8 @@
 //  const void *devTokenBytes = [devToken bytes];
 //  self.registered = YES;
 //  [self sendProviderDeviceToken:devTokenBytes]; // custom method
+  debugLog(@"caching device token");
+  self.pushNotificationDeviceToken = [devToken description];
   debugLog(@"Registering device ID with server, token: %@", devToken);
   [NSThread detachNewThreadSelector:@selector(threadedSaveOnServer:) toTarget:[Device class] withObject:devToken];
 }
@@ -393,6 +398,7 @@
 #pragma mark Memory management
 
 -(void)dealloc {
+  [pushNotificationDeviceToken release];
   [managedObjectContext release];
   [managedObjectModel release];
   [persistentStoreCoordinator release];

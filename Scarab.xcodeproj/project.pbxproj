@@ -98,6 +98,8 @@
 		3C46D7DC1103A67D00CFC16F /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C46D7C71103A67D00CFC16F /* NSString+UUID.m */; };
 		3C46D7DD1103A67D00CFC16F /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C46D7C91103A67D00CFC16F /* NSData+Base64.m */; };
 		3C46D9241103CDC600CFC16F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C46D9231103CDC600CFC16F /* MessageUI.framework */; };
+		3C46D9761103DCBE00CFC16F /* GiveawayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C46D9751103DCBE00CFC16F /* GiveawayViewController.m */; };
+		3C46D9781103DCC900CFC16F /* GiveawayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C46D9771103DCC900CFC16F /* GiveawayViewController.xib */; };
 		3C5119E50FF01C34009CDD9F /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5119E40FF01C34009CDD9F /* Transaction.m */; };
 		3C55E48A1020C7B9009F04FF /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C55E4891020C7B9009F04FF /* IssueViewController.m */; };
 		3C55E4F710226C29009F04FF /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C55E4F610226C29009F04FF /* Author.m */; };
@@ -341,6 +343,9 @@
 		3C46D7C81103A67D00CFC16F /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "../MGTwitterEngine/NSData+Base64.h"; sourceTree = SOURCE_ROOT; };
 		3C46D7C91103A67D00CFC16F /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "../MGTwitterEngine/NSData+Base64.m"; sourceTree = SOURCE_ROOT; };
 		3C46D9231103CDC600CFC16F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		3C46D9741103DCBE00CFC16F /* GiveawayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiveawayViewController.h; sourceTree = "<group>"; };
+		3C46D9751103DCBE00CFC16F /* GiveawayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiveawayViewController.m; sourceTree = "<group>"; };
+		3C46D9771103DCC900CFC16F /* GiveawayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GiveawayViewController.xib; sourceTree = "<group>"; };
 		3C5119E30FF01C34009CDD9F /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
 		3C5119E40FF01C34009CDD9F /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		3C55E4881020C7B9009F04FF /* IssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueViewController.h; sourceTree = "<group>"; };
@@ -545,6 +550,7 @@
 				3C63F84710293E7000E2D80F /* Interviews */,
 				3C63F6BB1028C54700E2D80F /* News */,
 				3C353EEA11015DA300D03FC9 /* Share */,
+				3C46D9731103DCAA00CFC16F /* Giveaway */,
 				3C63FC3E1032502F00E2D80F /* Feedback */,
 				3C63FB8B103219B000E2D80F /* Clean Up Files */,
 				3C63FB4B1032120900E2D80F /* Credits */,
@@ -855,6 +861,16 @@
 				3C46D7C91103A67D00CFC16F /* NSData+Base64.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		3C46D9731103DCAA00CFC16F /* Giveaway */ = {
+			isa = PBXGroup;
+			children = (
+				3C46D9741103DCBE00CFC16F /* GiveawayViewController.h */,
+				3C46D9751103DCBE00CFC16F /* GiveawayViewController.m */,
+				3C46D9771103DCC900CFC16F /* GiveawayViewController.xib */,
+			);
+			name = Giveaway;
 			sourceTree = "<group>";
 		};
 		3C63F5381027D2BD00E2D80F /* ObjectiveSupport */ = {
@@ -1189,6 +1205,7 @@
 				3CA3D55F1102A4AD006A4985 /* facebook.png in Resources */,
 				3CA3D5631102A57B006A4985 /* twitter.png in Resources */,
 				3C46D7641103728E00CFC16F /* TweetShareViewController.xib in Resources */,
+				3C46D9781103DCC900CFC16F /* GiveawayViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1305,6 +1322,7 @@
 				3C46D7D51103A67D00CFC16F /* MGTwitterMiscParser.m in Sources */,
 				3C46D7DC1103A67D00CFC16F /* NSString+UUID.m in Sources */,
 				3C46D7DD1103A67D00CFC16F /* NSData+Base64.m in Sources */,
+				3C46D9761103DCBE00CFC16F /* GiveawayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

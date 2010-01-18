@@ -11,11 +11,13 @@
 
 @implementation Device
 
-@synthesize deviceId, token;
+@synthesize deviceId, token, email, okToEmail;
 
 + (BOOL)saveOnServer:(NSData *)tokenData {
   Device *device = [[Device alloc] init];
   device.token = [tokenData description];
+  device.email = @"";
+  device.okToEmail = YES;
   debugLog(@"saving device on server!!");
   return [device saveRemote];  // if YES then it passed the Rails validations
 }
@@ -33,6 +35,7 @@
 } 
 
 - (void)dealloc {
+  [email release];
   [deviceId release];
   [token release];
   [super dealloc];

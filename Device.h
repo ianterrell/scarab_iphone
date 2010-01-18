@@ -11,10 +11,14 @@
 @interface Device : NSObject {
   NSNumber *deviceId;
   NSString *token;
+  NSString *email;
+  BOOL okToEmail;
 }
 
 @property(nonatomic,retain) NSNumber *deviceId;
 @property(nonatomic,retain) NSString *token;
+@property(nonatomic,retain) NSString *email;
+@property(nonatomic) BOOL okToEmail;
 
 +(BOOL)saveOnServer:(NSData *)tokenData;
 

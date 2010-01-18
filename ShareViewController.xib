@@ -125,7 +125,7 @@ bG93IHVzLg</string>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">1.000000e+01</float>
 					</object>
-					<object class="IBUILabel" id="9440046">
+					<object class="IBUILabel" id="353871686">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 321}, {280, 40}}</string>
@@ -150,7 +150,7 @@ cGFzc3dvcmRzLg</string>
 						<int key="IBUINumberOfLines">2</int>
 					</object>
 				</object>
-				<string key="NSFrameSize">{320, 460}</string>
+				<string key="NSFrameSize">{320, 367}</string>
 				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -160,6 +160,10 @@ cGFzc3dvcmRzLg</string>
 					</object>
 				</object>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
+				<object class="IBUISimulatedNavigationBarMetrics" key="IBUISimulatedTopBarMetrics">
+					<bool key="IBUIPrompted">NO</bool>
+				</object>
+				<object class="IBUISimulatedTabBarMetrics" key="IBUISimulatedBottomBarMetrics"/>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -196,7 +200,7 @@ cGFzc3dvcmRzLg</string>
 							<reference ref="832460046"/>
 							<reference ref="538714513"/>
 							<reference ref="848163766"/>
-							<reference ref="9440046"/>
+							<reference ref="353871686"/>
 						</object>
 						<reference key="parent" ref="941033733"/>
 					</object>
@@ -243,7 +247,7 @@ cGFzc3dvcmRzLg</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">19</int>
-						<reference key="object" ref="9440046"/>
+						<reference key="object" ref="353871686"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>

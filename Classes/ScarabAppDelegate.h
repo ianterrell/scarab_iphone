@@ -29,6 +29,8 @@
   TabBarController *tabBarController;
   
   MBProgressHUD *HUD;
+  
+  NSString *pushNotificationDeviceToken;
 }
 
 @property(nonatomic,retain) IBOutlet UIWindow *window;
@@ -46,6 +48,8 @@
 
 @property(nonatomic,readonly) NSString *applicationDocumentsDirectory;
 @property(nonatomic,readonly) NSString *baseServerURL;
+
+@property(nonatomic,retain) NSString *pushNotificationDeviceToken;
 
 #pragma mark Splash Screen
 
