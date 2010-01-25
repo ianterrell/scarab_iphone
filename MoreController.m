@@ -19,13 +19,12 @@
     self.variableHeightRows = NO;
 
     TTTableImageItem *share = [TTTableImageItem itemWithText:@"Share with friends" imageURL:@"bundle://08-chat.png" URL:@"scarab://share"];
-    TTTableImageItem *giveaways = [TTTableImageItem itemWithText:@"Free iTunes Gift Cards" imageURL:@"bundle://24-gift.png" URL:@"scarab://giveaway"];
     TTTableImageItem *feedback = [TTTableImageItem itemWithText:@"Send Feedback" imageURL:@"bundle://18-envelope.png" URL:@"scarab://feedback"];
     TTTableImageItem *syncDevice = [TTTableImageItem itemWithText:@"Sync Device" imageURL:@"bundle://02-redo.png" URL:@"scarab://syncDevice"];
     TTTableImageItem *cleanUpFiles = [TTTableImageItem itemWithText:@"Clean Up Files" imageURL:@"bundle://20-gear2.png" URL:@"scarab://cleanUpFiles"];
     TTTableImageItem *credits = [TTTableImageItem itemWithText:@"Credits" imageURL:@"bundle://29-heart.png" URL:@"scarab://credits"];
 
-    self.dataSource = [TTListDataSource dataSourceWithObjects:share, giveaways, feedback, syncDevice, cleanUpFiles, credits, nil];
+    self.dataSource = [TTListDataSource dataSourceWithObjects:share, feedback, syncDevice, cleanUpFiles, credits, nil];
   }
   return self;
 }

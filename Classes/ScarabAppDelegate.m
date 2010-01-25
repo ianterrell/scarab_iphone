@@ -30,7 +30,6 @@
 #import "TweetShareViewController.h"
 #import "MoreController.h"
 #import "SMWebController.h"
-#import "GiveawayViewController.h"
 
 #import "Transaction.h"
 #import "Device.h"
@@ -38,8 +37,8 @@
 
 #import "SMUpdatingDisplay.h"
 
-// 192.168.20.2:3000 // localhost:3000 // staging.scarabmag.com // www.scarabmag.com //192.168.0.101
-#define kServerBaseURL @"http://192.168.0.104:3000"
+// 192.168.20.2:3000 // localhost:3000 // staging.scarabmag.com // www.scarabmag.com //192.168.0.104
+#define kServerBaseURL @"http://www.scarabmag.com"
 #define kDatabaseName @"Scarab.sqlite3"
 #define kConnectionTimeout 20.0
 
@@ -188,7 +187,6 @@
   [map from:@"scarab://credits" toViewController:[CreditsViewController class]];
   [map from:@"scarab://share" toViewController:[ShareViewController class]];
   [map from:@"scarab://tweetShare" toViewController:[TweetShareViewController class]];
-  [map from:@"scarab://giveaway" toViewController:[GiveawayViewController class]];
   
   
   [map from:@"scarab://dontShowConnectivityAlert" toObject:self selector:@selector(dontShowConnectivityAlert)];
