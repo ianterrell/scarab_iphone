@@ -1,4 +1,4 @@
 .DS_Store
 build
-Scarab.xcodeproj/*.pbxuser
-Scarab.xcodeproj/*.mode1v3
+**.pbxuser
+**.mode1v3
